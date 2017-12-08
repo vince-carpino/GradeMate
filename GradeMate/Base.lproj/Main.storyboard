@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHK-0h-AoY">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Courier.ttc">
+            <string>Courier-Bold</string>
+        </array>
+        <array key="CourierNewBold.ttf">
+            <string>CourierNewPS-BoldMT</string>
+        </array>
+        <array key="Menlo.ttc">
+            <string>Menlo-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Final Calculator View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FinalCalculatorViewController" customModule="GradeMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="Ui8-8g-Ac6" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quD-ld-TDR">
+                                <rect key="frame" x="0.0" y="176" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zof-qm-QqX"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pml-Tg-i0A" userLabel="GradeMate - 5.5">
+                                <rect key="frame" x="-10.5" y="57" width="341" height="75"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
+                                <state key="normal" title="GradeMate">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gradeMateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMq-5q-Jw3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vah-EQ-Mmc" userLabel="GradeMate Label - 5s">
+                                <rect key="frame" x="16" y="33" width="288" height="64"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="60"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="0.0" height="4"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TmP-Zi-EAE" userLabel="GradeMate Label - 6s">
+                                <rect key="frame" x="16" y="55" width="288" height="68"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="64"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="0.0" height="4"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DZP-nd-5em" userLabel="GradeMate Label - Plus">
+                                <rect key="frame" x="16" y="70" width="288" height="73"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="0.0" height="4"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Srd-Ia-TKO" userLabel="Current Grade Shadow">
+                                <rect key="frame" x="8" y="197" width="102" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WQx-wo-8l2" userLabel="Exam Weight Shadow">
+                                <rect key="frame" x="158.66666666666666" y="197" width="97" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="DrN-2z-XqM"/>
+                                    <constraint firstAttribute="width" constant="120" id="vrB-4d-AG7">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="97"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="1"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DrN-2z-XqM"/>
+                                        <exclude reference="vrB-4d-AG7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="DrN-2z-XqM"/>
+                                        <include reference="vrB-4d-AG7"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3KQ-mI-sQD" userLabel="Desired Grade Shadow">
+                                <rect key="frame" x="304" y="197" width="102" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hB-Lp-Mgp" userLabel="Calculate Shadow">
+                                <rect key="frame" x="109.66666666666669" y="532.66666666666663" width="195" height="62"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="MGD-Fs-cYd"/>
+                                    <constraint firstAttribute="width" constant="195" id="nlW-ms-mlw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-z3-98b" userLabel="Current Grade Button" customClass="FUIButton">
+                                <rect key="frame" x="3" y="108" width="102" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="E6l-D9-fyM"/>
+                                    <constraint firstAttribute="height" constant="60" id="cao-sG-xun"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="Current Grade">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="currentGradeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wS7-NS-7mx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Tan-4d-B9t" userLabel="Weight Button" customClass="FUIButton">
+                                <rect key="frame" x="109" y="108" width="102" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="ERC-c1-Pbw"/>
+                                    <constraint firstAttribute="height" constant="60" id="IT2-Ro-tJf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
+                                <size key="titleShadowOffset" width="0.0" height="3"/>
+                                <state key="normal" title="Exam Weight">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="weightButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YPH-2v-pTz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="n6T-4R-YQR" userLabel="Desired Grade Button" customClass="FUIButton">
+                                <rect key="frame" x="215" y="108" width="102" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="NaH-Us-QKT"/>
+                                    <constraint firstAttribute="height" constant="60" id="RC2-GX-f7E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
+                                <size key="titleShadowOffset" width="-2" height="2"/>
+                                <state key="normal" title="Desired Grade">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="desiredGradeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NWF-yC-7bg"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-tf-LU1" userLabel="Calculate Button" customClass="FUIButton">
+                                <rect key="frame" x="60" y="443.5" width="200" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="5Pj-M4-dUg"/>
+                                    <constraint firstAttribute="width" constant="200" id="LtR-51-PYS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="27"/>
+                                <size key="titleShadowOffset" width="0.0" height="3"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5Pj-M4-dUg"/>
+                                        <exclude reference="LtR-51-PYS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="5Pj-M4-dUg"/>
+                                        <include reference="LtR-51-PYS"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaI-Lv-C0B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ii6-X4-Zdh">
+                                <rect key="frame" x="177" y="662" width="60" height="32"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="qLD-Rs-BiP"/>
+                                    <constraint firstAttribute="width" constant="60" id="x6T-eE-ZVs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBG-uT-CQa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="FXn-Zb-0fv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UpY-tY-zal">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="w68-cn-dT2">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="quD-ld-TDR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="1Cs-lr-liE"/>
+                            <constraint firstItem="xMt-tf-LU1" firstAttribute="top" secondItem="quD-ld-TDR" secondAttribute="bottom" constant="51.5" id="2W0-oE-4N4"/>
+                            <constraint firstItem="Srd-Ia-TKO" firstAttribute="width" secondItem="GcP-z3-98b" secondAttribute="width" id="3Fk-LK-i6E"/>
+                            <constraint firstItem="3KQ-mI-sQD" firstAttribute="height" secondItem="n6T-4R-YQR" secondAttribute="height" id="4zl-Bq-mua"/>
+                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="n6T-4R-YQR" secondAttribute="bottom" constant="8" id="5Mt-uk-uW8"/>
+                            <constraint firstItem="GcP-z3-98b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="3" id="8a7-lf-fDa"/>
+                            <constraint firstItem="xMt-tf-LU1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="97g-sw-aSt"/>
+                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="Srd-Ia-TKO" secondAttribute="bottom" constant="8" id="9Qx-PX-yyM">
+                                <variation key="heightClass=regular-widthClass=compact" constant="3"/>
+                            </constraint>
+                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="Tan-4d-B9t" secondAttribute="bottom" constant="8" id="AF6-FN-dSt"/>
+                            <constraint firstItem="DZP-nd-5em" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cwj-lz-Z10"/>
+                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="3KQ-mI-sQD" secondAttribute="bottom" constant="3" id="EnH-1a-W7a"/>
+                            <constraint firstItem="vah-EQ-Mmc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FoR-wz-mrT"/>
+                            <constraint firstItem="TmP-Zi-EAE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="GpB-xI-qlW"/>
+                            <constraint firstItem="vah-EQ-Mmc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HlU-Re-VxV"/>
+                            <constraint firstItem="quD-ld-TDR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HpD-1S-NuB"/>
+                            <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JdQ-ql-Q9x"/>
+                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="WQx-wo-8l2" secondAttribute="bottom" constant="3" id="Ku5-rc-bmb"/>
+                            <constraint firstItem="TmP-Zi-EAE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LGE-Ba-PEf"/>
+                            <constraint firstItem="WQx-wo-8l2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="McQ-oS-Jc9"/>
+                            <constraint firstItem="Tan-4d-B9t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nf8-tv-Nwe"/>
+                            <constraint firstItem="3KQ-mI-sQD" firstAttribute="width" secondItem="n6T-4R-YQR" secondAttribute="width" id="PrV-Pk-ZtA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ii6-X4-Zdh" secondAttribute="bottom" constant="42" id="QPC-IP-Vms"/>
+                            <constraint firstItem="Ui8-8g-Ac6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QaP-u6-Ovw"/>
+                            <constraint firstItem="9hB-Lp-Mgp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Seb-JN-q0s"/>
+                            <constraint firstItem="TmP-Zi-EAE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TNO-CW-J5M"/>
+                            <constraint firstAttribute="trailing" secondItem="n6T-4R-YQR" secondAttribute="trailing" constant="3" id="U6V-7b-gsk"/>
+                            <constraint firstItem="Srd-Ia-TKO" firstAttribute="height" secondItem="GcP-z3-98b" secondAttribute="height" id="Vd2-dR-onl"/>
+                            <constraint firstItem="ii6-X4-Zdh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wql-31-0ql"/>
+                            <constraint firstItem="9hB-Lp-Mgp" firstAttribute="top" secondItem="quD-ld-TDR" secondAttribute="bottom" constant="56.5" id="Zki-jl-VYc"/>
+                            <constraint firstItem="DZP-nd-5em" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="db8-fw-NO7"/>
+                            <constraint firstItem="DZP-nd-5em" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dfJ-8J-3q7"/>
+                            <constraint firstItem="quD-ld-TDR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fAy-RS-VYl"/>
+                            <constraint firstItem="DZP-nd-5em" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fkG-70-OfH"/>
+                            <constraint firstItem="Ui8-8g-Ac6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gfF-hX-mG5"/>
+                            <constraint firstItem="Pml-Tg-i0A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jla-nH-bfZ"/>
+                            <constraint firstItem="Srd-Ia-TKO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="nQb-aF-FTy"/>
+                            <constraint firstItem="Pml-Tg-i0A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="nr4-wP-CWK"/>
+                            <constraint firstItem="vah-EQ-Mmc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oS9-sd-78s"/>
+                            <constraint firstItem="TmP-Zi-EAE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rWb-Ic-cxR"/>
+                            <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="stu-bH-mf2"/>
+                            <constraint firstAttribute="trailing" secondItem="3KQ-mI-sQD" secondAttribute="trailing" constant="8" id="tE9-GE-stK"/>
+                            <constraint firstItem="vah-EQ-Mmc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="tJI-re-iAU"/>
+                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="GcP-z3-98b" secondAttribute="bottom" constant="8" id="uiE-Gk-mgc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Ui8-8g-Ac6"/>
+                                <exclude reference="quD-ld-TDR"/>
+                                <exclude reference="vah-EQ-Mmc"/>
+                                <exclude reference="TmP-Zi-EAE"/>
+                                <exclude reference="DZP-nd-5em"/>
+                                <exclude reference="Srd-Ia-TKO"/>
+                                <exclude reference="WQx-wo-8l2"/>
+                                <exclude reference="3KQ-mI-sQD"/>
+                                <exclude reference="9hB-Lp-Mgp"/>
+                                <exclude reference="GcP-z3-98b"/>
+                                <exclude reference="Tan-4d-B9t"/>
+                                <exclude reference="n6T-4R-YQR"/>
+                                <exclude reference="xMt-tf-LU1"/>
+                                <exclude reference="ii6-X4-Zdh"/>
+                                <exclude reference="QBG-uT-CQa"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8a7-lf-fDa"/>
+                                <exclude reference="Nf8-tv-Nwe"/>
+                                <exclude reference="nQb-aF-FTy"/>
+                                <exclude reference="McQ-oS-Jc9"/>
+                                <exclude reference="U6V-7b-gsk"/>
+                                <exclude reference="tE9-GE-stK"/>
+                                <exclude reference="1Cs-lr-liE"/>
+                                <exclude reference="5Mt-uk-uW8"/>
+                                <exclude reference="9Qx-PX-yyM"/>
+                                <exclude reference="AF6-FN-dSt"/>
+                                <exclude reference="EnH-1a-W7a"/>
+                                <exclude reference="HpD-1S-NuB"/>
+                                <exclude reference="Ku5-rc-bmb"/>
+                                <exclude reference="fAy-RS-VYl"/>
+                                <exclude reference="uiE-Gk-mgc"/>
+                                <exclude reference="2W0-oE-4N4"/>
+                                <exclude reference="97g-sw-aSt"/>
+                                <exclude reference="JdQ-ql-Q9x"/>
+                                <exclude reference="QaP-u6-Ovw"/>
+                                <exclude reference="gfF-hX-mG5"/>
+                                <exclude reference="stu-bH-mf2"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Ui8-8g-Ac6"/>
+                                <include reference="quD-ld-TDR"/>
+                                <exclude reference="Srd-Ia-TKO"/>
+                                <exclude reference="WQx-wo-8l2"/>
+                                <exclude reference="3KQ-mI-sQD"/>
+                                <include reference="GcP-z3-98b"/>
+                                <include reference="Tan-4d-B9t"/>
+                                <include reference="n6T-4R-YQR"/>
+                                <include reference="xMt-tf-LU1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8a7-lf-fDa"/>
+                                <include reference="Nf8-tv-Nwe"/>
+                                <include reference="nQb-aF-FTy"/>
+                                <include reference="McQ-oS-Jc9"/>
+                                <include reference="U6V-7b-gsk"/>
+                                <include reference="tE9-GE-stK"/>
+                                <include reference="1Cs-lr-liE"/>
+                                <include reference="5Mt-uk-uW8"/>
+                                <include reference="9Qx-PX-yyM"/>
+                                <include reference="AF6-FN-dSt"/>
+                                <include reference="EnH-1a-W7a"/>
+                                <include reference="HpD-1S-NuB"/>
+                                <include reference="Ku5-rc-bmb"/>
+                                <include reference="fAy-RS-VYl"/>
+                                <include reference="uiE-Gk-mgc"/>
+                                <include reference="2W0-oE-4N4"/>
+                                <include reference="97g-sw-aSt"/>
+                                <include reference="JdQ-ql-Q9x"/>
+                                <include reference="QaP-u6-Ovw"/>
+                                <include reference="gfF-hX-mG5"/>
+                                <include reference="stu-bH-mf2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sp2-ce-Jmc"/>
+                    <connections>
+                        <outlet property="calculateButton" destination="xMt-tf-LU1" id="hyJ-EX-V8U"/>
+                        <outlet property="calculateShadow" destination="9hB-Lp-Mgp" id="2Ne-iR-N5B"/>
+                        <outlet property="currentGradeButton" destination="GcP-z3-98b" id="GlL-jQ-yOn"/>
+                        <outlet property="currentGradeInfoDismiss" destination="0f2-Lc-Qgr" id="RDd-CP-eyM"/>
+                        <outlet property="currentGradeInfoView" destination="8yR-OH-JUR" id="dwY-wL-t2k"/>
+                        <outlet property="currentGradeShadow" destination="Srd-Ia-TKO" id="gD9-mY-fw7"/>
+                        <outlet property="desiredGradeButton" destination="n6T-4R-YQR" id="ltn-m0-hqa"/>
+                        <outlet property="desiredGradeInfoDismiss" destination="sj3-tH-E42" id="Bbb-Bz-lQ0"/>
+                        <outlet property="desiredGradeInfoView" destination="Qb9-XC-Q6O" id="aAs-XM-pVU"/>
+                        <outlet property="desiredGradeShadow" destination="3KQ-mI-sQD" id="xLN-xp-fJC"/>
+                        <outlet property="examWeightButton" destination="Tan-4d-B9t" id="Odj-sh-W6d"/>
+                        <outlet property="examWeightInfoDismiss" destination="CGq-1O-1Ih" id="EI9-cK-9kR"/>
+                        <outlet property="examWeightInfoView" destination="BUD-Vs-ozX" id="Yo6-VJ-N3b"/>
+                        <outlet property="examWeightShadow" destination="WQx-wo-8l2" id="vuK-Nw-Kk3"/>
+                        <outlet property="gradeMateButton" destination="Pml-Tg-i0A" id="EFx-lX-d6u"/>
+                        <outlet property="gradeMateLabel5s" destination="vah-EQ-Mmc" id="c6x-CS-KXt"/>
+                        <outlet property="gradeMateLabel6Plus" destination="DZP-nd-5em" id="XPr-Bx-kf9"/>
+                        <outlet property="gradeMateLabel6s" destination="TmP-Zi-EAE" id="Fjl-6a-SkL"/>
+                        <outlet property="menuButton" destination="ii6-X4-Zdh" id="OHp-If-pDy"/>
+                        <outlet property="resultView" destination="2Hv-6I-Kjh" id="tpx-yA-g77"/>
+                        <outlet property="resultViewDismissButton" destination="PQe-M8-Jcp" id="FtE-Jb-kV1"/>
+                        <outlet property="resultViewScoreLabel" destination="sPA-dN-II0" id="lo6-Jq-zL8"/>
+                        <outlet property="resultViewWarningLabel" destination="8kV-bW-XFv" id="SZy-Lx-XnK"/>
+                        <outlet property="visualEffectView" destination="QBG-uT-CQa" id="UV3-yN-LIO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="2Hv-6I-Kjh" userLabel="Result Pop Up">
+                    <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQe-M8-Jcp" userLabel="Dismiss Button" customClass="FUIButton">
+                            <rect key="frame" x="16" y="204" width="318" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="dismissPopUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ARl-eE-XWD"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="is what you need to get." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="q7U-8F-ma7" userLabel="Message Label">
+                            <rect key="frame" x="16" y="73" width="318" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="318" translatesAutoresizingMaskIntoConstraints="NO" id="8kV-bW-XFv" userLabel="Warning Label">
+                            <rect key="frame" x="16" y="102" width="318" height="94"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPA-dN-II0" userLabel="Score Label">
+                            <rect key="frame" x="16" y="20" width="318" height="45"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="40"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="8yR-OH-JUR" userLabel="Current Grade Info Pop Up">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="230"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Grade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZMH-tF-xoP" userLabel="Current Grade Label">
+                            <rect key="frame" x="16" y="20" width="308" height="38"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="32"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is the grade you have right now." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Sbe-t1-kl2" userLabel="Message Label">
+                            <rect key="frame" x="16" y="65" width="308" height="91"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0f2-Lc-Qgr" userLabel="Dismiss Button" customClass="FUIButton">
+                            <rect key="frame" x="16" y="164" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="Oh, definitely 💯">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="currentGradeInfoDismiss:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ZS-Fb-cb6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.75018728595890416" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="BUD-Vs-ozX" userLabel="Exam Weight Info Pop Up">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="230"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exam Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WcB-T2-Gbs" userLabel="Exam Weight Label">
+                            <rect key="frame" x="16" y="20" width="308" height="37"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="32"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is the amount of your total grade that this exam is worth." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5MZ-Cu-Q8s" userLabel="Message Label">
+                            <rect key="frame" x="16" y="65" width="308" height="91"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGq-1O-1Ih" userLabel="Dismiss Button" customClass="FUIButton">
+                            <rect key="frame" x="16" y="164" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="You're so smart 💡">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="examWeightInfoDismiss:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7c3-BH-bFw"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.74740475171232879" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="Qb9-XC-Q6O" userLabel="Desired Grade Pop Up">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="230"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desired Grade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hVS-KV-9PZ" userLabel="Desired Grade Label">
+                            <rect key="frame" x="16" y="20" width="308" height="37"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="32"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is the grade you want to have after completing the exam." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Kjc-w5-nRp" userLabel="Message Label">
+                            <rect key="frame" x="16" y="65" width="308" height="91"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sj3-tH-E42" userLabel="Dismiss Button" customClass="FUIButton">
+                            <rect key="frame" x="16" y="164" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="Got it 🚀">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="desiredGradeInfoDismiss:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJS-NT-IVh"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.75420055650684936" colorSpace="calibratedWhite"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="284" y="-263"/>
+        </scene>
+        <!--Show Launch Screen-->
+        <scene sceneID="Etb-bZ-ro1">
+            <objects>
+                <viewController id="LHK-0h-AoY" customClass="ShowLaunchScreen" customModule="GradeMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w2U-gz-769"/>
+                        <viewControllerLayoutGuide type="bottom" id="7rB-pl-sTk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zmE-PF-8XG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-b4-8Rf" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MpV-2O-qyr" userLabel="GradeMate Label - 5s">
+                                <rect key="frame" x="20" y="119" width="374" height="60"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="60"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="4"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-fZ-hFo" userLabel="GradeMate Label - 6s">
+                                <rect key="frame" x="20" y="91.666666666666657" width="374" height="63.999999999999972"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="64"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="4"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1v4-cu-L87" userLabel="GradeMate Label - Plus">
+                                <rect key="frame" x="20" y="72" width="374" height="69"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="4"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Ff-ek-yGq" userLabel="GradeMate Label - 4s">
+                                <rect key="frame" x="16" y="299" width="343" height="69"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="4"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnP-ys-bSr" userLabel="GradeMate - 5.5">
+                                <rect key="frame" x="-10.5" y="57" width="341" height="75"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
+                                <state key="normal" title="GradeMate">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gradeMateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MnH-rm-WN1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="6Ff-ek-yGq" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" id="2Ld-Mg-ICh"/>
+                            <constraint firstItem="YHA-b4-8Rf" firstAttribute="height" secondItem="zmE-PF-8XG" secondAttribute="height" id="6kn-nC-kEc"/>
+                            <constraint firstItem="6Ff-ek-yGq" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="8f2-qS-cAM"/>
+                            <constraint firstItem="xpj-fZ-hFo" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="9KE-I1-7g7"/>
+                            <constraint firstItem="1v4-cu-L87" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="CeC-22-Hcm"/>
+                            <constraint firstItem="YHA-b4-8Rf" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" id="Fy1-A8-7WI"/>
+                            <constraint firstItem="MpV-2O-qyr" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" constant="-219" id="HvD-06-nGq"/>
+                            <constraint firstItem="YHA-b4-8Rf" firstAttribute="width" secondItem="zmE-PF-8XG" secondAttribute="width" id="Jkx-D7-BX5"/>
+                            <constraint firstItem="MpV-2O-qyr" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="Mw4-sa-S7k"/>
+                            <constraint firstItem="bnP-ys-bSr" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="Oy9-d5-obh"/>
+                            <constraint firstItem="YHA-b4-8Rf" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="RPP-9k-RKb"/>
+                            <constraint firstItem="xpj-fZ-hFo" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" constant="-244.5" id="S0K-Ue-NrI"/>
+                            <constraint firstItem="1v4-cu-L87" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="SlJ-NJ-ijq"/>
+                            <constraint firstItem="1v4-cu-L87" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" constant="-261.5" id="dYq-WJ-tFo"/>
+                            <constraint firstItem="xpj-fZ-hFo" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="hUQ-Vh-pFn"/>
+                            <constraint firstItem="bnP-ys-bSr" firstAttribute="top" secondItem="w2U-gz-769" secondAttribute="bottom" constant="37" id="iaq-I9-Yed"/>
+                            <constraint firstItem="6Ff-ek-yGq" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="leC-DV-9eE"/>
+                            <constraint firstItem="xpj-fZ-hFo" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="pH5-QX-2S4"/>
+                            <constraint firstItem="MpV-2O-qyr" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="pI7-fe-Uq4"/>
+                            <constraint firstItem="1v4-cu-L87" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="rST-Ic-U2P"/>
+                            <constraint firstItem="6Ff-ek-yGq" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="rTb-m4-9d4"/>
+                            <constraint firstItem="MpV-2O-qyr" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="zjL-CC-Xt1"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="MpV-2O-qyr"/>
+                                <exclude reference="xpj-fZ-hFo"/>
+                                <exclude reference="1v4-cu-L87"/>
+                                <exclude reference="6Ff-ek-yGq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="gradeMateButton" destination="bnP-ys-bSr" id="s5M-jr-d86"/>
+                        <outlet property="grademateLabel4s" destination="6Ff-ek-yGq" id="Zfc-Zz-W7M"/>
+                        <outlet property="grademateLabel5s" destination="MpV-2O-qyr" id="1jZ-pI-WUV"/>
+                        <outlet property="grademateLabel6s" destination="xpj-fZ-hFo" id="x32-R0-iaR"/>
+                        <outlet property="grademateLabelPlus" destination="1v4-cu-L87" id="H8N-hj-iPg"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showLaunchScreen" modalTransitionStyle="crossDissolve" id="ngS-Aq-lvV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8L0-Pm-Qy7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-560.79999999999995" y="-263.11844077961024"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Gradient-Background" width="682" height="682"/>
+    </resources>
+</document>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Courier.ttc">
+            <string>Courier-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="oAR-6t-8oo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPd-4s-i2o" userLabel="GradeMate - 3.5">
+                                <rect key="frame" x="20" y="327" width="374" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
+                                <state key="normal" title="GradeMate">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpt-Yx-FSS" userLabel="GradeMate - 4.0">
+                                <rect key="frame" x="20" y="327" width="374" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
+                                <state key="normal" title="GradeMate">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tny-q8-yce" userLabel="GradeMate Label">
+                                <rect key="frame" x="16" y="299" width="343" height="69"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="4"/>
+                            </label>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtU-hs-PK1" userLabel="GradeMate - 4.7">
+                                <rect key="frame" x="36.666666666666657" y="330.66666666666669" width="341" height="75"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
+                                <state key="normal" title="GradeMate">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twe-GP-n1H" userLabel="GradeMate - 5.5">
+                                <rect key="frame" x="20.666666666666657" y="327.66666666666669" width="373" height="81"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
+                                <state key="normal" title="GradeMate">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Twe-GP-n1H" firstAttribute="centerX" secondItem="oAR-6t-8oo" secondAttribute="centerX" id="0va-1g-TGT"/>
+                            <constraint firstItem="tny-q8-yce" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="1nT-SK-Hcy"/>
+                            <constraint firstItem="oAR-6t-8oo" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="40q-fP-UbB"/>
+                            <constraint firstItem="tny-q8-yce" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="6hk-zo-ITz"/>
+                            <constraint firstItem="oAR-6t-8oo" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="CpJ-MM-l4H"/>
+                            <constraint firstItem="oAR-6t-8oo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="KqT-vd-crv"/>
+                            <constraint firstItem="Twe-GP-n1H" firstAttribute="centerY" secondItem="oAR-6t-8oo" secondAttribute="centerY" id="S5u-gv-lZJ"/>
+                            <constraint firstItem="oAR-6t-8oo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="T1b-tz-D6X"/>
+                            <constraint firstItem="qtU-hs-PK1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YNV-Eu-PwG"/>
+                            <constraint firstItem="tny-q8-yce" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="i11-Sm-Bgr"/>
+                            <constraint firstItem="tny-q8-yce" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rJ6-WP-D0h"/>
+                            <constraint firstItem="qtU-hs-PK1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yqk-gb-Fje"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="bPd-4s-i2o"/>
+                                <exclude reference="gpt-Yx-FSS"/>
+                                <exclude reference="qtU-hs-PK1"/>
+                                <exclude reference="Twe-GP-n1H"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.399999999999999" y="373.76311844077964"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Gradient-Background" width="682" height="682"/>
+    </resources>
+</document>
