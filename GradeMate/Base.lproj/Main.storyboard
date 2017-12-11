@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHK-0h-AoY">
-    <device id="retina4_0" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHK-0h-AoY">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,27 +31,62 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="Ui8-8g-Ac6" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quD-ld-TDR">
-                                <rect key="frame" x="0.0" y="176" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="260" width="414" height="216"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zof-qm-QqX"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pml-Tg-i0A" userLabel="GradeMate - 5.5">
-                                <rect key="frame" x="-10.5" y="57" width="341" height="75"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbC-DM-aJ4">
+                                <rect key="frame" x="20" y="496" width="374" height="220"/>
+                                <subviews>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-tf-LU1" userLabel="Calculate Button" customClass="FUIButton">
+                                        <rect key="frame" x="8" y="72.666666666666629" width="358" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="ddZ-u9-4yZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="38"/>
+                                        <size key="titleShadowOffset" width="0.0" height="3"/>
+                                        <state key="normal" title="Calculate">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaI-Lv-C0B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="leading" secondItem="pbC-DM-aJ4" secondAttribute="leading" constant="8" id="J60-fk-QOI"/>
+                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="centerX" secondItem="pbC-DM-aJ4" secondAttribute="centerX" id="TnR-nA-jBh"/>
+                                    <constraint firstAttribute="trailing" secondItem="xMt-tf-LU1" secondAttribute="trailing" constant="8" id="bcv-Sh-VnT"/>
+                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="centerY" secondItem="pbC-DM-aJ4" secondAttribute="centerY" id="lFd-Jt-aBd"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ii6-X4-Zdh">
+                                <rect key="frame" x="177" y="662" width="60" height="32"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="qLD-Rs-BiP"/>
+                                    <constraint firstAttribute="width" constant="60" id="x6T-eE-ZVs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmT-0f-tp7" userLabel="GradeMate - BLACK" customClass="FUIButton">
+                                <rect key="frame" x="20" y="62" width="374" height="75"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
                                 <state key="normal" title="GradeMate">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="gradeMateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMq-5q-Jw3"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vah-EQ-Mmc" userLabel="GradeMate Label - 5s">
                                 <rect key="frame" x="16" y="33" width="288" height="64"/>
@@ -132,11 +167,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pml-Tg-i0A" userLabel="GradeMate - 5.5" customClass="FUIButton">
+                                <rect key="frame" x="20" y="57" width="374" height="75"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
+                                <state key="normal" title="GradeMate">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gradeMateButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="01d-CW-aQl"/>
+                                    <action selector="gradeMateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMq-5q-Jw3"/>
+                                    <action selector="gradeMateButtonTouchDragEnter:" destination="BYZ-38-t0r" eventType="touchDragEnter" id="yta-Qc-0Tf"/>
+                                    <action selector="gradeMateButtonTouchDragExit:" destination="BYZ-38-t0r" eventType="touchDragExit" id="wL8-y9-MEw"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-z3-98b" userLabel="Current Grade Button" customClass="FUIButton">
-                                <rect key="frame" x="3" y="108" width="102" height="60"/>
+                                <rect key="frame" x="20" y="192" width="118" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="102" id="E6l-D9-fyM"/>
-                                    <constraint firstAttribute="height" constant="60" id="cao-sG-xun"/>
+                                    <constraint firstAttribute="height" constant="60" id="Q1r-FW-sc8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
                                 <size key="titleShadowOffset" width="2" height="2"/>
@@ -148,9 +195,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Tan-4d-B9t" userLabel="Weight Button" customClass="FUIButton">
-                                <rect key="frame" x="109" y="108" width="102" height="60"/>
+                                <rect key="frame" x="148" y="192" width="118" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="102" id="ERC-c1-Pbw"/>
                                     <constraint firstAttribute="height" constant="60" id="IT2-Ro-tJf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
@@ -163,10 +209,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="n6T-4R-YQR" userLabel="Desired Grade Button" customClass="FUIButton">
-                                <rect key="frame" x="215" y="108" width="102" height="60"/>
+                                <rect key="frame" x="276" y="192" width="118" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="102" id="NaH-Us-QKT"/>
-                                    <constraint firstAttribute="height" constant="60" id="RC2-GX-f7E"/>
+                                    <constraint firstAttribute="height" constant="60" id="l9X-Z3-VLP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
                                 <size key="titleShadowOffset" width="-2" height="2"/>
@@ -177,47 +222,7 @@
                                     <action selector="desiredGradeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NWF-yC-7bg"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-tf-LU1" userLabel="Calculate Button" customClass="FUIButton">
-                                <rect key="frame" x="60" y="443.5" width="200" height="62"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="5Pj-M4-dUg"/>
-                                    <constraint firstAttribute="width" constant="200" id="LtR-51-PYS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="27"/>
-                                <size key="titleShadowOffset" width="0.0" height="3"/>
-                                <state key="normal" title="Calculate">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5Pj-M4-dUg"/>
-                                        <exclude reference="LtR-51-PYS"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="5Pj-M4-dUg"/>
-                                        <include reference="LtR-51-PYS"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaI-Lv-C0B"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ii6-X4-Zdh">
-                                <rect key="frame" x="177" y="662" width="60" height="32"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="qLD-Rs-BiP"/>
-                                    <constraint firstAttribute="width" constant="60" id="x6T-eE-ZVs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
-                                <size key="titleShadowOffset" width="0.0" height="2"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBG-uT-CQa">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBG-uT-CQa">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="FXn-Zb-0fv">
@@ -243,12 +248,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="1Cs-lr-liE"/>
-                            <constraint firstItem="xMt-tf-LU1" firstAttribute="top" secondItem="quD-ld-TDR" secondAttribute="bottom" constant="51.5" id="2W0-oE-4N4"/>
+                            <constraint firstItem="n6T-4R-YQR" firstAttribute="leading" secondItem="Tan-4d-B9t" secondAttribute="trailing" constant="10" id="2W6-fU-nqZ"/>
                             <constraint firstItem="Srd-Ia-TKO" firstAttribute="width" secondItem="GcP-z3-98b" secondAttribute="width" id="3Fk-LK-i6E"/>
+                            <constraint firstItem="cmT-0f-tp7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3x3-ID-jeU"/>
                             <constraint firstItem="3KQ-mI-sQD" firstAttribute="height" secondItem="n6T-4R-YQR" secondAttribute="height" id="4zl-Bq-mua"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="n6T-4R-YQR" secondAttribute="bottom" constant="8" id="5Mt-uk-uW8"/>
-                            <constraint firstItem="GcP-z3-98b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="3" id="8a7-lf-fDa"/>
-                            <constraint firstItem="xMt-tf-LU1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="97g-sw-aSt"/>
+                            <constraint firstItem="GcP-z3-98b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8a7-lf-fDa"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="Srd-Ia-TKO" secondAttribute="bottom" constant="8" id="9Qx-PX-yyM">
                                 <variation key="heightClass=regular-widthClass=compact" constant="3"/>
                             </constraint>
@@ -256,42 +261,51 @@
                             <constraint firstItem="DZP-nd-5em" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cwj-lz-Z10"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="3KQ-mI-sQD" secondAttribute="bottom" constant="3" id="EnH-1a-W7a"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FoR-wz-mrT"/>
+                            <constraint firstItem="cmT-0f-tp7" firstAttribute="top" secondItem="Pml-Tg-i0A" secondAttribute="top" constant="5" id="GhS-3n-oi8"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="GpB-xI-qlW"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HlU-Re-VxV"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HpD-1S-NuB"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JdQ-ql-Q9x"/>
+                            <constraint firstItem="Tan-4d-B9t" firstAttribute="width" secondItem="GcP-z3-98b" secondAttribute="width" id="Kki-PF-Gsa"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="WQx-wo-8l2" secondAttribute="bottom" constant="3" id="Ku5-rc-bmb"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LGE-Ba-PEf"/>
                             <constraint firstItem="WQx-wo-8l2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="McQ-oS-Jc9"/>
                             <constraint firstItem="Tan-4d-B9t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nf8-tv-Nwe"/>
-                            <constraint firstItem="3KQ-mI-sQD" firstAttribute="width" secondItem="n6T-4R-YQR" secondAttribute="width" id="PrV-Pk-ZtA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pbC-DM-aJ4" secondAttribute="bottom" constant="20" id="P30-1J-rzW"/>
+                            <constraint firstItem="Pml-Tg-i0A" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QCF-yh-kXo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ii6-X4-Zdh" secondAttribute="bottom" constant="42" id="QPC-IP-Vms"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QaP-u6-Ovw"/>
                             <constraint firstItem="9hB-Lp-Mgp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Seb-JN-q0s"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TNO-CW-J5M"/>
-                            <constraint firstAttribute="trailing" secondItem="n6T-4R-YQR" secondAttribute="trailing" constant="3" id="U6V-7b-gsk"/>
-                            <constraint firstItem="Srd-Ia-TKO" firstAttribute="height" secondItem="GcP-z3-98b" secondAttribute="height" id="Vd2-dR-onl"/>
+                            <constraint firstItem="Pml-Tg-i0A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Twk-IL-Uax"/>
+                            <constraint firstAttribute="trailing" secondItem="n6T-4R-YQR" secondAttribute="trailing" constant="20" id="U6V-7b-gsk"/>
                             <constraint firstItem="ii6-X4-Zdh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wql-31-0ql"/>
                             <constraint firstItem="9hB-Lp-Mgp" firstAttribute="top" secondItem="quD-ld-TDR" secondAttribute="bottom" constant="56.5" id="Zki-jl-VYc"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="db8-fw-NO7"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dfJ-8J-3q7"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fAy-RS-VYl"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fkG-70-OfH"/>
+                            <constraint firstItem="Tan-4d-B9t" firstAttribute="leading" secondItem="GcP-z3-98b" secondAttribute="trailing" constant="10" id="gRy-6x-3FE"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gfF-hX-mG5"/>
-                            <constraint firstItem="Pml-Tg-i0A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jla-nH-bfZ"/>
                             <constraint firstItem="Srd-Ia-TKO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="nQb-aF-FTy"/>
                             <constraint firstItem="Pml-Tg-i0A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="nr4-wP-CWK"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oS9-sd-78s"/>
+                            <constraint firstItem="pbC-DM-aJ4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pTq-HJ-bNM"/>
+                            <constraint firstItem="Tan-4d-B9t" firstAttribute="width" secondItem="n6T-4R-YQR" secondAttribute="width" id="qQm-f0-AqU"/>
+                            <constraint firstItem="cmT-0f-tp7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qSG-h8-G2W"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rWb-Ic-cxR"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="stu-bH-mf2"/>
                             <constraint firstAttribute="trailing" secondItem="3KQ-mI-sQD" secondAttribute="trailing" constant="8" id="tE9-GE-stK"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="tJI-re-iAU"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="GcP-z3-98b" secondAttribute="bottom" constant="8" id="uiE-Gk-mgc"/>
+                            <constraint firstItem="pbC-DM-aJ4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wNp-9S-KHg"/>
+                            <constraint firstItem="pbC-DM-aJ4" firstAttribute="top" secondItem="quD-ld-TDR" secondAttribute="bottom" constant="20" id="wO3-ub-gdQ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Ui8-8g-Ac6"/>
                                 <exclude reference="quD-ld-TDR"/>
+                                <exclude reference="ii6-X4-Zdh"/>
                                 <exclude reference="vah-EQ-Mmc"/>
                                 <exclude reference="TmP-Zi-EAE"/>
                                 <exclude reference="DZP-nd-5em"/>
@@ -302,17 +316,17 @@
                                 <exclude reference="GcP-z3-98b"/>
                                 <exclude reference="Tan-4d-B9t"/>
                                 <exclude reference="n6T-4R-YQR"/>
-                                <exclude reference="xMt-tf-LU1"/>
-                                <exclude reference="ii6-X4-Zdh"/>
-                                <exclude reference="QBG-uT-CQa"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="8a7-lf-fDa"/>
-                                <exclude reference="Nf8-tv-Nwe"/>
                                 <exclude reference="nQb-aF-FTy"/>
                                 <exclude reference="McQ-oS-Jc9"/>
-                                <exclude reference="U6V-7b-gsk"/>
                                 <exclude reference="tE9-GE-stK"/>
+                                <exclude reference="JdQ-ql-Q9x"/>
+                                <exclude reference="QaP-u6-Ovw"/>
+                                <exclude reference="gfF-hX-mG5"/>
+                                <exclude reference="stu-bH-mf2"/>
+                                <exclude reference="8a7-lf-fDa"/>
+                                <exclude reference="Nf8-tv-Nwe"/>
                                 <exclude reference="1Cs-lr-liE"/>
                                 <exclude reference="5Mt-uk-uW8"/>
                                 <exclude reference="9Qx-PX-yyM"/>
@@ -322,12 +336,7 @@
                                 <exclude reference="Ku5-rc-bmb"/>
                                 <exclude reference="fAy-RS-VYl"/>
                                 <exclude reference="uiE-Gk-mgc"/>
-                                <exclude reference="2W0-oE-4N4"/>
-                                <exclude reference="97g-sw-aSt"/>
-                                <exclude reference="JdQ-ql-Q9x"/>
-                                <exclude reference="QaP-u6-Ovw"/>
-                                <exclude reference="gfF-hX-mG5"/>
-                                <exclude reference="stu-bH-mf2"/>
+                                <exclude reference="U6V-7b-gsk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -340,15 +349,17 @@
                                 <include reference="GcP-z3-98b"/>
                                 <include reference="Tan-4d-B9t"/>
                                 <include reference="n6T-4R-YQR"/>
-                                <include reference="xMt-tf-LU1"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="8a7-lf-fDa"/>
-                                <include reference="Nf8-tv-Nwe"/>
                                 <include reference="nQb-aF-FTy"/>
                                 <include reference="McQ-oS-Jc9"/>
-                                <include reference="U6V-7b-gsk"/>
                                 <include reference="tE9-GE-stK"/>
+                                <include reference="JdQ-ql-Q9x"/>
+                                <include reference="QaP-u6-Ovw"/>
+                                <include reference="gfF-hX-mG5"/>
+                                <include reference="stu-bH-mf2"/>
+                                <include reference="8a7-lf-fDa"/>
+                                <include reference="Nf8-tv-Nwe"/>
                                 <include reference="1Cs-lr-liE"/>
                                 <include reference="5Mt-uk-uW8"/>
                                 <include reference="9Qx-PX-yyM"/>
@@ -358,12 +369,7 @@
                                 <include reference="Ku5-rc-bmb"/>
                                 <include reference="fAy-RS-VYl"/>
                                 <include reference="uiE-Gk-mgc"/>
-                                <include reference="2W0-oE-4N4"/>
-                                <include reference="97g-sw-aSt"/>
-                                <include reference="JdQ-ql-Q9x"/>
-                                <include reference="QaP-u6-Ovw"/>
-                                <include reference="gfF-hX-mG5"/>
-                                <include reference="stu-bH-mf2"/>
+                                <include reference="U6V-7b-gsk"/>
                             </mask>
                         </variation>
                     </view>
@@ -384,6 +390,11 @@
                         <outlet property="examWeightInfoView" destination="BUD-Vs-ozX" id="Yo6-VJ-N3b"/>
                         <outlet property="examWeightShadow" destination="WQx-wo-8l2" id="vuK-Nw-Kk3"/>
                         <outlet property="gradeMateButton" destination="Pml-Tg-i0A" id="EFx-lX-d6u"/>
+                        <outlet property="gradeMateButtonShadow" destination="cmT-0f-tp7" id="waa-Gf-XPo"/>
+                        <outlet property="gradeMateButtonView" destination="MiO-lY-l4M" id="N7n-HG-y9I"/>
+                        <outlet property="gradeMateButtonViewBackButton" destination="oC4-rD-5JP" id="nK2-nn-I3e"/>
+                        <outlet property="gradeMateButtonViewLinkButton" destination="s8k-VC-06Z" id="6jp-dc-bZb"/>
+                        <outlet property="gradeMateButtonViewReviewButton" destination="IR1-53-jEX" id="qgG-Is-hg6"/>
                         <outlet property="gradeMateLabel5s" destination="vah-EQ-Mmc" id="c6x-CS-KXt"/>
                         <outlet property="gradeMateLabel6Plus" destination="DZP-nd-5em" id="XPr-Bx-kf9"/>
                         <outlet property="gradeMateLabel6s" destination="TmP-Zi-EAE" id="Fjl-6a-SkL"/>
@@ -396,6 +407,62 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="MiO-lY-l4M" userLabel="GradeMate Button Pop Up">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="486"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thanks for using GradeMate!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-y4-YAh" userLabel="Current Grade Label">
+                            <rect key="frame" x="16" y="20" width="308" height="84"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="32"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send a link to your friends" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wod-NN-75v" userLabel="Message Label">
+                            <rect key="frame" x="16" y="137" width="308" height="22"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8k-VC-06Z" userLabel="Dismiss Button" customClass="FUIButton">
+                            <rect key="frame" x="16" y="167" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="Hook it up 🔗">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR1-53-jEX" userLabel="Dismiss Button" customClass="FUIButton">
+                            <rect key="frame" x="16" y="300" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="Give stars ⭐️">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oC4-rD-5JP" userLabel="Dismiss Button" customClass="FUIButton">
+                            <rect key="frame" x="16" y="420" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="Back">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="desiredGradeInfoDismiss:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I5N-SR-abU"/>
+                                <action selector="gradeMateButtonViewBackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4g9-d3-6UJ"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write a review" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mb6-ld-OcV" userLabel="Message Label">
+                            <rect key="frame" x="16" y="270" width="308" height="22"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.75018728599999995" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" id="2Hv-6I-Kjh" userLabel="Result Pop Up">
                     <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -532,7 +599,7 @@
                     <color key="backgroundColor" white="1" alpha="0.75420055650684936" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="284" y="-263"/>
+            <point key="canvasLocation" x="282.60869565217394" y="-263.31521739130437"/>
         </scene>
         <!--Show Launch Screen-->
         <scene sceneID="Etb-bZ-ro1">
@@ -543,12 +610,19 @@
                         <viewControllerLayoutGuide type="bottom" id="7rB-pl-sTk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zmE-PF-8XG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-b4-8Rf" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW0-Dl-f9K" userLabel="GradeMate - BLACK">
+                                <rect key="frame" x="20" y="62" width="374" height="75"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
+                                <state key="normal" title="GradeMate">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MpV-2O-qyr" userLabel="GradeMate Label - 5s">
                                 <rect key="frame" x="20" y="119" width="374" height="60"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="60"/>
@@ -578,7 +652,7 @@
                                 <size key="shadowOffset" width="0.0" height="4"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnP-ys-bSr" userLabel="GradeMate - 5.5">
-                                <rect key="frame" x="-10.5" y="57" width="341" height="75"/>
+                                <rect key="frame" x="20" y="57" width="374" height="75"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
                                 <state key="normal" title="GradeMate">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -594,14 +668,17 @@
                             <constraint firstItem="6Ff-ek-yGq" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="8f2-qS-cAM"/>
                             <constraint firstItem="xpj-fZ-hFo" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="9KE-I1-7g7"/>
                             <constraint firstItem="1v4-cu-L87" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="CeC-22-Hcm"/>
+                            <constraint firstItem="bnP-ys-bSr" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="DPp-5u-SmN"/>
+                            <constraint firstItem="VW0-Dl-f9K" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="FqU-VD-09z"/>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" id="Fy1-A8-7WI"/>
                             <constraint firstItem="MpV-2O-qyr" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" constant="-219" id="HvD-06-nGq"/>
+                            <constraint firstItem="bnP-ys-bSr" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="IJs-z6-AMM"/>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="width" secondItem="zmE-PF-8XG" secondAttribute="width" id="Jkx-D7-BX5"/>
                             <constraint firstItem="MpV-2O-qyr" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="Mw4-sa-S7k"/>
-                            <constraint firstItem="bnP-ys-bSr" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="Oy9-d5-obh"/>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="RPP-9k-RKb"/>
                             <constraint firstItem="xpj-fZ-hFo" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" constant="-244.5" id="S0K-Ue-NrI"/>
                             <constraint firstItem="1v4-cu-L87" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="SlJ-NJ-ijq"/>
+                            <constraint firstItem="VW0-Dl-f9K" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="WMu-a4-f7j"/>
                             <constraint firstItem="1v4-cu-L87" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" constant="-261.5" id="dYq-WJ-tFo"/>
                             <constraint firstItem="xpj-fZ-hFo" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="hUQ-Vh-pFn"/>
                             <constraint firstItem="bnP-ys-bSr" firstAttribute="top" secondItem="w2U-gz-769" secondAttribute="bottom" constant="37" id="iaq-I9-Yed"/>
@@ -610,6 +687,7 @@
                             <constraint firstItem="MpV-2O-qyr" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="pI7-fe-Uq4"/>
                             <constraint firstItem="1v4-cu-L87" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="rST-Ic-U2P"/>
                             <constraint firstItem="6Ff-ek-yGq" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="rTb-m4-9d4"/>
+                            <constraint firstItem="VW0-Dl-f9K" firstAttribute="top" secondItem="bnP-ys-bSr" secondAttribute="top" constant="5" id="vND-hf-KEv"/>
                             <constraint firstItem="MpV-2O-qyr" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="zjL-CC-Xt1"/>
                         </constraints>
                         <variation key="default">
@@ -623,6 +701,7 @@
                     </view>
                     <connections>
                         <outlet property="gradeMateButton" destination="bnP-ys-bSr" id="s5M-jr-d86"/>
+                        <outlet property="gradeMateButtonShadow" destination="VW0-Dl-f9K" id="awY-h1-7zj"/>
                         <outlet property="grademateLabel4s" destination="6Ff-ek-yGq" id="Zfc-Zz-W7M"/>
                         <outlet property="grademateLabel5s" destination="MpV-2O-qyr" id="1jZ-pI-WUV"/>
                         <outlet property="grademateLabel6s" destination="xpj-fZ-hFo" id="x32-R0-iaR"/>

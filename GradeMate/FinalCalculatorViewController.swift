@@ -29,7 +29,12 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 {
 	// Blur effect view
 	@IBOutlet weak var visualEffectView: UIVisualEffectView!
-	
+    
+    @IBOutlet var gradeMateButtonView: UIView!
+    @IBOutlet weak var gradeMateButtonViewLinkButton: FUIButton!
+    @IBOutlet weak var gradeMateButtonViewReviewButton: FUIButton!
+    @IBOutlet weak var gradeMateButtonViewBackButton: FUIButton!
+    
 	// Score pop up, warning label & dismiss button
 	@IBOutlet var resultView: UIView!
 	@IBOutlet weak var resultViewScoreLabel: UILabel!
@@ -59,7 +64,8 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     @IBOutlet weak var desiredGradeShadow: UILabel!
 	
 	// GradeMate Button
-	@IBOutlet weak var gradeMateButton: UIButton!
+	@IBOutlet weak var gradeMateButton: FUIButton!
+    @IBOutlet weak var gradeMateButtonShadow: FUIButton!
 	
 	// GradeMate labels
     @IBOutlet weak var gradeMateLabel5s: UILabel!
@@ -79,7 +85,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     var currentGrade = 0.0
     var decimalValue = 0.0
-    var examWeight = 0.0
+    var examWeight   = 0.0
     var desiredGrade = 0
     
     var scoreValue = 0.0
@@ -104,7 +110,6 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 			}
 		}
 	}
-	
 	
     override func viewDidLoad()
     {
@@ -151,6 +156,8 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		examWeightInfoView.layer.cornerRadius = 10
 		
 		desiredGradeInfoView.layer.cornerRadius = 10
+        
+        gradeMateButtonView.layer.cornerRadius = 10
 		
 		//calculateButton.titleLabel?.minimumScaleFactor = 0.5
 		//calculateButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -215,12 +222,40 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		resultViewDismissButton.setTitleColor(.white, for: .normal)
 		resultViewDismissButton.setTitleColor(.white, for: .highlighted)
 		
-//		gradeMateButton.buttonColor = .clear
-//		gradeMateButton.shadowColor = .clear
-//		gradeMateButton.shadowHeight = 6.0
-//		gradeMateButton.cornerRadius = 6.0
-//		gradeMateButton.setTitleColor(.white, for: .normal)
-		
+        gradeMateButton.buttonColor = .clear
+        gradeMateButton.shadowColor = .clear
+        gradeMateButton.shadowHeight = 5.0
+        gradeMateButton.cornerRadius = 6.0
+        gradeMateButton.setTitleColor(.white, for: .normal)
+        
+        gradeMateButtonShadow.buttonColor = .clear
+        gradeMateButtonShadow.shadowColor = .clear
+        gradeMateButtonShadow.shadowHeight = 5.0
+        gradeMateButtonShadow.cornerRadius = 6.0
+        gradeMateButtonShadow.setTitleColor(.black, for: .normal)
+        
+        gradeMateButtonViewBackButton.buttonColor = calculateButton.buttonColor
+        gradeMateButtonViewBackButton.shadowColor = calculateButton.shadowColor
+        gradeMateButtonViewBackButton.shadowHeight = calculateButton.shadowHeight
+        gradeMateButtonViewBackButton.cornerRadius = calculateButton.cornerRadius
+        gradeMateButtonViewBackButton.setTitleColor(.white, for: .normal)
+        
+        gradeMateButtonViewLinkButton.buttonColor = upperButtonColors
+        gradeMateButtonViewLinkButton.shadowColor = upperButtonShadows
+        gradeMateButtonViewLinkButton.shadowHeight = calculateButton.shadowHeight
+        gradeMateButtonViewLinkButton.cornerRadius = currentGradeInfoDismiss.cornerRadius
+        gradeMateButtonViewLinkButton.setTitleColor(.white, for: .normal)
+        
+        gradeMateButtonViewReviewButton.buttonColor = upperButtonColors
+        gradeMateButtonViewReviewButton.shadowColor = upperButtonShadows
+        gradeMateButtonViewReviewButton.shadowHeight = calculateButton.shadowHeight
+        gradeMateButtonViewReviewButton.cornerRadius = currentGradeInfoDismiss.cornerRadius
+        gradeMateButtonViewReviewButton.setTitleColor(.white, for: .normal)
+        
+        
+        currentGradeButton.titleLabel?.numberOfLines = 2
+        desiredGradeButton.titleLabel?.numberOfLines = 2
+        examWeightButton.titleLabel?.numberOfLines = 2
     }
 
     override func didReceiveMemoryWarning()
@@ -274,7 +309,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		}
 		
 		let titleData = stringNumbers[component][row]
-		let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName: UIFont(name: "Courier", size: 24)!])
+		let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font: UIFont(name: "Courier", size: 24)!])
 		pickerLabel!.attributedText = myTitle
 		pickerLabel?.textAlignment = .center
 		pickerLabel?.textColor = .white
@@ -436,11 +471,42 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     }
     
     
+    // MARK: - GradeMate Button
+    
+    // Tapped normally
+    // PUT BUTTON ACTIONS IN HERE
 	@IBAction func gradeMateButtonTapped(_ sender: FUIButton) {
-		
+		gradeMateButtonShadow.isHidden = false
+        animateIn(viewToAnimate: self.gradeMateButtonView)
 	}
 	
-	
+    // Pushed down
+    @IBAction func gradeMateButtonDown(_ sender: FUIButton) {
+        gradeMateButtonShadow.isHidden = true
+    }
+    
+    // Pushed down, dragged out
+    @IBAction func gradeMateButtonTouchDragExit(_ sender: FUIButton) {
+        gradeMateButtonShadow.isHidden = false
+    }
+    
+    // Pushed down, dragged out, dragged back in
+    @IBAction func gradeMateButtonTouchDragEnter(_ sender: FUIButton) {
+        gradeMateButtonShadow.isHidden = true
+    }
+    
+    
+    // GRADEMATE VIEW BUTTONS
+    
+    // Back
+    @IBAction func gradeMateButtonViewBackButtonPressed(_ sender: FUIButton) {
+        animateOut(viewToAnimate: self.gradeMateButtonView)
+    }
+    
+    
+    
+    
+    
 	// MARK: - Info Buttons
     
     // Current Grade Tapped
@@ -490,7 +556,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 			viewToAnimate.transform = CGAffineTransform.identity
 		})
 		
-		statusBarIsHidden = !statusBarIsHidden
+		statusBarIsHidden = true
 	}
 	
 	// Animate Out
@@ -508,7 +574,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 			self.visualEffectView.isHidden = true
 		}
 		
-		statusBarIsHidden = !statusBarIsHidden
+		statusBarIsHidden  = false
 	}
 	
 	
@@ -809,21 +875,21 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		case 568:
 			// 5s code
 			
-			gradeMateButton.translatesAutoresizingMaskIntoConstraints = true
-			gradeMateButton.frame.origin.y = 38
+//            gradeMateButton.translatesAutoresizingMaskIntoConstraints = true
+//            gradeMateButton.frame.origin.y = 38
 //			gradeMateButton.titleLabel?.font = gradeMateButton.titleLabel?.font.withSize(53)
 			gradeMateButton.titleLabel?.adjustsFontSizeToFitWidth = true
-			gradeMateButton.center.x = view.center.x
+//            gradeMateButton.center.x = view.center.x
 			
 			break
 		case 667:
 			// 6s code
 			
-			gradeMateButton.translatesAutoresizingMaskIntoConstraints = true
-			gradeMateButton.frame.origin.y = 57
-			gradeMateButton.titleLabel?.font = gradeMateButton.titleLabel?.font.withSize(63)
+//            gradeMateButton.translatesAutoresizingMaskIntoConstraints = true
+//            gradeMateButton.frame.origin.y = 57
+//            gradeMateButton.titleLabel?.font = gradeMateButton.titleLabel?.font.withSize(63)
 			gradeMateButton.titleLabel?.adjustsFontSizeToFitWidth = true
-			gradeMateButton.center.x = view.center.x
+//            gradeMateButton.center.x = view.center.x
 			
 			break
 		case 736:

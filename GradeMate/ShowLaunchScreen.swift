@@ -15,14 +15,17 @@ class ShowLaunchScreen: UIViewController
 	@IBOutlet weak var grademateLabel6s: UILabel!
 	@IBOutlet weak var grademateLabelPlus: UILabel!
 	@IBOutlet weak var gradeMateButton: UIButton!
-	
+    @IBOutlet weak var gradeMateButtonShadow: UIButton!
+    
 	let screenHeight = UIScreen.main.bounds.size.height
 	
     override func viewDidLoad()
     {
         super.viewDidLoad()
 		
+        // Grows/shrinks text on button to fit screen size
 		gradeMateButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        gradeMateButtonShadow.titleLabel?.adjustsFontSizeToFitWidth = true
 		
 		// Change dial sizes based on screen size
 		switch (screenHeight)
@@ -49,6 +52,7 @@ class ShowLaunchScreen: UIViewController
 			// Animates GradeMate label with spring effect on launch
 			UIView.animate(withDuration: 1.0, delay: 0.85, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
 				self.grademateLabel5s.center.y -= 221.25
+                self.gradeMateButtonShadow.center.y -= 221.25
 			}, completion: nil)
 			
 			// Allows for delay when showing Launch Screen
@@ -69,6 +73,7 @@ class ShowLaunchScreen: UIViewController
 			// Animates GradeMate label with spring effect on launch
 			UIView.animate(withDuration: 1.0, delay: 0.85, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
 				self.gradeMateButton.center.y -= 239
+                self.gradeMateButtonShadow.center.y -= 239
 			}, completion: nil)
 			
 			// Allows for delay when showing Launch Screen
@@ -86,6 +91,7 @@ class ShowLaunchScreen: UIViewController
 			// Animates GradeMate label with spring effect on launch
 			UIView.animate(withDuration: 1.0, delay: 0.85, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
 				self.gradeMateButton.center.y -= 261.67
+                self.gradeMateButtonShadow.center.y -= 261.67
 			}, completion: nil)
 			
 			// Allows for delay when showing Launch Screen
@@ -117,7 +123,7 @@ class ShowLaunchScreen: UIViewController
 	}
 	
 	
-    func showMainView()
+    @objc func showMainView()
     {
         performSegue(withIdentifier: "showLaunchScreen", sender: self)
     }
