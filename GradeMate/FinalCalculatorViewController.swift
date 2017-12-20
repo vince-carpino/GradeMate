@@ -16,7 +16,7 @@ extension UIImage {
 		
 		let pixelInfo: Int = ((Int(self.size.width) * Int(pos.y)) + Int(pos.x)) * 4
 		
-		let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
+		let r = CGFloat(data[pixelInfo])   / CGFloat(255.0)
 		let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
 		let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
 		let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
@@ -82,6 +82,18 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     // Numbers that will go into the PickerView
     var numbers: [[Double]] = [[], [], [], []]
     var stringNumbers: [[String]] = [[], [], [], []]
+    
+    let calculateButtonWords : [String] = [
+        "Calculate",
+        "Punch it",
+        "Let's go",
+        "Fingers crossed",
+        "Work your magic",
+        "Reality check",
+        "Go for it",
+        "Surprise me",
+        "Hit me"
+    ]
     
     var currentGrade = 0.0
     var decimalValue = 0.0
@@ -166,8 +178,12 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		
 		let upperButtonColors = UIColor(fromHexCode: "#18c0ee")
 		let upperButtonShadows = UIColor(fromHexCode: "#149ec6")
-		calculateButton.buttonColor = UIColor(fromHexCode: "#1ACB83")
-		calculateButton.shadowColor = UIColor(fromHexCode: "#16ac70")
+//        calculateButton.buttonColor = UIColor(fromHexCode: "#1ACB83")
+//        calculateButton.shadowColor = UIColor(fromHexCode: "#16ac70")
+        
+        calculateButton.buttonColor = UIColor(fromHexCode: "#1abc9c")
+        calculateButton.shadowColor = UIColor(fromHexCode: "#16a085")
+        
 		calculateButton.shadowHeight = 6.0
 		calculateButton.cornerRadius = 6.0
 		calculateButton.setTitleColor(.white, for: .normal)
@@ -256,6 +272,9 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
         currentGradeButton.titleLabel?.numberOfLines = 2
         desiredGradeButton.titleLabel?.numberOfLines = 2
         examWeightButton.titleLabel?.numberOfLines = 2
+        
+        calculateButton.titleLabel?.numberOfLines = 1
+        calculateButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
 
     override func didReceiveMemoryWarning()
@@ -276,14 +295,14 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     // MARK: - Picker View
 	
     // Set number of columns in the PickerView
-    func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int
+    @objc func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int
     {
         return stringNumbers.count
     }
     
     
     // Set number of items in each column
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    @objc func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
         return stringNumbers[component].count
     }
@@ -292,21 +311,26 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	// Set font style and size
 	func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView
 	{
+        
+        [[pickerView.subviews objectAtIndex:1] setBackgroundColor:NEEDED_COLOR];
+        [[pickerView.subviews objectAtIndex:2] setBackgroundColor:NEEDED_COLOR];
+        
+        
 		var pickerLabel = view as! UILabel!
 		
 		if view == nil { pickerLabel = UILabel() }
 		
-		let currentRow = row
+//        let currentRow = row
 		
 		pickerLabel?.backgroundColor = .clear
 		
-		if pickerView.selectedRow(inComponent: component) != currentRow {
-			pickerLabel?.backgroundColor = .clear
-		} else {
+//        if pickerView.selectedRow(inComponent: component) != currentRow {
+//            pickerLabel?.backgroundColor = .clear
+//        } else {
 			pickerLabel?.layer.masksToBounds = true
 			pickerLabel?.layer.cornerRadius = 16
 			pickerLabel?.backgroundColor = checkColor(component: component, row: row)
-		}
+//        }
 		
 		let titleData = stringNumbers[component][row]
 		let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font: UIFont(name: "Courier", size: 24)!])
@@ -503,8 +527,25 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
         animateOut(viewToAnimate: self.gradeMateButtonView)
     }
     
+    // WRITE REVIEW BUTTON
+    @IBAction func gradeMateButonViewWriteReviewPressed(_ sender: FUIButton) {
+        let appID = "1142404187"
+        let urlStr = "itms-apps://itunes.apple.com/app/viewContentsUserReviews?id=\(appID)"
+        let url = URL(string: urlStr)!
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
     
-    
+    // SHARE BUTTON
+    @IBAction func gradeMateButtonViewShareButton(_ sender: FUIButton) {
+        let url = URL(string: "https://appsto.re/us/Br7feb.i")!
+
+        showShareSheet(itemsToShare: [url])
+    }
     
     
 	// MARK: - Info Buttons
@@ -578,9 +619,6 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	}
 	
 	
-
-	
-	
 	// MARK: - Dismiss Pop Ups
 	
 	// Result View
@@ -607,6 +645,21 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		animateOut(viewToAnimate: self.desiredGradeInfoView)
 	}
 	
+    
+    // MARK: - Show Share Sheet
+    func showShareSheet(itemsToShare: [Any]) {
+        let activityVC = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        
+        let excludedActivities = [UIActivityType.postToFlickr, UIActivityType.postToWeibo, UIActivityType.print, UIActivityType.assignToContact, UIActivityType.saveToCameraRoll, UIActivityType.addToReadingList, UIActivityType.postToFlickr, UIActivityType.postToVimeo, UIActivityType.postToTencentWeibo]
+        
+        activityVC.excludedActivityTypes = excludedActivities
+        
+        activityVC.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
+    
 	
     
 	// MARK: - Calculate Button Tapped
@@ -614,6 +667,12 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     @IBAction func calculateTapped(_ sender: FUIButton)
     {
 		animateIn(viewToAnimate: self.resultView)
+        
+        // CHANGE BUTTON TEXT
+        let arraySize = calculateButtonWords.count
+        let randNum   = arc4random_uniform(UInt32(arraySize))
+        let randInt    = Int(randNum)
+        calculateButton.setTitle(calculateButtonWords[randInt], for: .normal)
     }
     
     
@@ -972,6 +1031,10 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		currentGradeInfoDismiss.isExclusiveTouch = true
 		examWeightInfoDismiss.isExclusiveTouch   = true
 		desiredGradeInfoDismiss.isExclusiveTouch = true
+        gradeMateButton.isExclusiveTouch          = true
+        gradeMateButtonViewLinkButton.isExclusiveTouch   = true
+        gradeMateButtonViewReviewButton.isExclusiveTouch = true
+        gradeMateButtonViewBackButton.isExclusiveTouch   = true
 	}
 	
     // MARK: - Show Alert
