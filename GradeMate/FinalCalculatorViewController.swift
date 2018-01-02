@@ -277,8 +277,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
         calculateButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
 
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 	
@@ -295,27 +294,19 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     // MARK: - Picker View
 	
     // Set number of columns in the PickerView
-    @objc func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int
-    {
+    @objc func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {
         return stringNumbers.count
     }
     
     
     // Set number of items in each column
-    @objc func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
-    {
+    @objc func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return stringNumbers[component].count
     }
 	
     
 	// Set font style and size
-	func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView
-	{
-        
-        [[pickerView.subviews objectAtIndex:1] setBackgroundColor:NEEDED_COLOR];
-        [[pickerView.subviews objectAtIndex:2] setBackgroundColor:NEEDED_COLOR];
-        
-        
+	func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 		var pickerLabel = view as! UILabel!
 		
 		if view == nil { pickerLabel = UILabel() }
@@ -341,8 +332,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		return pickerLabel!
 	}
 	
-	func checkColor(component: Int, row: Int) -> UIColor
-	{
+	func checkColor(component: Int, row: Int) -> UIColor {
 		var color = UIColor()
 		var coords : CGPoint
 		
@@ -358,8 +348,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	
 	
     // Get numbers that are selected in each row and column
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-    {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 		// Set values for calculation
         setCurrentGrade(numbers[0][pickerView.selectedRow(inComponent: 0)])
         setDecimalValue(numbers[1][pickerView.selectedRow(inComponent: 1)])
@@ -384,8 +373,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	
 	
     // Size each column
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat
-    {
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         let screenHeight = UIScreen.main.bounds.size.height
         
         // Change dial sizes based on screen size
@@ -552,8 +540,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // Current Grade Tapped
     
-    @IBAction func currentGradeTapped(_ sender: FUIButton)
-    {
+    @IBAction func currentGradeTapped(_ sender: FUIButton) {
 		animateIn(viewToAnimate: self.currentGradeInfoView)
     }
     
@@ -561,8 +548,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // Weight Button Tapped
     
-    @IBAction func weightButtonTapped(_ sender: FUIButton)
-    {
+    @IBAction func weightButtonTapped(_ sender: FUIButton) {
 		animateIn(viewToAnimate: self.examWeightInfoView)
 	}
     
@@ -570,8 +556,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // Desired Grade Tapped
     
-    @IBAction func desiredGradeTapped(_ sender: FUIButton)
-    {
+    @IBAction func desiredGradeTapped(_ sender: FUIButton) {
 		animateIn(viewToAnimate: self.desiredGradeInfoView)
     }
 	
@@ -580,8 +565,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	// MARK: - Pop Up Animation
 	
 	// Animate In
-	func animateIn(viewToAnimate: UIView)
-	{
+	func animateIn(viewToAnimate: UIView) {
 		self.visualEffectView.isHidden = false
 		
 		self.view.addSubview(viewToAnimate)										// Add pop up view to main view
@@ -601,8 +585,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	}
 	
 	// Animate Out
-	func animateOut(viewToAnimate: UIView)
-	{
+	func animateOut(viewToAnimate: UIView) {
 		UIView.animate(withDuration: 0.3, animations: {
 			viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
 			viewToAnimate.alpha = 0
@@ -622,26 +605,22 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	// MARK: - Dismiss Pop Ups
 	
 	// Result View
-	@IBAction func dismissPopUp(_ sender: FUIButton)
-	{
+	@IBAction func dismissPopUp(_ sender: FUIButton) {
 		animateOut(viewToAnimate: self.resultView)
 	}
 	
 	// Current Grade Info View
-	@IBAction func currentGradeInfoDismiss(_ sender: FUIButton)
-	{
+	@IBAction func currentGradeInfoDismiss(_ sender: FUIButton) {
 		animateOut(viewToAnimate: self.currentGradeInfoView)
 	}
 	
 	// Exam Weight Info View
-	@IBAction func examWeightInfoDismiss(_ sender: FUIButton)
-	{
+	@IBAction func examWeightInfoDismiss(_ sender: FUIButton) {
 		animateOut(viewToAnimate: self.examWeightInfoView)
 	}
 	
 	// Desired Grade Info View
-	@IBAction func desiredGradeInfoDismiss(_ sender: FUIButton)
-	{
+	@IBAction func desiredGradeInfoDismiss(_ sender: FUIButton) {
 		animateOut(viewToAnimate: self.desiredGradeInfoView)
 	}
 	
@@ -664,8 +643,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
 	// MARK: - Calculate Button Tapped
     
-    @IBAction func calculateTapped(_ sender: FUIButton)
-    {
+    @IBAction func calculateTapped(_ sender: FUIButton) {
 		animateIn(viewToAnimate: self.resultView)
         
         // CHANGE BUTTON TEXT
@@ -679,43 +657,35 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // MARK: - Getters
     
-    fileprivate func getCurrentGrade() -> Double
-    {
+    fileprivate func getCurrentGrade() -> Double {
         return self.currentGrade
     }
     
-    fileprivate func getDecimalValue() -> Double
-    {
+    fileprivate func getDecimalValue() -> Double {
         return self.decimalValue
     }
     
-    fileprivate func getExamWeight() -> Double
-    {
+    fileprivate func getExamWeight() -> Double {
         return self.examWeight
     }
     
-    fileprivate func getDesiredGrade() -> Int
-    {
+    fileprivate func getDesiredGrade() -> Int {
         return self.desiredGrade
     }
     
-    fileprivate func getScoreValue() -> Double
-    {
+    fileprivate func getScoreValue() -> Double {
         return self.scoreValue
     }
     
-    fileprivate func getWarning() -> String
-    {
+    fileprivate func getWarning() -> String {
         return self.warning
     }
     
-    fileprivate func getDismiss() -> String
-    {
+    fileprivate func getDismiss() -> String {
         return self.dismiss
     }
     
-    fileprivate func getValue() -> String
-    {
+    fileprivate func getValue() -> String {
         return self.value
     }
 	
@@ -723,43 +693,35 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // MARK: - Setters
     
-    fileprivate func setCurrentGrade(_ value: Double)
-    {
+    fileprivate func setCurrentGrade(_ value: Double) {
         self.currentGrade = value
     }
     
-    fileprivate func setDecimalValue(_ value: Double)
-    {
+    fileprivate func setDecimalValue(_ value: Double) {
         self.decimalValue = value
     }
     
-    fileprivate func setExamWeight(_ value: Double)
-    {
+    fileprivate func setExamWeight(_ value: Double) {
         self.examWeight = value
     }
     
-    fileprivate func setDesiredGrade(_ value: Double)
-    {
+    fileprivate func setDesiredGrade(_ value: Double) {
         self.desiredGrade = Int(value)
     }
     
-    fileprivate func setScoreValue(_ value: Double)
-    {
+    fileprivate func setScoreValue(_ value: Double) {
         self.scoreValue = value;
     }
     
-    fileprivate func setWarning(_ warning: String)
-    {
+    fileprivate func setWarning(_ warning: String) {
         self.warning = warning
     }
     
-    fileprivate func setDismiss(_ message: String)
-    {
+    fileprivate func setDismiss(_ message: String) {
         self.dismiss = message
     }
     
-    fileprivate func setGradeValue(_ value: String)
-    {
+    fileprivate func setGradeValue(_ value: String) {
         self.value = value
     }
 	
@@ -767,8 +729,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // MARK: - Calculate Grade
     
-    func calculate(_ currentGradeDbl: Double, decimalValue: Double, examWeightDbl: Double, desiredGradeDbl: Int)
-    {
+    func calculate(_ currentGradeDbl: Double, decimalValue: Double, examWeightDbl: Double, desiredGradeDbl: Int) {
         let currentGrade = (currentGradeDbl + decimalValue) / 100.0
         
         let examWeight = examWeightDbl / 100.0
@@ -833,13 +794,12 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // MARK: - Check Screen Size
     
-    func checkScreenSize()
-    {
+    func checkScreenSize() {
         let screenHeight = UIScreen.main.bounds.size.height
         
         // Hide GradeMate labels & resize pop ups based on screen size
-        switch (screenHeight)
-        {
+        switch (screenHeight) {
+
         // 3.5"
         case (480):
 			// Hide GradeMate labels
@@ -965,8 +925,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	}
     
 	// MARK: - Set Button Style
-	func setButtonStyle(button: FUIButton, buttonColor: UIColor, shadowColor: UIColor, cornerRadius: CGFloat)
-	{
+	func setButtonStyle(button: FUIButton, buttonColor: UIColor, shadowColor: UIColor, cornerRadius: CGFloat) {
 		button.shadowHeight = 6.0
 		button.buttonColor = buttonColor
 		button.shadowColor = shadowColor
@@ -979,16 +938,14 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	
     // MARK: - Set Rounded Corners Of Button
     
-    func setCornersForButton(button: UIButton, value: Double) -> Void
-    {
+    func setCornersForButton(button: UIButton, value: Double) -> Void {
         button.layer.cornerRadius = CGFloat(value)
     }
     
     
     // MARK: - Set Rounded Corners Of Label
     
-    func setCornersForLabel(label: UILabel, value: Double) -> Void
-    {
+    func setCornersForLabel(label: UILabel, value: Double) -> Void {
         label.layer.masksToBounds = true
         label.layer.cornerRadius = CGFloat(value)
     }
@@ -996,8 +953,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // MARK: - Expand Button Label Bounds
     
-    func setButtonLabelBounds(button: UIButton, value: Double) -> Void
-    {
+    func setButtonLabelBounds(button: UIButton, value: Double) -> Void {
         button.contentEdgeInsets.top = CGFloat(value)
         button.contentEdgeInsets.bottom = CGFloat(value)
         button.contentEdgeInsets.left = CGFloat(value)
@@ -1005,24 +961,21 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     }
 	
 	// MARK: - Center Info Buttons Text
-	func centerButtonText()
-	{
+	func centerButtonText() {
 		currentGradeButton.titleLabel?.textAlignment = .center
 		examWeightButton.titleLabel?.textAlignment = .center
 		desiredGradeButton.titleLabel?.textAlignment = .center
 	}
 	
 	// MARK: - Set Default Result Pop Up Info
-	func setDefaultResultInfo()
-	{
+	func setDefaultResultInfo() {
 		self.resultViewScoreLabel.text = "100%"
 		self.resultViewWarningLabel.text = "May the Force be with you..."
 		self.resultViewDismissButton.setTitle("Thank you, Master 🙏", for: .normal)
 	}
 	
 	// MARK: - Make All Buttons Exclusive Touch
-	func makeAllButtonsExclusiveTouch()
-	{
+	func makeAllButtonsExclusiveTouch() {
 		currentGradeButton.isExclusiveTouch      = true
 		examWeightButton.isExclusiveTouch        = true
 		desiredGradeButton.isExclusiveTouch      = true
@@ -1031,7 +984,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		currentGradeInfoDismiss.isExclusiveTouch = true
 		examWeightInfoDismiss.isExclusiveTouch   = true
 		desiredGradeInfoDismiss.isExclusiveTouch = true
-        gradeMateButton.isExclusiveTouch          = true
+        gradeMateButton.isExclusiveTouch         = true
         gradeMateButtonViewLinkButton.isExclusiveTouch   = true
         gradeMateButtonViewReviewButton.isExclusiveTouch = true
         gradeMateButtonViewBackButton.isExclusiveTouch   = true
@@ -1039,8 +992,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	
     // MARK: - Show Alert
     
-    func showAlert()
-    {
+    func showAlert() {
         let alert = UIAlertController(title: "⚠️ Wait! ⚠️", message: "Are you sure about these values? 😬", preferredStyle: UIAlertControllerStyle.alert)
         
         let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive, handler: nil)
@@ -1071,10 +1023,8 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // MARK: - Responses
     
-    func checkScoreValue(_ value: Double)
-    {
-		switch Int(value)
-		{
+    func checkScoreValue(_ value: Double) {
+		switch Int(value) {
 		// 301+
 		case let x where x > 300:
 			setWarning("I think it's safe to say that this is not your best subject.")
