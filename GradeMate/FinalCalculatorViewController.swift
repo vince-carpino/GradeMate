@@ -291,7 +291,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	
 	
     
-    // MARK: - Picker View
+    // MARK: - PICKER VIEW
 	
     // Set number of columns in the PickerView
     @objc func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {
@@ -483,7 +483,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     }
     
     
-    // MARK: - GradeMate Button
+    // MARK: - GRADEMATE BUTTON
     
     // Tapped normally
     // PUT BUTTON ACTIONS IN HERE
@@ -536,7 +536,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     }
     
     
-	// MARK: - Info Buttons
+	// MARK: - INFO BUTTONS
     
     // Current Grade Tapped
     
@@ -562,7 +562,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	
 	
 	
-	// MARK: - Pop Up Animation
+	// MARK: - POP UP ANIMATION
 	
 	// Animate In
 	func animateIn(viewToAnimate: UIView) {
@@ -602,7 +602,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	}
 	
 	
-	// MARK: - Dismiss Pop Ups
+	// MARK: - DISMISS POP UPS
 	
 	// Result View
 	@IBAction func dismissPopUp(_ sender: FUIButton) {
@@ -625,7 +625,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	}
 	
     
-    // MARK: - Show Share Sheet
+    // MARK: - SHOW SHARE SHEET
     func showShareSheet(itemsToShare: [Any]) {
         let activityVC = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
         
@@ -641,7 +641,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
 	
     
-	// MARK: - Calculate Button Tapped
+	// MARK: - CALCULATE BUTTON TAPPED
     
     @IBAction func calculateTapped(_ sender: FUIButton) {
 		animateIn(viewToAnimate: self.resultView)
@@ -655,7 +655,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     
     
-    // MARK: - Getters
+    // MARK: - GETTERS
     
     fileprivate func getCurrentGrade() -> Double {
         return self.currentGrade
@@ -691,7 +691,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	
     
     
-    // MARK: - Setters
+    // MARK: - SETTERS
     
     fileprivate func setCurrentGrade(_ value: Double) {
         self.currentGrade = value
@@ -727,7 +727,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	
     
     
-    // MARK: - Calculate Grade
+    // MARK: - CALCULATE GRADE
     
     func calculate(_ currentGradeDbl: Double, decimalValue: Double, examWeightDbl: Double, desiredGradeDbl: Int) {
         let currentGrade = (currentGradeDbl + decimalValue) / 100.0
@@ -740,7 +740,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     }
     
     
-    // MARK: - Populate Arrays
+    // MARK: - POPULATE ARRAYS
     
     func populateArrays()
     {
@@ -792,7 +792,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     }
     
     
-    // MARK: - Check Screen Size
+    // MARK: - CHECK SCREEN SIZE
     
     func checkScreenSize() {
         let screenHeight = UIScreen.main.bounds.size.height
@@ -879,7 +879,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
         }
     }
 	
-	// MARK: - Set GradeMate Label Size
+	// MARK: - SET GRADEMATE LABEL SIZE
 	func setGradeMateLabelSize() {
 		let screenHeight = UIScreen.main.bounds.size.height
 		
@@ -924,7 +924,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		}
 	}
     
-	// MARK: - Set Button Style
+	// MARK: - SET BUTTON STYLE
 	func setButtonStyle(button: FUIButton, buttonColor: UIColor, shadowColor: UIColor, cornerRadius: CGFloat) {
 		button.shadowHeight = 6.0
 		button.buttonColor = buttonColor
@@ -936,14 +936,14 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	}
 	
 	
-    // MARK: - Set Rounded Corners Of Button
+    // MARK: - SET ROUNDED CORNERS OF BUTTON
     
     func setCornersForButton(button: UIButton, value: Double) -> Void {
         button.layer.cornerRadius = CGFloat(value)
     }
     
     
-    // MARK: - Set Rounded Corners Of Label
+    // MARK: - SET ROUNDED CORNERS OF LABEL
     
     func setCornersForLabel(label: UILabel, value: Double) -> Void {
         label.layer.masksToBounds = true
@@ -951,7 +951,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     }
     
     
-    // MARK: - Expand Button Label Bounds
+    // MARK: - EXPAND BUTTON LABEL BOUNDS
     
     func setButtonLabelBounds(button: UIButton, value: Double) -> Void {
         button.contentEdgeInsets.top = CGFloat(value)
@@ -960,21 +960,21 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
         button.contentEdgeInsets.right = CGFloat(value)
     }
 	
-	// MARK: - Center Info Buttons Text
+	// MARK: - CENTER INFO BUTTONS TEXT
 	func centerButtonText() {
 		currentGradeButton.titleLabel?.textAlignment = .center
 		examWeightButton.titleLabel?.textAlignment = .center
 		desiredGradeButton.titleLabel?.textAlignment = .center
 	}
 	
-	// MARK: - Set Default Result Pop Up Info
+	// MARK: - SET DEFAULT RESULT POP UP INFO
 	func setDefaultResultInfo() {
 		self.resultViewScoreLabel.text = "100%"
 		self.resultViewWarningLabel.text = "May the Force be with you..."
 		self.resultViewDismissButton.setTitle("Thank you, Master 🙏", for: .normal)
 	}
 	
-	// MARK: - Make All Buttons Exclusive Touch
+	// MARK: - MAKE ALL BUTTONS EXCLUSIVE TOUCH
 	func makeAllButtonsExclusiveTouch() {
 		currentGradeButton.isExclusiveTouch      = true
 		examWeightButton.isExclusiveTouch        = true
@@ -990,7 +990,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
         gradeMateButtonViewBackButton.isExclusiveTouch   = true
 	}
 	
-    // MARK: - Show Alert
+    // MARK: - SHOW ALERT
     
     func showAlert() {
         let alert = UIAlertController(title: "⚠️ Wait! ⚠️", message: "Are you sure about these values? 😬", preferredStyle: UIAlertControllerStyle.alert)
@@ -1021,7 +1021,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	
     
     
-    // MARK: - Responses
+    // MARK: - RESPONSES
     
     func checkScoreValue(_ value: Double) {
 		switch Int(value) {

@@ -12,6 +12,7 @@
 		D028A9121D2105F000AAA32A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D028A9101D2105F000AAA32A /* Main.storyboard */; };
 		D028A9141D2105F000AAA32A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D028A9131D2105F000AAA32A /* Assets.xcassets */; };
 		D028A9171D2105F000AAA32A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D028A9151D2105F000AAA32A /* LaunchScreen.storyboard */; };
+		D04761461FFC90CD00B2CD9B /* CourseGradeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04761451FFC90CD00B2CD9B /* CourseGradeCalculator.swift */; };
 		D066B9D01DB4217600A2B190 /* NumberOfTestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066B9CF1DB4217600A2B190 /* NumberOfTestsViewController.swift */; };
 		D06DF6691DB0B74D00C026BB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DF6681DB0B74D00C026BB /* MenuViewController.swift */; };
 		D06DF66B1DB0BC0E00C026BB /* TestCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DF66A1DB0BC0E00C026BB /* TestCalculatorViewController.swift */; };
@@ -30,6 +31,7 @@
 		D028A9131D2105F000AAA32A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D028A9161D2105F000AAA32A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D028A9181D2105F000AAA32A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D04761451FFC90CD00B2CD9B /* CourseGradeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseGradeCalculator.swift; sourceTree = "<group>"; };
 		D066B9CF1DB4217600A2B190 /* NumberOfTestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberOfTestsViewController.swift; sourceTree = "<group>"; };
 		D06DF6681DB0B74D00C026BB /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D06DF66A1DB0BC0E00C026BB /* TestCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCalculatorViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				D078EFF51D828EBB0063C825 /* ShowLaunchScreen.swift */,
 				D06DF6681DB0B74D00C026BB /* MenuViewController.swift */,
 				D028A90E1D2105F000AAA32A /* FinalCalculatorViewController.swift */,
+				D04761451FFC90CD00B2CD9B /* CourseGradeCalculator.swift */,
 				D066B9CF1DB4217600A2B190 /* NumberOfTestsViewController.swift */,
 				D06DF66A1DB0BC0E00C026BB /* TestCalculatorViewController.swift */,
 				D028A9101D2105F000AAA32A /* Main.storyboard */,
@@ -232,6 +235,7 @@
 			files = (
 				D066B9D01DB4217600A2B190 /* NumberOfTestsViewController.swift in Sources */,
 				D028A90F1D2105F000AAA32A /* FinalCalculatorViewController.swift in Sources */,
+				D04761461FFC90CD00B2CD9B /* CourseGradeCalculator.swift in Sources */,
 				D028A90D1D2105F000AAA32A /* AppDelegate.swift in Sources */,
 				D06DF66B1DB0BC0E00C026BB /* TestCalculatorViewController.swift in Sources */,
 				D078EFF61D828EBB0063C825 /* ShowLaunchScreen.swift in Sources */,
