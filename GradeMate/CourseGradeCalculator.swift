@@ -58,20 +58,3 @@ class CourseGradeCalculator {
         self.courseGrade = val
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
