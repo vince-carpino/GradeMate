@@ -6,5 +6,6 @@ target 'GradeMate' do
 
   # Pods for GradeMate
   pod 'FlatUIKit'
+  pod 'PickerView'
 
 end

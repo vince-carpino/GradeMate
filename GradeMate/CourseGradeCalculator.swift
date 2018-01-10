@@ -20,7 +20,7 @@ class CourseGradeCalculator {
         courseGrade  = 0.0
     }
     
-    // MARK: CALCULATE COURSE GRADE
+    // MARK: - CALCULATE COURSE GRADE
     func calculate() {
         courseGrade = examWeight * examScore + (1 - examWeight) * currentGrade
     }

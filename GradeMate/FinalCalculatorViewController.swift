@@ -742,51 +742,44 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // MARK: - POPULATE ARRAYS
     
-    func populateArrays()
-    {
-        for i in 0...3
-        {
-            switch(i)
-            {
-            // First column
-            case 0:
-                for j in (1...100).reversed()
-                {
-                    numbers[i].append(Double(j))
-                    stringNumbers[i].append(String(j))
-                }
+    func populateArrays() {
+        for i in 0...3 {
+            switch(i) {
+                // First column
+                case 0:
+                    for j in (1...100).reversed() {
+                        numbers[i].append(Double(j))
+                        stringNumbers[i].append(String(j))
+                    }
                 
-            // Second column
-            case 1:
-                for j in 0...9
-                {
-                    numbers[i].append(Double(j) / 10.0)
-                    
-                    var stringDecimal = (String(Double(j) / 10.0) + "%")
-                    
-                    // Remove the leading zero on decimal
-                    stringDecimal.remove(at: stringDecimal.startIndex)
-                    
-                    stringNumbers[i].append(stringDecimal)
-                }
+                // Second column
+                case 1:
+                    for j in 0...9 {
+                        numbers[i].append(Double(j) / 10.0)
+                        
+                        var stringDecimal = (String(Double(j) / 10.0) + "%")
+                        
+                        // Remove the leading zero on decimal
+                        stringDecimal.remove(at: stringDecimal.startIndex)
+                        
+                        stringNumbers[i].append(stringDecimal)
+                    }
                 
-            // Third column
-            case 2:
-                for j in (1...100)
-                {
-                    numbers[i].append(Double(j))
-                    stringNumbers[i].append(String(j) + "%")
-                }
+                // Third column
+                case 2:
+                    for j in (1...100) {
+                        numbers[i].append(Double(j))
+                        stringNumbers[i].append(String(j) + "%")
+                    }
                 
-            // Fourth column
-            case 3:
-                for j in (1...100).reversed()
-                {
-                    numbers[i].append(Double(j))
-                    stringNumbers[i].append(String(j) + "%")
-                }
-            
-            default:break
+                // Fourth column
+                case 3:
+                    for j in (1...100).reversed() {
+                        numbers[i].append(Double(j))
+                        stringNumbers[i].append(String(j) + "%")
+                    }
+                
+                default:break
             }
         }
     }
