@@ -9,6 +9,7 @@
 import UIKit
 import FlatUIKit
 
+
 extension UIImage {
 	func getPixelColor(pos: CGPoint) -> UIColor {
 		let pixelData = self.cgImage!.dataProvider?.data

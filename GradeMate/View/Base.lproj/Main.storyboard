@@ -17,9 +17,6 @@
         <array key="CourierNewBold.ttf">
             <string>CourierNewPS-BoldMT</string>
         </array>
-        <array key="Menlo.ttc">
-            <string>Menlo-Bold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Final Calculator View Controller-->
@@ -43,7 +40,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zof-qm-QqX"/>
                                 </connections>
                             </pickerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbC-DM-aJ4">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbC-DM-aJ4" userLabel="CalculateButtonView">
                                 <rect key="frame" x="20" y="496" width="374" height="220"/>
                                 <subviews>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-tf-LU1" userLabel="Calculate Button" customClass="FUIButton">
@@ -111,61 +108,6 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="0.0" height="4"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Srd-Ia-TKO" userLabel="Current Grade Shadow">
-                                <rect key="frame" x="8" y="197" width="102" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="shadowOffset" width="2" height="1"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WQx-wo-8l2" userLabel="Exam Weight Shadow">
-                                <rect key="frame" x="158.66666666666666" y="197" width="97" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="DrN-2z-XqM"/>
-                                    <constraint firstAttribute="width" constant="120" id="vrB-4d-AG7">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="97"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="shadowOffset" width="2" height="1"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="DrN-2z-XqM"/>
-                                        <exclude reference="vrB-4d-AG7"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="DrN-2z-XqM"/>
-                                        <include reference="vrB-4d-AG7"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3KQ-mI-sQD" userLabel="Desired Grade Shadow">
-                                <rect key="frame" x="304" y="197" width="102" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="shadowOffset" width="2" height="1"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hB-Lp-Mgp" userLabel="Calculate Shadow">
-                                <rect key="frame" x="109.66666666666669" y="532.66666666666663" width="195" height="62"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="MGD-Fs-cYd"/>
-                                    <constraint firstAttribute="width" constant="195" id="nlW-ms-mlw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pml-Tg-i0A" userLabel="GradeMate - 5.5" customClass="FUIButton">
                                 <rect key="frame" x="20" y="57" width="374" height="75"/>
@@ -249,17 +191,11 @@
                         <constraints>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="1Cs-lr-liE"/>
                             <constraint firstItem="n6T-4R-YQR" firstAttribute="leading" secondItem="Tan-4d-B9t" secondAttribute="trailing" constant="10" id="2W6-fU-nqZ"/>
-                            <constraint firstItem="Srd-Ia-TKO" firstAttribute="width" secondItem="GcP-z3-98b" secondAttribute="width" id="3Fk-LK-i6E"/>
                             <constraint firstItem="cmT-0f-tp7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3x3-ID-jeU"/>
-                            <constraint firstItem="3KQ-mI-sQD" firstAttribute="height" secondItem="n6T-4R-YQR" secondAttribute="height" id="4zl-Bq-mua"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="n6T-4R-YQR" secondAttribute="bottom" constant="8" id="5Mt-uk-uW8"/>
                             <constraint firstItem="GcP-z3-98b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8a7-lf-fDa"/>
-                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="Srd-Ia-TKO" secondAttribute="bottom" constant="8" id="9Qx-PX-yyM">
-                                <variation key="heightClass=regular-widthClass=compact" constant="3"/>
-                            </constraint>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="Tan-4d-B9t" secondAttribute="bottom" constant="8" id="AF6-FN-dSt"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cwj-lz-Z10"/>
-                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="3KQ-mI-sQD" secondAttribute="bottom" constant="3" id="EnH-1a-W7a"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FoR-wz-mrT"/>
                             <constraint firstItem="cmT-0f-tp7" firstAttribute="top" secondItem="Pml-Tg-i0A" secondAttribute="top" constant="5" id="GhS-3n-oi8"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="GpB-xI-qlW"/>
@@ -267,27 +203,22 @@
                             <constraint firstItem="quD-ld-TDR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HpD-1S-NuB"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JdQ-ql-Q9x"/>
                             <constraint firstItem="Tan-4d-B9t" firstAttribute="width" secondItem="GcP-z3-98b" secondAttribute="width" id="Kki-PF-Gsa"/>
-                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="WQx-wo-8l2" secondAttribute="bottom" constant="3" id="Ku5-rc-bmb"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LGE-Ba-PEf"/>
-                            <constraint firstItem="WQx-wo-8l2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="McQ-oS-Jc9"/>
                             <constraint firstItem="Tan-4d-B9t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nf8-tv-Nwe"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pbC-DM-aJ4" secondAttribute="bottom" constant="20" id="P30-1J-rzW"/>
                             <constraint firstItem="Pml-Tg-i0A" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QCF-yh-kXo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ii6-X4-Zdh" secondAttribute="bottom" constant="42" id="QPC-IP-Vms"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QaP-u6-Ovw"/>
-                            <constraint firstItem="9hB-Lp-Mgp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Seb-JN-q0s"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TNO-CW-J5M"/>
                             <constraint firstItem="Pml-Tg-i0A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Twk-IL-Uax"/>
                             <constraint firstAttribute="trailing" secondItem="n6T-4R-YQR" secondAttribute="trailing" constant="20" id="U6V-7b-gsk"/>
                             <constraint firstItem="ii6-X4-Zdh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wql-31-0ql"/>
-                            <constraint firstItem="9hB-Lp-Mgp" firstAttribute="top" secondItem="quD-ld-TDR" secondAttribute="bottom" constant="56.5" id="Zki-jl-VYc"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="db8-fw-NO7"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dfJ-8J-3q7"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fAy-RS-VYl"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fkG-70-OfH"/>
                             <constraint firstItem="Tan-4d-B9t" firstAttribute="leading" secondItem="GcP-z3-98b" secondAttribute="trailing" constant="10" id="gRy-6x-3FE"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gfF-hX-mG5"/>
-                            <constraint firstItem="Srd-Ia-TKO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="nQb-aF-FTy"/>
                             <constraint firstItem="Pml-Tg-i0A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="nr4-wP-CWK"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oS9-sd-78s"/>
                             <constraint firstItem="pbC-DM-aJ4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pTq-HJ-bNM"/>
@@ -295,7 +226,6 @@
                             <constraint firstItem="cmT-0f-tp7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qSG-h8-G2W"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rWb-Ic-cxR"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="stu-bH-mf2"/>
-                            <constraint firstAttribute="trailing" secondItem="3KQ-mI-sQD" secondAttribute="trailing" constant="8" id="tE9-GE-stK"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="tJI-re-iAU"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="GcP-z3-98b" secondAttribute="bottom" constant="8" id="uiE-Gk-mgc"/>
                             <constraint firstItem="pbC-DM-aJ4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wNp-9S-KHg"/>
@@ -309,10 +239,6 @@
                                 <exclude reference="vah-EQ-Mmc"/>
                                 <exclude reference="TmP-Zi-EAE"/>
                                 <exclude reference="DZP-nd-5em"/>
-                                <exclude reference="Srd-Ia-TKO"/>
-                                <exclude reference="WQx-wo-8l2"/>
-                                <exclude reference="3KQ-mI-sQD"/>
-                                <exclude reference="9hB-Lp-Mgp"/>
                                 <exclude reference="GcP-z3-98b"/>
                                 <exclude reference="Tan-4d-B9t"/>
                                 <exclude reference="n6T-4R-YQR"/>
@@ -320,18 +246,12 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="8a7-lf-fDa"/>
-                                <exclude reference="nQb-aF-FTy"/>
                                 <exclude reference="Nf8-tv-Nwe"/>
-                                <exclude reference="McQ-oS-Jc9"/>
                                 <exclude reference="U6V-7b-gsk"/>
-                                <exclude reference="tE9-GE-stK"/>
                                 <exclude reference="1Cs-lr-liE"/>
                                 <exclude reference="5Mt-uk-uW8"/>
-                                <exclude reference="9Qx-PX-yyM"/>
                                 <exclude reference="AF6-FN-dSt"/>
-                                <exclude reference="EnH-1a-W7a"/>
                                 <exclude reference="HpD-1S-NuB"/>
-                                <exclude reference="Ku5-rc-bmb"/>
                                 <exclude reference="fAy-RS-VYl"/>
                                 <exclude reference="uiE-Gk-mgc"/>
                                 <exclude reference="JdQ-ql-Q9x"/>
@@ -344,27 +264,18 @@
                             <mask key="subviews">
                                 <include reference="Ui8-8g-Ac6"/>
                                 <include reference="quD-ld-TDR"/>
-                                <exclude reference="Srd-Ia-TKO"/>
-                                <exclude reference="WQx-wo-8l2"/>
-                                <exclude reference="3KQ-mI-sQD"/>
                                 <include reference="GcP-z3-98b"/>
                                 <include reference="Tan-4d-B9t"/>
                                 <include reference="n6T-4R-YQR"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="8a7-lf-fDa"/>
-                                <include reference="nQb-aF-FTy"/>
                                 <include reference="Nf8-tv-Nwe"/>
-                                <include reference="McQ-oS-Jc9"/>
                                 <include reference="U6V-7b-gsk"/>
-                                <include reference="tE9-GE-stK"/>
                                 <include reference="1Cs-lr-liE"/>
                                 <include reference="5Mt-uk-uW8"/>
-                                <include reference="9Qx-PX-yyM"/>
                                 <include reference="AF6-FN-dSt"/>
-                                <include reference="EnH-1a-W7a"/>
                                 <include reference="HpD-1S-NuB"/>
-                                <include reference="Ku5-rc-bmb"/>
                                 <include reference="fAy-RS-VYl"/>
                                 <include reference="uiE-Gk-mgc"/>
                                 <include reference="JdQ-ql-Q9x"/>
@@ -377,19 +288,15 @@
                     <navigationItem key="navigationItem" id="Sp2-ce-Jmc"/>
                     <connections>
                         <outlet property="calculateButton" destination="xMt-tf-LU1" id="hyJ-EX-V8U"/>
-                        <outlet property="calculateShadow" destination="9hB-Lp-Mgp" id="2Ne-iR-N5B"/>
                         <outlet property="currentGradeButton" destination="GcP-z3-98b" id="GlL-jQ-yOn"/>
                         <outlet property="currentGradeInfoDismiss" destination="0f2-Lc-Qgr" id="RDd-CP-eyM"/>
                         <outlet property="currentGradeInfoView" destination="8yR-OH-JUR" id="dwY-wL-t2k"/>
-                        <outlet property="currentGradeShadow" destination="Srd-Ia-TKO" id="gD9-mY-fw7"/>
                         <outlet property="desiredGradeButton" destination="n6T-4R-YQR" id="ltn-m0-hqa"/>
                         <outlet property="desiredGradeInfoDismiss" destination="sj3-tH-E42" id="Bbb-Bz-lQ0"/>
                         <outlet property="desiredGradeInfoView" destination="Qb9-XC-Q6O" id="aAs-XM-pVU"/>
-                        <outlet property="desiredGradeShadow" destination="3KQ-mI-sQD" id="xLN-xp-fJC"/>
                         <outlet property="examWeightButton" destination="Tan-4d-B9t" id="Odj-sh-W6d"/>
                         <outlet property="examWeightInfoDismiss" destination="CGq-1O-1Ih" id="EI9-cK-9kR"/>
                         <outlet property="examWeightInfoView" destination="BUD-Vs-ozX" id="Yo6-VJ-N3b"/>
-                        <outlet property="examWeightShadow" destination="WQx-wo-8l2" id="vuK-Nw-Kk3"/>
                         <outlet property="gradeMateButton" destination="Pml-Tg-i0A" id="EFx-lX-d6u"/>
                         <outlet property="gradeMateButtonShadow" destination="cmT-0f-tp7" id="waa-Gf-XPo"/>
                         <outlet property="gradeMateButtonView" destination="MiO-lY-l4M" id="N7n-HG-y9I"/>
