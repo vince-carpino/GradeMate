@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Grade Calculator
+//  GradeMate
 //
 //  Created by Vince Carpino on 6/26/16.
 //  Copyright © 2016 TheHalfBloodJedi. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 import FlatUIKit
-
+import PickerView
 
 extension UIImage {
 	func getPixelColor(pos: CGPoint) -> UIColor {
@@ -26,65 +26,66 @@ extension UIImage {
 	}
 }
 
-class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
+class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate//, PickerViewDelegate, PickerViewDataSource
 {
-	// Blur effect view
+	// BLUR EFFECT VIEW
 	@IBOutlet weak var visualEffectView: UIVisualEffectView!
     
+    // GRADEMATE BUTTON MENU ITEMS
     @IBOutlet var gradeMateButtonView: UIView!
     @IBOutlet weak var gradeMateButtonViewLinkButton: FUIButton!
     @IBOutlet weak var gradeMateButtonViewReviewButton: FUIButton!
     @IBOutlet weak var gradeMateButtonViewBackButton: FUIButton!
     
-	// Score pop up, warning label & dismiss button
+	// SCORE POP UP, WARNING LABEL & DISMISS BUTTON
 	@IBOutlet var resultView: UIView!
 	@IBOutlet weak var resultViewScoreLabel: UILabel!
 	@IBOutlet weak var resultViewWarningLabel: UILabel!
 	@IBOutlet weak var resultViewDismissButton: FUIButton!
 	
-	// Current grade info pop up & dismiss button
+	// CURRENT GRADE INFO POP UP & DISMISS BUTTON
 	@IBOutlet var currentGradeInfoView: UIView!
 	@IBOutlet weak var currentGradeInfoDismiss: FUIButton!
 	
-	// Exam weight info pop up & dismiss button
+	// EXAM WEIGHT INFO POP UP & DISMISS BUTTON
 	@IBOutlet var examWeightInfoView: UIView!
 	@IBOutlet weak var examWeightInfoDismiss: FUIButton!
 	
-	// Desired grade info pop up & dismiss button
+	// DESIRED GRADE INFO POP UP & DISMISS BUTTON
 	@IBOutlet var desiredGradeInfoView: UIView!
 	@IBOutlet weak var desiredGradeInfoDismiss: FUIButton!
 	
-	// Info buttons
+	// INFO BUTTONS
     @IBOutlet weak var currentGradeButton: FUIButton!
     @IBOutlet weak var examWeightButton: FUIButton!
     @IBOutlet weak var desiredGradeButton: FUIButton!
 	
-	// Info button shadows
-    @IBOutlet weak var currentGradeShadow: UILabel!
-    @IBOutlet weak var examWeightShadow: UILabel!
-    @IBOutlet weak var desiredGradeShadow: UILabel!
-	
-	// GradeMate Button
+	// GRADEMATE BUTTON
 	@IBOutlet weak var gradeMateButton: FUIButton!
     @IBOutlet weak var gradeMateButtonShadow: FUIButton!
 	
-	// GradeMate labels
+	// GRADEMATE LABELS
     @IBOutlet weak var gradeMateLabel5s: UILabel!
     @IBOutlet weak var gradeMateLabel6s: UILabel!
     @IBOutlet weak var gradeMateLabel6Plus: UILabel!
 	
-	// Calculate button & shadow
+	// CALCULATE BUTTON & SHADOW
     @IBOutlet weak var calculateButton: FUIButton!
-    @IBOutlet weak var calculateShadow: UILabel!
 	
-	// Hidden menu button
+	// HIDDEN MENU BUTTON
 	@IBOutlet weak var menuButton: UIButton!
     
-    // Numbers that will go into the PickerView
+    // CUSTOM PICKERVIEWS
+//    var pickerView1: PickerView
+//    var pickerView2: PickerView
+//    var pickerView3: PickerView
+//    var pickerView4: PickerView
+    
+    // NUMBERS THAT WILL GO INTO THE PICKERVIEW
     var numbers: [[Double]] = [[], [], [], []]
     var stringNumbers: [[String]] = [[], [], [], []]
     
-    let calculateButtonWords : [String] = [
+    let calculateButtonWords: [String] = [
         "Calculate",
         "Punch it",
         "Let's go",
@@ -103,16 +104,16 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     var scoreValue = 0.0
     
-    // String version of score needed and message in result pop up
-    var value = ""
+    // STRING VERSION OF SCORE NEEDED AND MESSAGE IN RESULT POP UP
+    var value   = ""
     var message = ""
     
-    // Added sentence at end of message and dismiss button text
+    // ADDED SENTENCE AT END OF MESSAGE AND DISMISS BUTTON TEXT
     var warning = ""
     var dismiss = ""
     
     var bounds = UIScreen.main.bounds
-	var effect: UIVisualEffect!				// For blur effect
+	var effect: UIVisualEffect!				// FOR BLUR EFFECT
 	
 	let letterGradientImage = UIImage(named: "GradeGradient")
 	
@@ -137,13 +138,13 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		
 		setGradeMateLabelSize()
         
-        // Center-align text on buttons
+        // CENTER-ALIGN TEXT ON BUTTONS
 		centerButtonText()
         
-        // Populate arrays for picker view
+        // POPULATE ARRAYS FOR PICKER VIEW
         populateArrays()
         
-        // Set starting values for picker view
+        // SET STARTING VALUES FOR PICKER VIEW
         setCurrentGrade(100.0)
         setDecimalValue(0.0)
         setExamWeight(1.0)
@@ -151,7 +152,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 		
 		setDefaultResultInfo()
 		
-		// Hide menu button
+		// HIDE MENU BUTTON
         menuButton.isHidden = false
 		
         // Extend bounds for exam weight button label
@@ -294,19 +295,19 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     // MARK: - PICKER VIEW
 	
-    // Set number of columns in the PickerView
+    // SET NUMBER OF COLUMNS
     @objc func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {
         return stringNumbers.count
     }
     
     
-    // Set number of items in each column
+    // SET NUMBER OF ITEMS IN EACH COLUMN
     @objc func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return stringNumbers[component].count
     }
 	
     
-	// Set font style and size
+	// SET FONT STYLE AND SIZE
 	func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 		var pickerLabel = view as! UILabel!
 		
@@ -348,9 +349,9 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	}
 	
 	
-    // Get numbers that are selected in each row and column
+    // GET NUMBERS THAT ARE SELECTED IN EACH ROW AND COLUMN
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-		// Set values for calculation
+		// SET VALUES FOR CALCULATION
         setCurrentGrade(numbers[0][pickerView.selectedRow(inComponent: 0)])
         setDecimalValue(numbers[1][pickerView.selectedRow(inComponent: 1)])
         setExamWeight  (numbers[2][pickerView.selectedRow(inComponent: 2)])
@@ -366,7 +367,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 			pickerView.reloadComponent(component)
 		}
 		
-		// Set pop up view labels
+		// SET POP UP VIEW LABELS
 		self.resultViewScoreLabel.text = getValue()
 		self.resultViewWarningLabel.text = getWarning()
 		self.resultViewDismissButton.setTitle(getDismiss(), for: .normal)
@@ -509,7 +510,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     }
     
     
-    // GRADEMATE VIEW BUTTONS
+    // MARK: GRADEMATE VIEW BUTTONS
     
     // Back
     @IBAction func gradeMateButtonViewBackButtonPressed(_ sender: FUIButton) {
@@ -540,27 +541,19 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	// MARK: - INFO BUTTONS
     
     // Current Grade Tapped
-    
     @IBAction func currentGradeTapped(_ sender: FUIButton) {
 		animateIn(viewToAnimate: self.currentGradeInfoView)
     }
     
-    
-    
     // Weight Button Tapped
-    
     @IBAction func weightButtonTapped(_ sender: FUIButton) {
 		animateIn(viewToAnimate: self.examWeightInfoView)
 	}
     
-    
-    
     // Desired Grade Tapped
-    
     @IBAction func desiredGradeTapped(_ sender: FUIButton) {
 		animateIn(viewToAnimate: self.desiredGradeInfoView)
     }
-	
 	
 	
 	// MARK: - POP UP ANIMATION
@@ -569,10 +562,10 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 	func animateIn(viewToAnimate: UIView) {
 		self.visualEffectView.isHidden = false
 		
-		self.view.addSubview(viewToAnimate)										// Add pop up view to main view
-		viewToAnimate.center = self.view.center									// Center pop up view in main view
+		self.view.addSubview(viewToAnimate)										// ADD POP UP VIEW TO MAIN VIEW
+		viewToAnimate.center = self.view.center									// CENTER POP UP VIEW IN MAIN VIEW
 		
-		viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)	// Make pop up view slightly bigger before it is displayed
+		viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)	// MAKE POP UP VIEW SLIGHTLY BIGGER BEFORE IT IS DISPLAYED
 		viewToAnimate.alpha = 0
 		
 		// Animate pop up, returning it to its normal state (identity)
@@ -592,7 +585,6 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
 			viewToAnimate.alpha = 0
 			
 			self.visualEffectView.effect = nil
-			
 			
 		}) { (success:Bool) in
 			viewToAnimate.removeFromSuperview()
@@ -745,7 +737,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     func populateArrays() {
         for i in 0...3 {
-            switch(i) {
+            switch (i) {
                 // First column
                 case 0:
                     for j in (1...100).reversed() {
@@ -794,82 +786,81 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
         // Hide GradeMate labels & resize pop ups based on screen size
         switch (screenHeight) {
 
-        // 3.5"
-        case (480):
-			// Hide GradeMate labels
-            self.gradeMateLabel5s.isHidden = true
-            self.gradeMateLabel6s.isHidden = true
-            self.gradeMateLabel6Plus.isHidden = true
-			
-			// Resize pop ups to fit screen
-			self.currentGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-			self.examWeightInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-			self.desiredGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-			self.resultView.frame = CGRect(x: 0, y: 0, width: 300, height: 250)
-			
-			// Resize text on Current Grade Dismiss button
-			self.currentGradeInfoDismiss.titleLabel?.numberOfLines = 1
-			self.currentGradeInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
-			
-			// Resize text on Exam Weight Dismiss button
-			self.examWeightInfoDismiss.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-			self.examWeightInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
-			
-			// Resize text on Result Dismiss button
-			self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
-			self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
-			self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-			
-            break
+            // 3.5"
+            case (480):
+                // Hide GradeMate labels
+                self.gradeMateLabel5s.isHidden = true
+                self.gradeMateLabel6s.isHidden = true
+                self.gradeMateLabel6Plus.isHidden = true
+                
+                // Resize pop ups to fit screen
+                self.currentGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+                self.examWeightInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+                self.desiredGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+                self.resultView.frame = CGRect(x: 0, y: 0, width: 300, height: 250)
+                
+                // Resize text on Current Grade Dismiss button
+                self.currentGradeInfoDismiss.titleLabel?.numberOfLines = 1
+                self.currentGradeInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
+                
+                // Resize text on Exam Weight Dismiss button
+                self.examWeightInfoDismiss.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+                self.examWeightInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
+                
+                // Resize text on Result Dismiss button
+                self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
+                self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+                self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+                
+                break
             
-        // 4.0"
-        case (568):
-			// Hide GradeMate labels
-            self.gradeMateLabel6s.isHidden = true
-            self.gradeMateLabel6Plus.isHidden = true
-			
-			// Resize pop ups to fit screen
-			self.currentGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-			self.examWeightInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-			self.desiredGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-			
-			self.currentGradeInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
-			
-			self.examWeightInfoDismiss.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-			self.examWeightInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
-			
-			self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
-			self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
-			self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-			
-			self.resultView.frame = CGRect(x: 0, y: 0, width: 300, height: 250)
+            // 4.0"
+            case (568):
+                // Hide GradeMate labels
+                self.gradeMateLabel6s.isHidden = true
+                self.gradeMateLabel6Plus.isHidden = true
+                
+                // Resize pop ups to fit screen
+                self.currentGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+                self.examWeightInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+                self.desiredGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+                
+                self.currentGradeInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
+                
+                self.examWeightInfoDismiss.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+                self.examWeightInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
+                
+                self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
+                self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+                self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+                
+                self.resultView.frame = CGRect(x: 0, y: 0, width: 300, height: 250)
 
-            break
+                break
             
-        // 4.7"
-        case (667):
-            self.gradeMateLabel5s.isHidden = true
-            self.gradeMateLabel6Plus.isHidden = true
-			
-			self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
-			self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
-			self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-			
-            break
+            // 4.7"
+            case (667):
+                self.gradeMateLabel5s.isHidden = true
+                self.gradeMateLabel6Plus.isHidden = true
+                
+                self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
+                self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+                self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+                
+                break
             
-        // 5.5"
-        case (736):
-            self.gradeMateLabel5s.isHidden = true
-            self.gradeMateLabel6s.isHidden = true
-			
-			self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
-			self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
-			self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-			
-            break
+            // 5.5"
+            case (736):
+                self.gradeMateLabel5s.isHidden = true
+                self.gradeMateLabel6s.isHidden = true
+                
+                self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
+                self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+                self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+                
+                break
             
-        default:break
-            
+            default:break
         }
     }
 	
@@ -1019,92 +1010,91 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate
     
     func checkScoreValue(_ value: Double) {
 		switch Int(value) {
-		// 301+
-		case let x where x > 300:
-			setWarning("I think it's safe to say that this is not your best subject.")
-			setDismiss("No 💩, Sherlock")
-			break
-		
-		// 201 - 300
-		case let x where x > 200:
-			setWarning("Bribery is your only hope at this point...")
-			setDismiss("I would never...😈")
-			break
-		
-		// 151 - 200
-		case let x where x > 150:
-			setWarning("It's okay to cry...")
-			setDismiss("Already am 😭")
-			break
-			
-		// 126 - 150
-		case let x where x > 125:
-			setWarning("It's not lookin' good for you...")
-			setDismiss("I surrender 🏳")
-			break
-			
-		// 116 - 125
-		case let x where x > 115:
-			setWarning("You shall not pass! ✋")
-			setDismiss("Thanks, Gandalf 😐")
-			break
-			
-		// 101 - 115
-		case let x where x > 100:
-			setWarning("Is there extra credit? 😬")
-			setDismiss("I'll look into that 🙄")
-			break
-			
-		// 100
-		case let x where x == 100:
-			setWarning("May the Force be with you...")
-			setDismiss("Thank you, Master 🙏")
-			break
-			
-		// 90 - 99
-		case let x where x >= 90:
-			setWarning("I have faith in you.")
-			setDismiss("Thanks bro 😅")
-			break
-			
-		// 80 - 89
-		case let x where x >= 80:
-			setWarning("You got this.")
-			setDismiss("It's possible 🤔")
-			break
-			
-		// 70 - 79
-		case let x where x >= 70:
-			setWarning("Not so bad.")
-			setDismiss("Alright 😛")
-			break
-			
-		// 60 - 69
-		case let x where x >= 60:
-			setWarning("Piece o' cake.")
-			setDismiss("Yes please 🍰")
-			break
-			
-		// 50 - 59
-		case let x where x >= 50:
-			setWarning("No problemo.")
-			setDismiss("I can do that 😃")
-			break
-			
-		// 1 - 49
-		case let x where x > 0:
-			setWarning("You could bomb it.")
-			setDismiss("Chill 👌")
-			break
-			
-		// <= 0
-		case let x where x <= 0:
-			setWarning("Don't even take the test, dude.")
-			setDismiss("Sweeeet 😎")
-			break
-		
-		default:break
-		
+            // 301+
+            case let x where x > 300:
+                setWarning("I think it's safe to say that this is not your best subject.")
+                setDismiss("No 💩, Sherlock")
+                break
+            
+            // 201 - 300
+            case let x where x > 200:
+                setWarning("Bribery is your only hope at this point...")
+                setDismiss("I would never...😈")
+                break
+            
+            // 151 - 200
+            case let x where x > 150:
+                setWarning("It's okay to cry...")
+                setDismiss("Already am 😭")
+                break
+            
+            // 126 - 150
+            case let x where x > 125:
+                setWarning("It's not lookin' good for you...")
+                setDismiss("I surrender 🏳")
+                break
+            
+            // 116 - 125
+            case let x where x > 115:
+                setWarning("You shall not pass! ✋")
+                setDismiss("Thanks, Gandalf 😐")
+                break
+            
+            // 101 - 115
+            case let x where x > 100:
+                setWarning("Is there extra credit? 😬")
+                setDismiss("I'll look into that 🙄")
+                break
+            
+            // 100
+            case let x where x == 100:
+                setWarning("May the Force be with you...")
+                setDismiss("Thank you, Master 🙏")
+                break
+            
+            // 90 - 99
+            case let x where x >= 90:
+                setWarning("I have faith in you.")
+                setDismiss("Thanks bro 😅")
+                break
+            
+            // 80 - 89
+            case let x where x >= 80:
+                setWarning("You got this.")
+                setDismiss("It's possible 🤔")
+                break
+            
+            // 70 - 79
+            case let x where x >= 70:
+                setWarning("Not so bad.")
+                setDismiss("Alright 😛")
+                break
+            
+            // 60 - 69
+            case let x where x >= 60:
+                setWarning("Piece o' cake.")
+                setDismiss("Yes please 🍰")
+                break
+            
+            // 50 - 59
+            case let x where x >= 50:
+                setWarning("No problemo.")
+                setDismiss("I can do that 😃")
+                break
+            
+            // 1 - 49
+            case let x where x > 0:
+                setWarning("You could bomb it.")
+                setDismiss("Chill 👌")
+                break
+            
+            // <= 0
+            case let x where x <= 0:
+                setWarning("Don't even take the test, dude.")
+                setDismiss("Sweeeet 😎")
+                break
+            
+            default:break
 		}
     }
 }

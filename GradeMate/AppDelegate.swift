@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Grade Calculator
+//  GradeMate
 //
 //  Created by Vince Carpino on 6/26/16.
 //  Copyright © 2016 TheHalfBloodJedi. All rights reserved.
