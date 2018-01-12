@@ -26,8 +26,7 @@ extension UIImage {
 	}
 }
 
-class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate//, PickerViewDelegate, PickerViewDataSource
-{
+class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate {//, PickerViewDelegate, PickerViewDataSource {
 	// BLUR EFFECT VIEW
 	@IBOutlet weak var visualEffectView: UIVisualEffectView!
     

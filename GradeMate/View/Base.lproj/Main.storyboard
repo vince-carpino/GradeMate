@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHK-0h-AoY">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -28,23 +28,23 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="Ui8-8g-Ac6" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quD-ld-TDR">
-                                <rect key="frame" x="0.0" y="260" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="225.5" width="375" height="216"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zof-qm-QqX"/>
                                 </connections>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbC-DM-aJ4" userLabel="CalculateButtonView">
-                                <rect key="frame" x="20" y="496" width="374" height="220"/>
+                                <rect key="frame" x="16" y="461.5" width="343" height="185.5"/>
                                 <subviews>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-tf-LU1" userLabel="Calculate Button" customClass="FUIButton">
-                                        <rect key="frame" x="8" y="72.666666666666629" width="358" height="75"/>
+                                        <rect key="frame" x="8" y="55.5" width="327" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="ddZ-u9-4yZ"/>
                                         </constraints>
@@ -79,7 +79,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmT-0f-tp7" userLabel="GradeMate - BLACK" customClass="FUIButton">
-                                <rect key="frame" x="20" y="62" width="374" height="75"/>
+                                <rect key="frame" x="16" y="62" width="343" height="75"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
                                 <state key="normal" title="GradeMate">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,7 +110,7 @@
                                 <size key="shadowOffset" width="0.0" height="4"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pml-Tg-i0A" userLabel="GradeMate - 5.5" customClass="FUIButton">
-                                <rect key="frame" x="20" y="57" width="374" height="75"/>
+                                <rect key="frame" x="16" y="57" width="343" height="75"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
                                 <state key="normal" title="GradeMate">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,7 +123,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-z3-98b" userLabel="Current Grade Button" customClass="FUIButton">
-                                <rect key="frame" x="20" y="192" width="118" height="60"/>
+                                <rect key="frame" x="20" y="157.5" width="105" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Q1r-FW-sc8"/>
                                 </constraints>
@@ -137,7 +137,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Tan-4d-B9t" userLabel="Weight Button" customClass="FUIButton">
-                                <rect key="frame" x="148" y="192" width="118" height="60"/>
+                                <rect key="frame" x="135" y="157.5" width="105" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="IT2-Ro-tJf"/>
                                 </constraints>
@@ -151,7 +151,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="n6T-4R-YQR" userLabel="Desired Grade Button" customClass="FUIButton">
-                                <rect key="frame" x="276" y="192" width="118" height="60"/>
+                                <rect key="frame" x="250" y="157.5" width="105" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="l9X-Z3-VLP"/>
                                 </constraints>
@@ -524,14 +524,14 @@
                         <viewControllerLayoutGuide type="bottom" id="7rB-pl-sTk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zmE-PF-8XG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-b4-8Rf" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW0-Dl-f9K" userLabel="GradeMate - BLACK">
-                                <rect key="frame" x="20" y="62" width="374" height="75"/>
+                                <rect key="frame" x="16" y="62" width="343" height="75"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
                                 <state key="normal" title="GradeMate">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -566,7 +566,7 @@
                                 <size key="shadowOffset" width="0.0" height="4"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnP-ys-bSr" userLabel="GradeMate - 5.5">
-                                <rect key="frame" x="20" y="57" width="374" height="75"/>
+                                <rect key="frame" x="16" y="57" width="343" height="75"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
                                 <state key="normal" title="GradeMate">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
