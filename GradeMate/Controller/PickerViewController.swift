@@ -11,72 +11,102 @@ import FlatUIKit
 import PickerView
 
 class PickerViewController {
-    
+
+    // MARK: PICKERVIEWS
     let picker1 = PickerView()
     let picker2 = PickerView()
     let picker3 = PickerView()
     let picker4 = PickerView()
     
-    var numbers1: [Double]
-    var numbers2: [Double]
-    var numbers3: [Double]
-    var numbers4: [Double]
-    
-    var stringNumbers1: [String]
-    var stringNumbers2: [String]
-    var stringNumbers3: [String]
-    var stringNumbers4: [String]
-    
-    let letterGradientImage = UIImage(named: "GradeGradient")
-    
-    // MARK: - INITIALIZER
-    init() {
-        populateArrays()
-    }
-    
-    // MARK: - POPULATE ARRAYS
-    
-    func populateArrays() {
-        for i in 0...3 {
-            switch i {
-            // FIRST COLUMN
-            case 0:
-                for j in (1...100).reversed() {
-                    numbers1.append(Double(j))
-                    stringNumbers1.append(String(j))
-                }
-                
-            // SECOND COLUMN
-            case 1:
-                for j in 0...9 {
-                    numbers2.append(Double(j) / 10.0)
-                    
-                    var stringDecimal = (String(Double(j) / 10.0) + "%")
-                    
-                    // REMOVE THE LEADING ZERO ON DECIMAL
-                    stringDecimal.remove(at: stringDecimal.startIndex)
-                    
-                    stringNumbers2.append(stringDecimal)
-                }
-                
-            // THIRD COLUMN
-            case 2:
-                for j in (1...100) {
-                    numbers3.append(Double(j))
-                    stringNumbers3.append(String(j) + "%")
-                }
-                
-            // FOURTH COLUMN
-            case 3:
-                for j in (1...100).reversed() {
-                    numbers4.append(Double(j))
-                    stringNumbers4.append(String(j) + "%")
-                }
-                
-            default:break
-            }
+    // MARK: NUMBER ARRAYS
+    let numbers1: [Double] = {
+        var nums = [Double]()
+        
+        for i in (1...100).reversed() {
+            nums.append(Double(i))
         }
-    }
+        
+        return nums
+    }()
+    
+    let numbers2: [Double] = {
+        var nums = [Double]()
+        
+        for i in 0...9 {
+            nums.append(Double(i) / 10.0)
+        }
+        
+        return nums
+    }()
+    
+    let numbers3: [Double] = {
+        var nums = [Double]()
+        
+        for i in 1...100 {
+            nums.append(Double(i))
+        }
+        
+        return nums
+    }()
+    
+    let numbers4: [Double] = {
+        var nums = [Double]()
+        
+        for i in 1...100 {
+            nums.append(Double(i))
+        }
+        
+        return nums
+    }()
+    
+    // MARK: STRING ARRAYS
+    let stringNumbers1: [String] = {
+        var strNums = [String]()
+        
+        for i in (1...100).reversed() {
+            strNums.append(String(i))
+        }
+        
+        return strNums
+    }()
+    
+    let stringNumbers2: [String] = {
+        var strNums = [String]()
+        
+        for i in 0...9 {
+            var stringDecimal = (String(Double(i) / 10.0) + "%")
+            
+            // REMOVE THE LEADING ZERO ON DECIMAL
+            stringDecimal.remove(at: stringDecimal.startIndex)
+            
+            strNums.append(stringDecimal)
+        }
+        
+        return strNums
+    }()
+    
+    let stringNumbers3: [String] = {
+        var strNums = [String]()
+        
+        for i in 1...100 {
+            strNums.append(String(i) + "%")
+        }
+        
+        return strNums
+    }()
+    
+    let stringNumbers4: [String] = {
+        var strNums = [String]()
+        
+        for i in (1...100).reversed() {
+            strNums.append(String(i) + "%")
+        }
+        
+        return strNums
+    }()
+    
+    // MARK: GRADIENT IMAGE
+    let letterGradientImage = UIImage(named: "GradeGradient")
 }
 
 // MARK: - PICKERVIEW -
@@ -157,15 +187,10 @@ extension PickerViewController: PickerViewDelegate {
         if (highlighted) {
             let itemTextInt = Int(label.text!)
             let coords = CGPoint(x: 0, y: ((itemTextInt!)-1))
-            //            label.textColor = .white
             label.textColor = .clouds()
-            //            label.textColor = UIColor(red: 237/255, green: 241/255, blue: 242/255, alpha: 1.0)
             pickerView.defaultSelectionIndicator.backgroundColor = letterGradientImage?.getPixelColor(pos: coords)
         } else {
-            //            label.textColor = UIColor(red: 161.0/255.0, green: 161.0/255.0, blue: 161.0/255.0, alpha: 1.0)
-            //            label.textColor = .white
             label.textColor = .silver()
-            //            label.textColor = UIColor(red: 190/255, green: 196/255, blue: 200/255, alpha: 1.0)
         }
     }
     
