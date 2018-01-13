@@ -13,7 +13,7 @@ class MenuViewController: UIViewController
     @IBOutlet weak var gradeMateLabel5s: UILabel!
     @IBOutlet weak var gradeMateLabel6s: UILabel!
     @IBOutlet weak var gradeMateLabel6Plus: UILabel!
-
+    
     
     override func viewDidLoad()
     {
@@ -21,7 +21,7 @@ class MenuViewController: UIViewController
         
         checkScreenSize()
     }
-
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
