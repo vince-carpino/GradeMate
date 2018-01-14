@@ -7,16 +7,15 @@
 //
 
 import Foundation
-import FlatUIKit
 import PickerView
 
-class PickerViewController {
-
+class PickerViewController: UIViewController {
+    
     // MARK: PICKERVIEWS
-    let picker1 = PickerView()
-    let picker2 = PickerView()
-    let picker3 = PickerView()
-    let picker4 = PickerView()
+    @IBOutlet weak var picker1: PickerView!
+    @IBOutlet weak var picker2: PickerView!
+    @IBOutlet weak var picker3: PickerView!
+    @IBOutlet weak var picker4: PickerView!
     
     // MARK: NUMBER ARRAYS
     let numbers1: [Double] = {
@@ -76,7 +75,7 @@ class PickerViewController {
         for i in 0...9 {
             var stringDecimal = (String(Double(i) / 10.0) + "%")
             
-            // REMOVE THE LEADING ZERO ON DECIMAL
+            // REMOVE LEADING ZERO ON DECIMAL
             stringDecimal.remove(at: stringDecimal.startIndex)
             
             strNums.append(stringDecimal)
@@ -107,6 +106,49 @@ class PickerViewController {
     
     // MARK: GRADIENT IMAGE
     let letterGradientImage = UIImage(named: "GradeGradient")
+    
+    override func viewDidLoad() {
+        configurePicker1()
+        configurePicker2()
+        configurePicker3()
+        configurePicker4()
+    }
+    
+    func configurePicker1() {
+        picker1.backgroundColor = .clear
+        picker1.dataSource = self
+        picker1.delegate   = self
+        picker1.currentSelectedRow = stringNumbers1.index(of: "100")
+        picker1.selectionStyle = .defaultIndicator
+        picker1.scrollingStyle = .default
+    }
+    
+    func configurePicker2() {
+        picker2.backgroundColor = .clear
+        picker2.dataSource = self
+        picker2.delegate   = self
+        picker2.currentSelectedRow = stringNumbers2.index(of: "0%")
+        picker2.selectionStyle = .none
+        picker2.scrollingStyle = .default
+    }
+    
+    func configurePicker3() {
+        picker3.backgroundColor = .clear
+        picker3.dataSource = self
+        picker3.delegate   = self
+        picker3.currentSelectedRow = stringNumbers3.index(of: "1%")
+        picker3.selectionStyle = .none
+        picker3.scrollingStyle = .default
+    }
+    
+    func configurePicker4() {
+        picker4.backgroundColor = .clear
+        picker4.dataSource = self
+        picker4.delegate   = self
+        picker4.currentSelectedRow = stringNumbers4.index(of: "100%")
+        picker4.selectionStyle = .defaultIndicator
+        picker4.scrollingStyle = .default
+    }
 }
 
 // MARK: - PICKERVIEW -
@@ -172,9 +214,9 @@ extension PickerViewController: PickerViewDelegate {
         label.textAlignment = .center
         if #available(iOS 8.2, *) {
             if (highlighted) {
-                label.font = UIFont.systemFont(ofSize: 21.0, weight: UIFont.Weight.light)
+                label.font = UIFont(name: "Courier-Bold", size: 21.0)
             } else {
-                label.font = UIFont.systemFont(ofSize: 21.0, weight: UIFont.Weight.light)
+                label.font = UIFont(name: "Courier-Bold", size: 21.0)
             }
         } else {
             if (highlighted) {
@@ -185,12 +227,12 @@ extension PickerViewController: PickerViewDelegate {
         }
         
         if (highlighted) {
+            label.textColor = .white
             let itemTextInt = Int(label.text!)
             let coords = CGPoint(x: 0, y: ((itemTextInt!)-1))
-            label.textColor = .clouds()
             pickerView.defaultSelectionIndicator.backgroundColor = letterGradientImage?.getPixelColor(pos: coords)
         } else {
-            label.textColor = .silver()
+            label.textColor = .lightGray
         }
     }
     
@@ -198,3 +240,20 @@ extension PickerViewController: PickerViewDelegate {
         return nil
     }
 }
+
+extension UIImage {
+    func getPixelColor(pos: CGPoint) -> UIColor {
+        let pixelData = self.cgImage!.dataProvider?.data
+        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+        
+        let pixelInfo: Int = ((Int(self.size.width) * Int(pos.y)) + Int(pos.x)) * 4
+        
+        let r = CGFloat(data[pixelInfo])   / CGFloat(255.0)
+        let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
+        let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
+        let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
+        
+        return UIColor(red: r, green: g, blue: b, alpha: a)
+    }
+}
+
