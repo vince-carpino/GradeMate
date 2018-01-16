@@ -10,23 +10,7 @@ import UIKit
 import FlatUIKit
 import PickerView
 
-extension UIImage {
-    func getPixelColor(pos: CGPoint) -> UIColor {
-        let pixelData = self.cgImage!.dataProvider?.data
-        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
-        
-        let pixelInfo: Int = ((Int(self.size.width) * Int(pos.y)) + Int(pos.x)) * 4
-        
-        let r = CGFloat(data[pixelInfo])   / CGFloat(255.0)
-        let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
-        let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
-        let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
-        
-        return UIColor(red: r, green: g, blue: b, alpha: a)
-    }
-}
-
-class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate {//, PickerViewDelegate, PickerViewDataSource {
+class FinalCalculatorViewController: PickerViewController {
     // BLUR EFFECT VIEW
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
@@ -114,7 +98,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate {//,
     var bounds = UIScreen.main.bounds
     var effect: UIVisualEffect!				// FOR BLUR EFFECT
     
-    let letterGradientImage = UIImage(named: "GradeGradient")
+//    let letterGradientImage = UIImage(named: "GradeGradient")
     
     var statusBarIsHidden: Bool = false {
         didSet {
@@ -292,46 +276,46 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate {//,
     
     
     
-    // MARK: - PICKER VIEW
-    
-    // SET NUMBER OF COLUMNS
-    @objc func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {
-        return stringNumbers.count
-    }
-    
-    
-    // SET NUMBER OF ITEMS IN EACH COLUMN
-    @objc func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return stringNumbers[component].count
-    }
-    
-    
-    // SET FONT STYLE AND SIZE
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var pickerLabel = view as! UILabel!
-        
-        if view == nil { pickerLabel = UILabel() }
-        
-        //        let currentRow = row
-        
-        pickerLabel?.backgroundColor = .clear
-        
-        //        if pickerView.selectedRow(inComponent: component) != currentRow {
-        //            pickerLabel?.backgroundColor = .clear
-        //        } else {
-        pickerLabel?.layer.masksToBounds = true
-        pickerLabel?.layer.cornerRadius = 16
-        pickerLabel?.backgroundColor = checkColor(component: component, row: row)
-        //        }
-        
-        let titleData = stringNumbers[component][row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font: UIFont(name: "Courier", size: 24)!])
-        pickerLabel!.attributedText = myTitle
-        pickerLabel?.textAlignment = .center
-        pickerLabel?.textColor = .white
-        
-        return pickerLabel!
-    }
+//    // MARK: - PICKER VIEW
+//
+//    // SET NUMBER OF COLUMNS
+//    @objc func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {
+//        return stringNumbers.count
+//    }
+//
+//
+//    // SET NUMBER OF ITEMS IN EACH COLUMN
+//    @objc func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return stringNumbers[component].count
+//    }
+//
+//
+//    // SET FONT STYLE AND SIZE
+//    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+//        var pickerLabel = view as! UILabel!
+//
+//        if view == nil { pickerLabel = UILabel() }
+//
+//        //        let currentRow = row
+//
+//        pickerLabel?.backgroundColor = .clear
+//
+//        //        if pickerView.selectedRow(inComponent: component) != currentRow {
+//        //            pickerLabel?.backgroundColor = .clear
+//        //        } else {
+//        pickerLabel?.layer.masksToBounds = true
+//        pickerLabel?.layer.cornerRadius = 16
+//        pickerLabel?.backgroundColor = checkColor(component: component, row: row)
+//        //        }
+//
+//        let titleData = stringNumbers[component][row]
+//        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.font: UIFont(name: "Courier", size: 24)!])
+//        pickerLabel!.attributedText = myTitle
+//        pickerLabel?.textAlignment = .center
+//        pickerLabel?.textColor = .white
+//
+//        return pickerLabel!
+//    }
     
     func checkColor(component: Int, row: Int) -> UIColor {
         var color = UIColor()
@@ -348,140 +332,140 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate {//,
     }
     
     
-    // GET NUMBERS THAT ARE SELECTED IN EACH ROW AND COLUMN
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // SET VALUES FOR CALCULATION
-        setCurrentGrade(numbers[0][pickerView.selectedRow(inComponent: 0)])
-        setDecimalValue(numbers[1][pickerView.selectedRow(inComponent: 1)])
-        setExamWeight  (numbers[2][pickerView.selectedRow(inComponent: 2)])
-        setDesiredGrade(numbers[3][pickerView.selectedRow(inComponent: 3)])
-        
-        calculate( getCurrentGrade(), decimalValue: getDecimalValue(), examWeightDbl: getExamWeight(), desiredGradeDbl: getDesiredGrade() )
-        
-        setGradeValue( String(format: "%.0f", getScoreValue()) + "%" )
-        
-        checkScoreValue(getScoreValue())
-        
-        if component == 0 || component == 3 {
-            pickerView.reloadComponent(component)
-        }
-        
-        // SET POP UP VIEW LABELS
-        self.resultViewScoreLabel.text = getValue()
-        self.resultViewWarningLabel.text = getWarning()
-        self.resultViewDismissButton.setTitle(getDismiss(), for: .normal)
-    }
+//    // GET NUMBERS THAT ARE SELECTED IN EACH ROW AND COLUMN
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        // SET VALUES FOR CALCULATION
+//        setCurrentGrade(numbers[0][pickerView.selectedRow(inComponent: 0)])
+//        setDecimalValue(numbers[1][pickerView.selectedRow(inComponent: 1)])
+//        setExamWeight  (numbers[2][pickerView.selectedRow(inComponent: 2)])
+//        setDesiredGrade(numbers[3][pickerView.selectedRow(inComponent: 3)])
+//
+//        calculate( getCurrentGrade(), decimalValue: getDecimalValue(), examWeightDbl: getExamWeight(), desiredGradeDbl: getDesiredGrade() )
+//
+//        setGradeValue( String(format: "%.0f", getScoreValue()) + "%" )
+//
+//        checkScoreValue(getScoreValue())
+//
+//        if component == 0 || component == 3 {
+//            pickerView.reloadComponent(component)
+//        }
+//
+//        // SET POP UP VIEW LABELS
+//        self.resultViewScoreLabel.text = getValue()
+//        self.resultViewWarningLabel.text = getWarning()
+//        self.resultViewDismissButton.setTitle(getDismiss(), for: .normal)
+//    }
     
     
-    // Size each column
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        let screenHeight = UIScreen.main.bounds.size.height
-        
-        // Change dial sizes based on screen size
-        switch screenHeight
-        {
-        // 3.5"
-        case 480:
-            switch component {
-            // Column 1
-            case 0:
-                return bounds.width / 6.53
-                
-            // Column 2
-            case 1:
-                return bounds.width / (6 + 2/3)
-                
-            // Column 3
-            case 2:
-                return bounds.width / 2.95
-                
-            // Column 4
-            case 3:
-                return bounds.width / 3.35
-                
-            default:break
-            }
-            
-            break
-            
-        // 4.0"
-        case 568:
-            switch component {
-            // Column 1
-            case 0:
-                return bounds.width / 6.53
-                
-            // Column 2
-            case 1:
-                return bounds.width / (6 + 2/3)
-                
-            // Column 3
-            case 2:
-                return bounds.width / 2.95
-                
-            // Column 4
-            case 3:
-                return bounds.width / 3.35
-                
-            default:break
-            }
-            
-            break
-            
-        // 4.7"
-        case 667:
-            switch component {
-            // Column 1
-            case 0:
-                return bounds.width / 5
-                
-            // Column 2
-            case 1:
-                return bounds.width / 7.812
-                
-            // Column 3
-            case 2:
-                return bounds.width / 3.25
-                
-            // Column 4
-            case 3:
-                return bounds.width / 3
-                
-            default:break
-            }
-            
-            break
-            
-        // 5.5"
-        case 736:
-            switch component {
-            // Column 1
-            case 0:
-                return bounds.width / 6
-                
-            // Column 2
-            case 1:
-                return bounds.width / (6.75 + 2/3)
-                
-            // Column 3
-            case 2:
-                return bounds.width / 3.25
-                
-            // Column 4
-            case 3:
-                return bounds.width / 3
-                
-            default:break
-            }
-            
-            break
-            
-        default:break
-            
-        }
-        
-        return 0
-    }
+//    // Size each column
+//    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+//        let screenHeight = UIScreen.main.bounds.size.height
+//        
+//        // Change dial sizes based on screen size
+//        switch screenHeight
+//        {
+//        // 3.5"
+//        case 480:
+//            switch component {
+//            // Column 1
+//            case 0:
+//                return bounds.width / 6.53
+//                
+//            // Column 2
+//            case 1:
+//                return bounds.width / (6 + 2/3)
+//                
+//            // Column 3
+//            case 2:
+//                return bounds.width / 2.95
+//                
+//            // Column 4
+//            case 3:
+//                return bounds.width / 3.35
+//                
+//            default:break
+//            }
+//            
+//            break
+//            
+//        // 4.0"
+//        case 568:
+//            switch component {
+//            // Column 1
+//            case 0:
+//                return bounds.width / 6.53
+//                
+//            // Column 2
+//            case 1:
+//                return bounds.width / (6 + 2/3)
+//                
+//            // Column 3
+//            case 2:
+//                return bounds.width / 2.95
+//                
+//            // Column 4
+//            case 3:
+//                return bounds.width / 3.35
+//                
+//            default:break
+//            }
+//            
+//            break
+//            
+//        // 4.7"
+//        case 667:
+//            switch component {
+//            // Column 1
+//            case 0:
+//                return bounds.width / 5
+//                
+//            // Column 2
+//            case 1:
+//                return bounds.width / 7.812
+//                
+//            // Column 3
+//            case 2:
+//                return bounds.width / 3.25
+//                
+//            // Column 4
+//            case 3:
+//                return bounds.width / 3
+//                
+//            default:break
+//            }
+//            
+//            break
+//            
+//        // 5.5"
+//        case 736:
+//            switch component {
+//            // Column 1
+//            case 0:
+//                return bounds.width / 6
+//                
+//            // Column 2
+//            case 1:
+//                return bounds.width / (6.75 + 2/3)
+//                
+//            // Column 3
+//            case 2:
+//                return bounds.width / 3.25
+//                
+//            // Column 4
+//            case 3:
+//                return bounds.width / 3
+//                
+//            default:break
+//            }
+//            
+//            break
+//            
+//        default:break
+//            
+//        }
+//        
+//        return 0
+//    }
     
     
     // MARK: - GRADEMATE BUTTON
@@ -574,7 +558,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate {//,
             viewToAnimate.transform = CGAffineTransform.identity
         })
         
-        statusBarIsHidden = true
+//        statusBarIsHidden = true
     }
     
     // Animate Out
@@ -590,7 +574,7 @@ class FinalCalculatorViewController: UIViewController, UIPickerViewDelegate {//,
             self.visualEffectView.isHidden = true
         }
         
-        statusBarIsHidden  = false
+//        statusBarIsHidden  = false
     }
     
     
