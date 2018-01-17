@@ -11,19 +11,29 @@ import FlatUIKit
 import PickerView
 
 class PickerViewController: UIViewController {
+    // MARK: - VALUES
+    var currentGrade = 0
+    var decimalValue = 0.0
+    var examWeight   = 0
+    var desiredGrade = 0
+    var scoreValue   = 0.0
     
-    // MARK: PICKERVIEWS
+    var warning      = ""
+    var dismiss      = ""
+    var value        = ""
+    
+    // MARK: - PICKERVIEWS
     @IBOutlet weak var picker1: PickerView!
     @IBOutlet weak var picker2: PickerView!
     @IBOutlet weak var picker3: PickerView!
     @IBOutlet weak var picker4: PickerView!
     
-    // MARK: NUMBER ARRAYS
-    let numbers1: [Double] = {
-        var nums = [Double]()
+    // MARK: - NUMBER ARRAYS
+    let numbers1: [Int] = {
+        var nums = [Int]()
         
         for i in (1...100).reversed() {
-            nums.append(Double(i))
+            nums.append(i)
         }
         
         return nums
@@ -39,27 +49,27 @@ class PickerViewController: UIViewController {
         return nums
     }()
     
-    let numbers3: [Double] = {
-        var nums = [Double]()
+    let numbers3: [Int] = {
+        var nums = [Int]()
         
         for i in 1...100 {
-            nums.append(Double(i))
+            nums.append(i)
         }
         
         return nums
     }()
     
-    let numbers4: [Double] = {
-        var nums = [Double]()
+    let numbers4: [Int] = {
+        var nums = [Int]()
         
-        for i in 1...100 {
-            nums.append(Double(i))
+        for i in (1...100).reversed() {
+            nums.append(i)
         }
         
         return nums
     }()
     
-    // MARK: STRING ARRAYS
+    // MARK: - STRING ARRAYS
     let stringNumbers1: [String] = {
         var strNums = [String]()
         
@@ -105,7 +115,7 @@ class PickerViewController: UIViewController {
         return strNums
     }()
     
-    // MARK: GRADIENT IMAGE
+    // MARK: - GRADIENT IMAGE
     let letterGradientImage = UIImage(named: "GradeGradient")
     
     override func viewDidLoad() {
@@ -115,7 +125,7 @@ class PickerViewController: UIViewController {
         configurePicker(picker: picker4, stringArray: stringNumbers4)
     }
     
-    // MARK: CONFIGURE PICKER
+    // MARK: - CONFIGURE PICKER
     func configurePicker(picker: PickerView, stringArray: [String]) {
         picker.dataSource = self
         picker.delegate   = self
@@ -170,15 +180,26 @@ extension PickerViewController: PickerViewDelegate {
     func pickerView(_ pickerView: PickerView, didSelectRow row: Int, index: Int) {
         switch pickerView {
         case picker1:
-            print(stringNumbers1[index])
+            setCurrentGrade(val: numbers1[index])
+            print(getCurrentGrade())
         case picker2:
-            print(stringNumbers2[index])
+            setDecimalValue(val: numbers2[index])
+            print(getDecimalValue())
         case picker3:
-            print(stringNumbers3[index])
+            setExamWeight(val: numbers3[index])
+            print(getExamWeight())
         case picker4:
-            print(stringNumbers4[index])
+            setDesiredGrade(val: numbers4[index])
+            print(getDesiredGrade())
         default: break
         }
+        
+        calculate(currentGradeInt: self.currentGrade, decimalValue: self.decimalValue, examWeightInt: self.examWeight, desiredGradeInt: self.desiredGrade)
+        print(getScoreValue())
+        
+        setGradeValue(value: String(format: "%.0f", self.scoreValue) + "%")
+        
+        checkScoreValue(value: self.scoreValue)
     }
     
     func pickerView(_ pickerView: PickerView, styleForLabel label: UILabel, highlighted: Bool) {
@@ -228,6 +249,177 @@ extension PickerViewController: PickerViewDelegate {
     
     func pickerView(_ pickerView: PickerView, viewForRow row: Int, index: Int, highlighted: Bool, reusingView view: UIView?) -> UIView? {
         return nil
+    }
+}
+
+// MARK: - CALCULATOR
+extension PickerViewController {
+    
+    func calculate(currentGradeInt: Int, decimalValue: Double, examWeightInt: Int, desiredGradeInt: Int) {
+        let currentGrade = (Double(currentGradeInt) + decimalValue) / 100.0
+        
+        let examWeight = Double(examWeightInt) / 100.0
+        
+        let desiredGrade = Double(desiredGradeInt) / 100.0
+        
+        setScoreValue(val: floor((( desiredGrade - (1 - examWeight) * currentGrade) / examWeight) * 100))
+    }
+    
+    // MARK: - GETTERS
+    func getCurrentGrade() -> Int {
+        return self.currentGrade
+    }
+    
+    func getDecimalValue() -> Double {
+        return self.decimalValue
+    }
+    
+    func getExamWeight() -> Int {
+        return self.examWeight
+    }
+    
+    func getDesiredGrade() -> Int {
+        return self.desiredGrade
+    }
+    
+    func getScoreValue() -> Double {
+        return self.scoreValue
+    }
+    
+    func getWarning() -> String {
+        return self.warning
+    }
+    
+    func getDismiss() -> String {
+        return self.dismiss
+    }
+    
+    func getValue() -> String {
+        return self.value
+    }
+    
+    // MARK: - SETTERS
+    func setCurrentGrade(val: Int) {
+        self.currentGrade = val
+    }
+    
+    func setDecimalValue(val: Double) {
+        self.decimalValue = val
+    }
+    
+    func setExamWeight(val: Int) {
+        self.examWeight = val
+    }
+    
+    func setDesiredGrade(val: Int) {
+        self.desiredGrade = val
+    }
+    
+    func setScoreValue(val: Double) {
+        self.scoreValue = val
+    }
+    
+    func setWarning(warning: String) {
+        self.warning = warning
+    }
+    
+    func setDismiss(message: String) {
+        self.dismiss = message
+    }
+    
+    func setGradeValue(value: String) {
+        self.value = value
+    }
+    
+    // MARK: - RESPONSES
+    func checkScoreValue(value: Double) {
+        switch Int(value) {
+        // 301+
+        case let x where x > 300:
+            setWarning(warning: "I think it's safe to say that this is not your best subject.")
+            setDismiss(message: "No 💩, Sherlock")
+            break
+            
+        // 201 - 300
+        case let x where x > 200:
+            setWarning(warning: "Bribery is your only hope at this point...")
+            setDismiss(message: "I would never...😈")
+            break
+            
+        // 151 - 200
+        case let x where x > 150:
+            setWarning(warning: "It's okay to cry...")
+            setDismiss(message: "Already am 😭")
+            break
+            
+        // 126 - 150
+        case let x where x > 125:
+            setWarning(warning: "It's not lookin' good for you...")
+            setDismiss(message: "I surrender 🏳")
+            break
+            
+        // 116 - 125
+        case let x where x > 115:
+            setWarning(warning: "You shall not pass! ✋")
+            setDismiss(message: "Thanks, Gandalf 😐")
+            break
+            
+        // 101 - 115
+        case let x where x > 100:
+            setWarning(warning: "Is there extra credit? 😬")
+            setDismiss(message: "I'll look into that 🙄")
+            break
+            
+        // 100
+        case let x where x == 100:
+            setWarning(warning: "May the Force be with you...")
+            setDismiss(message: "Thank you, Master 🙏")
+            break
+            
+        // 90 - 99
+        case let x where x >= 90:
+            setWarning(warning: "I have faith in you.")
+            setDismiss(message: "Thanks bro 😅")
+            break
+            
+        // 80 - 89
+        case let x where x >= 80:
+            setWarning(warning: "You got this.")
+            setDismiss(message: "It's possible 🤔")
+            break
+            
+        // 70 - 79
+        case let x where x >= 70:
+            setWarning(warning: "Not so bad.")
+            setDismiss(message: "Alright 😛")
+            break
+            
+        // 60 - 69
+        case let x where x >= 60:
+            setWarning(warning: "Piece o' cake.")
+            setDismiss(message: "Yes please 🍰")
+            break
+            
+        // 50 - 59
+        case let x where x >= 50:
+            setWarning(warning: "No problemo.")
+            setDismiss(message: "I can do that 😃")
+            break
+            
+        // 1 - 49
+        case let x where x > 0:
+            setWarning(warning: "You could bomb it.")
+            setDismiss(message: "Chill 👌")
+            break
+            
+        // <= 0
+        case let x where x <= 0:
+            setWarning(warning: "Don't even take the test, dude.")
+            setDismiss(message: "Sweeeet 😎")
+            break
+            
+        default: break
+        }
     }
 }
 

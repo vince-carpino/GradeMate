@@ -6,11 +6,10 @@
 //  Copyright © 2016 TheHalfBloodJedi. All rights reserved.
 //
 
-import UIKit
 import FlatUIKit
 import PickerView
 
-class FinalCalculatorViewController: PickerViewController, FinalGradeCalculator {
+class FinalCalculatorViewController: PickerViewController {
     // BLUR EFFECT VIEW
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
@@ -80,20 +79,20 @@ class FinalCalculatorViewController: PickerViewController, FinalGradeCalculator 
         "Hit me"
     ]
     
-    var currentGrade = 0.0
-    var decimalValue = 0.0
-    var examWeight   = 0.0
-    var desiredGrade = 0
+//    var currentGrade = 0.0
+//    var decimalValue = 0.0
+//    var examWeight   = 0.0
+//    var desiredGrade = 0
     
-    var scoreValue = 0.0
+//    var scoreValue = 0.0
     
     // STRING VERSION OF SCORE NEEDED AND MESSAGE IN RESULT POP UP
-    var value   = ""
-    var message = ""
+//    var value   = ""
+//    var message = ""
     
     // ADDED SENTENCE AT END OF MESSAGE AND DISMISS BUTTON TEXT
-    var warning = ""
-    var dismiss = ""
+//    var warning = ""
+//    var dismiss = ""
     
     var bounds = UIScreen.main.bounds
     var effect: UIVisualEffect!				// FOR BLUR EFFECT
@@ -128,10 +127,10 @@ class FinalCalculatorViewController: PickerViewController, FinalGradeCalculator 
         populateArrays()
         
         // SET STARTING VALUES FOR PICKER VIEW
-        setCurrentGrade(100.0)
-        setDecimalValue(0.0)
-        setExamWeight(1.0)
-        setDesiredGrade(100.0)
+//        setCurrentGrade(100.0)
+//        setDecimalValue(0.0)
+//        setExamWeight(1.0)
+//        setDesiredGrade(100.0)
         
         setDefaultResultInfo()
         
@@ -317,19 +316,19 @@ class FinalCalculatorViewController: PickerViewController, FinalGradeCalculator 
 //        return pickerLabel!
 //    }
     
-    func checkColor(component: Int, row: Int) -> UIColor {
-        var color = UIColor()
-        var coords : CGPoint
-        
-        if component == 0 || component == 3 {
-            coords = CGPoint(x: 0, y: row)
-            color = (letterGradientImage?.getPixelColor(pos: coords))!
-        } else {
-            color = .clear
-        }
-        
-        return color
-    }
+//    func checkColor(component: Int, row: Int) -> UIColor {
+//        var color = UIColor()
+//        var coords : CGPoint
+//
+//        if component == 0 || component == 3 {
+//            coords = CGPoint(x: 0, y: row)
+//            color = (letterGradientImage?.getPixelColor(pos: coords))!
+//        } else {
+//            color = .clear
+//        }
+//
+//        return color
+//    }
     
     
 //    // GET NUMBERS THAT ARE SELECTED IN EACH ROW AND COLUMN
@@ -633,87 +632,87 @@ class FinalCalculatorViewController: PickerViewController, FinalGradeCalculator 
     
     // MARK: - GETTERS
     
-    fileprivate func getCurrentGrade() -> Double {
-        return self.currentGrade
-    }
-    
-    fileprivate func getDecimalValue() -> Double {
-        return self.decimalValue
-    }
-    
-    fileprivate func getExamWeight() -> Double {
-        return self.examWeight
-    }
-    
-    fileprivate func getDesiredGrade() -> Int {
-        return self.desiredGrade
-    }
-    
-    fileprivate func getScoreValue() -> Double {
-        return self.scoreValue
-    }
-    
-    fileprivate func getWarning() -> String {
-        return self.warning
-    }
-    
-    fileprivate func getDismiss() -> String {
-        return self.dismiss
-    }
-    
-    fileprivate func getValue() -> String {
-        return self.value
-    }
+//    fileprivate func getCurrentGrade() -> Double {
+//        return self.currentGrade
+//    }
+//
+//    fileprivate func getDecimalValue() -> Double {
+//        return self.decimalValue
+//    }
+//
+//    fileprivate func getExamWeight() -> Double {
+//        return self.examWeight
+//    }
+//
+//    fileprivate func getDesiredGrade() -> Int {
+//        return self.desiredGrade
+//    }
+//
+//    fileprivate func getScoreValue() -> Double {
+//        return self.scoreValue
+//    }
+//
+//    fileprivate func getWarning() -> String {
+//        return self.warning
+//    }
+//
+//    fileprivate func getDismiss() -> String {
+//        return self.dismiss
+//    }
+//
+//    fileprivate func getValue() -> String {
+//        return self.value
+//    }
     
     
     
     // MARK: - SETTERS
     
-    fileprivate func setCurrentGrade(_ value: Double) {
-        self.currentGrade = value
-    }
-    
-    fileprivate func setDecimalValue(_ value: Double) {
-        self.decimalValue = value
-    }
-    
-    fileprivate func setExamWeight(_ value: Double) {
-        self.examWeight = value
-    }
-    
-    fileprivate func setDesiredGrade(_ value: Double) {
-        self.desiredGrade = Int(value)
-    }
-    
-    fileprivate func setScoreValue(_ value: Double) {
-        self.scoreValue = value;
-    }
-    
-    fileprivate func setWarning(_ warning: String) {
-        self.warning = warning
-    }
-    
-    fileprivate func setDismiss(_ message: String) {
-        self.dismiss = message
-    }
-    
-    fileprivate func setGradeValue(_ value: String) {
-        self.value = value
-    }
+//    fileprivate func setCurrentGrade(_ value: Double) {
+//        self.currentGrade = value
+//    }
+//
+//    fileprivate func setDecimalValue(_ value: Double) {
+//        self.decimalValue = value
+//    }
+//
+//    fileprivate func setExamWeight(_ value: Double) {
+//        self.examWeight = value
+//    }
+//
+//    fileprivate func setDesiredGrade(_ value: Double) {
+//        self.desiredGrade = Int(value)
+//    }
+//
+//    fileprivate func setScoreValue(_ value: Double) {
+//        self.scoreValue = value;
+//    }
+//
+//    fileprivate func setWarning(_ warning: String) {
+//        self.warning = warning
+//    }
+//
+//    fileprivate func setDismiss(_ message: String) {
+//        self.dismiss = message
+//    }
+//
+//    fileprivate func setGradeValue(_ value: String) {
+//        self.value = value
+//    }
     
     
     
     // MARK: - CALCULATE GRADE
     
-    func calculate(_ currentGradeDbl: Double, decimalValue: Double, examWeightDbl: Double, desiredGradeDbl: Int) {
-        let currentGrade = (currentGradeDbl + decimalValue) / 100.0
-        
-        let examWeight = examWeightDbl / 100.0
-        
-        let desiredGrade = Double(desiredGradeDbl) / 100.0
-        
-        setScoreValue(floor((( desiredGrade - (1 - examWeight) * currentGrade) / examWeight) * 100))
-    }
+//    func calculate(_ currentGradeDbl: Double, decimalValue: Double, examWeightDbl: Double, desiredGradeDbl: Int) {
+//        let currentGrade = (currentGradeDbl + decimalValue) / 100.0
+//        
+//        let examWeight = examWeightDbl / 100.0
+//        
+//        let desiredGrade = Double(desiredGradeDbl) / 100.0
+//        
+//        setScoreValue(floor((( desiredGrade - (1 - examWeight) * currentGrade) / examWeight) * 100))
+//    }
     
     
     // MARK: - POPULATE ARRAYS
@@ -991,93 +990,93 @@ class FinalCalculatorViewController: PickerViewController, FinalGradeCalculator 
     
     // MARK: - RESPONSES
     
-    func checkScoreValue(_ value: Double) {
-        switch Int(value) {
-        // 301+
-        case let x where x > 300:
-            setWarning("I think it's safe to say that this is not your best subject.")
-            setDismiss("No 💩, Sherlock")
-            break
-            
-        // 201 - 300
-        case let x where x > 200:
-            setWarning("Bribery is your only hope at this point...")
-            setDismiss("I would never...😈")
-            break
-            
-        // 151 - 200
-        case let x where x > 150:
-            setWarning("It's okay to cry...")
-            setDismiss("Already am 😭")
-            break
-            
-        // 126 - 150
-        case let x where x > 125:
-            setWarning("It's not lookin' good for you...")
-            setDismiss("I surrender 🏳")
-            break
-            
-        // 116 - 125
-        case let x where x > 115:
-            setWarning("You shall not pass! ✋")
-            setDismiss("Thanks, Gandalf 😐")
-            break
-            
-        // 101 - 115
-        case let x where x > 100:
-            setWarning("Is there extra credit? 😬")
-            setDismiss("I'll look into that 🙄")
-            break
-            
-        // 100
-        case let x where x == 100:
-            setWarning("May the Force be with you...")
-            setDismiss("Thank you, Master 🙏")
-            break
-            
-        // 90 - 99
-        case let x where x >= 90:
-            setWarning("I have faith in you.")
-            setDismiss("Thanks bro 😅")
-            break
-            
-        // 80 - 89
-        case let x where x >= 80:
-            setWarning("You got this.")
-            setDismiss("It's possible 🤔")
-            break
-            
-        // 70 - 79
-        case let x where x >= 70:
-            setWarning("Not so bad.")
-            setDismiss("Alright 😛")
-            break
-            
-        // 60 - 69
-        case let x where x >= 60:
-            setWarning("Piece o' cake.")
-            setDismiss("Yes please 🍰")
-            break
-            
-        // 50 - 59
-        case let x where x >= 50:
-            setWarning("No problemo.")
-            setDismiss("I can do that 😃")
-            break
-            
-        // 1 - 49
-        case let x where x > 0:
-            setWarning("You could bomb it.")
-            setDismiss("Chill 👌")
-            break
-            
-        // <= 0
-        case let x where x <= 0:
-            setWarning("Don't even take the test, dude.")
-            setDismiss("Sweeeet 😎")
-            break
-            
-        default:break
-        }
-    }
+//    func checkScoreValue(_ value: Double) {
+//        switch Int(value) {
+//        // 301+
+//        case let x where x > 300:
+//            setWarning("I think it's safe to say that this is not your best subject.")
+//            setDismiss("No 💩, Sherlock")
+//            break
+//
+//        // 201 - 300
+//        case let x where x > 200:
+//            setWarning("Bribery is your only hope at this point...")
+//            setDismiss("I would never...😈")
+//            break
+//
+//        // 151 - 200
+//        case let x where x > 150:
+//            setWarning("It's okay to cry...")
+//            setDismiss("Already am 😭")
+//            break
+//
+//        // 126 - 150
+//        case let x where x > 125:
+//            setWarning("It's not lookin' good for you...")
+//            setDismiss("I surrender 🏳")
+//            break
+//
+//        // 116 - 125
+//        case let x where x > 115:
+//            setWarning("You shall not pass! ✋")
+//            setDismiss("Thanks, Gandalf 😐")
+//            break
+//
+//        // 101 - 115
+//        case let x where x > 100:
+//            setWarning("Is there extra credit? 😬")
+//            setDismiss("I'll look into that 🙄")
+//            break
+//
+//        // 100
+//        case let x where x == 100:
+//            setWarning("May the Force be with you...")
+//            setDismiss("Thank you, Master 🙏")
+//            break
+//
+//        // 90 - 99
+//        case let x where x >= 90:
+//            setWarning("I have faith in you.")
+//            setDismiss("Thanks bro 😅")
+//            break
+//
+//        // 80 - 89
+//        case let x where x >= 80:
+//            setWarning("You got this.")
+//            setDismiss("It's possible 🤔")
+//            break
+//
+//        // 70 - 79
+//        case let x where x >= 70:
+//            setWarning("Not so bad.")
+//            setDismiss("Alright 😛")
+//            break
+//
+//        // 60 - 69
+//        case let x where x >= 60:
+//            setWarning("Piece o' cake.")
+//            setDismiss("Yes please 🍰")
+//            break
+//
+//        // 50 - 59
+//        case let x where x >= 50:
+//            setWarning("No problemo.")
+//            setDismiss("I can do that 😃")
+//            break
+//
+//        // 1 - 49
+//        case let x where x > 0:
+//            setWarning("You could bomb it.")
+//            setDismiss("Chill 👌")
+//            break
+//
+//        // <= 0
+//        case let x where x <= 0:
+//            setWarning("Don't even take the test, dude.")
+//            setDismiss("Sweeeet 😎")
+//            break
+//
+//        default:break
+//        }
+//    }
 }
