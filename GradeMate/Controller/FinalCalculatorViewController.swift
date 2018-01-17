@@ -10,7 +10,7 @@ import UIKit
 import FlatUIKit
 import PickerView
 
-class FinalCalculatorViewController: PickerViewController {
+class FinalCalculatorViewController: PickerViewController, FinalGradeCalculator {
     // BLUR EFFECT VIEW
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
@@ -52,7 +52,7 @@ class FinalCalculatorViewController: PickerViewController {
     @IBOutlet weak var gradeMateLabel6s: UILabel!
     @IBOutlet weak var gradeMateLabel6Plus: UILabel!
     
-    // CALCULATE BUTTON & SHADOW
+    // CALCULATE BUTTON
     @IBOutlet weak var calculateButton: FUIButton!
     
     // HIDDEN MENU BUTTON
@@ -66,7 +66,7 @@ class FinalCalculatorViewController: PickerViewController {
     
     // NUMBERS THAT WILL GO INTO THE PICKERVIEW
     var numbers: [[Double]] = [[], [], [], []]
-    var stringNumbers: [[String]] = [[], [], [], []]
+//    var stringNumbers: [[String]] = [[], [], [], []]
     
     let calculateButtonWords: [String] = [
         "Calculate",
@@ -161,13 +161,13 @@ class FinalCalculatorViewController: PickerViewController {
         
         makeAllButtonsExclusiveTouch()
         
-        let upperButtonColors = UIColor(fromHexCode: "#18c0ee")
-        let upperButtonShadows = UIColor(fromHexCode: "#149ec6")
+        let upperButtonColors = UIColor(fromHexCode: "#18C0EE")
+        let upperButtonShadows = UIColor(fromHexCode: "#149EC6")
         //        calculateButton.buttonColor = UIColor(fromHexCode: "#1ACB83")
         //        calculateButton.shadowColor = UIColor(fromHexCode: "#16ac70")
         
-        calculateButton.buttonColor = UIColor(fromHexCode: "#1abc9c")
-        calculateButton.shadowColor = UIColor(fromHexCode: "#16a085")
+        calculateButton.buttonColor = UIColor(fromHexCode: "#1ABC9C")
+        calculateButton.shadowColor = UIColor(fromHexCode: "#16A085")
         
         calculateButton.shadowHeight = 6.0
         calculateButton.cornerRadius = 6.0
@@ -725,7 +725,7 @@ class FinalCalculatorViewController: PickerViewController {
             case 0:
                 for j in (1...100).reversed() {
                     numbers[i].append(Double(j))
-                    stringNumbers[i].append(String(j))
+//                    stringNumbers[i].append(String(j))
                 }
                 
             // Second column
@@ -733,26 +733,26 @@ class FinalCalculatorViewController: PickerViewController {
                 for j in 0...9 {
                     numbers[i].append(Double(j) / 10.0)
                     
-                    var stringDecimal = (String(Double(j) / 10.0) + "%")
-                    
-                    // Remove the leading zero on decimal
-                    stringDecimal.remove(at: stringDecimal.startIndex)
-                    
-                    stringNumbers[i].append(stringDecimal)
+//                    var stringDecimal = (String(Double(j) / 10.0) + "%")
+//
+//                    // Remove the leading zero on decimal
+//                    stringDecimal.remove(at: stringDecimal.startIndex)
+//
+//                    stringNumbers[i].append(stringDecimal)
                 }
                 
             // Third column
             case 2:
                 for j in (1...100) {
                     numbers[i].append(Double(j))
-                    stringNumbers[i].append(String(j) + "%")
+//                    stringNumbers[i].append(String(j) + "%")
                 }
                 
             // Fourth column
             case 3:
                 for j in (1...100).reversed() {
                     numbers[i].append(Double(j))
-                    stringNumbers[i].append(String(j) + "%")
+//                    stringNumbers[i].append(String(j) + "%")
                 }
                 
             default:break

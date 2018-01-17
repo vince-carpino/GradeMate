@@ -7,18 +7,10 @@
 //
 
 class CourseGradeCalculator {
-    var currentGrade : Float
-    var examWeight   : Float
-    var examScore    : Float
-    var courseGrade  : Float
-    
-    // MARK: - INITIALIZER
-    init() {
-        currentGrade = 0.0
-        examWeight   = 0.0
-        examScore    = 0.0
-        courseGrade  = 0.0
-    }
+    var currentGrade = 0.0
+    var examWeight   = 0.0
+    var examScore    = 0.0
+    var courseGrade  = 0.0
     
     // MARK: - CALCULATE COURSE GRADE
     func calculate() {
@@ -26,36 +18,36 @@ class CourseGradeCalculator {
     }
     
     // MARK: - GETTERS
-    func getCurrentGrade() -> Float {
+    func getCurrentGrade() -> Double {
         return self.currentGrade
     }
     
-    func getExamWeight() -> Float {
+    func getExamWeight() -> Double {
         return self.examWeight
     }
     
-    func getExamScore() -> Float {
+    func getExamScore() -> Double {
         return self.examScore
     }
     
-    func getCourseGrade() -> Float {
+    func getCourseGrade() -> Double {
         return self.courseGrade
     }
     
     // MARK: - SETTERS
-    func setCurrentGrade(val : Float) {
+    func setCurrentGrade(val: Double) {
         self.currentGrade = val
     }
     
-    func setExamWeight(val : Float) {
+    func setExamWeight(val: Double) {
         self.examWeight = val
     }
     
-    func setExamScore(val : Float) {
+    func setExamScore(val: Double) {
         self.examScore = val
     }
     
-    func setCourseGrade(val : Float) {
+    func setCourseGrade(val: Double) {
         self.courseGrade = val
     }
 }
