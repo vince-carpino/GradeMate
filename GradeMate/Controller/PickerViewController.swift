@@ -10,7 +10,7 @@ import Foundation
 import FlatUIKit
 import PickerView
 
-class PickerViewController: UIViewController {
+class PickerViewController: UIViewController, FUIAlertViewDelegate {
     // MARK: - VALUES
     var currentGrade = 0
     var decimalValue = 0.0
@@ -123,6 +123,11 @@ class PickerViewController: UIViewController {
         configurePicker(picker: picker2, stringArray: stringNumbers2)
         configurePicker(picker: picker3, stringArray: stringNumbers3)
         configurePicker(picker: picker4, stringArray: stringNumbers4)
+        
+        setCurrentGrade(val: 100)
+        setDecimalValue(val: 0.1)
+        setExamWeight(val: 1)
+        setDesiredGrade(val: 100)
     }
     
     // MARK: - CONFIGURE PICKER
@@ -263,6 +268,28 @@ extension PickerViewController {
         let desiredGrade = Double(desiredGradeInt) / 100.0
         
         setScoreValue(val: floor((( desiredGrade - (1 - examWeight) * currentGrade) / examWeight) * 100))
+    }
+    
+    func createAlert() {
+        let alert = FUIAlertView()
+        
+        alert.title = self.value
+        alert.message = "is what you need to get.\n\n" + self.warning
+        alert.delegate = nil
+        alert.addButton(withTitle: self.dismiss)
+        alert.titleLabel.textColor = .clouds()
+        alert.titleLabel.font = UIFont.init(name: "Courier-Bold", size: 36.0)
+        alert.messageLabel.textColor = .clouds()
+        alert.messageLabel.font = UIFont.init(name: "Courier-Bold", size: 18.0)
+        alert.backgroundOverlay.backgroundColor = (UIColor.clouds()).withAlphaComponent(0.8)
+        alert.alertContainer.backgroundColor = .midnightBlue()
+        alert.defaultButtonColor = .clouds()
+        alert.defaultButtonShadowColor = .asbestos()
+        alert.defaultButtonFont = UIFont.init(name: "Courier-Bold", size: 21.0)
+        alert.defaultButtonTitleColor = .asbestos()
+        alert.alertContainer.layer.cornerRadius = 10
+        
+        alert.show()
     }
     
     // MARK: - GETTERS

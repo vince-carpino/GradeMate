@@ -619,13 +619,15 @@ class FinalCalculatorViewController: PickerViewController {
     // MARK: - CALCULATE BUTTON TAPPED
     
     @IBAction func calculateTapped(_ sender: FUIButton) {
-        animateIn(viewToAnimate: self.resultView)
+//        animateIn(viewToAnimate: self.resultView)
+//        
+//        // CHANGE BUTTON TEXT
+//        let arraySize = calculateButtonWords.count
+//        let randNum   = arc4random_uniform(UInt32(arraySize))
+//        let randInt    = Int(randNum)
+//        calculateButton.setTitle(calculateButtonWords[randInt], for: .normal)
         
-        // CHANGE BUTTON TEXT
-        let arraySize = calculateButtonWords.count
-        let randNum   = arc4random_uniform(UInt32(arraySize))
-        let randInt    = Int(randNum)
-        calculateButton.setTitle(calculateButtonWords[randInt], for: .normal)
+        createAlert()
     }
     
     
