@@ -10,7 +10,7 @@ import Foundation
 import FlatUIKit
 import PickerView
 
-class PickerViewController: UIViewController, FUIAlertViewDelegate {
+class PickerViewController: UIViewController {
     // MARK: - VALUES
     var currentGrade = 0
     var decimalValue = 0.0
@@ -22,11 +22,15 @@ class PickerViewController: UIViewController, FUIAlertViewDelegate {
     var dismiss      = ""
     var value        = ""
     
+    var effect: UIVisualEffect!                // FOR BLUR EFFECT
+
     // MARK: - PICKERVIEWS
     @IBOutlet weak var picker1: PickerView!
     @IBOutlet weak var picker2: PickerView!
     @IBOutlet weak var picker3: PickerView!
     @IBOutlet weak var picker4: PickerView!
+    
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
     // MARK: - NUMBER ARRAYS
     let numbers1: [Int] = {
@@ -118,6 +122,7 @@ class PickerViewController: UIViewController, FUIAlertViewDelegate {
     // MARK: - GRADIENT IMAGE
     let letterGradientImage = UIImage(named: "GradeGradient")
     
+    
     override func viewDidLoad() {
         configurePicker(picker: picker1, stringArray: stringNumbers1)
         configurePicker(picker: picker2, stringArray: stringNumbers2)
@@ -128,6 +133,10 @@ class PickerViewController: UIViewController, FUIAlertViewDelegate {
         setDecimalValue(val: 0.1)
         setExamWeight(val: 1)
         setDesiredGrade(val: 100)
+        
+        effect = visualEffectView.effect         // STORES EFFECT IN VAR TO USE LATER IN ANIMATION
+        visualEffectView.effect = nil            // TURNS OFF BLUR WHEN VIEW LOADS
+        visualEffectView.isHidden = true         // HIDES BLUR EFFECT SO BUTTONS CAN BE USED
     }
     
     // MARK: - CONFIGURE PICKER
@@ -278,18 +287,57 @@ extension PickerViewController {
         alert.delegate = nil
         alert.addButton(withTitle: self.dismiss)
         alert.titleLabel.textColor = .clouds()
-        alert.titleLabel.font = UIFont.init(name: "Courier-Bold", size: 36.0)
+        alert.titleLabel.font = UIFont(name: "Courier-Bold", size: 40)
         alert.messageLabel.textColor = .clouds()
-        alert.messageLabel.font = UIFont.init(name: "Courier-Bold", size: 18.0)
+        alert.messageLabel.font = UIFont(name: "Courier-Bold", size: 18)
         alert.backgroundOverlay.backgroundColor = (UIColor.clouds()).withAlphaComponent(0.8)
         alert.alertContainer.backgroundColor = .midnightBlue()
         alert.defaultButtonColor = .clouds()
         alert.defaultButtonShadowColor = .asbestos()
-        alert.defaultButtonFont = UIFont.init(name: "Courier-Bold", size: 21.0)
+        alert.defaultButtonFont = UIFont(name: "Courier-Bold", size: 18)
         alert.defaultButtonTitleColor = .asbestos()
+        
         alert.alertContainer.layer.cornerRadius = 10
         
         alert.show()
+    }
+    
+    // MARK: - POP UP ANIMATION
+    
+    // ANIMATE IN
+    func animateIn(viewToAnimate: UIView) {
+        self.visualEffectView.isHidden = false
+        
+        self.view.addSubview(viewToAnimate)                                        // ADD POP UP VIEW TO MAIN VIEW
+        viewToAnimate.center = self.view.center                                    // CENTER POP UP VIEW IN MAIN VIEW
+        
+        viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)    // MAKE POP UP VIEW SLIGHTLY BIGGER BEFORE IT IS DISPLAYED
+        viewToAnimate.alpha = 0
+        
+        // Animate pop up, returning it to its normal state (identity)
+        UIView.animate(withDuration: 0.4, animations: {
+            self.visualEffectView.effect = self.effect
+            viewToAnimate.alpha = 1
+            viewToAnimate.transform = CGAffineTransform.identity
+        })
+        
+        //        statusBarIsHidden = true
+    }
+    
+    // ANIMATE OUT
+    func animateOut(viewToAnimate: UIView) {
+        UIView.animate(withDuration: 0.3, animations: {
+            viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            viewToAnimate.alpha = 0
+            
+            self.visualEffectView.effect = nil
+            
+        }) { (success:Bool) in
+            viewToAnimate.removeFromSuperview()
+            self.visualEffectView.isHidden = true
+        }
+        
+        //        statusBarIsHidden  = false
     }
     
     // MARK: - GETTERS

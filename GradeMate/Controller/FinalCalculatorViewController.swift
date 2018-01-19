@@ -11,7 +11,7 @@ import PickerView
 
 class FinalCalculatorViewController: PickerViewController {
     // BLUR EFFECT VIEW
-    @IBOutlet weak var visualEffectView: UIVisualEffectView!
+//    @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
     // GRADEMATE BUTTON MENU ITEMS
     @IBOutlet var gradeMateButtonView: UIView!
@@ -55,7 +55,7 @@ class FinalCalculatorViewController: PickerViewController {
     @IBOutlet weak var calculateButton: FUIButton!
     
     // HIDDEN MENU BUTTON
-    @IBOutlet weak var menuButton: UIButton!
+    //@IBOutlet weak var menuButton: UIButton!
     
     // CUSTOM PICKERVIEWS
     //    var pickerView1: PickerView
@@ -95,7 +95,7 @@ class FinalCalculatorViewController: PickerViewController {
 //    var dismiss = ""
     
     var bounds = UIScreen.main.bounds
-    var effect: UIVisualEffect!				// FOR BLUR EFFECT
+//    var effect: UIVisualEffect!                // FOR BLUR EFFECT
     
 //    let letterGradientImage = UIImage(named: "GradeGradient")
     
@@ -135,14 +135,14 @@ class FinalCalculatorViewController: PickerViewController {
         setDefaultResultInfo()
         
         // HIDE MENU BUTTON
-        menuButton.isHidden = false
+        //menuButton.isHidden = false
         
         // Extend bounds for exam weight button label
         //setButtonLabelBounds(button: examWeightButton, value: -1)
         
-        effect = visualEffectView.effect		// STORES EFFECT IN VAR TO USE LATER IN ANIMATION
-        visualEffectView.effect = nil			// TURNS OFF BLUR WHEN VIEW LOADS
-        visualEffectView.isHidden = true		// HIDES BLUR EFFECT SO BUTTONS CAN BE USED
+//        effect = visualEffectView.effect        // STORES EFFECT IN VAR TO USE LATER IN ANIMATION
+//        visualEffectView.effect = nil            // TURNS OFF BLUR WHEN VIEW LOADS
+//        visualEffectView.isHidden = true        // HIDES BLUR EFFECT SO BUTTONS CAN BE USED
         
         resultView.layer.cornerRadius = 10		// ROUNDS OFF CORNERS OF POP UP VIEW
         //		resultViewDismissButton.layer.cornerRadius = 23
@@ -540,41 +540,41 @@ class FinalCalculatorViewController: PickerViewController {
     
     // MARK: - POP UP ANIMATION
     
-    // Animate In
-    func animateIn(viewToAnimate: UIView) {
-        self.visualEffectView.isHidden = false
-        
-        self.view.addSubview(viewToAnimate)										// ADD POP UP VIEW TO MAIN VIEW
-        viewToAnimate.center = self.view.center									// CENTER POP UP VIEW IN MAIN VIEW
-        
-        viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)	// MAKE POP UP VIEW SLIGHTLY BIGGER BEFORE IT IS DISPLAYED
-        viewToAnimate.alpha = 0
-        
-        // Animate pop up, returning it to its normal state (identity)
-        UIView.animate(withDuration: 0.4, animations: {
-            self.visualEffectView.effect = self.effect
-            viewToAnimate.alpha = 1
-            viewToAnimate.transform = CGAffineTransform.identity
-        })
-        
-//        statusBarIsHidden = true
-    }
-    
-    // Animate Out
-    func animateOut(viewToAnimate: UIView) {
-        UIView.animate(withDuration: 0.3, animations: {
-            viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-            viewToAnimate.alpha = 0
-            
-            self.visualEffectView.effect = nil
-            
-        }) { (success:Bool) in
-            viewToAnimate.removeFromSuperview()
-            self.visualEffectView.isHidden = true
-        }
-        
-//        statusBarIsHidden  = false
-    }
+//    // Animate In
+//    func animateIn(viewToAnimate: UIView) {
+//        self.visualEffectView.isHidden = false
+//        
+//        self.view.addSubview(viewToAnimate)                                        // ADD POP UP VIEW TO MAIN VIEW
+//        viewToAnimate.center = self.view.center                                    // CENTER POP UP VIEW IN MAIN VIEW
+//        
+//        viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)    // MAKE POP UP VIEW SLIGHTLY BIGGER BEFORE IT IS DISPLAYED
+//        viewToAnimate.alpha = 0
+//        
+//        // Animate pop up, returning it to its normal state (identity)
+//        UIView.animate(withDuration: 0.4, animations: {
+//            self.visualEffectView.effect = self.effect
+//            viewToAnimate.alpha = 1
+//            viewToAnimate.transform = CGAffineTransform.identity
+//        })
+//        
+////        statusBarIsHidden = true
+//    }
+//    
+//    // Animate Out
+//    func animateOut(viewToAnimate: UIView) {
+//        UIView.animate(withDuration: 0.3, animations: {
+//            viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+//            viewToAnimate.alpha = 0
+//            
+//            self.visualEffectView.effect = nil
+//            
+//        }) { (success:Bool) in
+//            viewToAnimate.removeFromSuperview()
+//            self.visualEffectView.isHidden = true
+//        }
+//        
+////        statusBarIsHidden  = false
+//    }
     
     
     // MARK: - DISMISS POP UPS
@@ -619,15 +619,15 @@ class FinalCalculatorViewController: PickerViewController {
     // MARK: - CALCULATE BUTTON TAPPED
     
     @IBAction func calculateTapped(_ sender: FUIButton) {
-//        animateIn(viewToAnimate: self.resultView)
-//        
+        animateIn(viewToAnimate: self.resultView)
+
 //        // CHANGE BUTTON TEXT
 //        let arraySize = calculateButtonWords.count
 //        let randNum   = arc4random_uniform(UInt32(arraySize))
 //        let randInt    = Int(randNum)
 //        calculateButton.setTitle(calculateButtonWords[randInt], for: .normal)
         
-        createAlert()
+//        createAlert()
     }
     
     

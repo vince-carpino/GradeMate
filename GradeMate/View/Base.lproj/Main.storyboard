@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHK-0h-AoY">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -28,11 +28,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="Ui8-8g-Ac6" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quD-ld-TDR">
                                 <rect key="frame" x="0.0" y="226" width="375" height="216"/>
@@ -40,53 +40,47 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zof-qm-QqX"/>
                                 </connections>
                             </pickerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbC-DM-aJ4" userLabel="CalculateButtonView">
-                                <rect key="frame" x="16" y="463" width="343" height="184"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiA-7j-tPc" userLabel="GradeMate Button Container">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
                                 <subviews>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-tf-LU1" userLabel="Calculate Button" customClass="FUIButton">
-                                        <rect key="frame" x="8" y="55" width="327" height="75"/>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmT-0f-tp7" userLabel="GradeMate - BLACK" customClass="FUIButton">
+                                        <rect key="frame" x="8" y="70" width="398" height="75"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="ddZ-u9-4yZ"/>
+                                            <constraint firstAttribute="height" constant="75" id="hJ0-lB-VMz"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="38"/>
-                                        <size key="titleShadowOffset" width="0.0" height="3"/>
-                                        <state key="normal" title="Calculate">
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
+                                        <state key="normal" title="GradeMate">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pml-Tg-i0A" userLabel="GradeMate - 5.5" customClass="FUIButton">
+                                        <rect key="frame" x="8" y="65" width="398" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="nv8-78-ice"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
+                                        <state key="normal" title="GradeMate">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaI-Lv-C0B"/>
+                                            <action selector="gradeMateButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="01d-CW-aQl"/>
+                                            <action selector="gradeMateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMq-5q-Jw3"/>
+                                            <action selector="gradeMateButtonTouchDragEnter:" destination="BYZ-38-t0r" eventType="touchDragEnter" id="yta-Qc-0Tf"/>
+                                            <action selector="gradeMateButtonTouchDragExit:" destination="BYZ-38-t0r" eventType="touchDragExit" id="wL8-y9-MEw"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="leading" secondItem="pbC-DM-aJ4" secondAttribute="leading" constant="8" id="1uy-3y-RtY"/>
-                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="top" secondItem="pbC-DM-aJ4" secondAttribute="top" constant="55" id="Ff7-Ec-jIw"/>
-                                    <constraint firstAttribute="trailing" secondItem="xMt-tf-LU1" secondAttribute="trailing" constant="8" id="L1f-ah-bQY"/>
-                                    <constraint firstAttribute="bottom" secondItem="xMt-tf-LU1" secondAttribute="bottom" constant="54" id="Qcf-uo-HEx"/>
-                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="centerX" secondItem="pbC-DM-aJ4" secondAttribute="centerX" id="TnR-nA-jBh"/>
-                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="centerY" secondItem="pbC-DM-aJ4" secondAttribute="centerY" id="lFd-Jt-aBd"/>
+                                    <constraint firstItem="cmT-0f-tp7" firstAttribute="leading" secondItem="MiA-7j-tPc" secondAttribute="leading" constant="8" id="0UH-O4-Ug1"/>
+                                    <constraint firstAttribute="trailing" secondItem="cmT-0f-tp7" secondAttribute="trailing" constant="8" id="0ls-V0-QF0"/>
+                                    <constraint firstItem="Pml-Tg-i0A" firstAttribute="centerX" secondItem="MiA-7j-tPc" secondAttribute="centerX" id="70v-pf-dus"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pml-Tg-i0A" secondAttribute="trailing" constant="8" id="Bz2-J6-QRr"/>
+                                    <constraint firstItem="cmT-0f-tp7" firstAttribute="centerY" secondItem="MiA-7j-tPc" secondAttribute="centerY" constant="25" id="HUR-IY-M8e"/>
+                                    <constraint firstItem="Pml-Tg-i0A" firstAttribute="centerY" secondItem="MiA-7j-tPc" secondAttribute="centerY" constant="20" id="UtS-8m-Fyc"/>
+                                    <constraint firstItem="Pml-Tg-i0A" firstAttribute="leading" secondItem="MiA-7j-tPc" secondAttribute="leading" constant="8" id="d5F-vk-19a"/>
+                                    <constraint firstItem="cmT-0f-tp7" firstAttribute="centerX" secondItem="MiA-7j-tPc" secondAttribute="centerX" id="wg4-uN-R0k"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ii6-X4-Zdh">
-                                <rect key="frame" x="177" y="662" width="60" height="32"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="qLD-Rs-BiP"/>
-                                    <constraint firstAttribute="width" constant="60" id="x6T-eE-ZVs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
-                                <size key="titleShadowOffset" width="0.0" height="2"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmT-0f-tp7" userLabel="GradeMate - BLACK" customClass="FUIButton">
-                                <rect key="frame" x="16" y="62" width="343" height="75"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
-                                <state key="normal" title="GradeMate">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vah-EQ-Mmc" userLabel="GradeMate Label - 5s">
                                 <rect key="frame" x="16" y="33" width="288" height="64"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="60"/>
@@ -111,109 +105,64 @@
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="0.0" height="4"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pml-Tg-i0A" userLabel="GradeMate - 5.5" customClass="FUIButton">
-                                <rect key="frame" x="16" y="57" width="343" height="75"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
-                                <state key="normal" title="GradeMate">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="gradeMateButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="01d-CW-aQl"/>
-                                    <action selector="gradeMateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMq-5q-Jw3"/>
-                                    <action selector="gradeMateButtonTouchDragEnter:" destination="BYZ-38-t0r" eventType="touchDragEnter" id="yta-Qc-0Tf"/>
-                                    <action selector="gradeMateButtonTouchDragExit:" destination="BYZ-38-t0r" eventType="touchDragExit" id="wL8-y9-MEw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-z3-98b" userLabel="Current Grade Button" customClass="FUIButton">
-                                <rect key="frame" x="20" y="158" width="105" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Q1r-FW-sc8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" title="Current Grade">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="currentGradeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wS7-NS-7mx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Tan-4d-B9t" userLabel="Weight Button" customClass="FUIButton">
-                                <rect key="frame" x="135" y="158" width="105" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="IT2-Ro-tJf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
-                                <size key="titleShadowOffset" width="0.0" height="3"/>
-                                <state key="normal" title="Exam Weight">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="weightButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YPH-2v-pTz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="n6T-4R-YQR" userLabel="Desired Grade Button" customClass="FUIButton">
-                                <rect key="frame" x="250" y="158" width="105" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="l9X-Z3-VLP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
-                                <size key="titleShadowOffset" width="-2" height="2"/>
-                                <state key="normal" title="Desired Grade">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="desiredGradeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NWF-yC-7bg"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsN-nB-vq7" userLabel="PickerView Container">
-                                <rect key="frame" x="0.0" y="251" width="375" height="165"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWP-MT-gle" userLabel="Info Button Container">
+                                <rect key="frame" x="0.0" y="173" width="414" height="105"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U24-1Q-iQV" userLabel="Picker1" customClass="PickerView" customModule="PickerView">
-                                        <rect key="frame" x="8" y="0.0" width="75" height="165"/>
-                                        <color key="backgroundColor" red="0.099069572985172272" green="0.74058306217193604" blue="0.61464953422546387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-z3-98b" userLabel="Current Grade Button" customClass="FUIButton">
+                                        <rect key="frame" x="10" y="19.666666666666657" width="128" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="165" id="Jel-9b-sL1"/>
-                                            <constraint firstAttribute="width" constant="75" id="SpQ-lt-nIx"/>
+                                            <constraint firstAttribute="height" constant="65" id="aHM-oa-CnE"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKx-eF-fr1" userLabel="Picker2" customClass="PickerView" customModule="PickerView">
-                                        <rect key="frame" x="83" y="0.0" width="50" height="165"/>
-                                        <color key="backgroundColor" red="0.087845779955387115" green="0.63027310371398926" blue="0.5247001051902771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="Current Grade">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="currentGradeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wS7-NS-7mx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Tan-4d-B9t" userLabel="Weight Button" customClass="FUIButton">
+                                        <rect key="frame" x="143" y="19.666666666666657" width="128" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="Cjv-WY-ei5"/>
-                                            <constraint firstAttribute="height" constant="165" id="T9W-9f-Os1"/>
+                                            <constraint firstAttribute="height" constant="65" id="ymY-6l-gjf"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYC-7I-o15" userLabel="Picker3" customClass="PickerView" customModule="PickerView">
-                                        <rect key="frame" x="137" y="0.0" width="100" height="165"/>
-                                        <color key="backgroundColor" red="0.20183175802230835" green="0.59903854131698608" blue="0.86090624332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
+                                        <size key="titleShadowOffset" width="0.0" height="3"/>
+                                        <state key="normal" title="Exam Weight">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="weightButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YPH-2v-pTz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="n6T-4R-YQR" userLabel="Desired Grade Button" customClass="FUIButton">
+                                        <rect key="frame" x="276" y="19.666666666666657" width="128" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="165" id="FnC-RV-5kW"/>
-                                            <constraint firstAttribute="width" constant="100" id="bhd-Yi-Bnt"/>
+                                            <constraint firstAttribute="height" constant="65" id="Hhq-Ma-v3G"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bis-Oo-Sls" userLabel="Picker4" customClass="PickerView" customModule="PickerView">
-                                        <rect key="frame" x="292" y="0.0" width="75" height="165"/>
-                                        <color key="backgroundColor" red="0.61178845167160034" green="0.34843093156814575" blue="0.71794408559799194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="165" id="MMk-oJ-Vyf"/>
-                                            <constraint firstAttribute="width" constant="75" id="x2m-fq-O2L"/>
-                                        </constraints>
-                                    </view>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
+                                        <size key="titleShadowOffset" width="-2" height="2"/>
+                                        <state key="normal" title="Desired Grade">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="desiredGradeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NWF-yC-7bg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="U24-1Q-iQV" firstAttribute="centerY" secondItem="FsN-nB-vq7" secondAttribute="centerY" id="7hq-yQ-0Iw"/>
-                                    <constraint firstItem="Bis-Oo-Sls" firstAttribute="centerY" secondItem="FsN-nB-vq7" secondAttribute="centerY" id="Dgk-nT-hQn"/>
-                                    <constraint firstItem="BYC-7I-o15" firstAttribute="centerY" secondItem="FsN-nB-vq7" secondAttribute="centerY" id="LKa-z5-AaK"/>
-                                    <constraint firstAttribute="trailing" secondItem="Bis-Oo-Sls" secondAttribute="trailing" constant="8" id="XxJ-DP-NCU"/>
-                                    <constraint firstAttribute="width" constant="375" id="ZiP-LO-Q4H"/>
-                                    <constraint firstItem="BYC-7I-o15" firstAttribute="leading" secondItem="hKx-eF-fr1" secondAttribute="trailing" constant="4" id="c4t-aj-ksy"/>
-                                    <constraint firstItem="hKx-eF-fr1" firstAttribute="centerY" secondItem="FsN-nB-vq7" secondAttribute="centerY" id="k1p-RT-0G5"/>
-                                    <constraint firstItem="U24-1Q-iQV" firstAttribute="leading" secondItem="FsN-nB-vq7" secondAttribute="leading" constant="8" id="prN-Qt-N6k"/>
-                                    <constraint firstAttribute="height" constant="165" id="uzd-bm-IaL"/>
-                                    <constraint firstItem="hKx-eF-fr1" firstAttribute="leading" secondItem="U24-1Q-iQV" secondAttribute="trailing" id="wSM-d5-JaC"/>
-                                    <constraint firstItem="BYC-7I-o15" firstAttribute="centerX" secondItem="FsN-nB-vq7" secondAttribute="centerX" id="zWH-AZ-imn"/>
+                                    <constraint firstItem="Tan-4d-B9t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GcP-z3-98b" secondAttribute="trailing" constant="5" id="38X-mg-6h5"/>
+                                    <constraint firstItem="Tan-4d-B9t" firstAttribute="centerY" secondItem="zWP-MT-gle" secondAttribute="centerY" id="5z1-E0-0vb"/>
+                                    <constraint firstItem="GcP-z3-98b" firstAttribute="width" secondItem="Tan-4d-B9t" secondAttribute="width" id="9rP-ol-8aJ"/>
+                                    <constraint firstItem="GcP-z3-98b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zWP-MT-gle" secondAttribute="leading" constant="10" id="GK3-ma-OEM"/>
+                                    <constraint firstItem="n6T-4R-YQR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tan-4d-B9t" secondAttribute="trailing" constant="5" id="NCS-bK-aJ9"/>
+                                    <constraint firstItem="GcP-z3-98b" firstAttribute="centerY" secondItem="zWP-MT-gle" secondAttribute="centerY" id="QN9-7y-4iz"/>
+                                    <constraint firstItem="n6T-4R-YQR" firstAttribute="width" secondItem="Tan-4d-B9t" secondAttribute="width" id="abo-Aq-fjw"/>
+                                    <constraint firstItem="n6T-4R-YQR" firstAttribute="centerY" secondItem="zWP-MT-gle" secondAttribute="centerY" id="cAL-XE-gEO"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n6T-4R-YQR" secondAttribute="trailing" constant="10" id="daa-Bw-nMc"/>
+                                    <constraint firstItem="Tan-4d-B9t" firstAttribute="centerX" secondItem="zWP-MT-gle" secondAttribute="centerX" id="nUG-Ov-4dW"/>
+                                    <constraint firstAttribute="height" constant="105" id="vTj-wF-bVA"/>
                                 </constraints>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBG-uT-CQa">
@@ -237,112 +186,158 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsN-nB-vq7" userLabel="PickerView Container">
+                                <rect key="frame" x="0.0" y="286" width="414" height="165"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U24-1Q-iQV" userLabel="Picker1" customClass="PickerView" customModule="PickerView">
+                                        <rect key="frame" x="8" y="0.0" width="75" height="165"/>
+                                        <color key="backgroundColor" red="0.099069572985172272" green="0.74058306217193604" blue="0.61464953422546387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="165" id="Jel-9b-sL1"/>
+                                            <constraint firstAttribute="width" constant="75" id="SpQ-lt-nIx"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKx-eF-fr1" userLabel="Picker2" customClass="PickerView" customModule="PickerView">
+                                        <rect key="frame" x="83" y="0.0" width="50" height="165"/>
+                                        <color key="backgroundColor" red="0.087845779955387115" green="0.63027310371398926" blue="0.5247001051902771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Cjv-WY-ei5"/>
+                                            <constraint firstAttribute="height" constant="165" id="T9W-9f-Os1"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYC-7I-o15" userLabel="Picker3" customClass="PickerView" customModule="PickerView">
+                                        <rect key="frame" x="157" y="0.0" width="100" height="165"/>
+                                        <color key="backgroundColor" red="0.20183175802230835" green="0.59903854131698608" blue="0.86090624332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="BiC-bw-qLi"/>
+                                            <constraint firstAttribute="height" constant="165" id="UY8-Tr-0Fu"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bis-Oo-Sls" userLabel="Picker4" customClass="PickerView" customModule="PickerView">
+                                        <rect key="frame" x="331" y="0.0" width="75" height="165"/>
+                                        <color key="backgroundColor" red="0.61178845167160034" green="0.34843093156814575" blue="0.71794408559799194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="165" id="MMk-oJ-Vyf"/>
+                                            <constraint firstAttribute="width" constant="75" id="x2m-fq-O2L"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="U24-1Q-iQV" firstAttribute="leading" secondItem="FsN-nB-vq7" secondAttribute="leading" constant="8" id="9gR-Ud-Jxf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bis-Oo-Sls" secondAttribute="trailing" constant="8" id="Aly-BB-6Fx"/>
+                                    <constraint firstItem="U24-1Q-iQV" firstAttribute="centerY" secondItem="FsN-nB-vq7" secondAttribute="centerY" id="OPA-aB-79C"/>
+                                    <constraint firstItem="BYC-7I-o15" firstAttribute="centerY" secondItem="FsN-nB-vq7" secondAttribute="centerY" id="fRa-97-buz"/>
+                                    <constraint firstItem="Bis-Oo-Sls" firstAttribute="centerY" secondItem="FsN-nB-vq7" secondAttribute="centerY" id="guL-oI-bFA"/>
+                                    <constraint firstItem="hKx-eF-fr1" firstAttribute="centerY" secondItem="FsN-nB-vq7" secondAttribute="centerY" id="i1p-MG-Hjy"/>
+                                    <constraint firstItem="BYC-7I-o15" firstAttribute="centerX" secondItem="FsN-nB-vq7" secondAttribute="centerX" id="lU8-OV-vjb"/>
+                                    <constraint firstItem="hKx-eF-fr1" firstAttribute="leading" secondItem="U24-1Q-iQV" secondAttribute="trailing" id="wSM-d5-JaC"/>
+                                    <constraint firstAttribute="height" constant="165" id="xnz-eV-LO0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbC-DM-aJ4" userLabel="Calculate Button Container">
+                                <rect key="frame" x="20" y="498" width="374" height="218"/>
+                                <subviews>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-tf-LU1" userLabel="Calculate Button" customClass="FUIButton">
+                                        <rect key="frame" x="8" y="72" width="358" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="aRL-vo-VgK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="38"/>
+                                        <size key="titleShadowOffset" width="0.0" height="3"/>
+                                        <state key="normal" title="Calculate">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaI-Lv-C0B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="centerY" secondItem="pbC-DM-aJ4" secondAttribute="centerY" id="4ey-MK-2a5"/>
+                                    <constraint firstAttribute="trailing" secondItem="xMt-tf-LU1" secondAttribute="trailing" constant="8" id="LPN-i6-zbg"/>
+                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="leading" secondItem="pbC-DM-aJ4" secondAttribute="leading" constant="8" id="Ocv-E3-6RC"/>
+                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="centerX" secondItem="pbC-DM-aJ4" secondAttribute="centerX" id="ki2-by-6e0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="FsN-nB-vq7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0ZP-7p-3L2"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="1Cs-lr-liE"/>
                             <constraint firstItem="QBG-uT-CQa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1tn-T4-eJ0"/>
-                            <constraint firstItem="n6T-4R-YQR" firstAttribute="leading" secondItem="Tan-4d-B9t" secondAttribute="trailing" constant="10" id="2W6-fU-nqZ"/>
-                            <constraint firstItem="cmT-0f-tp7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3x3-ID-jeU"/>
-                            <constraint firstItem="FsN-nB-vq7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5Ef-uo-gB7"/>
-                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="n6T-4R-YQR" secondAttribute="bottom" constant="8" id="5Mt-uk-uW8"/>
+                            <constraint firstItem="pbC-DM-aJ4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="61M-t9-ywN"/>
                             <constraint firstAttribute="trailing" secondItem="QBG-uT-CQa" secondAttribute="trailing" id="7RO-dl-jVW"/>
                             <constraint firstItem="QBG-uT-CQa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Wx-ft-bjl"/>
-                            <constraint firstItem="GcP-z3-98b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8a7-lf-fDa"/>
-                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="Tan-4d-B9t" secondAttribute="bottom" constant="8" id="AF6-FN-dSt"/>
+                            <constraint firstItem="pbC-DM-aJ4" firstAttribute="top" secondItem="FsN-nB-vq7" secondAttribute="bottom" constant="47" id="CsG-It-eQ2"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cwj-lz-Z10"/>
+                            <constraint firstItem="MiA-7j-tPc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CxB-dP-LTT"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FoR-wz-mrT"/>
-                            <constraint firstItem="cmT-0f-tp7" firstAttribute="top" secondItem="Pml-Tg-i0A" secondAttribute="top" constant="5" id="GhS-3n-oi8"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="GpB-xI-qlW"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HlU-Re-VxV"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HpD-1S-NuB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pbC-DM-aJ4" secondAttribute="bottom" constant="20" id="JUL-9j-ofO"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JdQ-ql-Q9x"/>
-                            <constraint firstItem="Tan-4d-B9t" firstAttribute="width" secondItem="GcP-z3-98b" secondAttribute="width" id="Kki-PF-Gsa"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LGE-Ba-PEf"/>
-                            <constraint firstItem="Tan-4d-B9t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nf8-tv-Nwe"/>
-                            <constraint firstItem="FsN-nB-vq7" firstAttribute="top" secondItem="GcP-z3-98b" secondAttribute="bottom" constant="33" id="OuV-Wy-roQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pbC-DM-aJ4" secondAttribute="bottom" constant="20" id="P30-1J-rzW"/>
-                            <constraint firstItem="FsN-nB-vq7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P8O-sb-1LD"/>
-                            <constraint firstItem="Pml-Tg-i0A" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QCF-yh-kXo"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ii6-X4-Zdh" secondAttribute="bottom" constant="42" id="QPC-IP-Vms"/>
+                            <constraint firstItem="FsN-nB-vq7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LMX-DY-fqa"/>
+                            <constraint firstItem="pbC-DM-aJ4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NW8-vH-ADH"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QaP-u6-Ovw"/>
+                            <constraint firstItem="FsN-nB-vq7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rf1-Sv-W47"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TNO-CW-J5M"/>
-                            <constraint firstItem="Pml-Tg-i0A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Twk-IL-Uax"/>
-                            <constraint firstAttribute="trailing" secondItem="n6T-4R-YQR" secondAttribute="trailing" constant="20" id="U6V-7b-gsk"/>
-                            <constraint firstItem="ii6-X4-Zdh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wql-31-0ql"/>
-                            <constraint firstItem="Pml-Tg-i0A" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="37" id="ceL-h1-k3D"/>
+                            <constraint firstItem="zWP-MT-gle" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ViY-Z3-FoR"/>
+                            <constraint firstAttribute="trailing" secondItem="MiA-7j-tPc" secondAttribute="trailing" id="XCz-lJ-r6n"/>
+                            <constraint firstItem="zWP-MT-gle" firstAttribute="top" secondItem="MiA-7j-tPc" secondAttribute="bottom" constant="8" id="XSb-DV-IUc"/>
+                            <constraint firstItem="MiA-7j-tPc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="am0-i6-YBz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QBG-uT-CQa" secondAttribute="bottom" id="d2Q-Yk-GzX"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="db8-fw-NO7"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dfJ-8J-3q7"/>
                             <constraint firstItem="quD-ld-TDR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fAy-RS-VYl"/>
-                            <constraint firstItem="pbC-DM-aJ4" firstAttribute="top" secondItem="FsN-nB-vq7" secondAttribute="bottom" constant="47" id="fDX-IB-FTT"/>
                             <constraint firstItem="DZP-nd-5em" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fkG-70-OfH"/>
-                            <constraint firstItem="Tan-4d-B9t" firstAttribute="leading" secondItem="GcP-z3-98b" secondAttribute="trailing" constant="10" id="gRy-6x-3FE"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gfF-hX-mG5"/>
                             <constraint firstItem="QBG-uT-CQa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gho-Rf-S4T"/>
-                            <constraint firstItem="FsN-nB-vq7" firstAttribute="top" secondItem="n6T-4R-YQR" secondAttribute="bottom" constant="33" id="i27-ir-4bS"/>
+                            <constraint firstItem="zWP-MT-gle" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jbh-Ck-qId"/>
+                            <constraint firstItem="pbC-DM-aJ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mUA-Lx-Jke"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oS9-sd-78s"/>
-                            <constraint firstItem="pbC-DM-aJ4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pTq-HJ-bNM"/>
                             <constraint firstItem="QBG-uT-CQa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qEf-tN-OPU"/>
-                            <constraint firstItem="Tan-4d-B9t" firstAttribute="width" secondItem="n6T-4R-YQR" secondAttribute="width" id="qQm-f0-AqU"/>
-                            <constraint firstItem="cmT-0f-tp7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qSG-h8-G2W"/>
-                            <constraint firstItem="FsN-nB-vq7" firstAttribute="top" secondItem="Tan-4d-B9t" secondAttribute="bottom" constant="33" id="qvw-k5-WOi"/>
+                            <constraint firstAttribute="trailing" secondItem="zWP-MT-gle" secondAttribute="trailing" id="rE3-lu-dZ0"/>
                             <constraint firstItem="TmP-Zi-EAE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rWb-Ic-cxR"/>
+                            <constraint firstItem="MiA-7j-tPc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rvn-Bi-obs"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="stu-bH-mf2"/>
                             <constraint firstItem="vah-EQ-Mmc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="tJI-re-iAU"/>
-                            <constraint firstItem="quD-ld-TDR" firstAttribute="top" secondItem="GcP-z3-98b" secondAttribute="bottom" constant="8" id="uiE-Gk-mgc"/>
-                            <constraint firstItem="pbC-DM-aJ4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wNp-9S-KHg"/>
+                            <constraint firstAttribute="trailing" secondItem="FsN-nB-vq7" secondAttribute="trailing" id="tkD-BH-db1"/>
+                            <constraint firstItem="FsN-nB-vq7" firstAttribute="top" secondItem="zWP-MT-gle" secondAttribute="bottom" constant="8" id="u78-x5-fd5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Ui8-8g-Ac6"/>
                                 <exclude reference="quD-ld-TDR"/>
-                                <exclude reference="ii6-X4-Zdh"/>
                                 <exclude reference="vah-EQ-Mmc"/>
                                 <exclude reference="TmP-Zi-EAE"/>
                                 <exclude reference="DZP-nd-5em"/>
-                                <exclude reference="GcP-z3-98b"/>
-                                <exclude reference="Tan-4d-B9t"/>
-                                <exclude reference="n6T-4R-YQR"/>
+                                <exclude reference="QBG-uT-CQa"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1Cs-lr-liE"/>
-                                <exclude reference="5Mt-uk-uW8"/>
-                                <exclude reference="AF6-FN-dSt"/>
                                 <exclude reference="HpD-1S-NuB"/>
                                 <exclude reference="fAy-RS-VYl"/>
-                                <exclude reference="uiE-Gk-mgc"/>
                                 <exclude reference="JdQ-ql-Q9x"/>
                                 <exclude reference="QaP-u6-Ovw"/>
                                 <exclude reference="gfF-hX-mG5"/>
                                 <exclude reference="stu-bH-mf2"/>
-                                <exclude reference="8a7-lf-fDa"/>
-                                <exclude reference="Nf8-tv-Nwe"/>
-                                <exclude reference="U6V-7b-gsk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Ui8-8g-Ac6"/>
                                 <exclude reference="quD-ld-TDR"/>
-                                <include reference="GcP-z3-98b"/>
-                                <include reference="Tan-4d-B9t"/>
-                                <include reference="n6T-4R-YQR"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1Cs-lr-liE"/>
-                                <include reference="5Mt-uk-uW8"/>
-                                <include reference="AF6-FN-dSt"/>
                                 <include reference="HpD-1S-NuB"/>
                                 <include reference="fAy-RS-VYl"/>
-                                <include reference="uiE-Gk-mgc"/>
                                 <include reference="JdQ-ql-Q9x"/>
                                 <include reference="QaP-u6-Ovw"/>
                                 <include reference="gfF-hX-mG5"/>
                                 <include reference="stu-bH-mf2"/>
-                                <include reference="8a7-lf-fDa"/>
-                                <include reference="Nf8-tv-Nwe"/>
-                                <include reference="U6V-7b-gsk"/>
                             </mask>
                         </variation>
                     </view>
@@ -367,7 +362,6 @@
                         <outlet property="gradeMateLabel5s" destination="vah-EQ-Mmc" id="c6x-CS-KXt"/>
                         <outlet property="gradeMateLabel6Plus" destination="DZP-nd-5em" id="XPr-Bx-kf9"/>
                         <outlet property="gradeMateLabel6s" destination="TmP-Zi-EAE" id="Fjl-6a-SkL"/>
-                        <outlet property="menuButton" destination="ii6-X4-Zdh" id="OHp-If-pDy"/>
                         <outlet property="picker1" destination="U24-1Q-iQV" id="hME-dX-s7l"/>
                         <outlet property="picker2" destination="hKx-eF-fr1" id="kdt-3c-Jdo"/>
                         <outlet property="picker3" destination="BYC-7I-o15" id="gte-d7-sMf"/>
@@ -376,7 +370,7 @@
                         <outlet property="resultViewDismissButton" destination="PQe-M8-Jcp" id="FtE-Jb-kV1"/>
                         <outlet property="resultViewScoreLabel" destination="sPA-dN-II0" id="lo6-Jq-zL8"/>
                         <outlet property="resultViewWarningLabel" destination="8kV-bW-XFv" id="SZy-Lx-XnK"/>
-                        <outlet property="visualEffectView" destination="QBG-uT-CQa" id="UV3-yN-LIO"/>
+                        <outlet property="visualEffectView" destination="QBG-uT-CQa" id="S5J-j0-npO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -578,7 +572,7 @@
                     <color key="backgroundColor" white="1" alpha="0.75420055650684936" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="282.39999999999998" y="-264.01799100449779"/>
+            <point key="canvasLocation" x="281.15942028985512" y="-264.13043478260869"/>
         </scene>
         <!--Show Launch Screen-->
         <scene sceneID="Etb-bZ-ro1">
@@ -589,14 +583,14 @@
                         <viewControllerLayoutGuide type="bottom" id="7rB-pl-sTk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zmE-PF-8XG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-b4-8Rf" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW0-Dl-f9K" userLabel="GradeMate - BLACK">
-                                <rect key="frame" x="16" y="62" width="343" height="75"/>
+                                <rect key="frame" x="20" y="62" width="374" height="75"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
                                 <state key="normal" title="GradeMate">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -631,7 +625,7 @@
                                 <size key="shadowOffset" width="0.0" height="4"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnP-ys-bSr" userLabel="GradeMate - 5.5">
-                                <rect key="frame" x="16" y="57" width="343" height="75"/>
+                                <rect key="frame" x="20" y="57" width="374" height="75"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
                                 <state key="normal" title="GradeMate">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
