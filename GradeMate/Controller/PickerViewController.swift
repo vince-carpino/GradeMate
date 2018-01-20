@@ -151,7 +151,7 @@ class PickerViewController: UIViewController {
         visualEffectView.effect = nil            // TURNS OFF BLUR WHEN VIEW LOADS
         visualEffectView.isHidden = true         // HIDES BLUR EFFECT SO BUTTONS CAN BE USED
         
-        resultView.layer.cornerRadius = 10        // ROUNDS OFF CORNERS OF POP UP VIEW
+        resultView.layer.cornerRadius = 10       // ROUNDS OFF CORNERS OF POP UP VIEW
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
@@ -231,12 +231,17 @@ extension PickerViewController: PickerViewDelegate {
         default: break
         }
         
-        calculate(currentGradeInt: self.currentGrade, decimalValue: self.decimalValue, examWeightInt: self.examWeight, desiredGradeInt: self.desiredGrade)
+        calculate(currentGradeInt: getCurrentGrade(), decimalValue: getDecimalValue(), examWeightInt: getExamWeight(), desiredGradeInt: getDesiredGrade())
         print(getScoreValue())
         
-        setGradeValue(value: String(format: "%.0f", self.scoreValue) + "%")
+        setGradeValue(value: String(format: "%.0f", getScoreValue()) + "%")
         
         checkScoreValue(value: self.scoreValue)
+
+        // SET POP UP VIEW LABELS
+        self.resultViewScoreLabel.text = getValue()
+        self.resultViewWarningLabel.text = getWarning()
+        self.resultViewDismissButton.setTitle(getDismiss(), for: .normal)
     }
     
     func pickerView(_ pickerView: PickerView, styleForLabel label: UILabel, highlighted: Bool) {
@@ -396,17 +401,14 @@ extension PickerViewController {
     
     func setScoreValue(val: Double) {
         self.scoreValue = val
-        self.resultViewScoreLabel.text = String(Int(floor(val))) + "%"
     }
     
     func setWarning(warning: String) {
         self.warning = warning
-        self.resultViewWarningLabel.text = warning
     }
     
     func setDismiss(message: String) {
         self.dismiss = message
-        self.resultViewDismissButton.setTitle(message, for: .normal)
     }
     
     func setGradeValue(value: String) {

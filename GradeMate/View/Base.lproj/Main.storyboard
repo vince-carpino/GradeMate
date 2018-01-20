@@ -217,9 +217,9 @@
                                 <rect key="frame" x="16" y="463" width="343" height="184"/>
                                 <subviews>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-tf-LU1" userLabel="Calculate Button" customClass="FUIButton">
-                                        <rect key="frame" x="8" y="55" width="327" height="75"/>
+                                        <rect key="frame" x="8" y="42" width="327" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="aRL-vo-VgK"/>
+                                            <constraint firstAttribute="height" constant="100" id="PIV-nO-rST"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="38"/>
                                         <size key="titleShadowOffset" width="0.0" height="3"/>
