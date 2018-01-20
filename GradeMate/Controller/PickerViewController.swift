@@ -23,6 +23,14 @@ class PickerViewController: UIViewController {
     var value        = ""
     
     var effect: UIVisualEffect!                // FOR BLUR EFFECT
+    
+    var statusBarIsHidden: Bool = false {
+        didSet {
+            UIView.animate(withDuration: 0.3) { () -> Void in
+                self.setNeedsStatusBarAppearanceUpdate()
+            }
+        }
+    }
 
     // MARK: - PICKERVIEWS
     @IBOutlet weak var picker1: PickerView!
@@ -31,6 +39,11 @@ class PickerViewController: UIViewController {
     @IBOutlet weak var picker4: PickerView!
     
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
+    
+    @IBOutlet var resultView: UIView!
+    @IBOutlet weak var resultViewScoreLabel: UILabel!
+    @IBOutlet weak var resultViewWarningLabel: UILabel!
+    @IBOutlet weak var resultViewDismissButton: FUIButton!
     
     // MARK: - NUMBER ARRAYS
     let numbers1: [Int] = {
@@ -137,6 +150,16 @@ class PickerViewController: UIViewController {
         effect = visualEffectView.effect         // STORES EFFECT IN VAR TO USE LATER IN ANIMATION
         visualEffectView.effect = nil            // TURNS OFF BLUR WHEN VIEW LOADS
         visualEffectView.isHidden = true         // HIDES BLUR EFFECT SO BUTTONS CAN BE USED
+        
+        resultView.layer.cornerRadius = 10        // ROUNDS OFF CORNERS OF POP UP VIEW
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return statusBarIsHidden
     }
     
     // MARK: - CONFIGURE PICKER
@@ -279,29 +302,6 @@ extension PickerViewController {
         setScoreValue(val: floor((( desiredGrade - (1 - examWeight) * currentGrade) / examWeight) * 100))
     }
     
-    func createAlert() {
-        let alert = FUIAlertView()
-        
-        alert.title = self.value
-        alert.message = "is what you need to get.\n\n" + self.warning
-        alert.delegate = nil
-        alert.addButton(withTitle: self.dismiss)
-        alert.titleLabel.textColor = .clouds()
-        alert.titleLabel.font = UIFont(name: "Courier-Bold", size: 40)
-        alert.messageLabel.textColor = .clouds()
-        alert.messageLabel.font = UIFont(name: "Courier-Bold", size: 18)
-        alert.backgroundOverlay.backgroundColor = (UIColor.clouds()).withAlphaComponent(0.8)
-        alert.alertContainer.backgroundColor = .midnightBlue()
-        alert.defaultButtonColor = .clouds()
-        alert.defaultButtonShadowColor = .asbestos()
-        alert.defaultButtonFont = UIFont(name: "Courier-Bold", size: 18)
-        alert.defaultButtonTitleColor = .asbestos()
-        
-        alert.alertContainer.layer.cornerRadius = 10
-        
-        alert.show()
-    }
-    
     // MARK: - POP UP ANIMATION
     
     // ANIMATE IN
@@ -321,7 +321,7 @@ extension PickerViewController {
             viewToAnimate.transform = CGAffineTransform.identity
         })
         
-        //        statusBarIsHidden = true
+        statusBarIsHidden = true
     }
     
     // ANIMATE OUT
@@ -337,7 +337,11 @@ extension PickerViewController {
             self.visualEffectView.isHidden = true
         }
         
-        //        statusBarIsHidden  = false
+        statusBarIsHidden  = false
+    }
+    
+    @IBAction func dismissPopUp(_ sender: FUIButton) {
+        animateOut(viewToAnimate: self.resultView)
     }
     
     // MARK: - GETTERS
@@ -392,14 +396,17 @@ extension PickerViewController {
     
     func setScoreValue(val: Double) {
         self.scoreValue = val
+        self.resultViewScoreLabel.text = String(Int(floor(val))) + "%"
     }
     
     func setWarning(warning: String) {
         self.warning = warning
+        self.resultViewWarningLabel.text = warning
     }
     
     func setDismiss(message: String) {
         self.dismiss = message
+        self.resultViewDismissButton.setTitle(message, for: .normal)
     }
     
     func setGradeValue(value: String) {

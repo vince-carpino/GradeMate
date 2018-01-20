@@ -20,10 +20,10 @@ class FinalCalculatorViewController: PickerViewController {
     @IBOutlet weak var gradeMateButtonViewBackButton: FUIButton!
     
     // SCORE POP UP, WARNING LABEL & DISMISS BUTTON
-    @IBOutlet var resultView: UIView!
-    @IBOutlet weak var resultViewScoreLabel: UILabel!
-    @IBOutlet weak var resultViewWarningLabel: UILabel!
-    @IBOutlet weak var resultViewDismissButton: FUIButton!
+//    @IBOutlet var resultView: UIView!
+//    @IBOutlet weak var resultViewScoreLabel: UILabel!
+//    @IBOutlet weak var resultViewWarningLabel: UILabel!
+//    @IBOutlet weak var resultViewDismissButton: FUIButton!
     
     // CURRENT GRADE INFO POP UP & DISMISS BUTTON
     @IBOutlet var currentGradeInfoView: UIView!
@@ -99,17 +99,19 @@ class FinalCalculatorViewController: PickerViewController {
     
 //    let letterGradientImage = UIImage(named: "GradeGradient")
     
-    var statusBarIsHidden: Bool = false {
-        didSet {
-            UIView.animate(withDuration: 0.3) { () -> Void in
-                self.setNeedsStatusBarAppearanceUpdate()
-            }
-        }
-    }
+//    var statusBarIsHidden: Bool = false {
+//        didSet {
+//            UIView.animate(withDuration: 0.3) { () -> Void in
+//                self.setNeedsStatusBarAppearanceUpdate()
+//            }
+//        }
+//    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+//        print("GradeMate Button/Shadow Y: \(gradeMateButton.frame.origin.y), \(gradeMateButtonShadow.frame.origin.y)")
         
         // Checks size of screen to determine GradeMate label position & size
         //        checkScreenSize()
@@ -124,7 +126,7 @@ class FinalCalculatorViewController: PickerViewController {
         centerButtonText()
         
         // POPULATE ARRAYS FOR PICKER VIEW
-        populateArrays()
+//        populateArrays()
         
         // SET STARTING VALUES FOR PICKER VIEW
 //        setCurrentGrade(100.0)
@@ -132,7 +134,7 @@ class FinalCalculatorViewController: PickerViewController {
 //        setExamWeight(1.0)
 //        setDesiredGrade(100.0)
         
-        setDefaultResultInfo()
+//        setDefaultResultInfo()
         
         // HIDE MENU BUTTON
         //menuButton.isHidden = false
@@ -144,7 +146,7 @@ class FinalCalculatorViewController: PickerViewController {
 //        visualEffectView.effect = nil            // TURNS OFF BLUR WHEN VIEW LOADS
 //        visualEffectView.isHidden = true        // HIDES BLUR EFFECT SO BUTTONS CAN BE USED
         
-        resultView.layer.cornerRadius = 10		// ROUNDS OFF CORNERS OF POP UP VIEW
+//        resultView.layer.cornerRadius = 10        // ROUNDS OFF CORNERS OF POP UP VIEW
         //		resultViewDismissButton.layer.cornerRadius = 23
         
         currentGradeInfoView.layer.cornerRadius = 10
@@ -259,19 +261,25 @@ class FinalCalculatorViewController: PickerViewController {
         
         calculateButton.titleLabel?.numberOfLines = 1
         calculateButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        
+//        print("GradeMate Button/Shadow Y: \(gradeMateButton.frame.origin.y), \(gradeMateButtonShadow.frame.origin.y)")
+        
+//        print("grademate button/shadow CENTER y: \(gradeMateButton.center.y), \(gradeMateButtonShadow.center.y)")
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return statusBarIsHidden
-    }
+//    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+//        return .slide
+//    }
+//    
+//    override var prefersStatusBarHidden: Bool {
+//        return statusBarIsHidden
+//    }
     
     
     
@@ -580,9 +588,9 @@ class FinalCalculatorViewController: PickerViewController {
     // MARK: - DISMISS POP UPS
     
     // Result View
-    @IBAction func dismissPopUp(_ sender: FUIButton) {
-        animateOut(viewToAnimate: self.resultView)
-    }
+//    @IBAction func dismissPopUp(_ sender: FUIButton) {
+//        animateOut(viewToAnimate: self.resultView)
+//    }
     
     // Current Grade Info View
     @IBAction func currentGradeInfoDismiss(_ sender: FUIButton) {
@@ -619,6 +627,7 @@ class FinalCalculatorViewController: PickerViewController {
     // MARK: - CALCULATE BUTTON TAPPED
     
     @IBAction func calculateTapped(_ sender: FUIButton) {
+        
         animateIn(viewToAnimate: self.resultView)
 
 //        // CHANGE BUTTON TEXT
@@ -626,8 +635,6 @@ class FinalCalculatorViewController: PickerViewController {
 //        let randNum   = arc4random_uniform(UInt32(arraySize))
 //        let randInt    = Int(randNum)
 //        calculateButton.setTitle(calculateButtonWords[randInt], for: .normal)
-        
-//        createAlert()
     }
     
     
@@ -717,136 +724,136 @@ class FinalCalculatorViewController: PickerViewController {
 //    }
     
     
-    // MARK: - POPULATE ARRAYS
-    
-    func populateArrays() {
-        for i in 0...3 {
-            switch (i) {
-            // First column
-            case 0:
-                for j in (1...100).reversed() {
-                    numbers[i].append(Double(j))
-//                    stringNumbers[i].append(String(j))
-                }
-                
-            // Second column
-            case 1:
-                for j in 0...9 {
-                    numbers[i].append(Double(j) / 10.0)
-                    
-//                    var stringDecimal = (String(Double(j) / 10.0) + "%")
+//    // MARK: - POPULATE ARRAYS
 //
-//                    // Remove the leading zero on decimal
-//                    stringDecimal.remove(at: stringDecimal.startIndex)
+//    func populateArrays() {
+//        for i in 0...3 {
+//            switch (i) {
+//            // First column
+//            case 0:
+//                for j in (1...100).reversed() {
+//                    numbers[i].append(Double(j))
+////                    stringNumbers[i].append(String(j))
+//                }
 //
-//                    stringNumbers[i].append(stringDecimal)
-                }
-                
-            // Third column
-            case 2:
-                for j in (1...100) {
-                    numbers[i].append(Double(j))
-//                    stringNumbers[i].append(String(j) + "%")
-                }
-                
-            // Fourth column
-            case 3:
-                for j in (1...100).reversed() {
-                    numbers[i].append(Double(j))
-//                    stringNumbers[i].append(String(j) + "%")
-                }
-                
-            default:break
-            }
-        }
-    }
+//            // Second column
+//            case 1:
+//                for j in 0...9 {
+//                    numbers[i].append(Double(j) / 10.0)
+//
+////                    var stringDecimal = (String(Double(j) / 10.0) + "%")
+////
+////                    // Remove the leading zero on decimal
+////                    stringDecimal.remove(at: stringDecimal.startIndex)
+////
+////                    stringNumbers[i].append(stringDecimal)
+//                }
+//
+//            // Third column
+//            case 2:
+//                for j in (1...100) {
+//                    numbers[i].append(Double(j))
+////                    stringNumbers[i].append(String(j) + "%")
+//                }
+//
+//            // Fourth column
+//            case 3:
+//                for j in (1...100).reversed() {
+//                    numbers[i].append(Double(j))
+////                    stringNumbers[i].append(String(j) + "%")
+//                }
+//
+//            default:break
+//            }
+//        }
+//    }
     
     
-    // MARK: - CHECK SCREEN SIZE
-    
-    func checkScreenSize() {
-        let screenHeight = UIScreen.main.bounds.size.height
-        
-        // Hide GradeMate labels & resize pop ups based on screen size
-        switch (screenHeight) {
-            
-        // 3.5"
-        case (480):
-            // Hide GradeMate labels
-            self.gradeMateLabel5s.isHidden = true
-            self.gradeMateLabel6s.isHidden = true
-            self.gradeMateLabel6Plus.isHidden = true
-            
-            // Resize pop ups to fit screen
-            self.currentGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-            self.examWeightInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-            self.desiredGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-            self.resultView.frame = CGRect(x: 0, y: 0, width: 300, height: 250)
-            
-            // Resize text on Current Grade Dismiss button
-            self.currentGradeInfoDismiss.titleLabel?.numberOfLines = 1
-            self.currentGradeInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
-            
-            // Resize text on Exam Weight Dismiss button
-            self.examWeightInfoDismiss.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-            self.examWeightInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
-            
-            // Resize text on Result Dismiss button
-            self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
-            self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
-            self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-            
-            break
-            
-        // 4.0"
-        case (568):
-            // Hide GradeMate labels
-            self.gradeMateLabel6s.isHidden = true
-            self.gradeMateLabel6Plus.isHidden = true
-            
-            // Resize pop ups to fit screen
-            self.currentGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-            self.examWeightInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-            self.desiredGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
-            
-            self.currentGradeInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
-            
-            self.examWeightInfoDismiss.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-            self.examWeightInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
-            
-            self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
-            self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
-            self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-            
-            self.resultView.frame = CGRect(x: 0, y: 0, width: 300, height: 250)
-            
-            break
-            
-        // 4.7"
-        case (667):
-            self.gradeMateLabel5s.isHidden = true
-            self.gradeMateLabel6Plus.isHidden = true
-            
-            self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
-            self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
-            self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-            
-            break
-            
-        // 5.5"
-        case (736):
-            self.gradeMateLabel5s.isHidden = true
-            self.gradeMateLabel6s.isHidden = true
-            
-            self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
-            self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
-            self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-            
-            break
-            
-        default:break
-        }
-    }
+//    // MARK: - CHECK SCREEN SIZE
+//
+//    func checkScreenSize() {
+//        let screenHeight = UIScreen.main.bounds.size.height
+//
+//        // Hide GradeMate labels & resize pop ups based on screen size
+//        switch (screenHeight) {
+//
+//        // 3.5"
+//        case (480):
+//            // Hide GradeMate labels
+//            self.gradeMateLabel5s.isHidden = true
+//            self.gradeMateLabel6s.isHidden = true
+//            self.gradeMateLabel6Plus.isHidden = true
+//
+//            // Resize pop ups to fit screen
+//            self.currentGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+//            self.examWeightInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+//            self.desiredGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+//            self.resultView.frame = CGRect(x: 0, y: 0, width: 300, height: 250)
+//
+//            // Resize text on Current Grade Dismiss button
+//            self.currentGradeInfoDismiss.titleLabel?.numberOfLines = 1
+//            self.currentGradeInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
+//
+//            // Resize text on Exam Weight Dismiss button
+//            self.examWeightInfoDismiss.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+//            self.examWeightInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
+//
+//            // Resize text on Result Dismiss button
+//            self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
+//            self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//            self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+//
+//            break
+//
+//        // 4.0"
+//        case (568):
+//            // Hide GradeMate labels
+//            self.gradeMateLabel6s.isHidden = true
+//            self.gradeMateLabel6Plus.isHidden = true
+//
+//            // Resize pop ups to fit screen
+//            self.currentGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+//            self.examWeightInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+//            self.desiredGradeInfoView.frame = CGRect(x: 0, y: 0, width: 300, height: 215)
+//
+//            self.currentGradeInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
+//
+//            self.examWeightInfoDismiss.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+//            self.examWeightInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth = true
+//
+//            self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
+//            self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//            self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+//
+//            self.resultView.frame = CGRect(x: 0, y: 0, width: 300, height: 250)
+//
+//            break
+//
+//        // 4.7"
+//        case (667):
+//            self.gradeMateLabel5s.isHidden = true
+//            self.gradeMateLabel6Plus.isHidden = true
+//
+//            self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
+//            self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//            self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+//
+//            break
+//
+//        // 5.5"
+//        case (736):
+//            self.gradeMateLabel5s.isHidden = true
+//            self.gradeMateLabel6s.isHidden = true
+//
+//            self.resultViewDismissButton.titleLabel?.minimumScaleFactor = 0.5
+//            self.resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//            self.resultViewDismissButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+//
+//            break
+//
+//        default:break
+//        }
+//    }
     
     // MARK: - SET GRADEMATE LABEL SIZE
     func setGradeMateLabelSize() {
@@ -859,6 +866,7 @@ class FinalCalculatorViewController: PickerViewController {
             self.gradeMateLabel6s.isHidden = true
             self.gradeMateLabel6Plus.isHidden = true
             gradeMateButton.isHidden = true
+            gradeMateButtonShadow.isHidden = true
             break
         case 568:
             // 5s code
@@ -867,6 +875,7 @@ class FinalCalculatorViewController: PickerViewController {
             //            gradeMateButton.frame.origin.y = 38
             //			gradeMateButton.titleLabel?.font = gradeMateButton.titleLabel?.font.withSize(53)
             gradeMateButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            gradeMateButtonShadow.titleLabel?.adjustsFontSizeToFitWidth = true
             //            gradeMateButton.center.x = view.center.x
             
             break
@@ -877,16 +886,20 @@ class FinalCalculatorViewController: PickerViewController {
             //            gradeMateButton.frame.origin.y = 57
             //            gradeMateButton.titleLabel?.font = gradeMateButton.titleLabel?.font.withSize(63)
             gradeMateButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            gradeMateButtonShadow.titleLabel?.adjustsFontSizeToFitWidth = true
             //            gradeMateButton.center.x = view.center.x
             
             break
         case 736:
             // plus code
             
-            gradeMateButton.translatesAutoresizingMaskIntoConstraints = true
-            gradeMateButton.frame.origin.y = 66
-            gradeMateButton.titleLabel?.font = gradeMateButton.titleLabel?.font.withSize(69)
-            gradeMateButton.center.x = view.center.x
+            //gradeMateButton.translatesAutoresizingMaskIntoConstraints = true
+            //gradeMateButton.frame.origin.y = 66
+//            gradeMateButton.titleLabel?.font = gradeMateButton.titleLabel?.font.withSize(69)
+            //gradeMateButton.center.x = view.center.x
+            
+            gradeMateButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            gradeMateButtonShadow.titleLabel?.adjustsFontSizeToFitWidth = true
             
             break
         default:break
