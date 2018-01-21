@@ -135,7 +135,6 @@ class PickerViewController: UIViewController {
     // MARK: - GRADIENT IMAGE
     let letterGradientImage = UIImage(named: "GradeGradient")
     
-    
     override func viewDidLoad() {
         configurePicker(picker: picker1, stringArray: stringNumbers1)
         configurePicker(picker: picker2, stringArray: stringNumbers2)
@@ -310,12 +309,20 @@ extension PickerViewController {
     // MARK: - POP UP ANIMATION
     
     // ANIMATE IN
-    func animateIn(viewToAnimate: UIView) {
+    func animateIn(viewToAnimate: UIView, height: Int) {
         self.visualEffectView.isHidden = false
         
         self.view.addSubview(viewToAnimate)                                        // ADD POP UP VIEW TO MAIN VIEW
+        viewToAnimate.translatesAutoresizingMaskIntoConstraints = false
         viewToAnimate.center = self.view.center                                    // CENTER POP UP VIEW IN MAIN VIEW
-        
+
+        let leadingConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 12)
+        let trailingConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 12)
+        let centerX = NSLayoutConstraint(item: viewToAnimate, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
+        let centerY = NSLayoutConstraint(item: viewToAnimate, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        let heightConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(height))
+        NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, heightConstraint, centerX, centerY])
+
         viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)    // MAKE POP UP VIEW SLIGHTLY BIGGER BEFORE IT IS DISPLAYED
         viewToAnimate.alpha = 0
         

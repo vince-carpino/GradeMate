@@ -13,7 +13,7 @@
 
 - (void) configureFlatNavigationBarWithColor:(UIColor *)color {
     [self setBackgroundImage:[UIImage imageWithColor:color cornerRadius:0]
-               forBarMetrics:UIBarMetricsDefault & UIBarMetricsLandscapePhone];
+               forBarMetrics:UIBarMetricsDefault & UIBarMetricsCompact];
     NSMutableDictionary *titleTextAttributes = [[self titleTextAttributes] mutableCopy];
     if (!titleTextAttributes) {
         titleTextAttributes = [NSMutableDictionary dictionary];
@@ -25,10 +25,10 @@
         [shadow setShadowOffset:CGSizeZero];
         [shadow setShadowColor:[UIColor clearColor]];
         [titleTextAttributes setObject:shadow forKey:NSShadowAttributeName];
-    } else {
-        // Pre-iOS6 methods
-        [titleTextAttributes setValue:[UIColor clearColor] forKey:UITextAttributeTextShadowColor];
-        [titleTextAttributes setValue:[NSValue valueWithUIOffset:UIOffsetZero] forKey:UITextAttributeTextShadowOffset];
+//    } else {
+//        // Pre-iOS6 methods
+//        [titleTextAttributes setValue:[UIColor clearColor] forKey:UITextAttributeTextShadowColor];
+//        [titleTextAttributes setValue:[NSValue valueWithUIOffset:UIOffsetZero] forKey:UITextAttributeTextShadowOffset];
 
     }
     

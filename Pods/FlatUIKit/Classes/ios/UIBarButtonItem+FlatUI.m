@@ -70,10 +70,10 @@
                                                                        barMetrics:UIBarMetricsDefault
                                                                      cornerRadius:cornerRadius];
     UIImage *backButtonLandscapeImage = [UIImage backButtonImageWithColor:color
-                                                             barMetrics:UIBarMetricsLandscapePhone
+                                                             barMetrics:UIBarMetricsCompact
                                                            cornerRadius:2];
     UIImage *highlightedBackButtonLandscapeImage = [UIImage backButtonImageWithColor:highlightedColor
-                                                                        barMetrics:UIBarMetricsLandscapePhone
+                                                                        barMetrics:UIBarMetricsCompact
                                                                       cornerRadius:2];
 
     [appearance setBackButtonBackgroundImage:backButtonPortraitImage
@@ -81,16 +81,16 @@
                                 barMetrics:UIBarMetricsDefault];
     [appearance setBackButtonBackgroundImage:backButtonLandscapeImage
                                   forState:UIControlStateNormal
-                                barMetrics:UIBarMetricsLandscapePhone];
+                                barMetrics:UIBarMetricsCompact];
     [appearance setBackButtonBackgroundImage:highlightedBackButtonPortraitImage
                                   forState:UIControlStateHighlighted
                                 barMetrics:UIBarMetricsDefault];
     [appearance setBackButtonBackgroundImage:highlightedBackButtonLandscapeImage
                                   forState:UIControlStateHighlighted
-                                barMetrics:UIBarMetricsLandscapePhone];
+                                barMetrics:UIBarMetricsCompact];
 
     [appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(1.0f, 1.0f) forBarMetrics:UIBarMetricsDefault];
-    [appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(1.0f, 1.0f) forBarMetrics:UIBarMetricsLandscapePhone];
+    [appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(1.0f, 1.0f) forBarMetrics:UIBarMetricsCompact];
 
     UIImage *buttonImageNormal       = [UIImage imageWithColor:color cornerRadius:cornerRadius];
     UIImage *buttonImageHightlighted = [UIImage imageWithColor:highlightedColor cornerRadius:cornerRadius];

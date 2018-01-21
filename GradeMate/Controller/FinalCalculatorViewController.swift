@@ -12,11 +12,22 @@ import PickerView
 class FinalCalculatorViewController: PickerViewController {
     // BLUR EFFECT VIEW
 //    @IBOutlet weak var visualEffectView: UIVisualEffectView!
+
+    @IBOutlet var mainView: UIView!
+    
+    
+
+    @IBOutlet weak var gradeMateContainer: UIView!
+    @IBOutlet weak var infoContainer: UIView!
+    @IBOutlet weak var pickerViewContainer: UIView!
+    @IBOutlet weak var calculateContainer: UIView!
+    
+
     
     // GRADEMATE BUTTON MENU ITEMS
     @IBOutlet var gradeMateButtonView: UIView!
-    @IBOutlet weak var gradeMateButtonViewLinkButton: FUIButton!
-    @IBOutlet weak var gradeMateButtonViewReviewButton: FUIButton!
+    @IBOutlet weak var shareLinkButton: FUIButton!
+    @IBOutlet weak var writeReviewButton: FUIButton!
     @IBOutlet weak var gradeMateButtonViewBackButton: FUIButton!
     
     // SCORE POP UP, WARNING LABEL & DISMISS BUTTON
@@ -45,11 +56,6 @@ class FinalCalculatorViewController: PickerViewController {
     // GRADEMATE BUTTON
     @IBOutlet weak var gradeMateButton: FUIButton!
     @IBOutlet weak var gradeMateButtonShadow: FUIButton!
-    
-    // GRADEMATE LABELS
-    @IBOutlet weak var gradeMateLabel5s: UILabel!
-    @IBOutlet weak var gradeMateLabel6s: UILabel!
-    @IBOutlet weak var gradeMateLabel6Plus: UILabel!
     
     // CALCULATE BUTTON
     @IBOutlet weak var calculateButton: FUIButton!
@@ -110,16 +116,39 @@ class FinalCalculatorViewController: PickerViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+
+        self.isHeroEnabled = true
+
+        gradeMateButton.heroModifiers = [.fade, .scale(0.5)]
+        gradeMateButtonShadow.heroModifiers = [.fade, .scale(0.5)]
+        currentGradeButton.heroModifiers = [.fade, .translate(x: -50, y: 0, z: 0)]
+//        currentGradeButton.heroModifiers = [.fade, .scale(0.5)]
+        examWeightButton.heroModifiers = [.fade, .scale(0.5)]
+        desiredGradeButton.heroModifiers = [.fade, .translate(x: 50, y: 0, z: 0)]
+//        desiredGradeButton.heroModifiers = [.fade, .scale(0.5)]
+        picker1.heroModifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
+        picker2.heroModifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
+        picker3.heroModifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
+        picker4.heroModifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
+//        picker1.heroModifiers = [.fade, .scale(0.5)]
+//        picker2.heroModifiers = [.fade, .scale(0.5)]
+//        picker3.heroModifiers = [.fade, .scale(0.5)]
+//        picker4.heroModifiers = [.fade, .scale(0.5)]
+        calculateButton.heroModifiers = [.fade, .scale(0.5)]
+
+
+
+
         
 //        print("GradeMate Button/Shadow Y: \(gradeMateButton.frame.origin.y), \(gradeMateButtonShadow.frame.origin.y)")
         
         // Checks size of screen to determine GradeMate label position & size
         //        checkScreenSize()
         
-        self.gradeMateLabel5s.isHidden = true
-        self.gradeMateLabel6s.isHidden = true
-        self.gradeMateLabel6Plus.isHidden = true
-        
+//        self.gradeMateLabel5s.isHidden = true
+//        self.gradeMateLabel6s.isHidden = true
+//        self.gradeMateLabel6Plus.isHidden = true
+
         setGradeMateLabelSize()
         
         // CENTER-ALIGN TEXT ON BUTTONS
@@ -173,69 +202,69 @@ class FinalCalculatorViewController: PickerViewController {
         
         calculateButton.shadowHeight = 6.0
         calculateButton.cornerRadius = 6.0
-        calculateButton.setTitleColor(.white, for: .normal)
-        calculateButton.setTitleColor(.white, for: .highlighted)
+        calculateButton.setTitleColor(.clouds(), for: .normal)
+        calculateButton.setTitleColor(.clouds(), for: .highlighted)
         
         currentGradeButton.buttonColor = upperButtonColors
         currentGradeButton.shadowColor = upperButtonShadows
         currentGradeButton.shadowHeight = 6.0
         currentGradeButton.cornerRadius = 6.0
-        currentGradeButton.setTitleColor(.white, for: .normal)
-        currentGradeButton.setTitleColor(.white, for: .highlighted)
+        currentGradeButton.setTitleColor(.clouds(), for: .normal)
+        currentGradeButton.setTitleColor(.clouds(), for: .highlighted)
         
         examWeightButton.buttonColor = upperButtonColors
         examWeightButton.shadowColor = upperButtonShadows
         examWeightButton.shadowHeight = 6.0
         examWeightButton.cornerRadius = 6.0
-        examWeightButton.setTitleColor(.white, for: .normal)
-        examWeightButton.setTitleColor(.white, for: .highlighted)
+        examWeightButton.setTitleColor(.clouds(), for: .normal)
+        examWeightButton.setTitleColor(.clouds(), for: .highlighted)
         
         desiredGradeButton.buttonColor = upperButtonColors
         desiredGradeButton.shadowColor = upperButtonShadows
         desiredGradeButton.shadowHeight = 6.0
         desiredGradeButton.cornerRadius = 6.0
-        desiredGradeButton.setTitleColor(.white, for: .normal)
-        desiredGradeButton.setTitleColor(.white, for: .highlighted)
+        desiredGradeButton.setTitleColor(.clouds(), for: .normal)
+        desiredGradeButton.setTitleColor(.clouds(), for: .highlighted)
         
         currentGradeInfoDismiss.buttonColor = UIColor(fromHexCode: "#1ACB83")
         currentGradeInfoDismiss.shadowColor = UIColor(fromHexCode: "#16ac70")
         currentGradeInfoDismiss.shadowHeight = 6.0
         currentGradeInfoDismiss.cornerRadius = 23.0
-        currentGradeInfoDismiss.setTitleColor(.white, for: .normal)
-        currentGradeInfoDismiss.setTitleColor(.white, for: .highlighted)
+        currentGradeInfoDismiss.setTitleColor(.clouds(), for: .normal)
+        currentGradeInfoDismiss.setTitleColor(.clouds(), for: .highlighted)
         
         examWeightInfoDismiss.buttonColor = UIColor(fromHexCode: "#1ACB83")
         examWeightInfoDismiss.shadowColor = UIColor(fromHexCode: "#16ac70")
         examWeightInfoDismiss.shadowHeight = 6.0
         examWeightInfoDismiss.cornerRadius = 23.0
-        examWeightInfoDismiss.setTitleColor(.white, for: .normal)
-        examWeightInfoDismiss.setTitleColor(.white, for: .highlighted)
+        examWeightInfoDismiss.setTitleColor(.clouds(), for: .normal)
+        examWeightInfoDismiss.setTitleColor(.clouds(), for: .highlighted)
         
         desiredGradeInfoDismiss.buttonColor = UIColor(fromHexCode: "#1ACB83")
         desiredGradeInfoDismiss.shadowColor = UIColor(fromHexCode: "#16ac70")
         desiredGradeInfoDismiss.shadowHeight = 6.0
         desiredGradeInfoDismiss.cornerRadius = 23.0
-        desiredGradeInfoDismiss.setTitleColor(.white, for: .normal)
-        desiredGradeInfoDismiss.setTitleColor(.white, for: .highlighted)
+        desiredGradeInfoDismiss.setTitleColor(.clouds(), for: .normal)
+        desiredGradeInfoDismiss.setTitleColor(.clouds(), for: .highlighted)
         
         resultViewDismissButton.buttonColor = upperButtonColors
         resultViewDismissButton.shadowColor = upperButtonShadows
         resultViewDismissButton.shadowHeight = 6.0
         resultViewDismissButton.cornerRadius = 23.0
-        resultViewDismissButton.setTitleColor(.white, for: .normal)
-        resultViewDismissButton.setTitleColor(.white, for: .highlighted)
+        resultViewDismissButton.setTitleColor(.clouds(), for: .normal)
+        resultViewDismissButton.setTitleColor(.clouds(), for: .highlighted)
         
         gradeMateButton.buttonColor = .clear
         gradeMateButton.shadowColor = .clear
         gradeMateButton.shadowHeight = 5.0
         gradeMateButton.cornerRadius = 6.0
-        gradeMateButton.setTitleColor(.white, for: .normal)
+        gradeMateButton.setTitleColor(.clouds(), for: .normal)
         
         gradeMateButtonShadow.buttonColor = .clear
         gradeMateButtonShadow.shadowColor = .clear
         gradeMateButtonShadow.shadowHeight = 5.0
         gradeMateButtonShadow.cornerRadius = 6.0
-        gradeMateButtonShadow.setTitleColor(.black, for: .normal)
+        gradeMateButtonShadow.setTitleColor(.asbestos(), for: .normal)
         
         gradeMateButtonViewBackButton.buttonColor = calculateButton.buttonColor
         gradeMateButtonViewBackButton.shadowColor = calculateButton.shadowColor
@@ -243,17 +272,17 @@ class FinalCalculatorViewController: PickerViewController {
         gradeMateButtonViewBackButton.cornerRadius = calculateButton.cornerRadius
         gradeMateButtonViewBackButton.setTitleColor(.white, for: .normal)
         
-        gradeMateButtonViewLinkButton.buttonColor = upperButtonColors
-        gradeMateButtonViewLinkButton.shadowColor = upperButtonShadows
-        gradeMateButtonViewLinkButton.shadowHeight = calculateButton.shadowHeight
-        gradeMateButtonViewLinkButton.cornerRadius = currentGradeInfoDismiss.cornerRadius
-        gradeMateButtonViewLinkButton.setTitleColor(.white, for: .normal)
+        shareLinkButton.buttonColor = upperButtonColors
+        shareLinkButton.shadowColor = upperButtonShadows
+        shareLinkButton.shadowHeight = calculateButton.shadowHeight
+        shareLinkButton.cornerRadius = currentGradeInfoDismiss.cornerRadius
+        shareLinkButton.setTitleColor(.white, for: .normal)
         
-        gradeMateButtonViewReviewButton.buttonColor = upperButtonColors
-        gradeMateButtonViewReviewButton.shadowColor = upperButtonShadows
-        gradeMateButtonViewReviewButton.shadowHeight = calculateButton.shadowHeight
-        gradeMateButtonViewReviewButton.cornerRadius = currentGradeInfoDismiss.cornerRadius
-        gradeMateButtonViewReviewButton.setTitleColor(.white, for: .normal)
+        writeReviewButton.buttonColor = upperButtonColors
+        writeReviewButton.shadowColor = upperButtonShadows
+        writeReviewButton.shadowHeight = calculateButton.shadowHeight
+        writeReviewButton.cornerRadius = currentGradeInfoDismiss.cornerRadius
+        writeReviewButton.setTitleColor(.white, for: .normal)
         
         
         currentGradeButton.titleLabel?.numberOfLines = 2
@@ -262,6 +291,8 @@ class FinalCalculatorViewController: PickerViewController {
         
         calculateButton.titleLabel?.numberOfLines = 1
         calculateButton.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
         
 //        print("GradeMate Button/Shadow Y: \(gradeMateButton.frame.origin.y), \(gradeMateButtonShadow.frame.origin.y)")
@@ -482,7 +513,7 @@ class FinalCalculatorViewController: PickerViewController {
     // PUT BUTTON ACTIONS IN HERE
     @IBAction func gradeMateButtonTapped(_ sender: FUIButton) {
         gradeMateButtonShadow.isHidden = false
-        animateIn(viewToAnimate: self.gradeMateButtonView)
+        animateIn(viewToAnimate: self.gradeMateButtonView, height: 486)
     }
     
     // Pushed down
@@ -533,17 +564,17 @@ class FinalCalculatorViewController: PickerViewController {
     
     // Current Grade Tapped
     @IBAction func currentGradeTapped(_ sender: FUIButton) {
-        animateIn(viewToAnimate: self.currentGradeInfoView)
+        animateIn(viewToAnimate: self.currentGradeInfoView, height: 230)
     }
     
     // Weight Button Tapped
     @IBAction func weightButtonTapped(_ sender: FUIButton) {
-        animateIn(viewToAnimate: self.examWeightInfoView)
+        animateIn(viewToAnimate: self.examWeightInfoView, height: 230)
     }
     
     // Desired Grade Tapped
     @IBAction func desiredGradeTapped(_ sender: FUIButton) {
-        animateIn(viewToAnimate: self.desiredGradeInfoView)
+        animateIn(viewToAnimate: self.desiredGradeInfoView, height: 230)
     }
     
     
@@ -629,7 +660,7 @@ class FinalCalculatorViewController: PickerViewController {
     
     @IBAction func calculateTapped(_ sender: FUIButton) {
         
-        animateIn(viewToAnimate: self.resultView)
+        animateIn(viewToAnimate: self.resultView, height: 270)
 
 //        // CHANGE BUTTON TEXT
 //        let arraySize = calculateButtonWords.count
@@ -863,9 +894,9 @@ class FinalCalculatorViewController: PickerViewController {
         switch screenHeight {
         case 480:
             // 4s code
-            self.gradeMateLabel5s.isHidden = true
-            self.gradeMateLabel6s.isHidden = true
-            self.gradeMateLabel6Plus.isHidden = true
+//            self.gradeMateLabel5s.isHidden = true
+//            self.gradeMateLabel6s.isHidden = true
+//            self.gradeMateLabel6Plus.isHidden = true
             gradeMateButton.isHidden = true
             gradeMateButtonShadow.isHidden = true
             break
@@ -968,8 +999,8 @@ class FinalCalculatorViewController: PickerViewController {
         examWeightInfoDismiss.isExclusiveTouch   = true
         desiredGradeInfoDismiss.isExclusiveTouch = true
         gradeMateButton.isExclusiveTouch         = true
-        gradeMateButtonViewLinkButton.isExclusiveTouch   = true
-        gradeMateButtonViewReviewButton.isExclusiveTouch = true
+        shareLinkButton.isExclusiveTouch   = true
+        writeReviewButton.isExclusiveTouch = true
         gradeMateButtonViewBackButton.isExclusiveTouch   = true
     }
     

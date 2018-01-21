@@ -7,134 +7,50 @@
 //
 
 import UIKit
+import BEMCheckBox
+import FlatUIKit
+import Hero
 
-class ShowLaunchScreen: UIViewController
-{
-    @IBOutlet weak var grademateLabel4s: UILabel!
-    @IBOutlet weak var grademateLabel5s: UILabel!
-    @IBOutlet weak var grademateLabel6s: UILabel!
-    @IBOutlet weak var grademateLabelPlus: UILabel!
+class ShowLaunchScreen: UIViewController {
     
-    @IBOutlet weak var gradeMateButton: UIButton!
-    @IBOutlet weak var gradeMateButtonShadow: UIButton!
-    
-    let screenHeight = UIScreen.main.bounds.size.height
-    
-    override func viewDidLoad()
-    {
+    @IBOutlet weak var checkBox: BEMCheckBox!
+
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Grows/shrinks text on button to fit screen size
-        gradeMateButton.titleLabel?.adjustsFontSizeToFitWidth       = true
-        gradeMateButtonShadow.titleLabel?.adjustsFontSizeToFitWidth = true
-        
-        // Change dial sizes based on screen size
-        switch (screenHeight)
-        {
-        // iPhone 4
-        case (480):
-            
-            grademateLabel5s.isHidden = true
-            grademateLabel6s.isHidden = true
-            grademateLabelPlus.isHidden = true
-            
-            // Allows for delay when showing Launch Screen
-            perform(#selector(ShowLaunchScreen.showMainView), with: nil, afterDelay: 1.85)
-            
-            break
-            
-        // iPhone 5
-        case (568):
-            
-            grademateLabel4s.isHidden = true
-            grademateLabel6s.isHidden = true
-            grademateLabelPlus.isHidden = true
-            
-            let dist = abs(gradeMateButton.center.y - self.view.center.y)
-            
-            // Animates GradeMate label with spring effect on launch
-            UIView.animate(withDuration: 1.0, delay: 0.85, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.gradeMateButton.center.y -= dist
-                self.gradeMateButtonShadow.center.y -= dist
-            }, completion: nil)
-            
-            // Allows for delay when showing Launch Screen
-            perform(#selector(ShowLaunchScreen.showMainView), with: nil, afterDelay: 1.85)
-            
-            break
-            
-        // iPhone 6
-        case (667):
-            
-            grademateLabel4s.isHidden = true
-            grademateLabel5s.isHidden = true
-            grademateLabelPlus.isHidden = true
-            
-            
-//            gradeMateButton.center.y = 102.5
-//            gradeMateButtonShadow.center.y = 107.5
-            
-            let dist = abs(gradeMateButton.center.y - self.view.center.y)
-//            gradeMateButton.titleLabel?.font = gradeMateButton.titleLabel?.font.withSize(63)
-//            gradeMateButton.titleLabel?.adjustsFontSizeToFitWidth = true
-            
-            // Animates GradeMate label with spring effect on launch
-            UIView.animate(withDuration: 1.0, delay: 0.85, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.gradeMateButton.center.y -= dist
-                self.gradeMateButtonShadow.center.y -= dist
-            }, completion: nil)
-            
-            // Allows for delay when showing Launch Screen
-            perform(#selector(ShowLaunchScreen.showMainView), with: nil, afterDelay: 1.85)
-            
-            break
-            
-        // iPhone 6+
-        case (736):
-            
-            grademateLabel4s.isHidden = true
-            self.grademateLabel5s.isHidden = true
-            self.grademateLabel6s.isHidden = true
-            
-            let dist = abs(gradeMateButton.center.y - self.view.center.y)
-            
-            // Animates GradeMate label with spring effect on launch
-            UIView.animate(withDuration: 1.0, delay: 0.85, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.gradeMateButton.center.y -= dist
-                self.gradeMateButtonShadow.center.y -= dist
-            }, completion: nil)
-            
-            // Allows for delay when showing Launch Screen
-            perform(#selector(ShowLaunchScreen.showMainView), with: nil, afterDelay: 1.85)
-            
-            break
-            
-        default:break
-            
+
+        setUpCheckBox()
+
+        // TURN CHECK BOX ON
+        DispatchQueue.main.asyncAfter(deadline: (.now() + 0.25)) {
+            self.checkBox.setOn(true, animated: true)
         }
-        
-        
-        //		// Animates GradeMate label with spring effect on launch
-        //		UIView.animate(withDuration: 1.0, delay: 0.85, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-        //			self.grademateLabel.center.y -= 246
-        //		}, completion: nil)
-        //
-        
+
+        // TURN CHECK BOX OFF
+        DispatchQueue.main.asyncAfter(deadline: (.now() + 1)) {
+            self.checkBox.setOn(false, animated: true)
+        }
+
+        self.perform(#selector(ShowLaunchScreen.showMainView), with: nil, afterDelay: 1.5)
+    }
+
+    func setUpCheckBox() {
+        checkBox.hideBox = true
+        checkBox.lineWidth = 15
+        checkBox.onCheckColor = .clouds()
+        checkBox.onAnimationType  = .stroke
+        checkBox.offAnimationType = .fade
     }
     
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewWillAppear(_ animated: Bool)
-    {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
     
-    @objc func showMainView()
-    {
+    @objc func showMainView() {
         performSegue(withIdentifier: "showLaunchScreen", sender: self)
     }
 }

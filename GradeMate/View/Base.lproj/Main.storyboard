@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,12 +33,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="Ui8-8g-Ac6" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quD-ld-TDR">
-                                <rect key="frame" x="0.0" y="226" width="375" height="216"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zof-qm-QqX"/>
-                                </connections>
-                            </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiA-7j-tPc" userLabel="GradeMate Button Container">
                                 <rect key="frame" x="16" y="0.0" width="343" height="130"/>
                                 <subviews>
@@ -48,7 +41,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="Xk3-tR-Bus"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
                                         <state key="normal" title="GradeMate">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -58,7 +51,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="nMa-Ky-tFB"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
                                         <state key="normal" title="GradeMate">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -72,46 +65,25 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="cmT-0f-tp7" firstAttribute="leading" secondItem="MiA-7j-tPc" secondAttribute="leading" id="Mks-mn-QCd"/>
-                                    <constraint firstAttribute="trailing" secondItem="cmT-0f-tp7" secondAttribute="trailing" id="PAe-1T-5gR"/>
                                     <constraint firstItem="cmT-0f-tp7" firstAttribute="centerY" secondItem="MiA-7j-tPc" secondAttribute="centerY" constant="25" id="PSs-OJ-Qnb"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pml-Tg-i0A" secondAttribute="trailing" id="asH-0D-u0J"/>
                                     <constraint firstItem="Pml-Tg-i0A" firstAttribute="centerY" secondItem="MiA-7j-tPc" secondAttribute="centerY" constant="20" id="clB-h3-LgP"/>
                                     <constraint firstItem="cmT-0f-tp7" firstAttribute="centerX" secondItem="MiA-7j-tPc" secondAttribute="centerX" id="jbI-GO-cjB"/>
                                     <constraint firstItem="Pml-Tg-i0A" firstAttribute="leading" secondItem="MiA-7j-tPc" secondAttribute="leading" id="rIo-GS-zGy"/>
                                     <constraint firstItem="Pml-Tg-i0A" firstAttribute="centerX" secondItem="MiA-7j-tPc" secondAttribute="centerX" id="wzR-J8-aYG"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="gradeMate"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vah-EQ-Mmc" userLabel="GradeMate Label - 5s">
-                                <rect key="frame" x="16" y="33" width="288" height="64"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="60"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="0.0" height="4"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TmP-Zi-EAE" userLabel="GradeMate Label - 6s">
-                                <rect key="frame" x="16" y="55" width="288" height="68"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="64"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="0.0" height="4"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DZP-nd-5em" userLabel="GradeMate Label - Plus">
-                                <rect key="frame" x="16" y="70" width="288" height="73"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="0.0" height="4"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWP-MT-gle" userLabel="Info Button Container">
                                 <rect key="frame" x="0.0" y="138" width="375" height="105"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-z3-98b" userLabel="Current Grade Button" customClass="FUIButton">
-                                        <rect key="frame" x="10" y="19.5" width="115" height="65"/>
+                                        <rect key="frame" x="10" y="17" width="115" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="65" id="aHM-oa-CnE"/>
+                                            <constraint firstAttribute="height" constant="70" id="aHM-oa-CnE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
                                         <size key="titleShadowOffset" width="2" height="2"/>
@@ -123,9 +95,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Tan-4d-B9t" userLabel="Weight Button" customClass="FUIButton">
-                                        <rect key="frame" x="130" y="19.5" width="115" height="65"/>
+                                        <rect key="frame" x="130" y="17" width="115" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="65" id="ymY-6l-gjf"/>
+                                            <constraint firstAttribute="height" constant="70" id="ymY-6l-gjf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
                                         <size key="titleShadowOffset" width="0.0" height="3"/>
@@ -137,9 +109,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="n6T-4R-YQR" userLabel="Desired Grade Button" customClass="FUIButton">
-                                        <rect key="frame" x="250" y="19.5" width="115" height="65"/>
+                                        <rect key="frame" x="250" y="17" width="115" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="65" id="Hhq-Ma-v3G"/>
+                                            <constraint firstAttribute="height" constant="70" id="Hhq-Ma-v3G"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
                                         <size key="titleShadowOffset" width="-2" height="2"/>
@@ -152,17 +124,17 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Tan-4d-B9t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GcP-z3-98b" secondAttribute="trailing" constant="5" id="38X-mg-6h5"/>
+                                    <constraint firstItem="Tan-4d-B9t" firstAttribute="leading" secondItem="GcP-z3-98b" secondAttribute="trailing" constant="5" id="38X-mg-6h5"/>
                                     <constraint firstItem="Tan-4d-B9t" firstAttribute="centerY" secondItem="zWP-MT-gle" secondAttribute="centerY" id="5z1-E0-0vb"/>
                                     <constraint firstItem="GcP-z3-98b" firstAttribute="width" secondItem="Tan-4d-B9t" secondAttribute="width" id="9rP-ol-8aJ"/>
                                     <constraint firstItem="GcP-z3-98b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zWP-MT-gle" secondAttribute="leading" constant="10" id="GK3-ma-OEM"/>
-                                    <constraint firstItem="n6T-4R-YQR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tan-4d-B9t" secondAttribute="trailing" constant="5" id="NCS-bK-aJ9"/>
                                     <constraint firstItem="GcP-z3-98b" firstAttribute="centerY" secondItem="zWP-MT-gle" secondAttribute="centerY" id="QN9-7y-4iz"/>
                                     <constraint firstItem="n6T-4R-YQR" firstAttribute="width" secondItem="Tan-4d-B9t" secondAttribute="width" id="abo-Aq-fjw"/>
                                     <constraint firstItem="n6T-4R-YQR" firstAttribute="centerY" secondItem="zWP-MT-gle" secondAttribute="centerY" id="cAL-XE-gEO"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n6T-4R-YQR" secondAttribute="trailing" constant="10" id="daa-Bw-nMc"/>
                                     <constraint firstItem="Tan-4d-B9t" firstAttribute="centerX" secondItem="zWP-MT-gle" secondAttribute="centerX" id="nUG-Ov-4dW"/>
                                     <constraint firstAttribute="height" constant="105" id="vTj-wF-bVA"/>
+                                    <constraint firstItem="n6T-4R-YQR" firstAttribute="leading" secondItem="Tan-4d-B9t" secondAttribute="trailing" constant="5" id="wGN-0z-c1F"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsN-nB-vq7" userLabel="PickerView Container">
@@ -234,7 +206,6 @@
                                 <constraints>
                                     <constraint firstItem="xMt-tf-LU1" firstAttribute="centerY" secondItem="pbC-DM-aJ4" secondAttribute="centerY" id="4ey-MK-2a5"/>
                                     <constraint firstAttribute="trailing" secondItem="xMt-tf-LU1" secondAttribute="trailing" constant="8" id="LPN-i6-zbg"/>
-                                    <constraint firstItem="xMt-tf-LU1" firstAttribute="leading" secondItem="pbC-DM-aJ4" secondAttribute="leading" constant="8" id="Ocv-E3-6RC"/>
                                     <constraint firstItem="xMt-tf-LU1" firstAttribute="centerX" secondItem="pbC-DM-aJ4" secondAttribute="centerX" id="ki2-by-6e0"/>
                                 </constraints>
                             </view>
@@ -263,61 +234,39 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FsN-nB-vq7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0ZP-7p-3L2"/>
-                            <constraint firstItem="quD-ld-TDR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="1Cs-lr-liE"/>
                             <constraint firstItem="QBG-uT-CQa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1tn-T4-eJ0"/>
                             <constraint firstItem="pbC-DM-aJ4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="61M-t9-ywN"/>
                             <constraint firstAttribute="trailing" secondItem="QBG-uT-CQa" secondAttribute="trailing" id="7RO-dl-jVW"/>
                             <constraint firstItem="QBG-uT-CQa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Wx-ft-bjl"/>
                             <constraint firstItem="pbC-DM-aJ4" firstAttribute="top" secondItem="FsN-nB-vq7" secondAttribute="bottom" constant="47" id="CsG-It-eQ2"/>
-                            <constraint firstItem="DZP-nd-5em" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cwj-lz-Z10"/>
                             <constraint firstItem="MiA-7j-tPc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="CxB-dP-LTT"/>
-                            <constraint firstItem="vah-EQ-Mmc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FoR-wz-mrT"/>
-                            <constraint firstItem="TmP-Zi-EAE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="GpB-xI-qlW"/>
-                            <constraint firstItem="vah-EQ-Mmc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HlU-Re-VxV"/>
-                            <constraint firstItem="quD-ld-TDR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HpD-1S-NuB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pbC-DM-aJ4" secondAttribute="bottom" constant="20" id="JUL-9j-ofO"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JdQ-ql-Q9x"/>
-                            <constraint firstItem="TmP-Zi-EAE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LGE-Ba-PEf"/>
                             <constraint firstItem="FsN-nB-vq7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LMX-DY-fqa"/>
                             <constraint firstItem="pbC-DM-aJ4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NW8-vH-ADH"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QaP-u6-Ovw"/>
                             <constraint firstItem="FsN-nB-vq7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rf1-Sv-W47"/>
-                            <constraint firstItem="TmP-Zi-EAE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TNO-CW-J5M"/>
                             <constraint firstItem="zWP-MT-gle" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ViY-Z3-FoR"/>
                             <constraint firstAttribute="trailing" secondItem="MiA-7j-tPc" secondAttribute="trailing" constant="16" id="XCz-lJ-r6n"/>
                             <constraint firstItem="zWP-MT-gle" firstAttribute="top" secondItem="MiA-7j-tPc" secondAttribute="bottom" constant="8" id="XSb-DV-IUc"/>
                             <constraint firstItem="MiA-7j-tPc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="am0-i6-YBz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QBG-uT-CQa" secondAttribute="bottom" id="d2Q-Yk-GzX"/>
-                            <constraint firstItem="DZP-nd-5em" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="db8-fw-NO7"/>
-                            <constraint firstItem="DZP-nd-5em" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dfJ-8J-3q7"/>
-                            <constraint firstItem="quD-ld-TDR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fAy-RS-VYl"/>
-                            <constraint firstItem="DZP-nd-5em" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fkG-70-OfH"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gfF-hX-mG5"/>
                             <constraint firstItem="QBG-uT-CQa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gho-Rf-S4T"/>
                             <constraint firstItem="zWP-MT-gle" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jbh-Ck-qId"/>
                             <constraint firstItem="pbC-DM-aJ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mUA-Lx-Jke"/>
-                            <constraint firstItem="vah-EQ-Mmc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oS9-sd-78s"/>
                             <constraint firstItem="QBG-uT-CQa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qEf-tN-OPU"/>
                             <constraint firstAttribute="trailing" secondItem="zWP-MT-gle" secondAttribute="trailing" id="rE3-lu-dZ0"/>
-                            <constraint firstItem="TmP-Zi-EAE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rWb-Ic-cxR"/>
                             <constraint firstItem="MiA-7j-tPc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rvn-Bi-obs"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="stu-bH-mf2"/>
-                            <constraint firstItem="vah-EQ-Mmc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="tJI-re-iAU"/>
                             <constraint firstAttribute="trailing" secondItem="FsN-nB-vq7" secondAttribute="trailing" id="tkD-BH-db1"/>
                             <constraint firstItem="FsN-nB-vq7" firstAttribute="top" secondItem="zWP-MT-gle" secondAttribute="bottom" constant="8" id="u78-x5-fd5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Ui8-8g-Ac6"/>
-                                <exclude reference="quD-ld-TDR"/>
-                                <exclude reference="vah-EQ-Mmc"/>
-                                <exclude reference="TmP-Zi-EAE"/>
-                                <exclude reference="DZP-nd-5em"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1Cs-lr-liE"/>
-                                <exclude reference="HpD-1S-NuB"/>
-                                <exclude reference="fAy-RS-VYl"/>
                                 <exclude reference="JdQ-ql-Q9x"/>
                                 <exclude reference="QaP-u6-Ovw"/>
                                 <exclude reference="gfF-hX-mG5"/>
@@ -327,12 +276,8 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Ui8-8g-Ac6"/>
-                                <exclude reference="quD-ld-TDR"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1Cs-lr-liE"/>
-                                <include reference="HpD-1S-NuB"/>
-                                <include reference="fAy-RS-VYl"/>
                                 <include reference="JdQ-ql-Q9x"/>
                                 <include reference="QaP-u6-Ovw"/>
                                 <include reference="gfF-hX-mG5"/>
@@ -343,6 +288,7 @@
                     <navigationItem key="navigationItem" id="Sp2-ce-Jmc"/>
                     <connections>
                         <outlet property="calculateButton" destination="xMt-tf-LU1" id="hyJ-EX-V8U"/>
+                        <outlet property="calculateContainer" destination="pbC-DM-aJ4" id="LM4-iX-e3l"/>
                         <outlet property="currentGradeButton" destination="GcP-z3-98b" id="GlL-jQ-yOn"/>
                         <outlet property="currentGradeInfoDismiss" destination="0f2-Lc-Qgr" id="RDd-CP-eyM"/>
                         <outlet property="currentGradeInfoView" destination="8yR-OH-JUR" id="dwY-wL-t2k"/>
@@ -356,20 +302,21 @@
                         <outlet property="gradeMateButtonShadow" destination="cmT-0f-tp7" id="waa-Gf-XPo"/>
                         <outlet property="gradeMateButtonView" destination="MiO-lY-l4M" id="N7n-HG-y9I"/>
                         <outlet property="gradeMateButtonViewBackButton" destination="oC4-rD-5JP" id="nK2-nn-I3e"/>
-                        <outlet property="gradeMateButtonViewLinkButton" destination="s8k-VC-06Z" id="6jp-dc-bZb"/>
-                        <outlet property="gradeMateButtonViewReviewButton" destination="IR1-53-jEX" id="qgG-Is-hg6"/>
-                        <outlet property="gradeMateLabel5s" destination="vah-EQ-Mmc" id="c6x-CS-KXt"/>
-                        <outlet property="gradeMateLabel6Plus" destination="DZP-nd-5em" id="XPr-Bx-kf9"/>
-                        <outlet property="gradeMateLabel6s" destination="TmP-Zi-EAE" id="Fjl-6a-SkL"/>
+                        <outlet property="gradeMateContainer" destination="MiA-7j-tPc" id="gjA-Fh-7gb"/>
+                        <outlet property="infoContainer" destination="zWP-MT-gle" id="4W7-6s-5bz"/>
+                        <outlet property="mainView" destination="8bC-Xf-vdC" id="uSj-Mt-hPb"/>
                         <outlet property="picker1" destination="U24-1Q-iQV" id="hME-dX-s7l"/>
                         <outlet property="picker2" destination="hKx-eF-fr1" id="kdt-3c-Jdo"/>
                         <outlet property="picker3" destination="BYC-7I-o15" id="gte-d7-sMf"/>
                         <outlet property="picker4" destination="Bis-Oo-Sls" id="Xqs-lu-V1g"/>
+                        <outlet property="pickerViewContainer" destination="FsN-nB-vq7" id="NpZ-OA-ID9"/>
                         <outlet property="resultView" destination="2Hv-6I-Kjh" id="2W5-ix-FeX"/>
                         <outlet property="resultViewDismissButton" destination="PQe-M8-Jcp" id="FtE-Jb-kV1"/>
                         <outlet property="resultViewScoreLabel" destination="sPA-dN-II0" id="lo6-Jq-zL8"/>
                         <outlet property="resultViewWarningLabel" destination="8kV-bW-XFv" id="SZy-Lx-XnK"/>
+                        <outlet property="shareLinkButton" destination="s8k-VC-06Z" id="6jp-dc-bZb"/>
                         <outlet property="visualEffectView" destination="QBG-uT-CQa" id="S5J-j0-npO"/>
+                        <outlet property="writeReviewButton" destination="IR1-53-jEX" id="qgG-Is-hg6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -437,7 +384,7 @@
                 </view>
                 <view contentMode="scaleToFill" id="2Hv-6I-Kjh" userLabel="Result Pop Up">
                     <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQe-M8-Jcp" userLabel="Dismiss Button" customClass="FUIButton">
                             <rect key="frame" x="16" y="204" width="318" height="46"/>
@@ -571,7 +518,7 @@
                     <color key="backgroundColor" white="1" alpha="0.75420055650684936" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="280.80000000000001" y="-264.91754122938534"/>
+            <point key="canvasLocation" x="-51" y="-264"/>
         </scene>
         <!--Show Launch Screen-->
         <scene sceneID="Etb-bZ-ro1">
@@ -588,147 +535,81 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-b4-8Rf" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MpV-2O-qyr" userLabel="GradeMate Label - 5s">
-                                <rect key="frame" x="20" y="119" width="374" height="60"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="60"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="4"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-fZ-hFo" userLabel="GradeMate Label - 6s">
-                                <rect key="frame" x="20" y="91.666666666666657" width="374" height="63.999999999999972"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="64"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="4"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1v4-cu-L87" userLabel="GradeMate Label - Plus">
-                                <rect key="frame" x="20" y="72" width="374" height="69"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="4"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeMate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Ff-ek-yGq" userLabel="GradeMate Label - 4s">
-                                <rect key="frame" x="16" y="299" width="343" height="69"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="69"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="4"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgg-9h-iB2" userLabel="GradeMate Button Container">
                                 <rect key="frame" x="16" y="0.0" width="343" height="130"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW0-Dl-f9K" userLabel="GradeMate - BLACK">
-                                        <rect key="frame" x="1" y="52.5" width="341" height="75"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="3jR-S2-k96"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
-                                        <state key="normal" title="GradeMate">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnP-ys-bSr" userLabel="GradeMate - 5.5">
-                                        <rect key="frame" x="1" y="47.5" width="341" height="75"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="MgY-9a-hao"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="63"/>
-                                        <state key="normal" title="GradeMate">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="gradeMateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MnH-rm-WN1"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="VW0-Dl-f9K" firstAttribute="centerX" secondItem="cgg-9h-iB2" secondAttribute="centerX" id="6QN-Ab-dI3"/>
-                                    <constraint firstItem="VW0-Dl-f9K" firstAttribute="centerY" secondItem="cgg-9h-iB2" secondAttribute="centerY" constant="25" id="Irf-6D-tSd"/>
-                                    <constraint firstItem="bnP-ys-bSr" firstAttribute="centerX" secondItem="cgg-9h-iB2" secondAttribute="centerX" id="TmU-xe-GVp"/>
-                                    <constraint firstItem="bnP-ys-bSr" firstAttribute="centerY" secondItem="cgg-9h-iB2" secondAttribute="centerY" constant="20" id="ZFB-60-bd4"/>
-                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="gradeMate"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EqY-Nd-BrT" userLabel="Info Button Container">
                                 <rect key="frame" x="0.0" y="138" width="375" height="105"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="105" id="w9n-ow-tTO"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="info"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoT-dh-Tmd" userLabel="PickerView Container">
                                 <rect key="frame" x="0.0" y="251" width="375" height="165"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="gpd-nC-Kfv"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="picker"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjc-QE-ayM" userLabel="Calculate Button Container">
                                 <rect key="frame" x="16" y="463" width="343" height="184"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="calculate"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5x2-RR-StM" customClass="BEMCheckBox">
+                                <rect key="frame" x="112" y="258" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="DKy-Qf-0Nx"/>
+                                    <constraint firstAttribute="height" constant="150" id="nIv-3j-9Eg"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="6Ff-ek-yGq" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" id="2Ld-Mg-ICh"/>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="height" secondItem="zmE-PF-8XG" secondAttribute="height" id="6kn-nC-kEc"/>
                             <constraint firstAttribute="trailing" secondItem="EqY-Nd-BrT" secondAttribute="trailing" id="7GS-Ys-hbR"/>
-                            <constraint firstItem="6Ff-ek-yGq" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="8f2-qS-cAM"/>
-                            <constraint firstItem="xpj-fZ-hFo" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="9KE-I1-7g7"/>
-                            <constraint firstItem="1v4-cu-L87" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="CeC-22-Hcm"/>
                             <constraint firstItem="EqY-Nd-BrT" firstAttribute="top" secondItem="cgg-9h-iB2" secondAttribute="bottom" constant="8" id="EDt-nl-ga7"/>
                             <constraint firstItem="EoT-dh-Tmd" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" id="Fgp-28-QO2"/>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" id="Fy1-A8-7WI"/>
-                            <constraint firstItem="MpV-2O-qyr" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" constant="-219" id="HvD-06-nGq"/>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="width" secondItem="zmE-PF-8XG" secondAttribute="width" id="Jkx-D7-BX5"/>
+                            <constraint firstItem="5x2-RR-StM" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="K8m-xP-z8K"/>
                             <constraint firstItem="EoT-dh-Tmd" firstAttribute="top" secondItem="EqY-Nd-BrT" secondAttribute="bottom" constant="8" id="M53-Pt-zoh"/>
-                            <constraint firstItem="MpV-2O-qyr" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="Mw4-sa-S7k"/>
                             <constraint firstItem="tjc-QE-ayM" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="Ox4-di-tg8"/>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="RPP-9k-RKb"/>
-                            <constraint firstItem="xpj-fZ-hFo" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" constant="-244.5" id="S0K-Ue-NrI"/>
-                            <constraint firstItem="1v4-cu-L87" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="SlJ-NJ-ijq"/>
                             <constraint firstItem="cgg-9h-iB2" firstAttribute="top" secondItem="zmE-PF-8XG" secondAttribute="top" id="TXd-dr-EvM"/>
                             <constraint firstItem="EoT-dh-Tmd" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leading" id="TvS-Cy-q7z"/>
                             <constraint firstAttribute="trailing" secondItem="EoT-dh-Tmd" secondAttribute="trailing" id="YkX-oz-8ni"/>
-                            <constraint firstItem="1v4-cu-L87" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" constant="-261.5" id="dYq-WJ-tFo"/>
                             <constraint firstItem="EqY-Nd-BrT" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="fP5-Sb-Nw5"/>
-                            <constraint firstItem="xpj-fZ-hFo" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="hUQ-Vh-pFn"/>
                             <constraint firstItem="tjc-QE-ayM" firstAttribute="top" secondItem="EoT-dh-Tmd" secondAttribute="bottom" constant="47" id="hs2-3c-z4P"/>
                             <constraint firstAttribute="trailing" secondItem="cgg-9h-iB2" secondAttribute="trailing" constant="16" id="jVu-qi-qJx"/>
                             <constraint firstItem="cgg-9h-iB2" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leading" constant="16" id="lEj-VO-bdv"/>
-                            <constraint firstItem="6Ff-ek-yGq" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="leC-DV-9eE"/>
-                            <constraint firstItem="xpj-fZ-hFo" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="pH5-QX-2S4"/>
-                            <constraint firstItem="MpV-2O-qyr" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="pI7-fe-Uq4"/>
                             <constraint firstItem="cgg-9h-iB2" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="qRf-Sy-xID"/>
                             <constraint firstItem="tjc-QE-ayM" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="r1Q-2f-wO5"/>
-                            <constraint firstItem="1v4-cu-L87" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="rST-Ic-U2P"/>
-                            <constraint firstItem="6Ff-ek-yGq" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="rTb-m4-9d4"/>
                             <constraint firstItem="EqY-Nd-BrT" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leading" id="t10-ja-UdV"/>
                             <constraint firstItem="7rB-pl-sTk" firstAttribute="top" secondItem="tjc-QE-ayM" secondAttribute="bottom" constant="20" id="tbv-ja-dj3"/>
                             <constraint firstItem="EoT-dh-Tmd" firstAttribute="top" secondItem="EqY-Nd-BrT" secondAttribute="bottom" constant="8" id="wW3-11-jwS"/>
+                            <constraint firstItem="5x2-RR-StM" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" id="xfw-u8-lRH"/>
                             <constraint firstItem="EoT-dh-Tmd" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="xxZ-bC-1lE"/>
                             <constraint firstItem="tjc-QE-ayM" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="y2u-Ab-mmw"/>
-                            <constraint firstItem="MpV-2O-qyr" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="zjL-CC-Xt1"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="MpV-2O-qyr"/>
-                                <exclude reference="xpj-fZ-hFo"/>
-                                <exclude reference="1v4-cu-L87"/>
-                                <exclude reference="6Ff-ek-yGq"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="gradeMateButton" destination="bnP-ys-bSr" id="s5M-jr-d86"/>
-                        <outlet property="gradeMateButtonShadow" destination="VW0-Dl-f9K" id="awY-h1-7zj"/>
-                        <outlet property="grademateLabel4s" destination="6Ff-ek-yGq" id="Zfc-Zz-W7M"/>
-                        <outlet property="grademateLabel5s" destination="MpV-2O-qyr" id="1jZ-pI-WUV"/>
-                        <outlet property="grademateLabel6s" destination="xpj-fZ-hFo" id="x32-R0-iaR"/>
-                        <outlet property="grademateLabelPlus" destination="1v4-cu-L87" id="H8N-hj-iPg"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showLaunchScreen" modalTransitionStyle="crossDissolve" id="ngS-Aq-lvV"/>
+                        <outlet property="checkBox" destination="5x2-RR-StM" id="6lE-v0-Hzr"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showLaunchScreen" id="ngS-Aq-lvV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8L0-Pm-Qy7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-560.79999999999995" y="-263.11844077961024"/>
+            <point key="canvasLocation" x="-841" y="-264"/>
         </scene>
     </scenes>
     <resources>
