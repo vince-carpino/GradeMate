@@ -11,6 +11,7 @@ import FlatUIKit
 import PickerView
 
 class PickerViewController: UIViewController {
+
     // MARK: - VALUES
     var currentGrade = 0
     var decimalValue = 0.0
@@ -22,9 +23,9 @@ class PickerViewController: UIViewController {
     var dismiss      = ""
     var value        = ""
     
-    var effect: UIVisualEffect!                // FOR BLUR EFFECT
+    var effect: UIVisualEffect!
     
-    var statusBarIsHidden: Bool = false {
+    var statusBarIsHidden: Bool = true {
         didSet {
             UIView.animate(withDuration: 0.3) { () -> Void in
                 self.setNeedsStatusBarAppearanceUpdate()
@@ -281,7 +282,7 @@ extension PickerViewController: PickerViewDelegate {
                 let itemTextInt = Int(subString)
                 let coords = CGPoint(x: 0, y: ((itemTextInt!)-1))
                 picker4.defaultSelectionIndicator.backgroundColor = letterGradientImage?.getPixelColor(pos: coords)
-            default:break
+            default: break
             }
         } else {
             label.textColor = .silver()
@@ -316,18 +317,19 @@ extension PickerViewController {
         viewToAnimate.translatesAutoresizingMaskIntoConstraints = false
         viewToAnimate.center = self.view.center                                    // CENTER POP UP VIEW IN MAIN VIEW
 
-        let leadingConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 12)
-        let trailingConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 12)
+        // SET CONSTRAINTS TO AVOID CLIPPING ON SMALL SCREENS
+        let leading = NSLayoutConstraint(item: viewToAnimate, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 12)
+        let trailing = NSLayoutConstraint(item: viewToAnimate, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 12)
         let centerX = NSLayoutConstraint(item: viewToAnimate, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
         let centerY = NSLayoutConstraint(item: viewToAnimate, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
         let heightConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(height))
-        NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, heightConstraint, centerX, centerY])
+        NSLayoutConstraint.activate([leading, trailing, heightConstraint, centerX, centerY])
 
         viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)    // MAKE POP UP VIEW SLIGHTLY BIGGER BEFORE IT IS DISPLAYED
         viewToAnimate.alpha = 0
         
-        // Animate pop up, returning it to its normal state (identity)
-        UIView.animate(withDuration: 0.4, animations: {
+        // ANIMATE POP UP, RETURNING IT TO ITS NORMAL STATE (IDENTITY)
+        UIView.animate(withDuration: 0.3, animations: {
             self.visualEffectView.effect = self.effect
             viewToAnimate.alpha = 1
             viewToAnimate.transform = CGAffineTransform.identity
@@ -349,7 +351,7 @@ extension PickerViewController {
             self.visualEffectView.isHidden = true
         }
         
-        statusBarIsHidden  = false
+        statusBarIsHidden = false
     }
     
     @IBAction func dismissPopUp(_ sender: FUIButton) {

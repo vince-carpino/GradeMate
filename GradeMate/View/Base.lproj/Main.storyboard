@@ -288,7 +288,6 @@
                     <navigationItem key="navigationItem" id="Sp2-ce-Jmc"/>
                     <connections>
                         <outlet property="calculateButton" destination="xMt-tf-LU1" id="hyJ-EX-V8U"/>
-                        <outlet property="calculateContainer" destination="pbC-DM-aJ4" id="LM4-iX-e3l"/>
                         <outlet property="currentGradeButton" destination="GcP-z3-98b" id="GlL-jQ-yOn"/>
                         <outlet property="currentGradeInfoDismiss" destination="0f2-Lc-Qgr" id="RDd-CP-eyM"/>
                         <outlet property="currentGradeInfoView" destination="8yR-OH-JUR" id="dwY-wL-t2k"/>
@@ -302,14 +301,10 @@
                         <outlet property="gradeMateButtonShadow" destination="cmT-0f-tp7" id="waa-Gf-XPo"/>
                         <outlet property="gradeMateButtonView" destination="MiO-lY-l4M" id="N7n-HG-y9I"/>
                         <outlet property="gradeMateButtonViewBackButton" destination="oC4-rD-5JP" id="nK2-nn-I3e"/>
-                        <outlet property="gradeMateContainer" destination="MiA-7j-tPc" id="gjA-Fh-7gb"/>
-                        <outlet property="infoContainer" destination="zWP-MT-gle" id="4W7-6s-5bz"/>
-                        <outlet property="mainView" destination="8bC-Xf-vdC" id="uSj-Mt-hPb"/>
                         <outlet property="picker1" destination="U24-1Q-iQV" id="hME-dX-s7l"/>
                         <outlet property="picker2" destination="hKx-eF-fr1" id="kdt-3c-Jdo"/>
                         <outlet property="picker3" destination="BYC-7I-o15" id="gte-d7-sMf"/>
                         <outlet property="picker4" destination="Bis-Oo-Sls" id="Xqs-lu-V1g"/>
-                        <outlet property="pickerViewContainer" destination="FsN-nB-vq7" id="NpZ-OA-ID9"/>
                         <outlet property="resultView" destination="2Hv-6I-Kjh" id="2W5-ix-FeX"/>
                         <outlet property="resultViewDismissButton" destination="PQe-M8-Jcp" id="FtE-Jb-kV1"/>
                         <outlet property="resultViewScoreLabel" destination="sPA-dN-II0" id="lo6-Jq-zL8"/>
