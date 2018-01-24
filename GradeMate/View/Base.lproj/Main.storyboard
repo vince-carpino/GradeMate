@@ -530,36 +530,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-b4-8Rf" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgg-9h-iB2" userLabel="GradeMate Button Container">
-                                <rect key="frame" x="16" y="0.0" width="343" height="130"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="gradeMate"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EqY-Nd-BrT" userLabel="Info Button Container">
-                                <rect key="frame" x="0.0" y="138" width="375" height="105"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="w9n-ow-tTO"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="info"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoT-dh-Tmd" userLabel="PickerView Container">
-                                <rect key="frame" x="0.0" y="251" width="375" height="165"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="165" id="gpd-nC-Kfv"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="picker"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjc-QE-ayM" userLabel="Calculate Button Container">
-                                <rect key="frame" x="16" y="463" width="343" height="184"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="calculate"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5x2-RR-StM" customClass="BEMCheckBox">
                                 <rect key="frame" x="112" y="258" width="150" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -571,30 +541,11 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="height" secondItem="zmE-PF-8XG" secondAttribute="height" id="6kn-nC-kEc"/>
-                            <constraint firstAttribute="trailing" secondItem="EqY-Nd-BrT" secondAttribute="trailing" id="7GS-Ys-hbR"/>
-                            <constraint firstItem="EqY-Nd-BrT" firstAttribute="top" secondItem="cgg-9h-iB2" secondAttribute="bottom" constant="8" id="EDt-nl-ga7"/>
-                            <constraint firstItem="EoT-dh-Tmd" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" id="Fgp-28-QO2"/>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" id="Fy1-A8-7WI"/>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="width" secondItem="zmE-PF-8XG" secondAttribute="width" id="Jkx-D7-BX5"/>
                             <constraint firstItem="5x2-RR-StM" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="K8m-xP-z8K"/>
-                            <constraint firstItem="EoT-dh-Tmd" firstAttribute="top" secondItem="EqY-Nd-BrT" secondAttribute="bottom" constant="8" id="M53-Pt-zoh"/>
-                            <constraint firstItem="tjc-QE-ayM" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leadingMargin" id="Ox4-di-tg8"/>
                             <constraint firstItem="YHA-b4-8Rf" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="RPP-9k-RKb"/>
-                            <constraint firstItem="cgg-9h-iB2" firstAttribute="top" secondItem="zmE-PF-8XG" secondAttribute="top" id="TXd-dr-EvM"/>
-                            <constraint firstItem="EoT-dh-Tmd" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leading" id="TvS-Cy-q7z"/>
-                            <constraint firstAttribute="trailing" secondItem="EoT-dh-Tmd" secondAttribute="trailing" id="YkX-oz-8ni"/>
-                            <constraint firstItem="EqY-Nd-BrT" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="fP5-Sb-Nw5"/>
-                            <constraint firstItem="tjc-QE-ayM" firstAttribute="top" secondItem="EoT-dh-Tmd" secondAttribute="bottom" constant="47" id="hs2-3c-z4P"/>
-                            <constraint firstAttribute="trailing" secondItem="cgg-9h-iB2" secondAttribute="trailing" constant="16" id="jVu-qi-qJx"/>
-                            <constraint firstItem="cgg-9h-iB2" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leading" constant="16" id="lEj-VO-bdv"/>
-                            <constraint firstItem="cgg-9h-iB2" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="qRf-Sy-xID"/>
-                            <constraint firstItem="tjc-QE-ayM" firstAttribute="trailing" secondItem="zmE-PF-8XG" secondAttribute="trailingMargin" id="r1Q-2f-wO5"/>
-                            <constraint firstItem="EqY-Nd-BrT" firstAttribute="leading" secondItem="zmE-PF-8XG" secondAttribute="leading" id="t10-ja-UdV"/>
-                            <constraint firstItem="7rB-pl-sTk" firstAttribute="top" secondItem="tjc-QE-ayM" secondAttribute="bottom" constant="20" id="tbv-ja-dj3"/>
-                            <constraint firstItem="EoT-dh-Tmd" firstAttribute="top" secondItem="EqY-Nd-BrT" secondAttribute="bottom" constant="8" id="wW3-11-jwS"/>
                             <constraint firstItem="5x2-RR-StM" firstAttribute="centerY" secondItem="zmE-PF-8XG" secondAttribute="centerY" id="xfw-u8-lRH"/>
-                            <constraint firstItem="EoT-dh-Tmd" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="xxZ-bC-1lE"/>
-                            <constraint firstItem="tjc-QE-ayM" firstAttribute="centerX" secondItem="zmE-PF-8XG" secondAttribute="centerX" id="y2u-Ab-mmw"/>
                         </constraints>
                     </view>
                     <connections>
