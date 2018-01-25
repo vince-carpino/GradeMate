@@ -6,10 +6,8 @@
 //  Copyright © 2016 The Half-Blood Jedi. All rights reserved.
 //
 
-import UIKit
 import BEMCheckBox
 import FlatUIKit
-import Hero
 
 class ShowLaunchScreen: UIViewController {
     
@@ -24,12 +22,10 @@ class ShowLaunchScreen: UIViewController {
 
         setUpCheckBox()
 
-        // TURN CHECK BOX ON
         DispatchQueue.main.asyncAfter(deadline: (.now() + 0.25)) {
             self.checkBox.setOn(true, animated: true)
         }
 
-        // TURN CHECK BOX OFF
         DispatchQueue.main.asyncAfter(deadline: (.now() + 1)) {
             self.checkBox.setOn(false, animated: true)
         }
@@ -52,8 +48,7 @@ class ShowLaunchScreen: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
-    
+
     @objc func showMainView() {
         performSegue(withIdentifier: "showLaunchScreen", sender: self)
     }
