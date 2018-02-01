@@ -218,22 +218,17 @@ extension PickerViewController: PickerViewDelegate {
         switch pickerView {
         case picker1:
             setCurrentGrade(val: numbers1[index])
-            print(getCurrentGrade())
         case picker2:
             setDecimalValue(val: numbers2[index])
-            print(getDecimalValue())
         case picker3:
             setExamWeight(val: numbers3[index])
-            print(getExamWeight())
         case picker4:
             setDesiredGrade(val: numbers4[index])
-            print(getDesiredGrade())
         default: break
         }
         
         calculate(currentGradeInt: getCurrentGrade(), decimalValue: getDecimalValue(), examWeightInt: getExamWeight(), desiredGradeInt: getDesiredGrade())
-        print(getScoreValue())
-        
+
         setGradeValue(value: String(format: "%.0f", getScoreValue()) + "%")
         
         checkScoreValue(value: self.scoreValue)
@@ -305,6 +300,8 @@ extension PickerViewController {
         let desiredGrade = Double(desiredGradeInt) / 100.0
         
         setScoreValue(val: floor((( desiredGrade - (1 - examWeight) * currentGrade) / examWeight) * 100))
+
+        resultViewScoreLabel.textColor = setScoreValueColor(val: getScoreValue())
     }
     
     // MARK: - POP UP ANIMATION
@@ -512,6 +509,23 @@ extension PickerViewController {
             break
             
         default: break
+        }
+    }
+
+    func setScoreValueColor(val: Double) -> UIColor {
+        let score = Int(val)
+
+        switch score {
+        case let x where x >= 95:
+            return UIColor.pomegranate()
+        case let x where x >= 90:
+            return UIColor.alizarin()
+        case let x where x >= 80:
+            return UIColor.carrot()
+        case let x where x >= 70:
+            return UIColor.emerland()
+        default:
+            return UIColor.nephritis()
         }
     }
 }

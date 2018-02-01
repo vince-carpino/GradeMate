@@ -80,6 +80,11 @@ class FinalCalculatorViewController: PickerViewController {
         setAllButtonStyles()
 
         setAllButtonTextBehavior()
+
+
+
+
+        gradeMateButton.layer.shadowRadius = 0
     }
     
     override func didReceiveMemoryWarning() {

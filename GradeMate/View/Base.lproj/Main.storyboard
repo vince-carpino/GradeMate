@@ -375,7 +375,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.75018728599999995" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.92887574434280396" green="0.94514650106430054" blue="0.94924908876419067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="2Hv-6I-Kjh" userLabel="Result Pop Up">
                     <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>
@@ -414,7 +414,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.92887574434280396" green="0.94514650106430054" blue="0.94924908876419067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="8yR-OH-JUR" userLabel="Current Grade Info Pop Up">
                     <rect key="frame" x="0.0" y="0.0" width="340" height="230"/>
@@ -446,7 +446,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.75018728595890416" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.92887574434280396" green="0.94514650106430054" blue="0.94924908876419067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="BUD-Vs-ozX" userLabel="Exam Weight Info Pop Up">
                     <rect key="frame" x="0.0" y="0.0" width="340" height="230"/>
@@ -478,7 +478,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.74740475171232879" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.92887574434280396" green="0.94514650106430054" blue="0.94924908876419067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="Qb9-XC-Q6O" userLabel="Desired Grade Pop Up">
                     <rect key="frame" x="0.0" y="0.0" width="340" height="230"/>
@@ -510,7 +510,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.75420055650684936" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.92887574434280396" green="0.94514650106430054" blue="0.94924908876419067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="-51" y="-264"/>
