@@ -81,10 +81,6 @@ class FinalCalculatorViewController: PickerViewController {
 
         setAllButtonTextBehavior()
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(normalTap(_:)))
-        tapGesture.numberOfTapsRequired = 1
-        examWeightButton.addGestureRecognizer(tapGesture)
-
         let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
         examWeightButton.addGestureRecognizer(longGesture)
     }
@@ -94,12 +90,8 @@ class FinalCalculatorViewController: PickerViewController {
     }
 
     @objc func longTap(_ sender: UIGestureRecognizer) {
-        print("Long tap")
-
         if sender.state == .began {
-            print("began long press")
-        } else if sender.state == .ended {
-            print("ended long press")
+            print("began long press\nShow new pop up now")
         }
     }
     
