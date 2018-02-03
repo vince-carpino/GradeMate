@@ -135,6 +135,8 @@ class PickerViewController: UIViewController {
     
     // MARK: - GRADIENT IMAGE
     let letterGradientImage = UIImage(named: "GradeGradient")
+
+    let scoreGradientImage = UIImage(named: "ScoreGradient")
     
     override func viewDidLoad() {
         configurePicker(picker: picker1, stringArray: stringNumbers1)
@@ -301,7 +303,7 @@ extension PickerViewController {
         
         setScoreValue(val: floor((( desiredGrade - (1 - examWeight) * currentGrade) / examWeight) * 100))
 
-        resultViewScoreLabel.textColor = setScoreValueColor(val: getScoreValue())
+//        resultViewScoreLabel.textColor = setScoreValueColor(val: getScoreValue())
     }
     
     // MARK: - POP UP ANIMATION
@@ -514,18 +516,20 @@ extension PickerViewController {
 
     func setScoreValueColor(val: Double) -> UIColor {
         let score = Int(val)
+        let coords = CGPoint(x: 0, y: score)
 
         switch score {
-        case let x where x >= 95:
-            return UIColor.pomegranate()
-        case let x where x >= 90:
-            return UIColor.alizarin()
-        case let x where x >= 80:
-            return UIColor.carrot()
-        case let x where x >= 70:
-            return UIColor.emerland()
+
+        case let x where x >= 0:
+            return (scoreGradientImage?.getPixelColor(pos: coords))!
+        case let x where x <= 100:
+            return (scoreGradientImage?.getPixelColor(pos: coords))!
+        case let x where x > 100:
+            return (scoreGradientImage?.getPixelColor(pos: CGPoint(x: 0, y: 0)))!
+        case let x where x < 0:
+            return (scoreGradientImage?.getPixelColor(pos: CGPoint(x: 0, y: 100)))!
         default:
-            return UIColor.nephritis()
+            return UIColor.black
         }
     }
 }

@@ -287,7 +287,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Sp2-ce-Jmc"/>
                     <connections>
+                        <outlet property="addClassButton" destination="2h4-3c-YbT" id="zSa-PO-8qB"/>
                         <outlet property="calculateButton" destination="xMt-tf-LU1" id="hyJ-EX-V8U"/>
+                        <outlet property="class1Button" destination="rqF-bj-aiU" id="79v-l4-rU3"/>
+                        <outlet property="class2Button" destination="UDu-JF-NeX" id="gfQ-9Z-Oyd"/>
+                        <outlet property="class3Button" destination="hlR-Th-s0r" id="oa0-YN-el2"/>
+                        <outlet property="class4Button" destination="fgL-Ar-HJK" id="0nM-pd-DGe"/>
+                        <outlet property="class5Button" destination="J8H-fD-GV4" id="6A9-hc-ZFK"/>
                         <outlet property="currentGradeButton" destination="GcP-z3-98b" id="GlL-jQ-yOn"/>
                         <outlet property="currentGradeInfoDismiss" destination="0f2-Lc-Qgr" id="RDd-CP-eyM"/>
                         <outlet property="currentGradeInfoView" destination="8yR-OH-JUR" id="dwY-wL-t2k"/>
@@ -309,6 +315,8 @@
                         <outlet property="resultViewDismissButton" destination="PQe-M8-Jcp" id="FtE-Jb-kV1"/>
                         <outlet property="resultViewScoreLabel" destination="sPA-dN-II0" id="lo6-Jq-zL8"/>
                         <outlet property="resultViewWarningLabel" destination="8kV-bW-XFv" id="SZy-Lx-XnK"/>
+                        <outlet property="savedClassesBackButton" destination="sRQ-q8-3ua" id="gzV-Er-wfr"/>
+                        <outlet property="savedClassesView" destination="2aD-MI-okM" id="8Y9-5L-v3N"/>
                         <outlet property="shareLinkButton" destination="s8k-VC-06Z" id="6jp-dc-bZb"/>
                         <outlet property="visualEffectView" destination="QBG-uT-CQa" id="S5J-j0-npO"/>
                         <outlet property="writeReviewButton" destination="IR1-53-jEX" id="qgG-Is-hg6"/>
@@ -376,6 +384,95 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.92887574434280396" green="0.94514650106430054" blue="0.94924908876419067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" id="2aD-MI-okM" userLabel="Choose Class Pop Up">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="486"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saved Classes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k65-Fa-lOA" userLabel="Title Label">
+                            <rect key="frame" x="16" y="20" width="308" height="60"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="32"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRQ-q8-3ua" userLabel="Back button" customClass="FUIButton">
+                            <rect key="frame" x="16" y="420" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="Back">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="savedClassesBackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lml-zJ-5pv"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqF-bj-aiU" userLabel="CLASS 1" customClass="FUIButton">
+                            <rect key="frame" x="16" y="88" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="15">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="classButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wCd-Da-9eh"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDu-JF-NeX" userLabel="CLASS 2" customClass="FUIButton">
+                            <rect key="frame" x="16" y="142" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="18">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="classButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5aO-4z-Z1r"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlR-Th-s0r" userLabel="CLASS 3" customClass="FUIButton">
+                            <rect key="frame" x="16" y="196" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="12">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="classButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8oE-gY-sCC"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgL-Ar-HJK" userLabel="CLASS 4" customClass="FUIButton">
+                            <rect key="frame" x="16" y="250" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="20">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="classButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdy-UL-0vV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8H-fD-GV4" userLabel="CLASS 5" customClass="FUIButton">
+                            <rect key="frame" x="16" y="304" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="30">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="classButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3a5-iz-bb8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2h4-3c-YbT" userLabel="ADD CLASS" customClass="FUIButton">
+                            <rect key="frame" x="16" y="358" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="+">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92887574429999997" green="0.94514650109999998" blue="0.94924908880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="2Hv-6I-Kjh" userLabel="Result Pop Up">
                     <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>
@@ -531,7 +628,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5x2-RR-StM" customClass="BEMCheckBox">
-                                <rect key="frame" x="112" y="258" width="150" height="150"/>
+                                <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="DKy-Qf-0Nx"/>

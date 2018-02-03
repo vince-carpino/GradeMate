@@ -42,6 +42,15 @@ class FinalCalculatorViewController: PickerViewController {
     // CALCULATE BUTTON
     @IBOutlet weak var calculateButton: FUIButton!
 
+    @IBOutlet var savedClassesView: UIView!
+    @IBOutlet weak var savedClassesBackButton: FUIButton!
+    @IBOutlet weak var class1Button: FUIButton!
+    @IBOutlet weak var class2Button: FUIButton!
+    @IBOutlet weak var class3Button: FUIButton!
+    @IBOutlet weak var class4Button: FUIButton!
+    @IBOutlet weak var class5Button: FUIButton!
+    @IBOutlet weak var addClassButton: FUIButton!
+
     let calculateButtonWords: [String] = [
         "Calculate",
         "Punch it",
@@ -54,12 +63,15 @@ class FinalCalculatorViewController: PickerViewController {
         "Hit me"
     ]
 
+    var savedClassesValues: [Int] = []
+
     let upperButtonColors  = UIColor(fromHexCode: "#18C0EE")!
     let upperButtonShadows = UIColor(fromHexCode: "#149EC6")!
 
     let calculateButtonColor  = UIColor(fromHexCode: "#1ABC9C")!
     let calculateButtonShadow = UIColor(fromHexCode: "#16A085")!
 
+    // MARK: - VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -81,22 +93,18 @@ class FinalCalculatorViewController: PickerViewController {
 
         setAllButtonTextBehavior()
 
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
-        examWeightButton.addGestureRecognizer(longGesture)
-    }
+        addLongPressToExamWeightButton()
+        let userDefaults = UserDefaults.standard
 
-    @objc func normalTap(_ sender: UIGestureRecognizer) {
-        print("Normal tap")
-    }
+//        if userDefaults.object(forKey: "class1") == nil {
+//            userDefaults.set(15, forKey: "class1")
+//        }
 
-    @objc func longTap(_ sender: UIGestureRecognizer) {
-        if sender.state == .began {
-            print("began long press\nShow new pop up now")
+        if let val = userDefaults.object(forKey: "class1") as? Int {
+            class1Button.titleLabel?.text = String(val)
+        } else {
+            userDefaults.set(15, forKey: "class1")
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     // MARK: - GRADEMATE BUTTON
@@ -150,7 +158,43 @@ class FinalCalculatorViewController: PickerViewController {
         
         showShareSheet(itemsToShare: [url])
     }
-    
+
+    // MARK: SAVED CLASSES VIEW
+
+    @IBAction func classButtonPressed(_ sender: FUIButton) {
+
+        picker3.selectRow(Int((sender.titleLabel?.text)!)! - 1, animated: true)
+
+
+
+//        if let stored = UserDefaults.standard.object(forKey: "class1") as? Int {
+//            UserDefaults.standard.set(stored + 1, forKey: "class1")
+//            class1Button.titleLabel?.text = String(stored + 1)
+//            picker3.selectRow(stored, animated: true)
+//        }
+
+
+//        if let val = UserDefaults.standard.object(forKey: "class1") as? String {
+//            class1Button.titleLabel?.text = val
+//        }
+//
+//        let text = sender.titleLabel!.text!
+//        let start = text.index(text.startIndex, offsetBy: 9)
+//        let end   = text.index(text.endIndex, offsetBy: -1)
+//        let substring = text[start..<end]
+//
+//        picker3.selectRow(Int(substring)! - 1, animated: true)
+
+
+        animateOut(viewToAnimate: self.savedClassesView)
+    }
+
+
+
+    @IBAction func savedClassesBackPressed(_ sender: FUIButton) {
+        animateOut(viewToAnimate: self.savedClassesView)
+    }
+
     
     // MARK: - INFO BUTTONS
     
@@ -251,13 +295,13 @@ class FinalCalculatorViewController: PickerViewController {
         desiredGradeButton.titleLabel?.textAlignment = .center
     }
     
-    // MARK: - SET DEFAULT RESULT POP UP INFO
-    func setDefaultResultInfo() {
-        self.resultViewScoreLabel.text = "100%"
-        self.resultViewWarningLabel.text = "May the Force be with you..."
-        self.resultViewDismissButton.setTitle("Thank you, Master 🙏", for: .normal)
-    }
-    
+//    // MARK: - SET DEFAULT RESULT POP UP INFO
+//    func setDefaultResultInfo() {
+//        self.resultViewScoreLabel.text = "100%"
+//        self.resultViewWarningLabel.text = "May the Force be with you..."
+//        self.resultViewDismissButton.setTitle("Thank you, Master 🙏", for: .normal)
+//    }
+
     // MARK: - MAKE ALL BUTTONS EXCLUSIVE TOUCH
     func makeAllButtonsExclusiveTouch() {
         currentGradeButton.isExclusiveTouch            = true
@@ -272,6 +316,14 @@ class FinalCalculatorViewController: PickerViewController {
         shareLinkButton.isExclusiveTouch               = true
         writeReviewButton.isExclusiveTouch             = true
         gradeMateButtonViewBackButton.isExclusiveTouch = true
+        savedClassesBackButton.isExclusiveTouch        = true
+
+        class1Button.isExclusiveTouch = true
+        class2Button.isExclusiveTouch = true
+        class3Button.isExclusiveTouch = true
+        class4Button.isExclusiveTouch = true
+        class5Button.isExclusiveTouch = true
+        addClassButton.isExclusiveTouch = true
     }
 
     func checkForSmallScreen() {
@@ -305,6 +357,7 @@ class FinalCalculatorViewController: PickerViewController {
         examWeightInfoView.layer.cornerRadius   = 10
         desiredGradeInfoView.layer.cornerRadius = 10
         gradeMateButtonView.layer.cornerRadius  = 10
+        savedClassesView.layer.cornerRadius     = 10
     }
 
     func setAllButtonStyles() {
@@ -321,6 +374,14 @@ class FinalCalculatorViewController: PickerViewController {
         setButtonStyle(button: gradeMateButtonViewBackButton, buttonColor: calculateButtonColor, shadowColor: calculateButtonShadow)
         setButtonStyle(button: shareLinkButton, buttonColor: upperButtonColors, shadowColor: upperButtonShadows, isDismiss: true)
         setButtonStyle(button: writeReviewButton, buttonColor: upperButtonColors, shadowColor: upperButtonShadows, isDismiss: true)
+        setButtonStyle(button: savedClassesBackButton, buttonColor: calculateButtonColor, shadowColor: calculateButtonShadow)
+
+        setButtonStyle(button: class1Button, buttonColor: .turquoise(), shadowColor: .greenSea())
+        setButtonStyle(button: class2Button, buttonColor: .emerland(), shadowColor: .nephritis())
+        setButtonStyle(button: class3Button, buttonColor: .peterRiver(), shadowColor: .belizeHole())
+        setButtonStyle(button: class4Button, buttonColor: .amethyst(), shadowColor: .wisteria())
+        setButtonStyle(button: class5Button, buttonColor: .wetAsphalt(), shadowColor: .midnightBlue())
+        setButtonStyle(button: addClassButton, buttonColor: .concrete(), shadowColor: .asbestos())
     }
 
     func setAllButtonTextBehavior() {
@@ -345,5 +406,17 @@ class FinalCalculatorViewController: PickerViewController {
         shareLinkButton.titleLabel?.adjustsFontSizeToFitWidth               = true
         writeReviewButton.titleLabel?.adjustsFontSizeToFitWidth             = true
         gradeMateButtonViewBackButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        savedClassesBackButton.titleLabel?.adjustsFontSizeToFitWidth        = true
+    }
+
+    @objc func longTap(_ sender: UIGestureRecognizer) {
+        if sender.state == .began {
+            animateIn(viewToAnimate: self.savedClassesView, height: 486)
+        }
+    }
+
+    func addLongPressToExamWeightButton() {
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
+        examWeightButton.addGestureRecognizer(longGesture)
     }
 }
