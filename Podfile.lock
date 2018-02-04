@@ -1,5 +1,22 @@
 PODS:
   - BEMCheckBox (1.4.1)
+  - CHIPageControl (0.1.5):
+    - CHIPageControl/Aji (= 0.1.5)
+    - CHIPageControl/Aleppo (= 0.1.5)
+    - CHIPageControl/Chimayo (= 0.1.5)
+    - CHIPageControl/Fresno (= 0.1.5)
+    - CHIPageControl/Jalapeno (= 0.1.5)
+    - CHIPageControl/Jaloro (= 0.1.5)
+    - CHIPageControl/Paprika (= 0.1.5)
+    - CHIPageControl/Puya (= 0.1.5)
+  - CHIPageControl/Aji (0.1.5)
+  - CHIPageControl/Aleppo (0.1.5)
+  - CHIPageControl/Chimayo (0.1.5)
+  - CHIPageControl/Fresno (0.1.5)
+  - CHIPageControl/Jalapeno (0.1.5)
+  - CHIPageControl/Jaloro (0.1.5)
+  - CHIPageControl/Paprika (0.1.5)
+  - CHIPageControl/Puya (0.1.5)
   - FlatUIKit (1.6.2)
   - Hero (1.0.1)
   - PickerView (0.3.1)
@@ -7,6 +24,7 @@ PODS:
 
 DEPENDENCIES:
   - BEMCheckBox
+  - CHIPageControl
   - FlatUIKit
   - Hero
   - PickerView
@@ -14,11 +32,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
+  CHIPageControl: 79d19a8ee2e35fa3c1da6533adb5364c77b5cfea
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   Hero: cee286821578e170d8c0c9c9cda7897357401112
   PickerView: 13713136c7db291e6ada509f0ba6de242ee0627d
   ViewAnimator: 1f3fa25f3c9010ab0dda06cf9e3e49a4b55834ff
 
-PODFILE CHECKSUM: 7742c9ddfb30ead590aa9fef24edffefa33c2bd8
+PODFILE CHECKSUM: 8766bb9d38c4ef62e80ff6a1eca51e80f6216e1f
 
 COCOAPODS: 1.4.0

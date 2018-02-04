@@ -5,6 +5,7 @@ target 'GradeMate' do
 
   # Pods for GradeMate
   pod 'BEMCheckBox'
+  pod 'CHIPageControl'
   pod 'FlatUIKit'
   pod 'Hero'
   pod 'PickerView'
