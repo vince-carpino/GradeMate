@@ -26,6 +26,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         }
     }
 
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if finished && completed {
+            print (previousViewControllers.first?.restorationIdentifier as Any)
+        }
+    }
+
     // MARK: Data source functions.
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = pages.index(of: viewController) else {

@@ -9,6 +9,7 @@
 import FlatUIKit
 import Hero
 import PickerView
+import CHIPageControl
 
 class FinalCalculatorViewController: PickerViewController {
 
@@ -52,7 +53,7 @@ class FinalCalculatorViewController: PickerViewController {
     @IBOutlet weak var addClassButton: FUIButton!
 
     @IBOutlet var scv: UIView!
-    
+    @IBOutlet weak public var pageControl: CHIPageControlAji!
 
     let calculateButtonWords: [String] = [
         "Calculate",
