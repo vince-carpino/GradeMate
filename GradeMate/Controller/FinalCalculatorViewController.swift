@@ -51,6 +51,9 @@ class FinalCalculatorViewController: PickerViewController {
     @IBOutlet weak var class5Button: FUIButton!
     @IBOutlet weak var addClassButton: FUIButton!
 
+    @IBOutlet var scv: UIView!
+    
+
     let calculateButtonWords: [String] = [
         "Calculate",
         "Punch it",
@@ -186,13 +189,13 @@ class FinalCalculatorViewController: PickerViewController {
 //        picker3.selectRow(Int(substring)! - 1, animated: true)
 
 
-        animateOut(viewToAnimate: self.savedClassesView)
+        animateOut(viewToAnimate: self.scv)
     }
 
 
 
     @IBAction func savedClassesBackPressed(_ sender: FUIButton) {
-        animateOut(viewToAnimate: self.savedClassesView)
+        animateOut(viewToAnimate: self.scv)
     }
 
     
@@ -358,6 +361,8 @@ class FinalCalculatorViewController: PickerViewController {
         desiredGradeInfoView.layer.cornerRadius = 10
         gradeMateButtonView.layer.cornerRadius  = 10
         savedClassesView.layer.cornerRadius     = 10
+
+        scv.layer.cornerRadius = 10
     }
 
     func setAllButtonStyles() {
@@ -411,7 +416,7 @@ class FinalCalculatorViewController: PickerViewController {
 
     @objc func longTap(_ sender: UIGestureRecognizer) {
         if sender.state == .began {
-            animateIn(viewToAnimate: self.savedClassesView, height: 486)
+            animateIn(viewToAnimate: self.scv, height: 485)
         }
     }
 
