@@ -338,7 +338,7 @@ extension PickerViewController {
     }
     
     // ANIMATE OUT
-    func animateOut(viewToAnimate: UIView) {
+    public func animateOut(viewToAnimate: UIView) {
         UIView.animate(withDuration: 0.3, animations: {
             viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             viewToAnimate.alpha = 0

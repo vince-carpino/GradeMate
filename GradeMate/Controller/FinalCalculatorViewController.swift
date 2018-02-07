@@ -9,7 +9,6 @@
 import FlatUIKit
 import Hero
 import PickerView
-import CHIPageControl
 
 class FinalCalculatorViewController: PickerViewController {
 
@@ -53,7 +52,8 @@ class FinalCalculatorViewController: PickerViewController {
     @IBOutlet weak var addClassButton: FUIButton!
 
     @IBOutlet var scv: UIView!
-    @IBOutlet weak public var pageControl: CHIPageControlAji!
+    @IBOutlet weak var pageViewContainer: UIView!
+    @IBOutlet weak public var pageControl: UIPageControl!
 
     let calculateButtonWords: [String] = [
         "Calculate",
@@ -262,16 +262,16 @@ class FinalCalculatorViewController: PickerViewController {
 //        calculateButton.setTitle(calculateButtonWords[randInt], for: .normal)
     }
 
-    // MARK: - SET BUTTON STYLE
-    func setButtonStyle(button: FUIButton, buttonColor: UIColor, shadowColor: UIColor, textColor: UIColor = .clouds(), shadowHeight: CGFloat = 6.0, cornerRadius: CGFloat = 6.0, isDismiss: Bool = false) {
-        button.shadowHeight = shadowHeight
-        button.buttonColor  = buttonColor
-        button.shadowColor  = shadowColor
-        button.cornerRadius = isDismiss ? button.frame.height / 2 : cornerRadius
-        
-        button.setTitleColor(textColor, for: .normal)
-        button.setTitleColor(textColor, for: .highlighted)
-    }
+//    // MARK: - SET BUTTON STYLE
+//    func setButtonStyle(button: FUIButton, buttonColor: UIColor, shadowColor: UIColor, textColor: UIColor = .clouds(), shadowHeight: CGFloat = 6.0, cornerRadius: CGFloat = 6.0, isDismiss: Bool = false) {
+//        button.shadowHeight = shadowHeight
+//        button.buttonColor  = buttonColor
+//        button.shadowColor  = shadowColor
+//        button.cornerRadius = isDismiss ? button.frame.height / 2 : cornerRadius
+//        
+//        button.setTitleColor(textColor, for: .normal)
+//        button.setTitleColor(textColor, for: .highlighted)
+//    }
 
     // MARK: - SET ROUNDED CORNERS OF BUTTON
     func setCornersForButton(button: UIButton, value: Double) -> Void {
@@ -424,5 +424,22 @@ class FinalCalculatorViewController: PickerViewController {
     func addLongPressToExamWeightButton() {
         let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
         examWeightButton.addGestureRecognizer(longGesture)
+    }
+
+    func newVC(name: String) -> UIViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
+    }
+}
+
+extension UIViewController {
+    // MARK: - SET BUTTON STYLE
+    func setButtonStyle(button: FUIButton, buttonColor: UIColor, shadowColor: UIColor, textColor: UIColor = .clouds(), shadowHeight: CGFloat = 6.0, cornerRadius: CGFloat = 6.0, isDismiss: Bool = false) {
+        button.shadowHeight = shadowHeight
+        button.buttonColor  = buttonColor
+        button.shadowColor  = shadowColor
+        button.cornerRadius = isDismiss ? button.frame.height / 2 : cornerRadius
+
+        button.setTitleColor(textColor, for: .normal)
+        button.setTitleColor(textColor, for: .highlighted)
     }
 }
