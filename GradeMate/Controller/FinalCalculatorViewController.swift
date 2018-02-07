@@ -54,7 +54,8 @@ class FinalCalculatorViewController: PickerViewController {
     @IBOutlet var scv: UIView!
     @IBOutlet weak var pageViewContainer: UIView!
     @IBOutlet weak public var pageControl: UIPageControl!
-
+    @IBOutlet weak var scvBackButton: FUIButton!
+    
     let calculateButtonWords: [String] = [
         "Calculate",
         "Punch it",
@@ -328,6 +329,7 @@ class FinalCalculatorViewController: PickerViewController {
         class4Button.isExclusiveTouch = true
         class5Button.isExclusiveTouch = true
         addClassButton.isExclusiveTouch = true
+        scvBackButton.isExclusiveTouch = true
     }
 
     func checkForSmallScreen() {
@@ -364,6 +366,7 @@ class FinalCalculatorViewController: PickerViewController {
         savedClassesView.layer.cornerRadius     = 10
 
         scv.layer.cornerRadius = 10
+        pageViewContainer.layer.cornerRadius = 10
     }
 
     func setAllButtonStyles() {
@@ -388,6 +391,7 @@ class FinalCalculatorViewController: PickerViewController {
         setButtonStyle(button: class4Button, buttonColor: .amethyst(), shadowColor: .wisteria())
         setButtonStyle(button: class5Button, buttonColor: .wetAsphalt(), shadowColor: .midnightBlue())
         setButtonStyle(button: addClassButton, buttonColor: .concrete(), shadowColor: .asbestos())
+        setButtonStyle(button: scvBackButton, buttonColor: .concrete(), shadowColor: .asbestos())
     }
 
     func setAllButtonTextBehavior() {
@@ -441,5 +445,6 @@ extension UIViewController {
 
         button.setTitleColor(textColor, for: .normal)
         button.setTitleColor(textColor, for: .highlighted)
+        button.backgroundColor = .clear
     }
 }

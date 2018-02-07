@@ -21,7 +21,7 @@
         <!--Final Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FinalCalculatorViewController" customModule="GradeMate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="FinalCalculatorViewController" customModule="GradeMate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -320,6 +320,7 @@
                         <outlet property="savedClassesBackButton" destination="sRQ-q8-3ua" id="gzV-Er-wfr"/>
                         <outlet property="savedClassesView" destination="2aD-MI-okM" id="8Y9-5L-v3N"/>
                         <outlet property="scv" destination="jIT-JD-9vS" id="xKR-G1-0es"/>
+                        <outlet property="scvBackButton" destination="fOW-nG-NrI" id="7RV-dq-td1"/>
                         <outlet property="shareLinkButton" destination="s8k-VC-06Z" id="6jp-dc-bZb"/>
                         <outlet property="visualEffectView" destination="QBG-uT-CQa" id="S5J-j0-npO"/>
                         <outlet property="writeReviewButton" destination="IR1-53-jEX" id="qgG-Is-hg6"/>
@@ -482,7 +483,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved Classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg1-kh-Kor">
-                            <rect key="frame" x="16" y="20" width="308" height="50"/>
+                            <rect key="frame" x="16" y="10" width="308" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="ySH-m0-weS"/>
                             </constraints>
@@ -490,13 +491,13 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOW-nG-NrI" customClass="FUIButton">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOW-nG-NrI" customClass="FUIButton">
                             <rect key="frame" x="16" y="419" width="308" height="46"/>
                             <color key="backgroundColor" red="0.58314710855484009" green="0.64773333072662354" blue="0.65190428495407104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="46" id="Rnt-HZ-ihp"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
                             <state key="normal" title="Back">
                                 <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -522,6 +523,7 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cg1-kh-Kor" secondAttribute="trailing" constant="16" id="36f-FR-S4y"/>
                         <constraint firstAttribute="bottom" secondItem="fOW-nG-NrI" secondAttribute="bottom" constant="20" id="88y-QF-ppN"/>
+                        <constraint firstItem="97q-z7-Sck" firstAttribute="top" secondItem="cg1-kh-Kor" secondAttribute="bottom" constant="11" id="HJD-SR-AJd"/>
                         <constraint firstAttribute="trailing" secondItem="YZr-rh-4gD" secondAttribute="trailing" constant="16" id="IX7-t5-hAh"/>
                         <constraint firstItem="cg1-kh-Kor" firstAttribute="leading" secondItem="jIT-JD-9vS" secondAttribute="leading" constant="16" id="KNp-Ia-TPY"/>
                         <constraint firstItem="YZr-rh-4gD" firstAttribute="top" secondItem="97q-z7-Sck" secondAttribute="bottom" id="KXA-UN-XGQ"/>
@@ -529,7 +531,7 @@
                         <constraint firstItem="97q-z7-Sck" firstAttribute="leading" secondItem="jIT-JD-9vS" secondAttribute="leading" constant="16" id="RPu-jZ-Nku"/>
                         <constraint firstItem="YZr-rh-4gD" firstAttribute="centerX" secondItem="jIT-JD-9vS" secondAttribute="centerX" id="Yoc-N6-Gi4"/>
                         <constraint firstItem="YZr-rh-4gD" firstAttribute="leading" secondItem="jIT-JD-9vS" secondAttribute="leading" constant="16" id="caw-gW-65a"/>
-                        <constraint firstItem="cg1-kh-Kor" firstAttribute="top" secondItem="jIT-JD-9vS" secondAttribute="top" constant="20" id="oqO-rZ-1vE"/>
+                        <constraint firstItem="cg1-kh-Kor" firstAttribute="top" secondItem="jIT-JD-9vS" secondAttribute="top" constant="10" id="oqO-rZ-1vE"/>
                         <constraint firstItem="fOW-nG-NrI" firstAttribute="leading" secondItem="jIT-JD-9vS" secondAttribute="leading" constant="16" id="sPp-ip-p1Y"/>
                         <constraint firstAttribute="trailing" secondItem="fOW-nG-NrI" secondAttribute="trailing" constant="16" id="suN-Vq-eYt"/>
                         <constraint firstItem="97q-z7-Sck" firstAttribute="centerY" secondItem="jIT-JD-9vS" secondAttribute="centerY" constant="-10" id="tgI-Uo-B3N"/>
@@ -703,7 +705,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="308" height="323"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Yyi-VG-TNk" customClass="FUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Yyi-VG-TNk" customClass="FUIButton">
                                 <rect key="frame" x="32" y="20" width="244" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="B4Z-Ip-DQY"/>
@@ -717,7 +719,7 @@
                                     <action selector="classButtonPressed:" destination="BQh-Eu-prm" eventType="touchUpInside" id="7X5-zU-uqW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITJ-Jo-v8k" customClass="FUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITJ-Jo-v8k" customClass="FUIButton">
                                 <rect key="frame" x="32" y="74" width="244" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="vjp-aw-wlH"/>
@@ -730,7 +732,7 @@
                                     <action selector="classButtonPressed:" destination="BQh-Eu-prm" eventType="touchUpInside" id="J3v-Z8-78Z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0j-hq-2TT" customClass="FUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0j-hq-2TT" customClass="FUIButton">
                                 <rect key="frame" x="32" y="128" width="244" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="L3D-uA-Mnj"/>
@@ -743,7 +745,7 @@
                                     <action selector="classButtonPressed:" destination="BQh-Eu-prm" eventType="touchUpInside" id="0BU-ic-p85"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEb-du-do0" customClass="FUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEb-du-do0" customClass="FUIButton">
                                 <rect key="frame" x="32" y="182" width="244" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="gvv-Xw-6OA"/>
@@ -756,7 +758,7 @@
                                     <action selector="classButtonPressed:" destination="BQh-Eu-prm" eventType="touchUpInside" id="cUY-J3-uMD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYF-Nz-27L" customClass="FUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYF-Nz-27L" customClass="FUIButton">
                                 <rect key="frame" x="32" y="236" width="244" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="RsI-qZ-T46"/>
@@ -819,7 +821,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="308" height="323"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogk-RP-m39" customClass="FUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogk-RP-m39" customClass="FUIButton">
                                 <rect key="frame" x="32" y="20" width="244" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="y1j-Do-VSm"/>
@@ -832,7 +834,7 @@
                                     <action selector="classButtonPressed:" destination="CBi-zF-3by" eventType="touchUpInside" id="VQr-g5-ra9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhV-Cv-Yi0" customClass="FUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhV-Cv-Yi0" customClass="FUIButton">
                                 <rect key="frame" x="32" y="74" width="244" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="3Qo-4a-Amg"/>
@@ -845,7 +847,7 @@
                                     <action selector="classButtonPressed:" destination="CBi-zF-3by" eventType="touchUpInside" id="Tvt-4D-jek"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qq-DG-ghz" customClass="FUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qq-DG-ghz" customClass="FUIButton">
                                 <rect key="frame" x="32" y="128" width="244" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="MxL-6Y-A0q"/>
@@ -858,7 +860,7 @@
                                     <action selector="classButtonPressed:" destination="CBi-zF-3by" eventType="touchUpInside" id="PJQ-GB-X9R"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhG-bH-apC" customClass="FUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhG-bH-apC" customClass="FUIButton">
                                 <rect key="frame" x="32" y="182" width="244" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="YWY-aP-gcJ"/>
@@ -871,7 +873,7 @@
                                     <action selector="classButtonPressed:" destination="CBi-zF-3by" eventType="touchUpInside" id="XAo-eL-GpV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86W-sX-6Yo" customClass="FUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86W-sX-6Yo" customClass="FUIButton">
                                 <rect key="frame" x="32" y="236" width="244" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="r2d-9j-ECH"/>

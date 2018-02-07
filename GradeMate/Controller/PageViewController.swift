@@ -16,7 +16,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }()
 
     var pageControl = UIPageControl()
-    var customPC    = CHIPageControlAji()
+    var customPC    = CHIPageControlJaloro()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +29,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
             setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
 
-        configurePageControl()
-//        configureCustomPageControl()
+//        configurePageControl()
+        configureCustomPageControl()
 
 //        print (pageControl.layer.position)
 //        print (customPC.layer.position)
@@ -39,8 +39,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     // MARK: Delegate functions
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
-        pageControl.currentPage = pages.index(of: pageContentViewController)!
-//        customPC.set(progress: pages.index(of: pageContentViewController)!, animated: true)
+//        pageControl.currentPage = pages.index(of: pageContentViewController)!
+        customPC.set(progress: pages.index(of: pageContentViewController)!, animated: true)
     }
 
     // MARK: Data source functions.
@@ -99,22 +99,26 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         pageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20))
         pageControl.center.x = self.view.center.x
         pageControl.center.y = 303
-        self.pageControl.numberOfPages = pages.count
-        self.pageControl.currentPage = 0
-        self.pageControl.tintColor = .white
-        self.pageControl.pageIndicatorTintColor = .black
-        self.pageControl.currentPageIndicatorTintColor = .white
+        pageControl.numberOfPages = pages.count
+        pageControl.currentPage = 0
+        pageControl.tintColor = .white
+        pageControl.pageIndicatorTintColor = .black
+        pageControl.currentPageIndicatorTintColor = .white
+        pageControl.isUserInteractionEnabled = false
         self.view.addSubview(pageControl)
     }
 
     func configureCustomPageControl() {
-        self.customPC = CHIPageControlAji(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20))
-        self.customPC.center.x = self.view.center.x
-        self.customPC.center.y = 303
-        self.customPC.numberOfPages = pages.count
-        self.customPC.tintColor = .black
-        self.customPC.radius = 4
-        self.customPC.currentPageTintColor = .white
-        self.customPC.padding = 6
+        customPC = CHIPageControlJaloro(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20))
+        customPC.center.x = self.view.center.x - 28
+        customPC.center.y = 303
+        customPC.numberOfPages = pages.count
+        customPC.tintColor = .asbestos()
+        customPC.radius = 2.5
+        customPC.borderWidth = 0
+        customPC.currentPageTintColor = .clouds()
+        customPC.padding = 5
+        customPC.isUserInteractionEnabled = false
+        self.view.addSubview(customPC)
     }
 }

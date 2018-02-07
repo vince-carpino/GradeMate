@@ -18,6 +18,8 @@ class PickerViewController: UIViewController {
     var examWeight   = 0
     var desiredGrade = 0
     var scoreValue   = 0.0
+
+    var currentClass = 0
     
     var warning      = ""
     var dismiss      = ""
@@ -172,6 +174,11 @@ class PickerViewController: UIViewController {
         picker.scrollingStyle  = .default
         picker.selectionStyle  = .defaultIndicator
         picker.currentSelectedRow = stringArray.index(of: stringArray.first!)
+    }
+
+    public func setCurrentClass(val: Int) {
+//        self.picker3.selectRow(val, animated: true)
+        print (val)
     }
 }
 
@@ -459,7 +466,7 @@ extension PickerViewController {
         // 101 - 115
         case let x where x > 100:
             setWarning(warning: "Is there extra credit? 😬")
-            setDismiss(message: "I'll look into that 🙄")
+            setDismiss(message: "I'll look into it 🙄")
             break
             
         // 100
