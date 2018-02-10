@@ -22,6 +22,11 @@ class ClassButtonsViewController: UIViewController {
     @IBOutlet weak var button9: FUIButton!
     @IBOutlet weak var button10: FUIButton!
 
+
+
+
+    
+
     var pvc = PickerViewController()
 
     override func viewDidLoad() {
@@ -35,6 +40,7 @@ class ClassButtonsViewController: UIViewController {
     @IBAction func classButtonPressed(_ sender: FUIButton) {
         let value = Int((sender.titleLabel?.text)!)! - 1
         pvc.setCurrentClass(val: value)
+        print (Int((sender.titleLabel?.text)!)!)
     }
 
     func setAllButtonStyles() {

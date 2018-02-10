@@ -294,6 +294,9 @@
                         <outlet property="class3Button" destination="hlR-Th-s0r" id="oa0-YN-el2"/>
                         <outlet property="class4Button" destination="fgL-Ar-HJK" id="0nM-pd-DGe"/>
                         <outlet property="class5Button" destination="J8H-fD-GV4" id="6A9-hc-ZFK"/>
+                        <outlet property="classesBackButton" destination="6zy-Lq-Bnf" id="mrj-5C-tHT"/>
+                        <outlet property="classesScrollView" destination="L10-CA-8N3" id="AEo-9o-mva"/>
+                        <outlet property="classesView" destination="5cs-LM-Uyg" id="H8C-pK-8dh"/>
                         <outlet property="currentGradeButton" destination="GcP-z3-98b" id="GlL-jQ-yOn"/>
                         <outlet property="currentGradeInfoDismiss" destination="0f2-Lc-Qgr" id="RDd-CP-eyM"/>
                         <outlet property="currentGradeInfoView" destination="8yR-OH-JUR" id="dwY-wL-t2k"/>
@@ -541,6 +544,52 @@
                             <exclude reference="YZr-rh-4gD"/>
                         </mask>
                     </variation>
+                </view>
+                <view contentMode="scaleToFill" id="5cs-LM-Uyg">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="485"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved Classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYZ-iq-miK">
+                            <rect key="frame" x="16" y="10" width="308" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="UKY-fH-ajh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="32"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L10-CA-8N3" customClass="CustomScrollView" customModule="GradeMate" customModuleProvider="target">
+                            <rect key="frame" x="16" y="71" width="308" height="323"/>
+                            <color key="backgroundColor" red="0.74066370725631714" green="0.76499909162521362" blue="0.78119140863418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="323" id="BPu-bw-lpa"/>
+                            </constraints>
+                        </scrollView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zy-Lq-Bnf" customClass="FUIButton">
+                            <rect key="frame" x="16" y="420" width="308" height="45"/>
+                            <color key="backgroundColor" red="0.58314710855484009" green="0.64773333072662354" blue="0.65190428495407104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="8Uy-Ob-jXg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                            <state key="normal" title="Back"/>
+                            <connections>
+                                <action selector="savedClassesBackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UEU-9P-Bgh"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="sYZ-iq-miK" firstAttribute="top" secondItem="5cs-LM-Uyg" secondAttribute="top" constant="10" id="8IL-5k-buw"/>
+                        <constraint firstItem="L10-CA-8N3" firstAttribute="centerY" secondItem="5cs-LM-Uyg" secondAttribute="centerY" constant="-10" id="CCs-Hd-mb3"/>
+                        <constraint firstAttribute="bottom" secondItem="6zy-Lq-Bnf" secondAttribute="bottom" constant="20" id="NPg-eK-n3f"/>
+                        <constraint firstAttribute="trailing" secondItem="6zy-Lq-Bnf" secondAttribute="trailing" constant="16" id="OCj-TB-hEB"/>
+                        <constraint firstAttribute="trailing" secondItem="sYZ-iq-miK" secondAttribute="trailing" constant="16" id="cTz-61-CNZ"/>
+                        <constraint firstAttribute="trailing" secondItem="L10-CA-8N3" secondAttribute="trailing" constant="16" id="gnC-H6-mwS"/>
+                        <constraint firstItem="sYZ-iq-miK" firstAttribute="leading" secondItem="5cs-LM-Uyg" secondAttribute="leading" constant="16" id="rPS-FX-ou6"/>
+                        <constraint firstItem="L10-CA-8N3" firstAttribute="leading" secondItem="5cs-LM-Uyg" secondAttribute="leading" constant="16" id="tyH-4e-Jkw"/>
+                        <constraint firstItem="6zy-Lq-Bnf" firstAttribute="leading" secondItem="5cs-LM-Uyg" secondAttribute="leading" constant="16" id="zxT-o6-bvd"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" id="2Hv-6I-Kjh" userLabel="Result Pop Up">
                     <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>

@@ -10,7 +10,7 @@ import FlatUIKit
 import Hero
 import PickerView
 
-class FinalCalculatorViewController: PickerViewController {
+class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate {
 
     // GRADEMATE BUTTON MENU ITEMS
     @IBOutlet var gradeMateButtonView: UIView!
@@ -55,6 +55,11 @@ class FinalCalculatorViewController: PickerViewController {
     @IBOutlet weak var pageViewContainer: UIView!
     @IBOutlet weak public var pageControl: UIPageControl!
     @IBOutlet weak var scvBackButton: FUIButton!
+
+
+    @IBOutlet var classesView: UIView!
+    @IBOutlet weak var classesScrollView: UIScrollView!
+    @IBOutlet weak var classesBackButton: FUIButton!
     
     let calculateButtonWords: [String] = [
         "Calculate",
@@ -81,6 +86,8 @@ class FinalCalculatorViewController: PickerViewController {
         super.viewDidLoad()
 
         self.isHeroEnabled = true
+
+        classesScrollView.delegate = self
 
         checkForSmallScreen()
 
@@ -110,6 +117,18 @@ class FinalCalculatorViewController: PickerViewController {
         } else {
             userDefaults.set(15, forKey: "class1")
         }
+
+
+
+        let pages: [ClassButtonPage] = createClassButtonPages()
+        setupClassesScrollView(pages: pages)
+
+//        print ("WHOLE VIEW WIDTH: \(classesView.frame.width)")
+        print ("SCROLLVIEW WIDTH: \(classesScrollView.frame.width)")
+        print ("PAGE 1 WIDTH    : \(pages[0].frame.width)")
+        print ("PAGE 2 WIDTH    : \(pages[1].frame.width)")
+        print ("PAGE 1 X POS    : \(pages[0].layer.position.x)")
+        print ("PAGE 2 X POS    : \(pages[1].layer.position.x)")
     }
 
     // MARK: - GRADEMATE BUTTON
@@ -197,7 +216,7 @@ class FinalCalculatorViewController: PickerViewController {
 
 
     @IBAction func savedClassesBackPressed(_ sender: FUIButton) {
-        animateOut(viewToAnimate: self.scv)
+        animateOut(viewToAnimate: self.classesView)
     }
 
     
@@ -367,6 +386,9 @@ class FinalCalculatorViewController: PickerViewController {
 
         scv.layer.cornerRadius = 10
         pageViewContainer.layer.cornerRadius = 10
+
+        classesView.layer.cornerRadius = 10
+        classesScrollView.layer.cornerRadius = 10
     }
 
     func setAllButtonStyles() {
@@ -392,6 +414,8 @@ class FinalCalculatorViewController: PickerViewController {
         setButtonStyle(button: class5Button, buttonColor: .wetAsphalt(), shadowColor: .midnightBlue())
         setButtonStyle(button: addClassButton, buttonColor: .concrete(), shadowColor: .asbestos())
         setButtonStyle(button: scvBackButton, buttonColor: .concrete(), shadowColor: .asbestos())
+
+        setButtonStyle(button: classesBackButton, buttonColor: .concrete(), shadowColor: .asbestos())
     }
 
     func setAllButtonTextBehavior() {
@@ -421,7 +445,7 @@ class FinalCalculatorViewController: PickerViewController {
 
     @objc func longTap(_ sender: UIGestureRecognizer) {
         if sender.state == .began {
-            animateIn(viewToAnimate: self.scv, height: 485)
+            animateIn(viewToAnimate: self.classesView, height: 485)
         }
     }
 
@@ -433,11 +457,57 @@ class FinalCalculatorViewController: PickerViewController {
     func newVC(name: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
     }
+
+    func createClassButtonPages() -> [ClassButtonPage] {
+        let page1: ClassButtonPage = Bundle.main.loadNibNamed("ClassButtonPage", owner: self, options: nil)?.first as! ClassButtonPage
+        page1.button1.setTitle("A", for: .normal)
+        page1.button2.setTitle("B", for: .normal)
+        page1.button3.setTitle("C", for: .normal)
+        page1.button4.setTitle("D", for: .normal)
+        page1.button5.setTitle("E", for: .normal)
+
+        let page2: ClassButtonPage = Bundle.main.loadNibNamed("ClassButtonPage", owner: self, options: nil)?.first as! ClassButtonPage
+        page2.button1.setTitle("F", for: .normal)
+        page2.button2.setTitle("G", for: .normal)
+        page2.button3.setTitle("H", for: .normal)
+        page2.button4.setTitle("I", for: .normal)
+        page2.button5.setTitle("J", for: .normal)
+
+        setButtonStyle(button: page1.button1)
+        setButtonStyle(button: page1.button2)
+        setButtonStyle(button: page1.button3)
+        setButtonStyle(button: page1.button4)
+        setButtonStyle(button: page1.button5)
+
+        setButtonStyle(button: page2.button1)
+        setButtonStyle(button: page2.button2)
+        setButtonStyle(button: page2.button3)
+        setButtonStyle(button: page2.button4)
+        setButtonStyle(button: page2.button5)
+
+        page1.backgroundColor = .pomegranate()
+        page2.backgroundColor = .belizeHole()
+
+        return [page1, page2]
+    }
+
+    func setupClassesScrollView(pages: [ClassButtonPage]) {
+        classesScrollView.contentSize = CGSize(width: classesScrollView.frame.width * CGFloat(pages.count), height: classesScrollView.frame.height)
+
+        for i in 0 ..< pages.count {
+            pages[i].frame = CGRect(x: classesScrollView.frame.width * CGFloat(i), y: 0, width: classesScrollView.frame.width, height: classesScrollView.frame.height)
+            classesScrollView.addSubview(pages[i])
+        }
+
+//        classesScrollView.delegate = self
+        classesScrollView.isPagingEnabled = true
+        classesScrollView.showsHorizontalScrollIndicator = false
+    }
 }
 
 extension UIViewController {
     // MARK: - SET BUTTON STYLE
-    func setButtonStyle(button: FUIButton, buttonColor: UIColor, shadowColor: UIColor, textColor: UIColor = .clouds(), shadowHeight: CGFloat = 6.0, cornerRadius: CGFloat = 6.0, isDismiss: Bool = false) {
+    func setButtonStyle(button: FUIButton, buttonColor: UIColor = .turquoise(), shadowColor: UIColor = .greenSea(), textColor: UIColor = .clouds(), shadowHeight: CGFloat = 6.0, cornerRadius: CGFloat = 6.0, isDismiss: Bool = false) {
         button.shadowHeight = shadowHeight
         button.buttonColor  = buttonColor
         button.shadowColor  = shadowColor
@@ -446,5 +516,8 @@ extension UIViewController {
         button.setTitleColor(textColor, for: .normal)
         button.setTitleColor(textColor, for: .highlighted)
         button.backgroundColor = .clear
+
+        button.isExclusiveTouch = true
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
     }
 }
