@@ -13,13 +13,11 @@
 		D028A9141D2105F000AAA32A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D028A9131D2105F000AAA32A /* Assets.xcassets */; };
 		D028A9171D2105F000AAA32A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D028A9151D2105F000AAA32A /* LaunchScreen.storyboard */; };
 		D04761461FFC90CD00B2CD9B /* CourseGradeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04761451FFC90CD00B2CD9B /* CourseGradeCalculator.swift */; };
-		D04D72C2202903B6008A4A6A /* ClassButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D72C1202903B6008A4A6A /* ClassButtonsViewController.swift */; };
 		D078EFF61D828EBB0063C825 /* ShowLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078EFF51D828EBB0063C825 /* ShowLaunchScreen.swift */; };
 		D09AF72D200891C70002C506 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09AF72C200891C70002C506 /* PickerViewController.swift */; };
 		D0A83406202ED81D00BCC4E5 /* ClassButtonPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A83405202ED81D00BCC4E5 /* ClassButtonPage.xib */; };
 		D0D7DCA6202BF3040077C64D /* ClassButtonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D7DCA5202BF3040077C64D /* ClassButtonPage.swift */; };
 		D0D7DCA8202D74B80077C64D /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D7DCA7202D74B80077C64D /* CustomScrollView.swift */; };
-		D0EA7C1520285D1D00CF612A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA7C1420285D1D00CF612A /* PageViewController.swift */; };
 		EC6E700E9C8F8C81F543CF8D /* Pods_GradeMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB97C7EB7CC79108B33B8A6 /* Pods_GradeMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,13 +33,11 @@
 		D028A9161D2105F000AAA32A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D028A9181D2105F000AAA32A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04761451FFC90CD00B2CD9B /* CourseGradeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseGradeCalculator.swift; sourceTree = "<group>"; };
-		D04D72C1202903B6008A4A6A /* ClassButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClassButtonsViewController.swift; path = GradeMate/Controller/ClassButtonsViewController.swift; sourceTree = SOURCE_ROOT; };
 		D078EFF51D828EBB0063C825 /* ShowLaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLaunchScreen.swift; sourceTree = "<group>"; };
 		D09AF72C200891C70002C506 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		D0A83405202ED81D00BCC4E5 /* ClassButtonPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassButtonPage.xib; sourceTree = "<group>"; };
 		D0D7DCA5202BF3040077C64D /* ClassButtonPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassButtonPage.swift; sourceTree = "<group>"; };
 		D0D7DCA7202D74B80077C64D /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
-		D0EA7C1420285D1D00CF612A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = GradeMate/Controller/PageViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +107,6 @@
 				D09AF72C200891C70002C506 /* PickerViewController.swift */,
 				D028A90E1D2105F000AAA32A /* FinalCalculatorViewController.swift */,
 				D04761451FFC90CD00B2CD9B /* CourseGradeCalculator.swift */,
-				D0EA7C1420285D1D00CF612A /* PageViewController.swift */,
-				D04D72C1202903B6008A4A6A /* ClassButtonsViewController.swift */,
 				D0D7DCA7202D74B80077C64D /* CustomScrollView.swift */,
 			);
 			path = Controller;
@@ -280,10 +274,8 @@
 				D09AF72D200891C70002C506 /* PickerViewController.swift in Sources */,
 				D028A90F1D2105F000AAA32A /* FinalCalculatorViewController.swift in Sources */,
 				D04761461FFC90CD00B2CD9B /* CourseGradeCalculator.swift in Sources */,
-				D0EA7C1520285D1D00CF612A /* PageViewController.swift in Sources */,
 				D028A90D1D2105F000AAA32A /* AppDelegate.swift in Sources */,
 				D0D7DCA8202D74B80077C64D /* CustomScrollView.swift in Sources */,
-				D04D72C2202903B6008A4A6A /* ClassButtonsViewController.swift in Sources */,
 				D078EFF61D828EBB0063C825 /* ShowLaunchScreen.swift in Sources */,
 				D0D7DCA6202BF3040077C64D /* ClassButtonPage.swift in Sources */,
 			);

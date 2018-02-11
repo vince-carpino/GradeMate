@@ -42,21 +42,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     // CALCULATE BUTTON
     @IBOutlet weak var calculateButton: FUIButton!
 
-    @IBOutlet var savedClassesView: UIView!
-    @IBOutlet weak var savedClassesBackButton: FUIButton!
-    @IBOutlet weak var class1Button: FUIButton!
-    @IBOutlet weak var class2Button: FUIButton!
-    @IBOutlet weak var class3Button: FUIButton!
-    @IBOutlet weak var class4Button: FUIButton!
-    @IBOutlet weak var class5Button: FUIButton!
-    @IBOutlet weak var addClassButton: FUIButton!
-
-    @IBOutlet var scv: UIView!
-    @IBOutlet weak var pageViewContainer: UIView!
-    @IBOutlet weak public var pageControl: UIPageControl!
-    @IBOutlet weak var scvBackButton: FUIButton!
-
-
     @IBOutlet var classesView: UIView!
     @IBOutlet weak var classesScrollView: UIScrollView!
     @IBOutlet weak var classesBackButton: FUIButton!
@@ -87,12 +72,8 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
         self.isHeroEnabled = true
 
-
-
         let pages: [ClassButtonPage] = createClassButtonPages()
         setupClassesScrollView(pages: pages)
-
-
 
         checkForSmallScreen()
 
@@ -100,36 +81,24 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
         addAnimations()
 
-        centerButtonText()
-
         roundOffPopUpCorners()
-
-        makeAllButtonsExclusiveTouch()
 
         setAllButtonStyles()
 
         setAllButtonTextBehavior()
 
         addLongPressToExamWeightButton()
-        let userDefaults = UserDefaults.standard
+//        let userDefaults = UserDefaults.standard
 
 //        if userDefaults.object(forKey: "class1") == nil {
 //            userDefaults.set(15, forKey: "class1")
 //        }
 
-        if let val = userDefaults.object(forKey: "class1") as? Int {
-            class1Button.titleLabel?.text = String(val)
-        } else {
-            userDefaults.set(15, forKey: "class1")
-        }
-
-//
-////        print ("WHOLE VIEW WIDTH: \(classesView.frame.width)")
-//        print ("SCROLLVIEW WIDTH: \(classesScrollView.frame.width)")
-//        print ("PAGE 1 WIDTH    : \(pages[0].frame.width)")
-//        print ("PAGE 2 WIDTH    : \(pages[1].frame.width)")
-//        print ("PAGE 1 X POS    : \(pages[0].layer.position.x)")
-//        print ("PAGE 2 X POS    : \(pages[1].layer.position.x)")
+//        if let val = userDefaults.object(forKey: "class1") as? Int {
+//            class1Button.titleLabel?.text = String(val)
+//        } else {
+//            userDefaults.set(15, forKey: "class1")
+//        }
     }
 
     // MARK: - GRADEMATE BUTTON
@@ -211,9 +180,13 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 //        picker3.selectRow(Int(substring)! - 1, animated: true)
 
 
-        animateOut(viewToAnimate: self.scv)
+        animateOut(viewToAnimate: self.classesView)
     }
 
+    // MARK: - DISMISS POP UP
+//    @IBAction func dismissPopUp(_ sender: FUIButton) {
+//        animateOut(viewToAnimate: self.view.subviews.last!)
+//    }
 
 
     @IBAction func savedClassesBackPressed(_ sender: FUIButton) {
@@ -284,75 +257,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 //        calculateButton.setTitle(calculateButtonWords[randInt], for: .normal)
     }
 
-//    // MARK: - SET BUTTON STYLE
-//    func setButtonStyle(button: FUIButton, buttonColor: UIColor, shadowColor: UIColor, textColor: UIColor = .clouds(), shadowHeight: CGFloat = 6.0, cornerRadius: CGFloat = 6.0, isDismiss: Bool = false) {
-//        button.shadowHeight = shadowHeight
-//        button.buttonColor  = buttonColor
-//        button.shadowColor  = shadowColor
-//        button.cornerRadius = isDismiss ? button.frame.height / 2 : cornerRadius
-//        
-//        button.setTitleColor(textColor, for: .normal)
-//        button.setTitleColor(textColor, for: .highlighted)
-//    }
-
-    // MARK: - SET ROUNDED CORNERS OF BUTTON
-    func setCornersForButton(button: UIButton, value: Double) -> Void {
-        button.layer.cornerRadius = CGFloat(value)
-    }
-
-    // MARK: - SET ROUNDED CORNERS OF LABEL
-    func setCornersForLabel(label: UILabel, value: Double) -> Void {
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius  = CGFloat(value)
-    }
-    
-    // MARK: - EXPAND BUTTON LABEL BOUNDS
-    func setButtonLabelBounds(button: UIButton, value: Double) -> Void {
-        button.contentEdgeInsets.top    = CGFloat(value)
-        button.contentEdgeInsets.bottom = CGFloat(value)
-        button.contentEdgeInsets.left   = CGFloat(value)
-        button.contentEdgeInsets.right  = CGFloat(value)
-    }
-    
-    // MARK: - CENTER INFO BUTTONS TEXT
-    func centerButtonText() {
-        currentGradeButton.titleLabel?.textAlignment = .center
-        examWeightButton.titleLabel?.textAlignment = .center
-        desiredGradeButton.titleLabel?.textAlignment = .center
-    }
-    
-//    // MARK: - SET DEFAULT RESULT POP UP INFO
-//    func setDefaultResultInfo() {
-//        self.resultViewScoreLabel.text = "100%"
-//        self.resultViewWarningLabel.text = "May the Force be with you..."
-//        self.resultViewDismissButton.setTitle("Thank you, Master 🙏", for: .normal)
-//    }
-
-    // MARK: - MAKE ALL BUTTONS EXCLUSIVE TOUCH
-    func makeAllButtonsExclusiveTouch() {
-        currentGradeButton.isExclusiveTouch            = true
-        examWeightButton.isExclusiveTouch              = true
-        desiredGradeButton.isExclusiveTouch            = true
-        calculateButton.isExclusiveTouch               = true
-        resultViewDismissButton.isExclusiveTouch       = true
-        currentGradeInfoDismiss.isExclusiveTouch       = true
-        examWeightInfoDismiss.isExclusiveTouch         = true
-        desiredGradeInfoDismiss.isExclusiveTouch       = true
-        gradeMateButton.isExclusiveTouch               = true
-        shareLinkButton.isExclusiveTouch               = true
-        writeReviewButton.isExclusiveTouch             = true
-        gradeMateButtonViewBackButton.isExclusiveTouch = true
-        savedClassesBackButton.isExclusiveTouch        = true
-
-        class1Button.isExclusiveTouch = true
-        class2Button.isExclusiveTouch = true
-        class3Button.isExclusiveTouch = true
-        class4Button.isExclusiveTouch = true
-        class5Button.isExclusiveTouch = true
-        addClassButton.isExclusiveTouch = true
-        scvBackButton.isExclusiveTouch = true
-    }
-
     func checkForSmallScreen() {
         if (UIScreen.main.bounds.size.height == 480) {
             gradeMateButton.isHidden = true
@@ -384,13 +288,8 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         examWeightInfoView.layer.cornerRadius   = 10
         desiredGradeInfoView.layer.cornerRadius = 10
         gradeMateButtonView.layer.cornerRadius  = 10
-        savedClassesView.layer.cornerRadius     = 10
-
-        scv.layer.cornerRadius = 10
-        pageViewContainer.layer.cornerRadius = 10
-
-        classesView.layer.cornerRadius = 10
-        classesScrollView.layer.cornerRadius = 10
+        classesView.layer.cornerRadius          = 10
+        classesScrollView.layer.cornerRadius    = 10
     }
 
     func setAllButtonStyles() {
@@ -407,15 +306,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         setButtonStyle(button: gradeMateButtonViewBackButton, buttonColor: calculateButtonColor, shadowColor: calculateButtonShadow)
         setButtonStyle(button: shareLinkButton, buttonColor: upperButtonColors, shadowColor: upperButtonShadows, isDismiss: true)
         setButtonStyle(button: writeReviewButton, buttonColor: upperButtonColors, shadowColor: upperButtonShadows, isDismiss: true)
-        setButtonStyle(button: savedClassesBackButton, buttonColor: calculateButtonColor, shadowColor: calculateButtonShadow)
-
-        setButtonStyle(button: class1Button, buttonColor: .turquoise(), shadowColor: .greenSea())
-        setButtonStyle(button: class2Button, buttonColor: .emerland(), shadowColor: .nephritis())
-        setButtonStyle(button: class3Button, buttonColor: .peterRiver(), shadowColor: .belizeHole())
-        setButtonStyle(button: class4Button, buttonColor: .amethyst(), shadowColor: .wisteria())
-        setButtonStyle(button: class5Button, buttonColor: .wetAsphalt(), shadowColor: .midnightBlue())
-        setButtonStyle(button: addClassButton, buttonColor: .concrete(), shadowColor: .asbestos())
-        setButtonStyle(button: scvBackButton, buttonColor: .concrete(), shadowColor: .asbestos())
 
         setButtonStyle(button: classesBackButton, buttonColor: .concrete(), shadowColor: .asbestos())
     }
@@ -428,21 +318,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         currentGradeInfoDismiss.titleLabel?.numberOfLines = 1
         examWeightInfoDismiss.titleLabel?.numberOfLines   = 1
         desiredGradeInfoDismiss.titleLabel?.numberOfLines = 1
-
-        gradeMateButton.titleLabel?.adjustsFontSizeToFitWidth               = true
-        gradeMateButtonShadow.titleLabel?.adjustsFontSizeToFitWidth         = true
-        currentGradeButton.titleLabel?.adjustsFontSizeToFitWidth            = true
-        examWeightButton.titleLabel?.adjustsFontSizeToFitWidth              = true
-        desiredGradeButton.titleLabel?.adjustsFontSizeToFitWidth            = true
-        calculateButton.titleLabel?.adjustsFontSizeToFitWidth               = true
-        currentGradeInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth       = true
-        examWeightInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth         = true
-        desiredGradeInfoDismiss.titleLabel?.adjustsFontSizeToFitWidth       = true
-        resultViewDismissButton.titleLabel?.adjustsFontSizeToFitWidth       = true
-        shareLinkButton.titleLabel?.adjustsFontSizeToFitWidth               = true
-        writeReviewButton.titleLabel?.adjustsFontSizeToFitWidth             = true
-        gradeMateButtonViewBackButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        savedClassesBackButton.titleLabel?.adjustsFontSizeToFitWidth        = true
     }
 
     @objc func longTap(_ sender: UIGestureRecognizer) {
@@ -456,24 +331,21 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         examWeightButton.addGestureRecognizer(longGesture)
     }
 
-    func newVC(name: String) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
-    }
-
     func createClassButtonPages() -> [ClassButtonPage] {
         let page1: ClassButtonPage = Bundle.main.loadNibNamed("ClassButtonPage", owner: self, options: nil)?.first as! ClassButtonPage
-        page1.button1.setTitle("A", for: .normal)
-        page1.button2.setTitle("B", for: .normal)
-        page1.button3.setTitle("C", for: .normal)
-        page1.button4.setTitle("D", for: .normal)
-        page1.button5.setTitle("E", for: .normal)
+
+        page1.button1.setTitle("5%", for: .normal)
+        page1.button2.setTitle("10%", for: .normal)
+        page1.button3.setTitle("15%", for: .normal)
+        page1.button4.setTitle("20%", for: .normal)
+        page1.button5.setTitle("25%", for: .normal)
 
         let page2: ClassButtonPage = Bundle.main.loadNibNamed("ClassButtonPage", owner: self, options: nil)?.first as! ClassButtonPage
-        page2.button1.setTitle("F", for: .normal)
-        page2.button2.setTitle("G", for: .normal)
-        page2.button3.setTitle("H", for: .normal)
-        page2.button4.setTitle("I", for: .normal)
-        page2.button5.setTitle("J", for: .normal)
+        page2.button1.setTitle("30%", for: .normal)
+        page2.button2.setTitle("35%", for: .normal)
+        page2.button3.setTitle("40%", for: .normal)
+        page2.button4.setTitle("45%", for: .normal)
+        page2.button5.setTitle("50%", for: .normal)
 
         setButtonStyle(button: page1.button1)
         setButtonStyle(button: page1.button2)
@@ -525,6 +397,7 @@ extension UIViewController {
         button.backgroundColor = .clear
 
         button.isExclusiveTouch = true
+        button.titleLabel?.textAlignment = .center
         button.titleLabel?.adjustsFontSizeToFitWidth = true
     }
 }

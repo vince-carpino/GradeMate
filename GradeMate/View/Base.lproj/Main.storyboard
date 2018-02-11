@@ -244,13 +244,13 @@
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JdQ-ql-Q9x"/>
                             <constraint firstItem="FsN-nB-vq7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LMX-DY-fqa"/>
                             <constraint firstItem="pbC-DM-aJ4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NW8-vH-ADH"/>
+                            <constraint firstAttribute="bottom" secondItem="QBG-uT-CQa" secondAttribute="bottom" id="PGe-ll-vtI"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QaP-u6-Ovw"/>
                             <constraint firstItem="FsN-nB-vq7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rf1-Sv-W47"/>
                             <constraint firstItem="zWP-MT-gle" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ViY-Z3-FoR"/>
                             <constraint firstAttribute="trailing" secondItem="MiA-7j-tPc" secondAttribute="trailing" constant="16" id="XCz-lJ-r6n"/>
                             <constraint firstItem="zWP-MT-gle" firstAttribute="top" secondItem="MiA-7j-tPc" secondAttribute="bottom" constant="8" id="XSb-DV-IUc"/>
                             <constraint firstItem="MiA-7j-tPc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="am0-i6-YBz"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QBG-uT-CQa" secondAttribute="bottom" id="d2Q-Yk-GzX"/>
                             <constraint firstItem="Ui8-8g-Ac6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gfF-hX-mG5"/>
                             <constraint firstItem="QBG-uT-CQa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gho-Rf-S4T"/>
                             <constraint firstItem="zWP-MT-gle" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jbh-Ck-qId"/>
@@ -287,13 +287,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Sp2-ce-Jmc"/>
                     <connections>
-                        <outlet property="addClassButton" destination="2h4-3c-YbT" id="zSa-PO-8qB"/>
                         <outlet property="calculateButton" destination="xMt-tf-LU1" id="hyJ-EX-V8U"/>
-                        <outlet property="class1Button" destination="rqF-bj-aiU" id="79v-l4-rU3"/>
-                        <outlet property="class2Button" destination="UDu-JF-NeX" id="gfQ-9Z-Oyd"/>
-                        <outlet property="class3Button" destination="hlR-Th-s0r" id="oa0-YN-el2"/>
-                        <outlet property="class4Button" destination="fgL-Ar-HJK" id="0nM-pd-DGe"/>
-                        <outlet property="class5Button" destination="J8H-fD-GV4" id="6A9-hc-ZFK"/>
                         <outlet property="classesBackButton" destination="6zy-Lq-Bnf" id="mrj-5C-tHT"/>
                         <outlet property="classesScrollView" destination="L10-CA-8N3" id="AEo-9o-mva"/>
                         <outlet property="classesView" destination="5cs-LM-Uyg" id="H8C-pK-8dh"/>
@@ -310,8 +304,6 @@
                         <outlet property="gradeMateButtonShadow" destination="cmT-0f-tp7" id="waa-Gf-XPo"/>
                         <outlet property="gradeMateButtonView" destination="MiO-lY-l4M" id="N7n-HG-y9I"/>
                         <outlet property="gradeMateButtonViewBackButton" destination="oC4-rD-5JP" id="nK2-nn-I3e"/>
-                        <outlet property="pageControl" destination="YZr-rh-4gD" id="tkL-8z-sqw"/>
-                        <outlet property="pageViewContainer" destination="97q-z7-Sck" id="zgr-Hh-aCY"/>
                         <outlet property="picker1" destination="U24-1Q-iQV" id="hME-dX-s7l"/>
                         <outlet property="picker2" destination="hKx-eF-fr1" id="kdt-3c-Jdo"/>
                         <outlet property="picker3" destination="BYC-7I-o15" id="gte-d7-sMf"/>
@@ -320,10 +312,6 @@
                         <outlet property="resultViewDismissButton" destination="PQe-M8-Jcp" id="FtE-Jb-kV1"/>
                         <outlet property="resultViewScoreLabel" destination="sPA-dN-II0" id="lo6-Jq-zL8"/>
                         <outlet property="resultViewWarningLabel" destination="8kV-bW-XFv" id="SZy-Lx-XnK"/>
-                        <outlet property="savedClassesBackButton" destination="sRQ-q8-3ua" id="gzV-Er-wfr"/>
-                        <outlet property="savedClassesView" destination="2aD-MI-okM" id="8Y9-5L-v3N"/>
-                        <outlet property="scv" destination="jIT-JD-9vS" id="xKR-G1-0es"/>
-                        <outlet property="scvBackButton" destination="fOW-nG-NrI" id="7RV-dq-td1"/>
                         <outlet property="shareLinkButton" destination="s8k-VC-06Z" id="6jp-dc-bZb"/>
                         <outlet property="visualEffectView" destination="QBG-uT-CQa" id="S5J-j0-npO"/>
                         <outlet property="writeReviewButton" destination="IR1-53-jEX" id="qgG-Is-hg6"/>
@@ -391,153 +379,6 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.92887574434280396" green="0.94514650106430054" blue="0.94924908876419067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <view contentMode="scaleToFill" id="2aD-MI-okM" userLabel="Choose Class Pop Up">
-                    <rect key="frame" x="0.0" y="0.0" width="340" height="486"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saved Classes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k65-Fa-lOA" userLabel="Title Label">
-                            <rect key="frame" x="16" y="20" width="308" height="60"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="32"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRQ-q8-3ua" userLabel="Back button" customClass="FUIButton">
-                            <rect key="frame" x="16" y="420" width="308" height="46"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                            <state key="normal" title="Back">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqF-bj-aiU" userLabel="CLASS 1" customClass="FUIButton">
-                            <rect key="frame" x="16" y="88" width="308" height="46"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                            <state key="normal" title="15">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="classButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wCd-Da-9eh"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDu-JF-NeX" userLabel="CLASS 2" customClass="FUIButton">
-                            <rect key="frame" x="16" y="142" width="308" height="46"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                            <state key="normal" title="18">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="classButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5aO-4z-Z1r"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlR-Th-s0r" userLabel="CLASS 3" customClass="FUIButton">
-                            <rect key="frame" x="16" y="196" width="308" height="46"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                            <state key="normal" title="12">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="classButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8oE-gY-sCC"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgL-Ar-HJK" userLabel="CLASS 4" customClass="FUIButton">
-                            <rect key="frame" x="16" y="250" width="308" height="46"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                            <state key="normal" title="20">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="classButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdy-UL-0vV"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8H-fD-GV4" userLabel="CLASS 5" customClass="FUIButton">
-                            <rect key="frame" x="16" y="304" width="308" height="46"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                            <state key="normal" title="30">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="classButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3a5-iz-bb8"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2h4-3c-YbT" userLabel="ADD CLASS" customClass="FUIButton">
-                            <rect key="frame" x="16" y="358" width="308" height="46"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                            <state key="normal" title="+">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.92887574429999997" green="0.94514650109999998" blue="0.94924908880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <view contentMode="scaleToFill" id="jIT-JD-9vS">
-                    <rect key="frame" x="0.0" y="0.0" width="340" height="485"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved Classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg1-kh-Kor">
-                            <rect key="frame" x="16" y="10" width="308" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="ySH-m0-weS"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="32"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOW-nG-NrI" customClass="FUIButton">
-                            <rect key="frame" x="16" y="419" width="308" height="46"/>
-                            <color key="backgroundColor" red="0.58314710855484009" green="0.64773333072662354" blue="0.65190428495407104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="46" id="Rnt-HZ-ihp"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
-                            <state key="normal" title="Back">
-                                <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                        </button>
-                        <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97q-z7-Sck">
-                            <rect key="frame" x="16" y="71" width="308" height="323"/>
-                            <color key="backgroundColor" red="0.74040353298187256" green="0.76455146074295044" blue="0.78119933605194092" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="323" id="iNR-4c-Gzo"/>
-                            </constraints>
-                            <connections>
-                                <segue destination="96w-lt-TMH" kind="embed" id="i9P-hq-Mnm"/>
-                            </connections>
-                        </containerView>
-                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="YZr-rh-4gD">
-                            <rect key="frame" x="16" y="383.5" width="308" height="37"/>
-                        </pageControl>
-                    </subviews>
-                    <color key="backgroundColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="cg1-kh-Kor" secondAttribute="trailing" constant="16" id="36f-FR-S4y"/>
-                        <constraint firstAttribute="bottom" secondItem="fOW-nG-NrI" secondAttribute="bottom" constant="20" id="88y-QF-ppN"/>
-                        <constraint firstItem="97q-z7-Sck" firstAttribute="top" secondItem="cg1-kh-Kor" secondAttribute="bottom" constant="11" id="HJD-SR-AJd"/>
-                        <constraint firstAttribute="trailing" secondItem="YZr-rh-4gD" secondAttribute="trailing" constant="16" id="IX7-t5-hAh"/>
-                        <constraint firstItem="cg1-kh-Kor" firstAttribute="leading" secondItem="jIT-JD-9vS" secondAttribute="leading" constant="16" id="KNp-Ia-TPY"/>
-                        <constraint firstItem="YZr-rh-4gD" firstAttribute="top" secondItem="97q-z7-Sck" secondAttribute="bottom" id="KXA-UN-XGQ"/>
-                        <constraint firstAttribute="trailing" secondItem="97q-z7-Sck" secondAttribute="trailing" constant="16" id="Pqx-PV-rSf"/>
-                        <constraint firstItem="97q-z7-Sck" firstAttribute="leading" secondItem="jIT-JD-9vS" secondAttribute="leading" constant="16" id="RPu-jZ-Nku"/>
-                        <constraint firstItem="YZr-rh-4gD" firstAttribute="centerX" secondItem="jIT-JD-9vS" secondAttribute="centerX" id="Yoc-N6-Gi4"/>
-                        <constraint firstItem="YZr-rh-4gD" firstAttribute="leading" secondItem="jIT-JD-9vS" secondAttribute="leading" constant="16" id="caw-gW-65a"/>
-                        <constraint firstItem="cg1-kh-Kor" firstAttribute="top" secondItem="jIT-JD-9vS" secondAttribute="top" constant="10" id="oqO-rZ-1vE"/>
-                        <constraint firstItem="fOW-nG-NrI" firstAttribute="leading" secondItem="jIT-JD-9vS" secondAttribute="leading" constant="16" id="sPp-ip-p1Y"/>
-                        <constraint firstAttribute="trailing" secondItem="fOW-nG-NrI" secondAttribute="trailing" constant="16" id="suN-Vq-eYt"/>
-                        <constraint firstItem="97q-z7-Sck" firstAttribute="centerY" secondItem="jIT-JD-9vS" secondAttribute="centerY" constant="-10" id="tgI-Uo-B3N"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="subviews">
-                            <exclude reference="YZr-rh-4gD"/>
-                        </mask>
-                    </variation>
                 </view>
                 <view contentMode="scaleToFill" id="5cs-LM-Uyg">
                     <rect key="frame" x="0.0" y="0.0" width="340" height="485"/>
@@ -717,244 +558,6 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="-51" y="-264"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="bHb-I4-3CI">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="96w-lt-TMH" customClass="PageViewController" customModule="GradeMate" customModuleProvider="target" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="BQh-Eu-prm" kind="show" identifier="showBP1" id="SZa-6g-01V"/>
-                        <segue destination="CBi-zF-3by" kind="show" identifier="showBP2" id="o6h-qD-Mba"/>
-                    </connections>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2K-uK-qoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-53" y="431"/>
-        </scene>
-        <!--Class Buttons View Controller-->
-        <scene sceneID="ige-hU-JXp">
-            <objects>
-                <viewController storyboardIdentifier="buttonPage1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BQh-Eu-prm" customClass="ClassButtonsViewController" customModule="GradeMate" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="26H-3U-K7O"/>
-                        <viewControllerLayoutGuide type="bottom" id="KNG-1Q-6Y6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HQk-AE-GO3">
-                        <rect key="frame" x="0.0" y="0.0" width="308" height="323"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Yyi-VG-TNk" customClass="FUIButton">
-                                <rect key="frame" x="32" y="20" width="244" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="B4Z-Ip-DQY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="5">
-                                    <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="classBtnPressed:" destination="NWb-Oq-LgG" eventType="touchUpInside" id="6YB-eF-9Kc"/>
-                                    <action selector="classButtonPressed:" destination="BQh-Eu-prm" eventType="touchUpInside" id="7X5-zU-uqW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITJ-Jo-v8k" customClass="FUIButton">
-                                <rect key="frame" x="32" y="74" width="244" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="vjp-aw-wlH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="10">
-                                    <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="classButtonPressed:" destination="BQh-Eu-prm" eventType="touchUpInside" id="J3v-Z8-78Z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0j-hq-2TT" customClass="FUIButton">
-                                <rect key="frame" x="32" y="128" width="244" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="L3D-uA-Mnj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="15">
-                                    <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="classButtonPressed:" destination="BQh-Eu-prm" eventType="touchUpInside" id="0BU-ic-p85"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEb-du-do0" customClass="FUIButton">
-                                <rect key="frame" x="32" y="182" width="244" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="gvv-Xw-6OA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="20">
-                                    <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="classButtonPressed:" destination="BQh-Eu-prm" eventType="touchUpInside" id="cUY-J3-uMD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYF-Nz-27L" customClass="FUIButton">
-                                <rect key="frame" x="32" y="236" width="244" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="RsI-qZ-T46"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="25">
-                                    <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="classButtonPressed:" destination="BQh-Eu-prm" eventType="touchUpInside" id="0Q8-O5-kIP"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="px1-pW-q1i">
-                                <rect key="frame" x="34" y="331" width="125" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="HEb-du-do0" firstAttribute="top" secondItem="X0j-hq-2TT" secondAttribute="bottom" constant="8" id="3go-C2-FVA"/>
-                            <constraint firstItem="Yyi-VG-TNk" firstAttribute="trailing" secondItem="HQk-AE-GO3" secondAttribute="trailingMargin" constant="-16" id="Fgd-Et-dgC"/>
-                            <constraint firstItem="X0j-hq-2TT" firstAttribute="trailing" secondItem="HQk-AE-GO3" secondAttribute="trailingMargin" constant="-16" id="Gs8-xD-cW4"/>
-                            <constraint firstItem="X0j-hq-2TT" firstAttribute="top" secondItem="ITJ-Jo-v8k" secondAttribute="bottom" constant="8" id="I9z-cU-ARV"/>
-                            <constraint firstItem="mYF-Nz-27L" firstAttribute="leading" secondItem="HQk-AE-GO3" secondAttribute="leadingMargin" constant="16" id="PHB-UD-VM2"/>
-                            <constraint firstItem="HEb-du-do0" firstAttribute="trailing" secondItem="HQk-AE-GO3" secondAttribute="trailingMargin" constant="-16" id="PV4-lP-oPJ"/>
-                            <constraint firstItem="Yyi-VG-TNk" firstAttribute="top" secondItem="26H-3U-K7O" secondAttribute="bottom" constant="20" id="RTg-bj-r3z"/>
-                            <constraint firstItem="HEb-du-do0" firstAttribute="leading" secondItem="HQk-AE-GO3" secondAttribute="leadingMargin" constant="16" id="UOe-pe-kvy"/>
-                            <constraint firstItem="ITJ-Jo-v8k" firstAttribute="top" secondItem="Yyi-VG-TNk" secondAttribute="bottom" constant="8" id="d4X-CN-Knd"/>
-                            <constraint firstItem="X0j-hq-2TT" firstAttribute="leading" secondItem="HQk-AE-GO3" secondAttribute="leadingMargin" constant="16" id="dmt-zQ-ude"/>
-                            <constraint firstItem="ITJ-Jo-v8k" firstAttribute="trailing" secondItem="HQk-AE-GO3" secondAttribute="trailingMargin" constant="-16" id="ehK-xf-4hh"/>
-                            <constraint firstItem="Yyi-VG-TNk" firstAttribute="leading" secondItem="HQk-AE-GO3" secondAttribute="leadingMargin" constant="16" id="goe-9s-n81"/>
-                            <constraint firstItem="mYF-Nz-27L" firstAttribute="trailing" secondItem="HQk-AE-GO3" secondAttribute="trailingMargin" constant="-16" id="iSf-e2-vGN"/>
-                            <constraint firstItem="mYF-Nz-27L" firstAttribute="top" secondItem="HEb-du-do0" secondAttribute="bottom" constant="8" id="k1f-WR-6Sj"/>
-                            <constraint firstItem="ITJ-Jo-v8k" firstAttribute="leading" secondItem="HQk-AE-GO3" secondAttribute="leadingMargin" constant="16" id="ylv-04-j3R"/>
-                        </constraints>
-                    </view>
-                    <size key="freeformSize" width="308" height="323"/>
-                    <connections>
-                        <outlet property="button1" destination="Yyi-VG-TNk" id="RVz-uY-YdC"/>
-                        <outlet property="button2" destination="ITJ-Jo-v8k" id="Q96-al-qnN"/>
-                        <outlet property="button3" destination="X0j-hq-2TT" id="zWn-yM-75e"/>
-                        <outlet property="button4" destination="HEb-du-do0" id="pQy-IR-Mje"/>
-                        <outlet property="button5" destination="mYF-Nz-27L" id="7eB-Vo-hZd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SBM-eU-sBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="NWb-Oq-LgG" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="-349" y="852"/>
-        </scene>
-        <!--Class Buttons View Controller-->
-        <scene sceneID="42D-TE-0rb">
-            <objects>
-                <viewController storyboardIdentifier="buttonPage2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CBi-zF-3by" customClass="ClassButtonsViewController" customModule="GradeMate" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OpE-e0-IF7"/>
-                        <viewControllerLayoutGuide type="bottom" id="fm1-NU-5eR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4Uq-dG-bGA">
-                        <rect key="frame" x="0.0" y="0.0" width="308" height="323"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogk-RP-m39" customClass="FUIButton">
-                                <rect key="frame" x="32" y="20" width="244" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="y1j-Do-VSm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="30">
-                                    <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="classButtonPressed:" destination="CBi-zF-3by" eventType="touchUpInside" id="VQr-g5-ra9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhV-Cv-Yi0" customClass="FUIButton">
-                                <rect key="frame" x="32" y="74" width="244" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="3Qo-4a-Amg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="35">
-                                    <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="classButtonPressed:" destination="CBi-zF-3by" eventType="touchUpInside" id="Tvt-4D-jek"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qq-DG-ghz" customClass="FUIButton">
-                                <rect key="frame" x="32" y="128" width="244" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="MxL-6Y-A0q"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="40">
-                                    <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="classButtonPressed:" destination="CBi-zF-3by" eventType="touchUpInside" id="PJQ-GB-X9R"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhG-bH-apC" customClass="FUIButton">
-                                <rect key="frame" x="32" y="182" width="244" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="YWY-aP-gcJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="45">
-                                    <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="classButtonPressed:" destination="CBi-zF-3by" eventType="touchUpInside" id="XAo-eL-GpV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86W-sX-6Yo" customClass="FUIButton">
-                                <rect key="frame" x="32" y="236" width="244" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="r2d-9j-ECH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="50">
-                                    <color key="titleColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="classButtonPressed:" destination="CBi-zF-3by" eventType="touchUpInside" id="FwD-8x-NgA"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="ogk-RP-m39" firstAttribute="leading" secondItem="4Uq-dG-bGA" secondAttribute="leadingMargin" constant="16" id="7D7-1k-Heu"/>
-                            <constraint firstItem="3Qq-DG-ghz" firstAttribute="leading" secondItem="4Uq-dG-bGA" secondAttribute="leadingMargin" constant="16" id="7Rf-op-Zk3"/>
-                            <constraint firstItem="qhG-bH-apC" firstAttribute="leading" secondItem="4Uq-dG-bGA" secondAttribute="leadingMargin" constant="16" id="EkX-xU-JJZ"/>
-                            <constraint firstItem="86W-sX-6Yo" firstAttribute="leading" secondItem="4Uq-dG-bGA" secondAttribute="leadingMargin" constant="16" id="GYM-9F-LeE"/>
-                            <constraint firstItem="zhV-Cv-Yi0" firstAttribute="top" secondItem="ogk-RP-m39" secondAttribute="bottom" constant="8" id="HpD-Gn-XDG"/>
-                            <constraint firstItem="86W-sX-6Yo" firstAttribute="top" secondItem="qhG-bH-apC" secondAttribute="bottom" constant="8" id="LWy-of-QVg"/>
-                            <constraint firstItem="3Qq-DG-ghz" firstAttribute="trailing" secondItem="4Uq-dG-bGA" secondAttribute="trailingMargin" constant="-16" id="Z0c-Bz-WSf"/>
-                            <constraint firstItem="ogk-RP-m39" firstAttribute="top" secondItem="OpE-e0-IF7" secondAttribute="bottom" constant="20" id="bNj-Am-wf3"/>
-                            <constraint firstItem="zhV-Cv-Yi0" firstAttribute="leading" secondItem="4Uq-dG-bGA" secondAttribute="leadingMargin" constant="16" id="ehz-Eo-zl3"/>
-                            <constraint firstItem="qhG-bH-apC" firstAttribute="trailing" secondItem="4Uq-dG-bGA" secondAttribute="trailingMargin" constant="-16" id="jgj-s8-GPc"/>
-                            <constraint firstItem="3Qq-DG-ghz" firstAttribute="top" secondItem="zhV-Cv-Yi0" secondAttribute="bottom" constant="8" id="ka1-XS-Fyk"/>
-                            <constraint firstItem="qhG-bH-apC" firstAttribute="top" secondItem="3Qq-DG-ghz" secondAttribute="bottom" constant="8" id="liv-GN-5ev"/>
-                            <constraint firstItem="zhV-Cv-Yi0" firstAttribute="trailing" secondItem="4Uq-dG-bGA" secondAttribute="trailingMargin" constant="-16" id="qVy-ic-bxV"/>
-                            <constraint firstItem="86W-sX-6Yo" firstAttribute="trailing" secondItem="4Uq-dG-bGA" secondAttribute="trailingMargin" constant="-16" id="u4f-kc-JLF"/>
-                            <constraint firstItem="ogk-RP-m39" firstAttribute="trailing" secondItem="4Uq-dG-bGA" secondAttribute="trailingMargin" constant="-16" id="xy9-jG-LrY"/>
-                        </constraints>
-                    </view>
-                    <size key="freeformSize" width="308" height="323"/>
-                    <connections>
-                        <outlet property="button10" destination="86W-sX-6Yo" id="5sD-Px-bQD"/>
-                        <outlet property="button6" destination="ogk-RP-m39" id="TS0-BN-iTZ"/>
-                        <outlet property="button7" destination="zhV-Cv-Yi0" id="m34-Zn-MBH"/>
-                        <outlet property="button8" destination="3Qq-DG-ghz" id="OuD-BC-kex"/>
-                        <outlet property="button9" destination="qhG-bH-apC" id="eN6-fY-zIC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xCP-2w-zK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="243" y="852"/>
         </scene>
         <!--Show Launch Screen-->
         <scene sceneID="Etb-bZ-ro1">
