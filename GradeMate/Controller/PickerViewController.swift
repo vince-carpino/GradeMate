@@ -35,6 +35,8 @@ class PickerViewController: UIViewController {
         }
     }
 
+    let screenWidth = UIScreen.main.bounds.width
+
     // MARK: - PICKERVIEWS
     @IBOutlet weak var picker1: PickerView!
     @IBOutlet weak var picker2: PickerView!
@@ -321,7 +323,6 @@ extension PickerViewController {
     func animateIn(viewToAnimate: UIView, height: Int) {
 
         self.visualEffectView.isHidden = false
-        self.view.addSubview(viewToAnimate)
 //        viewToAnimate.translatesAutoresizingMaskIntoConstraints = false
 
         viewToAnimate.frame = CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.width) - 24, height: height)
@@ -337,6 +338,7 @@ extension PickerViewController {
 
 //        viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)    // MAKE POP UP VIEW SLIGHTLY BIGGER BEFORE IT IS DISPLAYED
         viewToAnimate.alpha = 0
+        self.view.addSubview(viewToAnimate)
 
         // ANIMATE POP UP, RETURNING IT TO ITS NORMAL STATE (IDENTITY)
         UIView.animate(withDuration: 0.3, animations: {

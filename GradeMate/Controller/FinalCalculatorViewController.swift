@@ -123,12 +123,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
             userDefaults.set(15, forKey: "class1")
         }
 
-
-//        self.view.addSubview(classesView)
-//        self.classesView.center = self.view.center
-
-
-
 //
 ////        print ("WHOLE VIEW WIDTH: \(classesView.frame.width)")
 //        print ("SCROLLVIEW WIDTH: \(classesScrollView.frame.width)")
@@ -500,13 +494,18 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     func setupClassesScrollView(pages: [ClassButtonPage]) {
+//        let screenWidth = Int(UIScreen.main.bounds.width)
+//        classesView.frame = CGRect(x: 0, y: 0, width: screenWidth - 24, height: 485)
+//        classesView.center = self.view.center
         classesScrollView.delegate = self
         classesScrollView.isPagingEnabled = true
         classesScrollView.showsHorizontalScrollIndicator = false
-        classesScrollView.contentSize = CGSize(width: classesScrollView.bounds.size.width * CGFloat(pages.count), height: classesScrollView.bounds.size.height)
+//        classesScrollView.frame = CGRect(x: 0, y: 0, width: screenWidth - 56, height: 323)
+//        classesScrollView.center = classesView.center
+        classesScrollView.contentSize = CGSize(width: CGFloat(screenWidth - (16 * 2) - (12 * 2)) * CGFloat(pages.count), height: classesScrollView.frame.height)
 
         for (index, page) in pages.enumerated() {
-            page.frame = CGRect(x: classesScrollView.bounds.width * CGFloat(index), y: 0, width: classesScrollView.bounds.width, height: classesScrollView.bounds.height)
+            page.frame = CGRect(x: classesScrollView.frame.width * CGFloat(index), y: 0, width: classesScrollView.frame.width, height: classesScrollView.frame.height)
             classesScrollView.addSubview(page)
         }
     }
