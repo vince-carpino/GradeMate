@@ -22,6 +22,7 @@ class CustomScrollView: UIScrollView {
 
     private func myInit() {
         self.delaysContentTouches = false
+        self.translatesAutoresizingMaskIntoConstraints = true
     }
 
     override func touchesShouldCancel(in view: UIView) -> Bool {

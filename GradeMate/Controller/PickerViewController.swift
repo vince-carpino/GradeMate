@@ -141,6 +141,8 @@ class PickerViewController: UIViewController {
     let scoreGradientImage = UIImage(named: "ScoreGradient")
     
     override func viewDidLoad() {
+        self.view.isHeroEnabled = true
+        
         configurePicker(picker: picker1, stringArray: stringNumbers1)
         configurePicker(picker: picker2, stringArray: stringNumbers2)
         configurePicker(picker: picker3, stringArray: stringNumbers3)
@@ -317,49 +319,51 @@ extension PickerViewController {
     
     // ANIMATE IN
     func animateIn(viewToAnimate: UIView, height: Int) {
+
         self.visualEffectView.isHidden = false
-        
-        self.view.addSubview(viewToAnimate)                                        // ADD POP UP VIEW TO MAIN VIEW
-        viewToAnimate.translatesAutoresizingMaskIntoConstraints = false
-        viewToAnimate.center = self.view.center                                    // CENTER POP UP VIEW IN MAIN VIEW
+        self.view.addSubview(viewToAnimate)
+//        viewToAnimate.translatesAutoresizingMaskIntoConstraints = false
 
-        // SET CONSTRAINTS TO AVOID CLIPPING ON SMALL SCREENS
-        let leading = NSLayoutConstraint(item: viewToAnimate, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 12)
-        let trailing = NSLayoutConstraint(item: viewToAnimate, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 12)
-        let centerX = NSLayoutConstraint(item: viewToAnimate, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
-        let centerY = NSLayoutConstraint(item: viewToAnimate, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
-        let heightConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(height))
-        NSLayoutConstraint.activate([leading, trailing, heightConstraint, centerX, centerY])
+        viewToAnimate.frame = CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.width) - 24, height: height)
+        viewToAnimate.center = self.view.center
 
-        viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)    // MAKE POP UP VIEW SLIGHTLY BIGGER BEFORE IT IS DISPLAYED
+//        // SET CONSTRAINTS TO AVOID CLIPPING ON SMALL SCREENS
+//        let leading = NSLayoutConstraint(item: viewToAnimate, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 12)
+//        let trailing = NSLayoutConstraint(item: viewToAnimate, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 12)
+//        let centerX = NSLayoutConstraint(item: viewToAnimate, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
+//        let centerY = NSLayoutConstraint(item: viewToAnimate, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+//        let heightConstraint = NSLayoutConstraint(item: viewToAnimate, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(height))
+//        NSLayoutConstraint.activate([leading, trailing, heightConstraint, centerX, centerY])
+
+//        viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)    // MAKE POP UP VIEW SLIGHTLY BIGGER BEFORE IT IS DISPLAYED
         viewToAnimate.alpha = 0
-        
+
         // ANIMATE POP UP, RETURNING IT TO ITS NORMAL STATE (IDENTITY)
         UIView.animate(withDuration: 0.3, animations: {
             self.visualEffectView.effect = self.effect
             viewToAnimate.alpha = 1
-            viewToAnimate.transform = CGAffineTransform.identity
+//            viewToAnimate.transform = CGAffineTransform.identity
         })
-        
+
         statusBarIsHidden = true
     }
-    
+
     // ANIMATE OUT
     public func animateOut(viewToAnimate: UIView) {
         UIView.animate(withDuration: 0.3, animations: {
-            viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+//            viewToAnimate.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             viewToAnimate.alpha = 0
-            
+
             self.visualEffectView.effect = nil
-            
+
         }) { (success:Bool) in
             viewToAnimate.removeFromSuperview()
             self.visualEffectView.isHidden = true
         }
-        
+
         statusBarIsHidden = false
     }
-    
+
     @IBAction func dismissPopUp(_ sender: FUIButton) {
         animateOut(viewToAnimate: self.resultView)
     }

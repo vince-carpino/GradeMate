@@ -21,94 +21,94 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3er-Bh-X8L" customClass="FUIButton">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm6-on-cCT" customClass="FUIButton">
                     <rect key="frame" x="16" y="192" width="343" height="50"/>
-                    <color key="backgroundColor" red="0.10161393135786057" green="0.73680812120437622" blue="0.61260855197906494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.10007033497095108" green="0.73665314912796021" blue="0.61070448160171509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="qK2-Nk-54d"/>
+                        <constraint firstAttribute="height" constant="50" id="WUt-OQ-N1P"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
                     <state key="normal" title="Button"/>
                     <connections>
-                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="TcS-wa-xfJ"/>
+                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="I5Y-A2-zZV"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4S-ij-a6q" customClass="FUIButton">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgE-yd-d7A" customClass="FUIButton">
                     <rect key="frame" x="16" y="250" width="343" height="50"/>
-                    <color key="backgroundColor" red="0.10161393135786057" green="0.73680812120437622" blue="0.61260855197906494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.10007033497095108" green="0.73665314912796021" blue="0.61070448160171509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="SBC-O4-W83"/>
+                        <constraint firstAttribute="height" constant="50" id="fji-TZ-mYx"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
                     <state key="normal" title="Button"/>
                     <connections>
-                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="rAP-m8-ACF"/>
+                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="2jO-05-xht"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alP-Nf-Zm3" customClass="FUIButton">
-                    <rect key="frame" x="16" y="308" width="343" height="50"/>
-                    <color key="backgroundColor" red="0.10161393135786057" green="0.73680812120437622" blue="0.61260855197906494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5A-4K-dFT" customClass="FUIButton">
+                    <rect key="frame" x="16" y="308.5" width="343" height="50"/>
+                    <color key="backgroundColor" red="0.10007033497095108" green="0.73665314912796021" blue="0.61070448160171509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="EgX-bD-CS5"/>
+                        <constraint firstAttribute="height" constant="50" id="u4g-zL-rEU"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
                     <state key="normal" title="Button"/>
                     <connections>
-                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="51i-aY-lcf"/>
+                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="gCO-yv-ESO"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcT-Z5-qBD" customClass="FUIButton">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-dj-eCx" customClass="FUIButton">
                     <rect key="frame" x="16" y="366" width="343" height="50"/>
-                    <color key="backgroundColor" red="0.10161393135786057" green="0.73680812120437622" blue="0.61260855197906494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.10007033497095108" green="0.73665314912796021" blue="0.61070448160171509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Gjz-vb-XE5"/>
+                        <constraint firstAttribute="height" constant="50" id="RgW-Mn-CFU"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
                     <state key="normal" title="Button"/>
                     <connections>
-                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="vby-PA-mDs"/>
+                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="0sQ-H6-5n5"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHk-i7-dSG" customClass="FUIButton">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tX-By-pBM" customClass="FUIButton">
                     <rect key="frame" x="16" y="424" width="343" height="50"/>
-                    <color key="backgroundColor" red="0.10161393135786057" green="0.73680812120437622" blue="0.61260855197906494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.10007033497095108" green="0.73665314912796021" blue="0.61070448160171509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="yev-vg-ZLY"/>
+                        <constraint firstAttribute="height" constant="50" id="Da6-0C-hhl"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
                     <state key="normal" title="Button"/>
                     <connections>
-                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="YQp-mO-Qyu"/>
+                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="SwQ-pm-o7A"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.74040353298187256" green="0.76455146074295044" blue="0.78119933605194092" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="3er-Bh-X8L" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="7t2-hF-UWc"/>
-                <constraint firstItem="Z4S-ij-a6q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Bcj-Y6-iSR"/>
-                <constraint firstItem="alP-Nf-Zm3" firstAttribute="top" secondItem="Z4S-ij-a6q" secondAttribute="bottom" constant="8" id="C3l-t9-aWi"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Z4S-ij-a6q" secondAttribute="trailing" constant="16" id="DId-RJ-goH"/>
-                <constraint firstItem="cHk-i7-dSG" firstAttribute="top" secondItem="RcT-Z5-qBD" secondAttribute="bottom" constant="8" id="Hhi-ip-tuj"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3er-Bh-X8L" secondAttribute="trailing" constant="16" id="JR1-bd-eEs"/>
-                <constraint firstItem="cHk-i7-dSG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Q4G-V1-rSF"/>
-                <constraint firstItem="Z4S-ij-a6q" firstAttribute="top" secondItem="3er-Bh-X8L" secondAttribute="bottom" constant="8" id="cUA-Wi-oQb"/>
-                <constraint firstItem="RcT-Z5-qBD" firstAttribute="top" secondItem="alP-Nf-Zm3" secondAttribute="bottom" constant="8" id="fUI-ej-VXH"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cHk-i7-dSG" secondAttribute="trailing" constant="16" id="krk-sX-MqS"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="alP-Nf-Zm3" secondAttribute="trailing" constant="16" id="piM-JG-Yl2"/>
-                <constraint firstItem="RcT-Z5-qBD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="qn4-51-LSt"/>
-                <constraint firstItem="alP-Nf-Zm3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="r7D-TG-zrU"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RcT-Z5-qBD" secondAttribute="trailing" constant="16" id="uPV-ZE-4Hl"/>
-                <constraint firstItem="alP-Nf-Zm3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zlm-Fc-Pr0"/>
+                <constraint firstItem="oQd-dj-eCx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="9Cc-wd-yJa"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FgE-yd-d7A" secondAttribute="trailing" constant="16" id="BXf-15-9kw"/>
+                <constraint firstItem="FgE-yd-d7A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Fnz-RK-xuq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="n5A-4K-dFT" secondAttribute="trailing" constant="16" id="J9h-vW-M8g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2tX-By-pBM" secondAttribute="trailing" constant="16" id="S0D-nL-B4k"/>
+                <constraint firstItem="FgE-yd-d7A" firstAttribute="top" secondItem="zm6-on-cCT" secondAttribute="bottom" constant="8" id="W6i-s5-PBc"/>
+                <constraint firstItem="2tX-By-pBM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ZIC-pI-Pth"/>
+                <constraint firstItem="n5A-4K-dFT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="aW0-AJ-OQo"/>
+                <constraint firstItem="n5A-4K-dFT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dQ4-6p-Gzc"/>
+                <constraint firstItem="n5A-4K-dFT" firstAttribute="top" secondItem="FgE-yd-d7A" secondAttribute="bottom" constant="8" id="gET-ex-lUK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oQd-dj-eCx" secondAttribute="trailing" constant="16" id="gf2-KT-hyt"/>
+                <constraint firstItem="2tX-By-pBM" firstAttribute="top" secondItem="oQd-dj-eCx" secondAttribute="bottom" constant="8" id="jH0-3Z-axM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zm6-on-cCT" secondAttribute="trailing" constant="16" id="o4n-xH-dcn"/>
+                <constraint firstItem="oQd-dj-eCx" firstAttribute="top" secondItem="n5A-4K-dFT" secondAttribute="bottom" constant="8" id="wap-a1-mHA"/>
+                <constraint firstItem="zm6-on-cCT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="xEc-Rx-ipv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="button1" destination="3er-Bh-X8L" id="MeJ-mE-Of0"/>
-                <outlet property="button2" destination="Z4S-ij-a6q" id="NJk-T8-bR6"/>
-                <outlet property="button3" destination="alP-Nf-Zm3" id="xCr-J4-2Dd"/>
-                <outlet property="button4" destination="RcT-Z5-qBD" id="FMH-La-9rr"/>
-                <outlet property="button5" destination="cHk-i7-dSG" id="lHq-Ui-K9K"/>
+                <outlet property="button1" destination="zm6-on-cCT" id="HIh-Oj-off"/>
+                <outlet property="button2" destination="FgE-yd-d7A" id="7FV-2X-XOV"/>
+                <outlet property="button3" destination="n5A-4K-dFT" id="hWM-3y-JgE"/>
+                <outlet property="button4" destination="oQd-dj-eCx" id="3om-4m-q4f"/>
+                <outlet property="button5" destination="2tX-By-pBM" id="e0s-g2-BMO"/>
             </connections>
-            <point key="canvasLocation" x="35.5" y="54.5"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
 </document>

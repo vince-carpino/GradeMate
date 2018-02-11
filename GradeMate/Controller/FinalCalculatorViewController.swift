@@ -87,7 +87,12 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
         self.isHeroEnabled = true
 
-        classesScrollView.delegate = self
+
+
+        let pages: [ClassButtonPage] = createClassButtonPages()
+        setupClassesScrollView(pages: pages)
+
+
 
         checkForSmallScreen()
 
@@ -119,16 +124,18 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         }
 
 
+//        self.view.addSubview(classesView)
+//        self.classesView.center = self.view.center
 
-        let pages: [ClassButtonPage] = createClassButtonPages()
-        setupClassesScrollView(pages: pages)
 
-//        print ("WHOLE VIEW WIDTH: \(classesView.frame.width)")
-        print ("SCROLLVIEW WIDTH: \(classesScrollView.frame.width)")
-        print ("PAGE 1 WIDTH    : \(pages[0].frame.width)")
-        print ("PAGE 2 WIDTH    : \(pages[1].frame.width)")
-        print ("PAGE 1 X POS    : \(pages[0].layer.position.x)")
-        print ("PAGE 2 X POS    : \(pages[1].layer.position.x)")
+
+//
+////        print ("WHOLE VIEW WIDTH: \(classesView.frame.width)")
+//        print ("SCROLLVIEW WIDTH: \(classesScrollView.frame.width)")
+//        print ("PAGE 1 WIDTH    : \(pages[0].frame.width)")
+//        print ("PAGE 2 WIDTH    : \(pages[1].frame.width)")
+//        print ("PAGE 1 X POS    : \(pages[0].layer.position.x)")
+//        print ("PAGE 2 X POS    : \(pages[1].layer.position.x)")
     }
 
     // MARK: - GRADEMATE BUTTON
@@ -216,7 +223,8 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
 
     @IBAction func savedClassesBackPressed(_ sender: FUIButton) {
-        animateOut(viewToAnimate: self.classesView)
+//        animateOut(viewToAnimate: self.classesView)
+        animateOut(viewToAnimate: self.view.subviews.last!)
     }
 
     
@@ -492,22 +500,22 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     func setupClassesScrollView(pages: [ClassButtonPage]) {
-        classesScrollView.contentSize = CGSize(width: classesScrollView.frame.width * CGFloat(pages.count), height: classesScrollView.frame.height)
-
-        for i in 0 ..< pages.count {
-            pages[i].frame = CGRect(x: classesScrollView.frame.width * CGFloat(i), y: 0, width: classesScrollView.frame.width, height: classesScrollView.frame.height)
-            classesScrollView.addSubview(pages[i])
-        }
-
-//        classesScrollView.delegate = self
+        classesScrollView.delegate = self
         classesScrollView.isPagingEnabled = true
         classesScrollView.showsHorizontalScrollIndicator = false
+        classesScrollView.contentSize = CGSize(width: classesScrollView.bounds.size.width * CGFloat(pages.count), height: classesScrollView.bounds.size.height)
+
+        for (index, page) in pages.enumerated() {
+            page.frame = CGRect(x: classesScrollView.bounds.width * CGFloat(index), y: 0, width: classesScrollView.bounds.width, height: classesScrollView.bounds.height)
+            classesScrollView.addSubview(page)
+        }
     }
 }
 
 extension UIViewController {
     // MARK: - SET BUTTON STYLE
     func setButtonStyle(button: FUIButton, buttonColor: UIColor = .turquoise(), shadowColor: UIColor = .greenSea(), textColor: UIColor = .clouds(), shadowHeight: CGFloat = 6.0, cornerRadius: CGFloat = 6.0, isDismiss: Bool = false) {
+
         button.shadowHeight = shadowHeight
         button.buttonColor  = buttonColor
         button.shadowColor  = shadowColor
