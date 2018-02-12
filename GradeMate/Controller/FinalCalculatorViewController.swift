@@ -9,6 +9,7 @@
 import FlatUIKit
 import Hero
 import PickerView
+import CHIPageControl
 
 class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate {
 
@@ -45,6 +46,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     @IBOutlet var classesView: UIView!
     @IBOutlet weak var classesScrollView: UIScrollView!
     @IBOutlet weak var classesBackButton: FUIButton!
+    @IBOutlet weak var classesPageControl: CHIPageControlJaloro!
     
     let calculateButtonWords: [String] = [
         "Calculate",
@@ -70,7 +72,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.isHeroEnabled = true
+        self.hero.isEnabled = true
 
         let pages: [ClassButtonPage] = createClassButtonPages()
         setupClassesScrollView(pages: pages)
@@ -99,6 +101,21 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 //        } else {
 //            userDefaults.set(15, forKey: "class1")
 //        }
+
+
+
+        classesPageControl.numberOfPages = pages.count
+        classesPageControl.radius = 2.5
+        classesPageControl.tintColor = .silver()
+        classesPageControl.currentPageTintColor = .greenSea()
+        classesPageControl.padding = 6
+        classesPageControl.backgroundColor = .clear
+
+
+
+
+
+
     }
 
     // MARK: - GRADEMATE BUTTON
@@ -271,16 +288,16 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     func addAnimations() {
-        gradeMateButton.heroModifiers = [.fade, .scale(0.5)]
-        gradeMateButtonShadow.heroModifiers = [.fade, .scale(0.5)]
-        currentGradeButton.heroModifiers = [.fade, .translate(x: -50, y: 0, z: 0)]
-        examWeightButton.heroModifiers = [.fade, .scale(0.5)]
-        desiredGradeButton.heroModifiers = [.fade, .translate(x: 50, y: 0, z: 0)]
-        picker1.heroModifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
-        picker2.heroModifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
-        picker3.heroModifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
-        picker4.heroModifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
-        calculateButton.heroModifiers = [.fade, .scale(0.5)]
+        gradeMateButton.hero.modifiers = [.fade, .scale(0.5)]
+        gradeMateButtonShadow.hero.modifiers = [.fade, .scale(0.5)]
+        currentGradeButton.hero.modifiers = [.fade, .translate(x: -50, y: 0, z: 0)]
+        examWeightButton.hero.modifiers = [.fade, .scale(0.5)]
+        desiredGradeButton.hero.modifiers = [.fade, .translate(x: 50, y: 0, z: 0)]
+        picker1.hero.modifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
+        picker2.hero.modifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
+        picker3.hero.modifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
+        picker4.hero.modifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
+        calculateButton.hero.modifiers = [.fade, .scale(0.5)]
     }
 
     func roundOffPopUpCorners() {
@@ -359,8 +376,8 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         setButtonStyle(button: page2.button4)
         setButtonStyle(button: page2.button5)
 
-        page1.backgroundColor = .pomegranate()
-        page2.backgroundColor = .belizeHole()
+//        page1.backgroundColor = .pomegranate()
+//        page2.backgroundColor = .belizeHole()
 
         return [page1, page2]
     }
@@ -380,6 +397,12 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
             page.frame = CGRect(x: classesScrollView.frame.width * CGFloat(index), y: 0, width: classesScrollView.frame.width, height: classesScrollView.frame.height)
             classesScrollView.addSubview(page)
         }
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let page = classesScrollView.contentOffset.x / classesScrollView.frame.size.width
+//        classesPageControl.set(progress: Int(page), animated: true)
+        classesPageControl.progress = Double(page)
     }
 }
 

@@ -143,7 +143,7 @@ class PickerViewController: UIViewController {
     let scoreGradientImage = UIImage(named: "ScoreGradient")
     
     override func viewDidLoad() {
-        self.view.isHeroEnabled = true
+        self.view.hero.isEnabled = true
         
         configurePicker(picker: picker1, stringArray: stringNumbers1)
         configurePicker(picker: picker2, stringArray: stringNumbers2)

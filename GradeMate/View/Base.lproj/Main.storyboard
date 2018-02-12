@@ -286,9 +286,13 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Sp2-ce-Jmc"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="calculateButton" destination="xMt-tf-LU1" id="hyJ-EX-V8U"/>
                         <outlet property="classesBackButton" destination="6zy-Lq-Bnf" id="mrj-5C-tHT"/>
+                        <outlet property="classesPageControl" destination="fmc-cR-n3P" id="tev-DH-MhG"/>
                         <outlet property="classesScrollView" destination="L10-CA-8N3" id="AEo-9o-mva"/>
                         <outlet property="classesView" destination="5cs-LM-Uyg" id="H8C-pK-8dh"/>
                         <outlet property="currentGradeButton" destination="GcP-z3-98b" id="GlL-jQ-yOn"/>
@@ -394,7 +398,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L10-CA-8N3" customClass="CustomScrollView" customModule="GradeMate" customModuleProvider="target">
-                            <rect key="frame" x="16" y="71" width="308" height="323"/>
+                            <rect key="frame" x="16" y="71" width="308" height="303"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.74066370725631714" green="0.76499909162521362" blue="0.78119140863418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </scrollView>
@@ -410,6 +414,11 @@
                                 <action selector="savedClassesBackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UEU-9P-Bgh"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmc-cR-n3P" customClass="CHIPageControlJaloro" customModule="CHIPageControl">
+                            <rect key="frame" x="16" y="382" width="308" height="20"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.60614174604415894" green="0.34884321689605713" blue="0.71243017911911011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.92512220144271851" green="0.94140166044235229" blue="0.9453551173210144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
