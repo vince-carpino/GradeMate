@@ -336,26 +336,30 @@ open class PickerView: UIView {
     fileprivate func setupDefaultSelectionIndicator() {
         defaultSelectionIndicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(defaultSelectionIndicator)
-        
+
+        // HEIGHT
         let selectionIndicatorH = NSLayoutConstraint(item: defaultSelectionIndicator, attribute: .height, relatedBy: .equal, toItem: nil,
-                                                        attribute: .notAnAttribute, multiplier: 1, constant: 2.0)
+                                                     attribute: .notAnAttribute, multiplier: 1, constant: 5.0)
         addConstraint(selectionIndicatorH)
-        
+
         let selectionIndicatorW = NSLayoutConstraint(item: defaultSelectionIndicator, attribute: .width, relatedBy: .equal,
-                                                        toItem: self, attribute: .width, multiplier: 1, constant: 0)
+                                                     toItem: self, attribute: .width, multiplier: 1, constant: 0)
         addConstraint(selectionIndicatorW)
-        
+
         let selectionIndicatorL = NSLayoutConstraint(item: defaultSelectionIndicator, attribute: .leading, relatedBy: .equal,
-                                                        toItem: self, attribute: .leading, multiplier: 1, constant: 0)
+                                                     toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         addConstraint(selectionIndicatorL)
-        
+
         selectionIndicatorB = NSLayoutConstraint(item: defaultSelectionIndicator, attribute: .bottom, relatedBy: .equal,
-                                                    toItem: self, attribute: .centerY, multiplier: 1, constant: (rowHeight / 2))
+                                                 toItem: self, attribute: .centerY, multiplier: 1, constant: (rowHeight / 2))
         addConstraint(selectionIndicatorB)
-        
+
         let selectionIndicatorT = NSLayoutConstraint(item: defaultSelectionIndicator, attribute: .trailing, relatedBy: .equal,
-                                                        toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+                                                     toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
         addConstraint(selectionIndicatorT)
+
+        // ROUND OFF CORNERS
+        defaultSelectionIndicator.layer.cornerRadius = selectionIndicatorH.constant / 2
     }
     
     // MARK: Infinite Scrolling Helpers
