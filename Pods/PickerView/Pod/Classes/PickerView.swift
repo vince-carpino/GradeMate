@@ -170,6 +170,7 @@ open class PickerView: UIView {
     fileprivate var orientationChanged = false
     fileprivate var isScrolling = false
     fileprivate var setupHasBeenDone = false
+    fileprivate var shouldSelectNearbyToMiddleRow = true
     
     open var scrollingStyle = ScrollingStyle.default {
         didSet {
@@ -184,24 +185,7 @@ open class PickerView: UIView {
     
     open var selectionStyle = SelectionStyle.none {
         didSet {
-            switch selectionStyle {
-            case .defaultIndicator:
-                defaultSelectionIndicator.alpha = 1.0
-                selectionOverlay.alpha = 0.0
-                selectionImageView.alpha = 0.0
-            case .overlay:
-                selectionOverlay.alpha = 0.25
-                defaultSelectionIndicator.alpha = 0.0
-                selectionImageView.alpha = 0.0
-            case .image:
-                selectionImageView.alpha = 1.0
-                selectionOverlay.alpha = 0.0
-                defaultSelectionIndicator.alpha = 0.0
-            case .none:
-                selectionOverlay.alpha = 0.0
-                defaultSelectionIndicator.alpha = 0.0
-                selectionImageView.alpha = 0.0
-            }
+            setupSelectionViewsVisibility()
         }
     }
     
@@ -235,7 +219,6 @@ open class PickerView: UIView {
         // the view is already displaying
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             // Some UI Adjustments we need to do after setting UITableView data source & delegate.
-            self.configureFirstSelection()
             self.adjustSelectionOverlayHeightConstraint()
         }
     }
@@ -279,6 +262,27 @@ open class PickerView: UIView {
         let tableViewT = NSLayoutConstraint(item: tableView, attribute: .trailing, relatedBy: .equal, toItem: self,
                                                 attribute: .trailing, multiplier: 1, constant: 0)
         addConstraint(tableViewT)
+    }
+
+    fileprivate func setupSelectionViewsVisibility() {
+        switch selectionStyle {
+        case .defaultIndicator:
+            defaultSelectionIndicator.alpha = 1.0
+            selectionOverlay.alpha = 0.0
+            selectionImageView.alpha = 0.0
+        case .overlay:
+            selectionOverlay.alpha = 0.25
+            defaultSelectionIndicator.alpha = 0.0
+            selectionImageView.alpha = 0.0
+        case .image:
+            selectionImageView.alpha = 1.0
+            selectionOverlay.alpha = 0.0
+            defaultSelectionIndicator.alpha = 0.0
+        case .none:
+            selectionOverlay.alpha = 0.0
+            defaultSelectionIndicator.alpha = 0.0
+            selectionImageView.alpha = 0.0
+        }
     }
     
     fileprivate func setupSelectionOverlay() {
@@ -336,9 +340,10 @@ open class PickerView: UIView {
     fileprivate func setupDefaultSelectionIndicator() {
         defaultSelectionIndicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(defaultSelectionIndicator)
-        
+
+        // HEIGHT
         let selectionIndicatorH = NSLayoutConstraint(item: defaultSelectionIndicator, attribute: .height, relatedBy: .equal, toItem: nil,
-                                                        attribute: .notAnAttribute, multiplier: 1, constant: 2.0)
+                                                        attribute: .notAnAttribute, multiplier: 1, constant: 5.0)
         addConstraint(selectionIndicatorH)
         
         let selectionIndicatorW = NSLayoutConstraint(item: defaultSelectionIndicator, attribute: .width, relatedBy: .equal,
@@ -356,6 +361,9 @@ open class PickerView: UIView {
         let selectionIndicatorT = NSLayoutConstraint(item: defaultSelectionIndicator, attribute: .trailing, relatedBy: .equal,
                                                         toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
         addConstraint(selectionIndicatorT)
+
+        // ROUND OFF CORNERS
+        defaultSelectionIndicator.layer.cornerRadius = selectionIndicatorH.constant / 2
     }
     
     // MARK: Infinite Scrolling Helpers
@@ -411,14 +419,7 @@ open class PickerView: UIView {
         setNeedsLayout()
         layoutIfNeeded()
         
-        // Configure the PickerView to select the middle row when the orientation changes during scroll
-        if isScrolling {
-            let middleRow = Int(ceil(Float(numberOfRowsByDataSource) / 2.0))
-            selectedNearbyToMiddleRow(middleRow)
-        } else {
-            let rowToSelect = currentSelectedRow != nil ? currentSelectedRow : Int(ceil(Float(numberOfRowsByDataSource) / 2.0))
-            selectedNearbyToMiddleRow(rowToSelect!)
-        }
+        shouldSelectNearbyToMiddleRow = true
         
         if firstTimeOrientationChanged {
             firstTimeOrientationChanged = false
@@ -446,18 +447,16 @@ open class PickerView: UIView {
     fileprivate func selectedNearbyToMiddleRow(_ row: Int) {
         currentSelectedRow = row
         tableView.reloadData()
-        
-        repeat {
-            // This line adjust the contentInset to UIEdgeInsetZero because when the PickerView are inside of a UIViewController 
-            // presented by a UINavigation controller, the tableView contentInset is affected.
-            tableView.contentInset = UIEdgeInsets.zero
-            
-            let indexOfSelectedRow = visibleIndexOfSelectedRow()
-            tableView.setContentOffset(CGPoint(x: 0.0, y: CGFloat(indexOfSelectedRow) * rowHeight), animated: false)
-            
-            delegate?.pickerView?(self, didSelectRow: currentSelectedRow, index: currentSelectedIndex)
-            
-        } while !(numberOfRowsByDataSource > 0 && tableView.numberOfRows(inSection: 0) > 0)
+
+        // This line adjust the contentInset to UIEdgeInsetZero because when the PickerView are inside of a UIViewController
+        // presented by a UINavigation controller, the tableView contentInset is affected.
+        tableView.contentInset = UIEdgeInsets.zero
+
+        let indexOfSelectedRow = visibleIndexOfSelectedRow()
+        tableView.setContentOffset(CGPoint(x: 0.0, y: CGFloat(indexOfSelectedRow) * rowHeight), animated: false)
+
+        delegate?.pickerView?(self, didSelectRow: currentSelectedRow, index: currentSelectedIndex)
+        shouldSelectNearbyToMiddleRow = false
     }
     
     /**
@@ -469,21 +468,17 @@ open class PickerView: UIView {
         delegate?.pickerView?(self, didTapRow: row, index: indexForRow(row))
         selectRow(row, animated: true)
     }
-    
-    /**
-        Configure the first row selection: If some pre-selected row was set, we select it, else we select the nearby to middle at all.
-    */
-    fileprivate func configureFirstSelection() {
-        let rowToSelect = currentSelectedRow != nil ? currentSelectedRow : Int(ceil(Float(numberOfRowsByDataSource) / 2.0))
-        selectedNearbyToMiddleRow(rowToSelect!)
-    }
-    
+
     fileprivate func turnPickerViewOn() {
         tableView.isScrollEnabled = true
+        setupSelectionViewsVisibility()
     }
     
     fileprivate func turnPickerViewOff() {
         tableView.isScrollEnabled = false
+        selectionOverlay.alpha = 0.0
+        defaultSelectionIndicator.alpha = 0.0
+        selectionImageView.alpha = 0.0
     }
     
     /**
@@ -511,23 +506,23 @@ open class PickerView: UIView {
     }
     
     open func selectRow(_ row : Int, animated: Bool) {
+        var finalRow = row
         
-        var finalRow = row;
-        
-        if (scrollingStyle == .infinite && row < numberOfRowsByDataSource) {
-            let selectedRow = currentSelectedRow ?? Int(ceil(Float(numberOfRowsByDataSource) / 2.0))
-            let diff = (row % numberOfRowsByDataSource) - (selectedRow % numberOfRowsByDataSource)
-            finalRow = selectedRow + diff
+        if (scrollingStyle == .infinite && row <= numberOfRowsByDataSource) {
+            let middleMultiplier = scrollingStyle == .infinite ? (infinityRowsMultiplier / 2) : infinityRowsMultiplier
+            let middleIndex = numberOfRowsByDataSource * middleMultiplier
+            finalRow = middleIndex - (numberOfRowsByDataSource - finalRow)
         }
         
         currentSelectedRow = finalRow
         
         delegate?.pickerView?(self, didSelectRow: currentSelectedRow, index: currentSelectedIndex)
         
-        tableView.setContentOffset(CGPoint(x: 0.0, y: CGFloat(finalRow) * rowHeight), animated: animated)
+        tableView.setContentOffset(CGPoint(x: 0.0, y: CGFloat(currentSelectedRow) * rowHeight), animated: animated)
     }
     
     open func reloadPickerView() {
+        shouldSelectNearbyToMiddleRow = true
         tableView.reloadData()
     }
     
@@ -538,7 +533,28 @@ extension PickerView: UITableViewDataSource {
     // MARK: UITableViewDataSource
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfRowsByDataSource * infinityRowsMultiplier
+        let numberOfRows = numberOfRowsByDataSource * infinityRowsMultiplier
+
+        // Select the nearby to middle row when it's needed (first run or orientation change)
+        if shouldSelectNearbyToMiddleRow && numberOfRows > 0 {
+            // Configure the PickerView to select the middle row when the orientation changes during scroll
+            if isScrolling {
+                let middleRow = Int(ceil(Float(numberOfRowsByDataSource) / 2.0))
+                selectedNearbyToMiddleRow(middleRow)
+            } else {
+                let rowToSelect = currentSelectedRow != nil ? currentSelectedRow : Int(ceil(Float(numberOfRowsByDataSource) / 2.0))
+                selectedNearbyToMiddleRow(rowToSelect!)
+            }
+        }
+
+        // If PickerView have items to show set it as enabled otherwise set it as disabled
+        if numberOfRows > 0 {
+            turnPickerViewOn()
+        } else {
+            turnPickerViewOff()
+        }
+
+        return numberOfRows
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -618,7 +634,7 @@ extension PickerView: UIScrollViewDelegate {
         }
         
         // Update the currentSelectedRow and notify the delegate that we have a new selected row.
-        currentSelectedRow = roundedRow
+        currentSelectedRow = roundedRow % numberOfRowsByDataSource
         
         delegate?.pickerView?(self, didSelectRow: currentSelectedRow, index: currentSelectedIndex)
     }

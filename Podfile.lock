@@ -1,26 +1,26 @@
 PODS:
   - BEMCheckBox (1.4.1)
-  - CHIPageControl (0.1.5):
-    - CHIPageControl/Aji (= 0.1.5)
-    - CHIPageControl/Aleppo (= 0.1.5)
-    - CHIPageControl/Chimayo (= 0.1.5)
-    - CHIPageControl/Fresno (= 0.1.5)
-    - CHIPageControl/Jalapeno (= 0.1.5)
-    - CHIPageControl/Jaloro (= 0.1.5)
-    - CHIPageControl/Paprika (= 0.1.5)
-    - CHIPageControl/Puya (= 0.1.5)
-  - CHIPageControl/Aji (0.1.5)
-  - CHIPageControl/Aleppo (0.1.5)
-  - CHIPageControl/Chimayo (0.1.5)
-  - CHIPageControl/Fresno (0.1.5)
-  - CHIPageControl/Jalapeno (0.1.5)
-  - CHIPageControl/Jaloro (0.1.5)
-  - CHIPageControl/Paprika (0.1.5)
-  - CHIPageControl/Puya (0.1.5)
+  - CHIPageControl (0.1.6):
+    - CHIPageControl/Aji (= 0.1.6)
+    - CHIPageControl/Aleppo (= 0.1.6)
+    - CHIPageControl/Chimayo (= 0.1.6)
+    - CHIPageControl/Fresno (= 0.1.6)
+    - CHIPageControl/Jalapeno (= 0.1.6)
+    - CHIPageControl/Jaloro (= 0.1.6)
+    - CHIPageControl/Paprika (= 0.1.6)
+    - CHIPageControl/Puya (= 0.1.6)
+  - CHIPageControl/Aji (0.1.6)
+  - CHIPageControl/Aleppo (0.1.6)
+  - CHIPageControl/Chimayo (0.1.6)
+  - CHIPageControl/Fresno (0.1.6)
+  - CHIPageControl/Jalapeno (0.1.6)
+  - CHIPageControl/Jaloro (0.1.6)
+  - CHIPageControl/Paprika (0.1.6)
+  - CHIPageControl/Puya (0.1.6)
   - FlatUIKit (1.6.2)
-  - Hero (1.1.0)
-  - PickerView (0.3.3)
-  - ViewAnimator (1.0.4)
+  - Hero (1.3.0)
+  - PickerView (0.3.4)
+  - ViewAnimator (2.1.2)
 
 DEPENDENCIES:
   - BEMCheckBox
@@ -30,14 +30,23 @@ DEPENDENCIES:
   - PickerView
   - ViewAnimator
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - BEMCheckBox
+    - CHIPageControl
+    - FlatUIKit
+    - Hero
+    - PickerView
+    - ViewAnimator
+
 SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
-  CHIPageControl: 79d19a8ee2e35fa3c1da6533adb5364c77b5cfea
+  CHIPageControl: 21b85bb8c7d4d1d15fc4f353e1eb095eb75de5f1
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
-  Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
-  PickerView: a6703d2f7cb1fafc8a3aef4af255a5acd320ddff
-  ViewAnimator: 1f3fa25f3c9010ab0dda06cf9e3e49a4b55834ff
+  Hero: 3eecd3fd62dd2425cbc7e35505c557b86d5a379e
+  PickerView: 7edcbbd008682d574eb42916d74a18ebd8dba109
+  ViewAnimator: 20df9a24a076c6ee78b77a4dbf1943808c94954e
 
 PODFILE CHECKSUM: 8766bb9d38c4ef62e80ff6a1eca51e80f6216e1f
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0
