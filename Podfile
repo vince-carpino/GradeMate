@@ -8,6 +8,7 @@ target 'GradeMate' do
   pod 'CHIPageControl'
   pod 'FlatUIKit'
   pod 'Hero'
+  pod 'NightNight'
   pod 'PickerView'
   pod 'ViewAnimator'
 end

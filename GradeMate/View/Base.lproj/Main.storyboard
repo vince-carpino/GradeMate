@@ -282,7 +282,9 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="backgroundImage" destination="Ui8-8g-Ac6" id="caO-D9-YIt"/>
                         <outlet property="calculateButton" destination="xMt-tf-LU1" id="hyJ-EX-V8U"/>
+                        <outlet property="changeThemeButton" destination="n3f-r7-61J" id="bqw-XT-gxs"/>
                         <outlet property="classesBackButton" destination="6zy-Lq-Bnf" id="mrj-5C-tHT"/>
                         <outlet property="classesPageControl" destination="fmc-cR-n3P" id="tev-DH-MhG"/>
                         <outlet property="classesScrollView" destination="L10-CA-8N3" id="AEo-9o-mva"/>
@@ -343,8 +345,15 @@
                                 <action selector="gradeMateButtonViewShareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IuE-Yq-Oej"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write a review" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mb6-ld-OcV" userLabel="Write review label">
+                            <rect key="frame" x="16" y="221" width="308" height="22"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR1-53-jEX" userLabel="Write review button" customClass="FUIButton">
-                            <rect key="frame" x="16" y="300" width="308" height="46"/>
+                            <rect key="frame" x="16" y="251" width="308" height="46"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
                             <state key="normal" title="Give stars ⭐️">
@@ -352,6 +361,24 @@
                             </state>
                             <connections>
                                 <action selector="gradeMateButonViewWriteReviewPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dtA-Ws-ce4"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change theme" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="h7f-DY-xSV" userLabel="Change theme label">
+                            <rect key="frame" x="16" y="305" width="308" height="22"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3f-r7-61J" userLabel="Change theme button" customClass="FUIButton">
+                            <rect key="frame" x="16" y="335" width="308" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                            <state key="normal" title="Go dark 🌙">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="changeThemeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wAm-jX-rzS"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oC4-rD-5JP" userLabel="Back button" customClass="FUIButton">
@@ -366,13 +393,6 @@
                                 <action selector="gradeMateButtonViewBackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4g9-d3-6UJ"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write a review" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mb6-ld-OcV" userLabel="Write review label">
-                            <rect key="frame" x="16" y="270" width="308" height="22"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.92887574434280396" green="0.94514650106430054" blue="0.94924908876419067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
