@@ -12,6 +12,7 @@ import FlatUIKit
 class ShowLaunchScreen: UIViewController {
     
     @IBOutlet weak var checkBox: BEMCheckBox!
+    @IBOutlet weak var background: UIImageView!
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -47,6 +48,8 @@ class ShowLaunchScreen: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        background.image = UIImage(named: "matte-grey")
     }
 
     @objc func showMainView() {

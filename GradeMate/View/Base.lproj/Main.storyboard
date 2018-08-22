@@ -285,34 +285,46 @@
                         <outlet property="backgroundImage" destination="Ui8-8g-Ac6" id="caO-D9-YIt"/>
                         <outlet property="calculateButton" destination="xMt-tf-LU1" id="hyJ-EX-V8U"/>
                         <outlet property="changeThemeButton" destination="n3f-r7-61J" id="bqw-XT-gxs"/>
+                        <outlet property="changeThemeLabel" destination="h7f-DY-xSV" id="8hi-ee-wng"/>
                         <outlet property="classesBackButton" destination="6zy-Lq-Bnf" id="mrj-5C-tHT"/>
                         <outlet property="classesPageControl" destination="fmc-cR-n3P" id="tev-DH-MhG"/>
                         <outlet property="classesScrollView" destination="L10-CA-8N3" id="AEo-9o-mva"/>
                         <outlet property="classesView" destination="5cs-LM-Uyg" id="H8C-pK-8dh"/>
+                        <outlet property="classesViewTitleLabel" destination="sYZ-iq-miK" id="hpo-H3-B7c"/>
                         <outlet property="currentGradeButton" destination="GcP-z3-98b" id="GlL-jQ-yOn"/>
                         <outlet property="currentGradeInfoDismiss" destination="0f2-Lc-Qgr" id="RDd-CP-eyM"/>
+                        <outlet property="currentGradeInfoMessageLabel" destination="Sbe-t1-kl2" id="nHp-eu-f73"/>
+                        <outlet property="currentGradeInfoTitleLabel" destination="ZMH-tF-xoP" id="or6-Ea-chg"/>
                         <outlet property="currentGradeInfoView" destination="8yR-OH-JUR" id="dwY-wL-t2k"/>
                         <outlet property="desiredGradeButton" destination="n6T-4R-YQR" id="ltn-m0-hqa"/>
                         <outlet property="desiredGradeInfoDismiss" destination="sj3-tH-E42" id="Bbb-Bz-lQ0"/>
+                        <outlet property="desiredGradeInfoMessageLabel" destination="Kjc-w5-nRp" id="hBz-MW-QSd"/>
+                        <outlet property="desiredGradeInfoTitleLabel" destination="hVS-KV-9PZ" id="6y7-s9-5D4"/>
                         <outlet property="desiredGradeInfoView" destination="Qb9-XC-Q6O" id="aAs-XM-pVU"/>
                         <outlet property="examWeightButton" destination="Tan-4d-B9t" id="Odj-sh-W6d"/>
                         <outlet property="examWeightInfoDismiss" destination="CGq-1O-1Ih" id="EI9-cK-9kR"/>
+                        <outlet property="examWeightInfoMessageLabel" destination="5MZ-Cu-Q8s" id="UbV-Lb-86y"/>
+                        <outlet property="examWeightInfoTitleLabel" destination="WcB-T2-Gbs" id="v8y-2u-RPw"/>
                         <outlet property="examWeightInfoView" destination="BUD-Vs-ozX" id="Yo6-VJ-N3b"/>
                         <outlet property="gradeMateButton" destination="Pml-Tg-i0A" id="EFx-lX-d6u"/>
                         <outlet property="gradeMateButtonShadow" destination="cmT-0f-tp7" id="waa-Gf-XPo"/>
                         <outlet property="gradeMateButtonView" destination="MiO-lY-l4M" id="N7n-HG-y9I"/>
                         <outlet property="gradeMateButtonViewBackButton" destination="oC4-rD-5JP" id="nK2-nn-I3e"/>
+                        <outlet property="gradeMateViewTitleLabel" destination="wfc-y4-YAh" id="d2B-P0-kME"/>
                         <outlet property="picker1" destination="U24-1Q-iQV" id="hME-dX-s7l"/>
                         <outlet property="picker2" destination="hKx-eF-fr1" id="kdt-3c-Jdo"/>
                         <outlet property="picker3" destination="BYC-7I-o15" id="gte-d7-sMf"/>
                         <outlet property="picker4" destination="Bis-Oo-Sls" id="Xqs-lu-V1g"/>
                         <outlet property="resultView" destination="2Hv-6I-Kjh" id="2W5-ix-FeX"/>
                         <outlet property="resultViewDismissButton" destination="PQe-M8-Jcp" id="FtE-Jb-kV1"/>
+                        <outlet property="resultViewMessageLabel" destination="q7U-8F-ma7" id="hf9-t4-Lwe"/>
                         <outlet property="resultViewScoreLabel" destination="sPA-dN-II0" id="lo6-Jq-zL8"/>
                         <outlet property="resultViewWarningLabel" destination="8kV-bW-XFv" id="SZy-Lx-XnK"/>
+                        <outlet property="sendLinkLabel" destination="Wod-NN-75v" id="tFS-YK-acO"/>
                         <outlet property="shareLinkButton" destination="s8k-VC-06Z" id="6jp-dc-bZb"/>
                         <outlet property="visualEffectView" destination="QBG-uT-CQa" id="S5J-j0-npO"/>
                         <outlet property="writeReviewButton" destination="IR1-53-jEX" id="qgG-Is-hg6"/>
+                        <outlet property="writeReviewLabel" destination="Mb6-ld-OcV" id="117-mA-kNl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -320,7 +332,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="340" height="486"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thanks for using GradeMate!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-y4-YAh" userLabel="Title Label">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thanks for using GradeMate" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-y4-YAh" userLabel="Title Label">
                             <rect key="frame" x="16" y="20" width="308" height="84"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="32"/>
@@ -614,6 +626,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="background" destination="YHA-b4-8Rf" id="4UN-Fb-3CR"/>
                         <outlet property="checkBox" destination="5x2-RR-StM" id="6lE-v0-Hzr"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="showLaunchScreen" id="ngS-Aq-lvV"/>
                     </connections>

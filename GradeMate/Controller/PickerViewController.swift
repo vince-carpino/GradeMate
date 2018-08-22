@@ -8,6 +8,7 @@
 
 import Foundation
 import FlatUIKit
+import NightNight
 import PickerView
 
 class PickerViewController: UIViewController {
@@ -46,6 +47,7 @@ class PickerViewController: UIViewController {
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
     @IBOutlet var resultView: UIView!
+    @IBOutlet weak var resultViewMessageLabel: UILabel!
     @IBOutlet weak var resultViewScoreLabel: UILabel!
     @IBOutlet weak var resultViewWarningLabel: UILabel!
     @IBOutlet weak var resultViewDismissButton: FUIButton!
@@ -250,6 +252,10 @@ extension PickerViewController: PickerViewDelegate {
         self.resultViewScoreLabel.text = getValue()
         self.resultViewWarningLabel.text = getWarning()
         self.resultViewDismissButton.setTitle(getDismiss(), for: .normal)
+
+        self.resultViewScoreLabel.mixedTextColor = MixedColor(normal: .black, night: .clouds())
+        self.resultViewWarningLabel.mixedTextColor = MixedColor(normal: .black, night: .clouds())
+        self.resultViewMessageLabel.mixedTextColor = MixedColor(normal: .black, night: .clouds())
     }
     
     func pickerView(_ pickerView: PickerView, styleForLabel label: UILabel, highlighted: Bool) {
