@@ -254,8 +254,8 @@
 		1212B1CC3ACAE6CBE0E8D582E7F5B758 /* UINavigationBar+MixedBarStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+MixedBarStyle.swift"; path = "NightNight/Classes/UINavigationBar+MixedBarStyle.swift"; sourceTree = "<group>"; };
 		1214A824F120E5BD146C151A6A6E0E7B /* BEMCheckBox.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMCheckBox.m; path = Classes/BEMCheckBox.m; sourceTree = "<group>"; };
 		1282ED57AD46456C0EA5B7650C4428BA /* HeroStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroStringConvertible.swift; path = Sources/Parser/HeroStringConvertible.swift; sourceTree = "<group>"; };
-		13BC6D577409D9C5FC000E15A7AA28E4 /* BEMCheckBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BEMCheckBox.framework; path = BEMCheckBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		147045AC672903CAC00BFB4E9529EB9D /* Pods_GradeMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GradeMate.framework; path = "Pods-GradeMate.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13BC6D577409D9C5FC000E15A7AA28E4 /* BEMCheckBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BEMCheckBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		147045AC672903CAC00BFB4E9529EB9D /* Pods_GradeMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradeMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16506F44D78C372468ECFA221A2BCA2E /* HeroTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTypes.swift; path = Sources/HeroTypes.swift; sourceTree = "<group>"; };
 		17CCF6005841B64FE3CDDE0284E4D609 /* HeroTransition+Animate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Animate.swift"; path = "Sources/Transition/HeroTransition+Animate.swift"; sourceTree = "<group>"; };
 		17FA5AAEC13ABC9591E40B6AD6BCE236 /* BEMPathManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMPathManager.m; path = Classes/BEMPathManager.m; sourceTree = "<group>"; };
@@ -284,7 +284,7 @@
 		3385B8EC6A684FCAF2E6EDF32BAC1E43 /* Hero-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hero-prefix.pch"; sourceTree = "<group>"; };
 		33ECF4190957F66FEF14A03CCDCCB42E /* UISlider+Mixed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISlider+Mixed.swift"; path = "NightNight/Classes/UIKit/UISlider+Mixed.swift"; sourceTree = "<group>"; };
 		342487DD31853B21A93C9E980B09547D /* UITableViewCell+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+FlatUI.h"; path = "Classes/ios/UITableViewCell+FlatUI.h"; sourceTree = "<group>"; };
-		3453FF6E79F7004D2330CE9869A6BD9B /* CHIPageControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CHIPageControl.framework; path = CHIPageControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3453FF6E79F7004D2330CE9869A6BD9B /* CHIPageControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CHIPageControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37ACA7678857B0AACD85C69E69E4511F /* BEMCheckBoxGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMCheckBoxGroup.h; path = Classes/BEMCheckBoxGroup.h; sourceTree = "<group>"; };
 		3A223DF7C037620500C4BCAC4733D9A2 /* UISwitch+Mixed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISwitch+Mixed.swift"; path = "NightNight/Classes/UIKit/UISwitch+Mixed.swift"; sourceTree = "<group>"; };
 		3A916A0A835DFDEAD6F4C7FC9EA8D7CE /* HeroContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroContext.swift; path = Sources/HeroContext.swift; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 		6EA930D094EECFDBFB0514ADCD842EF6 /* CHIBasePageControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CHIBasePageControl.swift; path = CHIPageControl/Core/CHIBasePageControl.swift; sourceTree = "<group>"; };
 		6EF866AA62D482EA59D6E6BAFA1F3916 /* MatchPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchPreprocessor.swift; path = Sources/Preprocessors/MatchPreprocessor.swift; sourceTree = "<group>"; };
 		6F969345E82A1168DC5CD03DA8308154 /* CALayer+Mixed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Mixed.swift"; path = "NightNight/Classes/CALayer+Mixed.swift"; sourceTree = "<group>"; };
-		735BB58CA34B3D368EA595F145F5B91B /* PickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PickerView.framework; path = PickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		735BB58CA34B3D368EA595F145F5B91B /* PickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7586242431F02CEA23681CCAA10CB84B /* HeroTransition+Complete.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Complete.swift"; path = "Sources/Transition/HeroTransition+Complete.swift"; sourceTree = "<group>"; };
 		77A50B1D2A38C2C4F00511BA1AC0C9A9 /* UIProgressView+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+FlatUI.m"; path = "Classes/ios/UIProgressView+FlatUI.m"; sourceTree = "<group>"; };
 		77C927B61EBCF9AD74003619A943D48C /* PickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PickerView-dummy.m"; sourceTree = "<group>"; };
@@ -337,7 +337,7 @@
 		7D944E15D58B4B2B0C7F7F20A6BA6AB0 /* UISlider+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UISlider+FlatUI.m"; path = "Classes/ios/UISlider+FlatUI.m"; sourceTree = "<group>"; };
 		7DD9A1B9FB2AE91031D187E849A4DE00 /* ViewAnimator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewAnimator.xcconfig; sourceTree = "<group>"; };
 		7E0D97B3A5AB295591E4054574202A5B /* HeroTransition+Start.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Start.swift"; path = "Sources/Transition/HeroTransition+Start.swift"; sourceTree = "<group>"; };
-		7E41084B9B82EFB5D35DF73D0549A2B9 /* Lato-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Lato-Bold.ttf"; path = "Resources/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		7E41084B9B82EFB5D35DF73D0549A2B9 /* Lato-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Resources/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		7E67F0A2209AF876CF1F224E6BDABF18 /* CHIPageControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CHIPageControl-umbrella.h"; sourceTree = "<group>"; };
 		7EF026A08455786B3878185A6969A02F /* FlatUIKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FlatUIKit.modulemap; sourceTree = "<group>"; };
 		7F57764EEF43DF6B166606F55992B8D2 /* NSObject+Customize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Customize.swift"; path = "NightNight/Classes/NSObject+Customize.swift"; sourceTree = "<group>"; };
@@ -356,14 +356,14 @@
 		927D0CF15D636D918835B3793A75A4DF /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Parser/Parser.swift; sourceTree = "<group>"; };
 		9324DD4D5BBF6E80FF8DE5BE0DFDC53D /* BEMCheckBox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BEMCheckBox-umbrella.h"; sourceTree = "<group>"; };
 		9349B7C0B1E796D13046D8F0A567C586 /* Pods-GradeMate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GradeMate-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9786C9BBBE1D84EF204AE919A6E3988E /* HeroModifier+HeroStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroModifier+HeroStringConvertible.swift"; path = "Sources/HeroModifier+HeroStringConvertible.swift"; sourceTree = "<group>"; };
 		97FB9CD885F0E85025F02963BD6A812D /* ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimator.swift; path = ViewAnimator/Classes/ViewAnimator.swift; sourceTree = "<group>"; };
 		9806A53AE48712593BE4A3C4672B88CF /* Pods-GradeMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GradeMate.debug.xcconfig"; sourceTree = "<group>"; };
 		9869C83DAE4B948E37E0D74AF3C8F97D /* UINavigationBar+MixedTitleTextAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+MixedTitleTextAttributes.swift"; path = "NightNight/Classes/UINavigationBar+MixedTitleTextAttributes.swift"; sourceTree = "<group>"; };
 		98A7734212E9A9CB1C2C2BAC341CDEAE /* BEMCheckBoxGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMCheckBoxGroup.m; path = Classes/BEMCheckBoxGroup.m; sourceTree = "<group>"; };
 		9975F14ECA7ED7A0F9B939ACFBD25E66 /* Lexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lexer.swift; path = Sources/Parser/Lexer.swift; sourceTree = "<group>"; };
-		99C3B21B22A4B05231F1A9F5F18FA700 /* Lato-Light.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Lato-Light.ttf"; path = "Resources/Lato-Light.ttf"; sourceTree = "<group>"; };
+		99C3B21B22A4B05231F1A9F5F18FA700 /* Lato-Light.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "Resources/Lato-Light.ttf"; sourceTree = "<group>"; };
 		9A95874595D051ABA70E4CB0152DFC59 /* FUIAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUIAlertView.h; path = Classes/ios/FUIAlertView.h; sourceTree = "<group>"; };
 		9AC6D7EE9E8C30B5E86009349429A19F /* ViewAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-prefix.pch"; sourceTree = "<group>"; };
 		9AF246F038A76766DF83B164595CC3E3 /* UIColor+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+FlatUI.h"; path = "Classes/ios/UIColor+FlatUI.h"; sourceTree = "<group>"; };
@@ -381,7 +381,7 @@
 		A35740B80102E1E0286AD227EE650B05 /* UIColor+RGB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+RGB.swift"; path = "NightNight/Classes/UIColor+RGB.swift"; sourceTree = "<group>"; };
 		A66E9EB9E7C34041136C3C83A9A10673 /* Pods-GradeMate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GradeMate.modulemap"; sourceTree = "<group>"; };
 		A6855FB5B044DF549DB3858776D2E8DE /* UIView+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Hero.swift"; path = "Sources/Extensions/UIView+Hero.swift"; sourceTree = "<group>"; };
-		A8377CF43B61F84A3E619767B9ABC0DC /* Lato-Italic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Lato-Italic.ttf"; path = "Resources/Lato-Italic.ttf"; sourceTree = "<group>"; };
+		A8377CF43B61F84A3E619767B9ABC0DC /* Lato-Italic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Italic.ttf"; path = "Resources/Lato-Italic.ttf"; sourceTree = "<group>"; };
 		A91FD058B2BA792562274BCF47282D0E /* BEMAnimationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMAnimationManager.h; path = Classes/BEMAnimationManager.h; sourceTree = "<group>"; };
 		A94EC35C950694EC2A8D156908C8A47F /* UISlider+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISlider+FlatUI.h"; path = "Classes/ios/UISlider+FlatUI.h"; sourceTree = "<group>"; };
 		AADB203B2DCE49E67EC9FE19243084F0 /* ViewAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ViewAnimator.modulemap; sourceTree = "<group>"; };
@@ -399,9 +399,9 @@
 		B5F9DFE65D7B29E16FB82E272DECD66F /* BEMAnimationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMAnimationManager.m; path = Classes/BEMAnimationManager.m; sourceTree = "<group>"; };
 		B6B5D07084577EB3A550FC97E247BF5F /* Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Direction.swift; path = ViewAnimator/Classes/Models/Direction.swift; sourceTree = "<group>"; };
 		B7BD2138E1D63AFB4FD665B15C88D4BB /* BasePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasePreprocessor.swift; path = Sources/Preprocessors/BasePreprocessor.swift; sourceTree = "<group>"; };
-		B945AC670A245133DDA6F4416BBD9B32 /* ViewAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ViewAnimator.framework; path = ViewAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B945AC670A245133DDA6F4416BBD9B32 /* ViewAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9BE8141854CC913EDC1E1EB4EC01B1E /* UIPopoverPresentationController+Mixed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIPopoverPresentationController+Mixed.swift"; path = "NightNight/Classes/UIKit/UIPopoverPresentationController+Mixed.swift"; sourceTree = "<group>"; };
-		BAB10C40305B52EDAB21CF97E2BF27F5 /* flat-ui-icons-regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "flat-ui-icons-regular.ttf"; path = "Resources/flat-ui-icons-regular.ttf"; sourceTree = "<group>"; };
+		BAB10C40305B52EDAB21CF97E2BF27F5 /* flat-ui-icons-regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "flat-ui-icons-regular.ttf"; path = "Resources/flat-ui-icons-regular.ttf"; sourceTree = "<group>"; };
 		BCD5A33E636BD1CAF6423A92E72ECB51 /* UIImageView+Mixed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Mixed.swift"; path = "NightNight/Classes/UIImageView+Mixed.swift"; sourceTree = "<group>"; };
 		BE478B6AB2E6FE4D10D695A269D2751E /* HeroTransition+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+UINavigationControllerDelegate.swift"; path = "Sources/Transition/HeroTransition+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
 		BF6B555E07AB6BCEB4B97A1E35C0D278 /* UISearchBar+Mixed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISearchBar+Mixed.swift"; path = "NightNight/Classes/UIKit/UISearchBar+Mixed.swift"; sourceTree = "<group>"; };
@@ -442,14 +442,14 @@
 		EFDC43460AD78DBA2DBA6040FA6C2D4F /* FUIAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUIAlertView.m; path = Classes/ios/FUIAlertView.m; sourceTree = "<group>"; };
 		F129BA0E0D6C7CED1A744300E4A828DE /* UIFont+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+FlatUI.m"; path = "Classes/ios/UIFont+FlatUI.m"; sourceTree = "<group>"; };
 		F428043AFC2F0F3144A16E6E3934464A /* NightNight.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NightNight.modulemap; sourceTree = "<group>"; };
-		F5F1FC8A00623186BD30531EAA2E4CB6 /* Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Hero.framework; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5F1FC8A00623186BD30531EAA2E4CB6 /* Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5FBF8A8A5CDC7D7C4E6AD892DD11FBE /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ViewAnimator/Classes/Utilities/Utilities.swift; sourceTree = "<group>"; };
-		F63E5B71CFDBE1A36C8B0741F6E3D01F /* FlatUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlatUIKit.framework; path = FlatUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6E24A16B722C0738C70DC201B0984E3 /* Lato-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Lato-Regular.ttf"; path = "Resources/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		F63E5B71CFDBE1A36C8B0741F6E3D01F /* FlatUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlatUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6E24A16B722C0738C70DC201B0984E3 /* Lato-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Resources/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		F710FD6EC5205D8AF2591BD3F9B1D21F /* UIPopoverController+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIPopoverController+FlatUI.h"; path = "Classes/ios/UIPopoverController+FlatUI.h"; sourceTree = "<group>"; };
 		F99C6560C8B1AB34D10B370623B94736 /* UITabBar+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITabBar+FlatUI.h"; path = "Classes/ios/UITabBar+FlatUI.h"; sourceTree = "<group>"; };
 		F9B03C6FD7023885011BC03B9D534564 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCBF943A57CE39C1FD9873DC7B021252 /* NightNight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NightNight.framework; path = NightNight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCBF943A57CE39C1FD9873DC7B021252 /* NightNight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NightNight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFB4A9279F2114222D388B49C94F421 /* UIStepper+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIStepper+FlatUI.h"; path = "Classes/ios/UIStepper+FlatUI.h"; sourceTree = "<group>"; };
 		FE2C17E662B89E009C039787845D7CFC /* UIKit+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+Hero.swift"; path = "Sources/Extensions/UIKit+Hero.swift"; sourceTree = "<group>"; };
 		FE596A929E6E3475AF5BCFE69159DB88 /* FlatUIKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlatUIKit.xcconfig; sourceTree = "<group>"; };
@@ -682,7 +682,6 @@
 				E894BE7ED2AA1EAAD0AA3CDF751AD02F /* UIView+Mixed.swift */,
 				25F9A2EF74C5E87E4E1C3AA87E4061F3 /* Support Files */,
 			);
-			name = NightNight;
 			path = NightNight;
 			sourceTree = "<group>";
 		};
@@ -733,7 +732,6 @@
 				7BE06FFA36A9F5D281C589653035BE7C /* Resources */,
 				2C1B1EF58F5C8BDA8FD3D7393B1E3738 /* Support Files */,
 			);
-			name = FlatUIKit;
 			path = FlatUIKit;
 			sourceTree = "<group>";
 		};
@@ -750,7 +748,6 @@
 				17FA5AAEC13ABC9591E40B6AD6BCE236 /* BEMPathManager.m */,
 				A8994545C11C715B4F13361314953F96 /* Support Files */,
 			);
-			name = BEMCheckBox;
 			path = BEMCheckBox;
 			sourceTree = "<group>";
 		};
@@ -785,7 +782,6 @@
 				9F6647820B0635A688C9B516A91FE528 /* ViewAnimatorConfig.swift */,
 				C9079AC0B7EA60582E1A3C84BD72D3BA /* Support Files */,
 			);
-			name = ViewAnimator;
 			path = ViewAnimator;
 			sourceTree = "<group>";
 		};
@@ -839,7 +835,6 @@
 				8161B5993515F3D588037960C43CFBC8 /* UIViewController+Hero.swift */,
 				478A50240E1769B01514F2F306EEB72C /* Support Files */,
 			);
-			name = Hero;
 			path = Hero;
 			sourceTree = "<group>";
 		};
@@ -897,7 +892,6 @@
 				07DC1537BC6BE6326C7456651F78B9D1 /* Puya */,
 				C9BE4F7164F32C78A0F67C5637E17680 /* Support Files */,
 			);
-			name = CHIPageControl;
 			path = CHIPageControl;
 			sourceTree = "<group>";
 		};
@@ -907,7 +901,6 @@
 				6B21A291B6460FC466B5F869C1246B86 /* PickerView.swift */,
 				1CC22807B9C034ED045AFBCE1DCD977C /* Support Files */,
 			);
-			name = PickerView;
 			path = PickerView;
 			sourceTree = "<group>";
 		};
@@ -1243,7 +1236,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					2D865914F0DEBD2EF2231CF88397F94E = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1636,7 +1634,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.1;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1763,7 +1761,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.1;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2155,6 +2153,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
