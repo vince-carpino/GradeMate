@@ -344,6 +344,10 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         //        calculateButton.setTitle(calculateButtonWords[randInt], for: .normal)
     }
 
+    @IBAction func buttonDown(_ sender: FUIButton) {
+
+    }
+
     func checkForSmallScreen() {
         if (UIScreen.main.bounds.size.height == 480) {
             gradeMateButton.isHidden = true
