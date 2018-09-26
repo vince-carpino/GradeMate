@@ -60,7 +60,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     @IBOutlet weak var classesViewTitleLabel: UILabel!
     @IBOutlet weak var classesScrollView: UIScrollView!
     @IBOutlet weak var classesBackButton: FUIButton!
-    @IBOutlet weak var classesPageControl: CHIPageControlJaloro!
+    @IBOutlet weak var classesPageControl: CHIPageControlAleppo!
 
     @IBOutlet weak var backgroundImage: UIImageView!
     
@@ -143,10 +143,10 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
 
         classesPageControl.numberOfPages = pages.count
-        classesPageControl.radius = 2.5
+        classesPageControl.radius = 5
         classesPageControl.tintColor = .silver()
         classesPageControl.currentPageTintColor = .greenSea()
-        classesPageControl.padding = 6
+        classesPageControl.padding = 10
         classesPageControl.backgroundColor = .clear
     }
 
@@ -345,10 +345,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         //        calculateButton.setTitle(calculateButtonWords[randInt], for: .normal)
     }
 
-    @IBAction func buttonDown(_ sender: FUIButton) {
-
-    }
-
     func checkForSmallScreen() {
         if (UIScreen.main.bounds.size.height == 480) {
             gradeMateButton.isHidden = true
@@ -537,7 +533,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     func createClassButtonPages() -> [ClassButtonPage] {
-        savedClassesPage1.button1.setTitle("5%", for: .normal)
+        savedClassesPage1.button1.setTitle("5%" , for: .normal)
         savedClassesPage1.button2.setTitle("10%", for: .normal)
         savedClassesPage1.button3.setTitle("15%", for: .normal)
         savedClassesPage1.button4.setTitle("20%", for: .normal)
@@ -584,7 +580,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = classesScrollView.contentOffset.x / classesScrollView.frame.size.width
-        //        classesPageControl.set(progress: Int(page), animated: true)
         classesPageControl.progress = Double(page)
     }
 }
