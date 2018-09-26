@@ -188,7 +188,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         let url = URL(string: urlStr)!
 
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url)
         }
@@ -309,7 +309,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     func showShareSheet(itemsToShare: [Any]) {
         let activityVC = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
         
-        let excludedActivities = [.postToFlickr, .postToWeibo, .print, .assignToContact, UIActivityType.saveToCameraRoll, .addToReadingList, .postToFlickr, .postToVimeo, .postToTencentWeibo]
+        let excludedActivities = [.postToFlickr, .postToWeibo, .print, .assignToContact, UIActivity.ActivityType.saveToCameraRoll, .addToReadingList, .postToFlickr, .postToVimeo, .postToTencentWeibo]
         
         activityVC.excludedActivityTypes = excludedActivities
         
@@ -602,4 +602,9 @@ extension UIViewController {
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.adjustsFontSizeToFitWidth = true
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
