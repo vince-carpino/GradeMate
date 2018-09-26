@@ -8,6 +8,7 @@
 
 import Foundation
 import FlatUIKit
+import Haptica
 import NightNight
 import PickerView
 
@@ -260,20 +261,8 @@ extension PickerViewController: PickerViewDelegate {
     
     func pickerView(_ pickerView: PickerView, styleForLabel label: UILabel, highlighted: Bool) {
         label.textAlignment = .center
-        if #available(iOS 8.2, *) {
-            if (highlighted) {
-                label.font = UIFont(name: "Courier-Bold", size: 26.0)
-            } else {
-                label.font = UIFont(name: "Courier-Bold", size: 26.0)
-            }
-        } else {
-            if (highlighted) {
-                label.font = UIFont(name: "Courier-Bold", size: 26.0)
-            } else {
-                label.font = UIFont(name: "Courier-Bold", size: 26.0)
-            }
-        }
-        
+        label.font = UIFont(name: "Courier-Bold", size: 26.0)
+
         if pickerView == picker2 {
             label.textAlignment = .left
         }

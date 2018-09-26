@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '10.0'
 
 target 'GradeMate' do
   use_frameworks!
@@ -7,6 +7,7 @@ target 'GradeMate' do
   pod 'BEMCheckBox'
   pod 'CHIPageControl'
   pod 'FlatUIKit'
+  pod 'Haptica'
   pod 'Hero'
   pod 'NightNight'
   pod 'PickerView'

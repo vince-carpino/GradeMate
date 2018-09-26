@@ -8,6 +8,7 @@
 
 import CHIPageControl
 import FlatUIKit
+import Haptica
 import Hero
 import NightNight
 import PickerView
@@ -605,6 +606,9 @@ extension UIViewController {
         button.isExclusiveTouch = true
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        button.isHaptic = true
+        button.hapticType = .impact(.light)
     }
 }
 
