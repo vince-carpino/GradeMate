@@ -8,6 +8,7 @@
 
 import CHIPageControl
 import FlatUIKit
+import FontBlaster
 import Haptica
 import Hero
 import NightNight
@@ -130,6 +131,12 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         addLongPressToExamWeightButton()
 
         setUpClassesPageControl(pages)
+
+//        FontBlaster.blast()
+//
+//        calculateButton.titleLabel?.font = UIFont(name: "Quicksand-Medium", size: 12)
+
+
 
 //        if userDefaults.object(forKey: "class1") == nil {
 //            userDefaults.set(15, forKey: "class1")
@@ -599,12 +606,15 @@ extension UIViewController {
         button.setTitleColor(textColor.unfold(), for: .highlighted)
         button.backgroundColor = .clear
 
+//        button.titleLabel?.font = UIFont(name: "FredokaOne-Regular", size: UIFont.buttonFontSize)
+
         button.isExclusiveTouch = true
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.adjustsFontSizeToFitWidth = true
 
         button.isHaptic = true
         button.hapticType = .impact(.light)
+
     }
 }
 

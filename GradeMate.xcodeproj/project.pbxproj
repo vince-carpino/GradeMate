@@ -13,6 +13,14 @@
 		D028A9141D2105F000AAA32A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D028A9131D2105F000AAA32A /* Assets.xcassets */; };
 		D028A9171D2105F000AAA32A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D028A9151D2105F000AAA32A /* LaunchScreen.storyboard */; };
 		D04761461FFC90CD00B2CD9B /* CourseGradeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04761451FFC90CD00B2CD9B /* CourseGradeCalculator.swift */; };
+		D06837E6215E02B4007EBA7E /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D06837E5215E02B4007EBA7E /* Quicksand-Medium.ttf */; };
+		D06837E8215E05A1007EBA7E /* FredokaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D06837E7215E05A1007EBA7E /* FredokaOne-Regular.ttf */; };
+		D06837EF215E08CE007EBA7E /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D06837E9215E08CD007EBA7E /* Quicksand-Bold.ttf */; };
+		D06837F0215E08CE007EBA7E /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D06837EA215E08CE007EBA7E /* Quicksand-Light.ttf */; };
+		D06837F1215E08CE007EBA7E /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D06837EB215E08CE007EBA7E /* Comfortaa-Bold.ttf */; };
+		D06837F2215E08CE007EBA7E /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D06837EC215E08CE007EBA7E /* Quicksand-Regular.ttf */; };
+		D06837F3215E08CE007EBA7E /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D06837ED215E08CE007EBA7E /* Comfortaa-Light.ttf */; };
+		D06837F4215E08CE007EBA7E /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D06837EE215E08CE007EBA7E /* Comfortaa-Regular.ttf */; };
 		D078EFF61D828EBB0063C825 /* ShowLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078EFF51D828EBB0063C825 /* ShowLaunchScreen.swift */; };
 		D09AF72D200891C70002C506 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09AF72C200891C70002C506 /* PickerViewController.swift */; };
 		D0A83406202ED81D00BCC4E5 /* ClassButtonPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A83405202ED81D00BCC4E5 /* ClassButtonPage.xib */; };
@@ -33,6 +41,14 @@
 		D028A9161D2105F000AAA32A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D028A9181D2105F000AAA32A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04761451FFC90CD00B2CD9B /* CourseGradeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseGradeCalculator.swift; sourceTree = "<group>"; };
+		D06837E5215E02B4007EBA7E /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Medium.ttf"; path = "Quicksand/Quicksand-Medium.ttf"; sourceTree = SOURCE_ROOT; };
+		D06837E7215E05A1007EBA7E /* FredokaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FredokaOne-Regular.ttf"; path = "Fredoka_One/FredokaOne-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		D06837E9215E08CD007EBA7E /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Bold.ttf"; path = "Quicksand/Quicksand-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		D06837EA215E08CE007EBA7E /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Light.ttf"; path = "Quicksand/Quicksand-Light.ttf"; sourceTree = SOURCE_ROOT; };
+		D06837EB215E08CE007EBA7E /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Bold.ttf"; path = "Comfortaa/Comfortaa-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		D06837EC215E08CE007EBA7E /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Regular.ttf"; path = "Quicksand/Quicksand-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		D06837ED215E08CE007EBA7E /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Light.ttf"; path = "Comfortaa/Comfortaa-Light.ttf"; sourceTree = SOURCE_ROOT; };
+		D06837EE215E08CE007EBA7E /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Regular.ttf"; path = "Comfortaa/Comfortaa-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		D078EFF51D828EBB0063C825 /* ShowLaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLaunchScreen.swift; sourceTree = "<group>"; };
 		D09AF72C200891C70002C506 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		D0A83405202ED81D00BCC4E5 /* ClassButtonPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassButtonPage.xib; sourceTree = "<group>"; };
@@ -72,6 +88,7 @@
 		D028A9001D2105F000AAA32A = {
 			isa = PBXGroup;
 			children = (
+				D06837E4215E0268007EBA7E /* Fonts */,
 				D028A90B1D2105F000AAA32A /* GradeMate */,
 				D028A90A1D2105F000AAA32A /* Products */,
 				78FF59A8FE0D2531BDB6334E /* Pods */,
@@ -119,6 +136,21 @@
 				D028A9151D2105F000AAA32A /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D06837E4215E0268007EBA7E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D06837EB215E08CE007EBA7E /* Comfortaa-Bold.ttf */,
+				D06837ED215E08CE007EBA7E /* Comfortaa-Light.ttf */,
+				D06837EE215E08CE007EBA7E /* Comfortaa-Regular.ttf */,
+				D06837E9215E08CD007EBA7E /* Quicksand-Bold.ttf */,
+				D06837EA215E08CE007EBA7E /* Quicksand-Light.ttf */,
+				D06837EC215E08CE007EBA7E /* Quicksand-Regular.ttf */,
+				D06837E7215E05A1007EBA7E /* FredokaOne-Regular.ttf */,
+				D06837E5215E02B4007EBA7E /* Quicksand-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D0D7DCA9202D90FD0077C64D /* SavedClasses */ = {
@@ -192,10 +224,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06837EF215E08CE007EBA7E /* Quicksand-Bold.ttf in Resources */,
 				D028A9171D2105F000AAA32A /* LaunchScreen.storyboard in Resources */,
 				D028A9141D2105F000AAA32A /* Assets.xcassets in Resources */,
 				D028A9121D2105F000AAA32A /* Main.storyboard in Resources */,
+				D06837F4215E08CE007EBA7E /* Comfortaa-Regular.ttf in Resources */,
 				D0A83406202ED81D00BCC4E5 /* ClassButtonPage.xib in Resources */,
+				D06837E6215E02B4007EBA7E /* Quicksand-Medium.ttf in Resources */,
+				D06837E8215E05A1007EBA7E /* FredokaOne-Regular.ttf in Resources */,
+				D06837F0215E08CE007EBA7E /* Quicksand-Light.ttf in Resources */,
+				D06837F1215E08CE007EBA7E /* Comfortaa-Bold.ttf in Resources */,
+				D06837F2215E08CE007EBA7E /* Quicksand-Regular.ttf in Resources */,
+				D06837F3215E08CE007EBA7E /* Comfortaa-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +252,7 @@
 				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
 				"${BUILT_PRODUCTS_DIR}/CHIPageControl/CHIPageControl.framework",
 				"${BUILT_PRODUCTS_DIR}/FlatUIKit/FlatUIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FontBlaster/FontBlaster.framework",
 				"${BUILT_PRODUCTS_DIR}/Haptica/Haptica.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/NightNight/NightNight.framework",
@@ -223,6 +264,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHIPageControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlatUIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontBlaster.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haptica.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NightNight.framework",

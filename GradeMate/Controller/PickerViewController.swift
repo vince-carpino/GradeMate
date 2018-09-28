@@ -261,7 +261,9 @@ extension PickerViewController: PickerViewDelegate {
     
     func pickerView(_ pickerView: PickerView, styleForLabel label: UILabel, highlighted: Bool) {
         label.textAlignment = .center
-        label.font = UIFont(name: "Courier-Bold", size: 26.0)
+//        label.font = UIFont(name: "Courier-Bold", size: 26.0)
+//        label.font = UIFont(name: "FredokaOne-Regular", size: 26)
+        label.font = UIFont(name: "Quicksand-Bold", size: 26)
 
         if pickerView == picker2 {
             label.textAlignment = .left

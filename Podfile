@@ -7,6 +7,7 @@ target 'GradeMate' do
   pod 'BEMCheckBox'
   pod 'CHIPageControl'
   pod 'FlatUIKit'
+  pod 'FontBlaster'
   pod 'Haptica'
   pod 'Hero'
   pod 'NightNight'
