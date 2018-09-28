@@ -129,25 +129,17 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
         addLongPressToExamWeightButton()
 
+        setUpClassesPageControl(pages)
 
-        //        if userDefaults.object(forKey: "class1") == nil {
-        //            userDefaults.set(15, forKey: "class1")
-        //        }
-
-        //        if let val = userDefaults.object(forKey: "class1") as? Int {
-        //            class1Button.titleLabel?.text = String(val)
-        //        } else {
-        //            userDefaults.set(15, forKey: "class1")
-        //        }
-
-
-
-        classesPageControl.numberOfPages = pages.count
-        classesPageControl.radius = 5
-        classesPageControl.tintColor = .silver()
-        classesPageControl.currentPageTintColor = .greenSea()
-        classesPageControl.padding = 10
-        classesPageControl.backgroundColor = .clear
+//        if userDefaults.object(forKey: "class1") == nil {
+//            userDefaults.set(15, forKey: "class1")
+//        }
+//
+//        if let val = userDefaults.object(forKey: "class1") as? Int {
+//            class1Button.titleLabel?.text = String(val)
+//        } else {
+//            userDefaults.set(15, forKey: "class1")
+//        }
     }
 
     // MARK: - GRADEMATE BUTTON
@@ -229,6 +221,15 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     // MARK: SAVED CLASSES VIEW
+
+    func setUpClassesPageControl(_ pages: [ClassButtonPage]) {
+        classesPageControl.numberOfPages = pages.count
+        classesPageControl.radius = 5
+        classesPageControl.tintColor = .greenSea()
+        classesPageControl.currentPageTintColor = .greenSea()
+        classesPageControl.padding = 10
+        classesPageControl.backgroundColor = .clear
+    }
 
     @IBAction func classButtonPressed(_ sender: FUIButton) {
 
