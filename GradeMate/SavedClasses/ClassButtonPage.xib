@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Courier.ttc">
-            <string>Courier-Bold</string>
+        <array key="FredokaOne-Regular.ttf">
+            <string>FredokaOne-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -22,24 +22,24 @@
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm6-on-cCT" customClass="FUIButton">
-                    <rect key="frame" x="16" y="20" width="343" height="50"/>
+                    <rect key="frame" x="16" y="20.5" width="343" height="50"/>
                     <color key="backgroundColor" red="0.10007033497095108" green="0.73665314912796021" blue="0.61070448160171509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="WUt-OQ-N1P"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                    <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="24"/>
                     <state key="normal" title="Button"/>
                     <connections>
                         <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="I5Y-A2-zZV"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgE-yd-d7A" customClass="FUIButton">
-                    <rect key="frame" x="16" y="78" width="343" height="50"/>
+                    <rect key="frame" x="16" y="78.5" width="343" height="50"/>
                     <color key="backgroundColor" red="0.10007033497095108" green="0.73665314912796021" blue="0.61070448160171509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="fji-TZ-mYx"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                    <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="24"/>
                     <state key="normal" title="Button"/>
                     <connections>
                         <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="2jO-05-xht"/>
@@ -51,31 +51,31 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="u4g-zL-rEU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                    <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="24"/>
                     <state key="normal" title="Button"/>
                     <connections>
                         <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="gCO-yv-ESO"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-dj-eCx" customClass="FUIButton">
-                    <rect key="frame" x="16" y="194" width="343" height="50"/>
+                    <rect key="frame" x="16" y="194.5" width="343" height="50"/>
                     <color key="backgroundColor" red="0.10007033497095108" green="0.73665314912796021" blue="0.61070448160171509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="RgW-Mn-CFU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                    <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="24"/>
                     <state key="normal" title="Button"/>
                     <connections>
                         <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="0sQ-H6-5n5"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tX-By-pBM" customClass="FUIButton">
-                    <rect key="frame" x="16" y="252" width="343" height="50"/>
+                    <rect key="frame" x="16" y="252.5" width="343" height="50"/>
                     <color key="backgroundColor" red="0.10007033497095108" green="0.73665314912796021" blue="0.61070448160171509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Da6-0C-hhl"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                    <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="24"/>
                     <state key="normal" title="Button"/>
                     <connections>
                         <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="SwQ-pm-o7A"/>

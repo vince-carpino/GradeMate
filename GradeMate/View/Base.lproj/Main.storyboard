@@ -421,7 +421,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="UKY-fH-ajh"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="32"/>
+                            <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="32"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -436,7 +436,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="8Uy-Ob-jXg"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                            <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="26"/>
                             <state key="normal" title="Back"/>
                             <connections>
                                 <action selector="savedClassesBackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UEU-9P-Bgh"/>
