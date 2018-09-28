@@ -8,7 +8,6 @@
 
 import CHIPageControl
 import FlatUIKit
-import FontBlaster
 import Haptica
 import Hero
 import NightNight
