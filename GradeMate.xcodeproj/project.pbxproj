@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D008B71A215EAE4800DD03B1 /* Bungee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D008B719215EAE4800DD03B1 /* Bungee-Regular.ttf */; };
+		D008B71C215EAF1100DD03B1 /* Baloo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D008B71B215EAF1100DD03B1 /* Baloo-Regular.ttf */; };
 		D028A90D1D2105F000AAA32A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028A90C1D2105F000AAA32A /* AppDelegate.swift */; };
 		D028A90F1D2105F000AAA32A /* FinalCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028A90E1D2105F000AAA32A /* FinalCalculatorViewController.swift */; };
 		D028A9121D2105F000AAA32A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D028A9101D2105F000AAA32A /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		7DB97C7EB7CC79108B33B8A6 /* Pods_GradeMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradeMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7E89091AA10A1DE727BE69 /* Pods-GradeMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradeMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradeMate/Pods-GradeMate.release.xcconfig"; sourceTree = "<group>"; };
 		CE849ED656898E5236F40FD2 /* Pods-GradeMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradeMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradeMate/Pods-GradeMate.debug.xcconfig"; sourceTree = "<group>"; };
+		D008B719215EAE4800DD03B1 /* Bungee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bungee-Regular.ttf"; sourceTree = "<group>"; };
+		D008B71B215EAF1100DD03B1 /* Baloo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo-Regular.ttf"; sourceTree = "<group>"; };
 		D028A9091D2105F000AAA32A /* GradeMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradeMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D028A90C1D2105F000AAA32A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D028A90E1D2105F000AAA32A /* FinalCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCalculatorViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		D06837E4215E0268007EBA7E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D008B71B215EAF1100DD03B1 /* Baloo-Regular.ttf */,
+				D008B719215EAE4800DD03B1 /* Bungee-Regular.ttf */,
 				D06837EB215E08CE007EBA7E /* Comfortaa-Bold.ttf */,
 				D06837ED215E08CE007EBA7E /* Comfortaa-Light.ttf */,
 				D06837EE215E08CE007EBA7E /* Comfortaa-Regular.ttf */,
@@ -228,6 +234,7 @@
 				D028A9171D2105F000AAA32A /* LaunchScreen.storyboard in Resources */,
 				D028A9141D2105F000AAA32A /* Assets.xcassets in Resources */,
 				D028A9121D2105F000AAA32A /* Main.storyboard in Resources */,
+				D008B71A215EAE4800DD03B1 /* Bungee-Regular.ttf in Resources */,
 				D06837F4215E08CE007EBA7E /* Comfortaa-Regular.ttf in Resources */,
 				D0A83406202ED81D00BCC4E5 /* ClassButtonPage.xib in Resources */,
 				D06837E6215E02B4007EBA7E /* Quicksand-Medium.ttf in Resources */,
@@ -236,6 +243,7 @@
 				D06837F1215E08CE007EBA7E /* Comfortaa-Bold.ttf in Resources */,
 				D06837F2215E08CE007EBA7E /* Quicksand-Regular.ttf in Resources */,
 				D06837F3215E08CE007EBA7E /* Comfortaa-Light.ttf in Resources */,
+				D008B71C215EAF1100DD03B1 /* Baloo-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

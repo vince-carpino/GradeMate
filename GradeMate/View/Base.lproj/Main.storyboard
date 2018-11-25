@@ -261,6 +261,7 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Ui8-8g-Ac6"/>
+                                <exclude reference="QBG-uT-CQa"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="JdQ-ql-Q9x"/>
