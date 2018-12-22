@@ -32,7 +32,9 @@ public extension UIButton {
     public override func _updateCurrentStatus() {
         super._updateCurrentStatus()
 
-        mixedTitleColorDictionary.forEach { (state, mixedColor) in
+        mixedTitleColorDictionary.forEach { (arg) in
+            
+            let (state, mixedColor) = arg
             setTitleColor(mixedColor.unfold(), for: UIControl.State(number: state))
         }
 
@@ -40,7 +42,9 @@ public extension UIButton {
 //            setTitleShadowColor(mixedColor.unfold(), for: UIControlState(number: state))
 //        }
 
-        mixedImageDictionary.forEach { (state, mixedImage) in
+        mixedImageDictionary.forEach { (arg) in
+            
+            let (state, mixedImage) = arg
             setImage(mixedImage.unfold(), for: UIControl.State(number: state))
         }
 
