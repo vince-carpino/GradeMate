@@ -193,6 +193,20 @@ class PickerViewController: UIViewController {
 
 // MARK: DATA SOURCE
 extension PickerViewController: PickerViewDataSource {
+    func pickerView(_ pickerView: PickerView, titleForRow row: Int) -> String {
+        switch pickerView {
+        case picker1:
+            return stringNumbers1[row]
+        case picker2:
+            return stringNumbers2[row]
+        case picker3:
+            return stringNumbers3[row]
+        case picker4:
+            return stringNumbers4[row]
+        default: return ""
+        }
+    }
+
     
     func pickerViewNumberOfRows(_ pickerView: PickerView) -> Int {
         switch pickerView {
