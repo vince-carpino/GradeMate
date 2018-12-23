@@ -207,7 +207,6 @@ extension PickerViewController: PickerViewDataSource {
         }
     }
 
-    
     func pickerViewNumberOfRows(_ pickerView: PickerView) -> Int {
         switch pickerView {
         case picker1:
@@ -221,20 +220,6 @@ extension PickerViewController: PickerViewDataSource {
         default: return 0
         }
     }
-    
-    func pickerView(_ pickerView: PickerView, titleForRow row: Int, index: Int) -> String {
-        switch pickerView {
-        case picker1:
-            return stringNumbers1[index]
-        case picker2:
-            return stringNumbers2[index]
-        case picker3:
-            return stringNumbers3[index]
-        case picker4:
-            return stringNumbers4[index]
-        default: return ""
-        }
-    }
 }
 
 // MARK: DELEGATE
@@ -244,23 +229,23 @@ extension PickerViewController: PickerViewDelegate {
         return 35.0
     }
     
-    func pickerView(_ pickerView: PickerView, didSelectRow row: Int, index: Int) {
+    func pickerView(_ pickerView: PickerView, didSelectRow row: Int) {
         switch pickerView {
         case picker1:
-            setCurrentGrade(val: numbers1[index])
+            setCurrentGrade(val: numbers1[row])
         case picker2:
-            setDecimalValue(val: numbers2[index])
+            setDecimalValue(val: numbers2[row])
         case picker3:
-            setExamWeight(val: numbers3[index])
+            setExamWeight(val: numbers3[row])
         case picker4:
-            setDesiredGrade(val: numbers4[index])
+            setDesiredGrade(val: numbers4[row])
         default: break
         }
-        
+
         calculate(currentGradeInt: getCurrentGrade(), decimalValue: getDecimalValue(), examWeightInt: getExamWeight(), desiredGradeInt: getDesiredGrade())
 
         setGradeValue(value: String(format: "%.0f", getScoreValue()) + "%")
-        
+
         checkScoreValue(value: self.scoreValue)
 
         // SET POP UP VIEW LABELS
@@ -268,7 +253,7 @@ extension PickerViewController: PickerViewDelegate {
         self.resultViewWarningLabel.text = getWarning()
         self.resultViewDismissButton.setTitle(getDismiss(), for: .normal)
 
-        self.resultViewScoreLabel.mixedTextColor = MixedColor(normal: .black, night: .clouds())
+        self.resultViewScoreLabel.mixedTextColor   = MixedColor(normal: .black, night: .clouds())
         self.resultViewWarningLabel.mixedTextColor = MixedColor(normal: .black, night: .clouds())
         self.resultViewMessageLabel.mixedTextColor = MixedColor(normal: .black, night: .clouds())
     }
