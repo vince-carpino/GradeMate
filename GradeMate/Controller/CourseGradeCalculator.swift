@@ -1,11 +1,3 @@
-//
-//  CourseGradeCalculator.swift
-//  GradeMate
-//
-//  Created by Vince Carpino on 1/2/18.
-//  Copyright © 2018 The Half-Blood Jedi. All rights reserved.
-//
-
 class CourseGradeCalculator {
     var currentGrade = 0.0
     var examWeight   = 0.0

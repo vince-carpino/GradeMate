@@ -1,16 +1,7 @@
-//
-//  ShowLaunchScreen.swift
-//  GradeMate
-//
-//  Created by Vince Carpino on 9/8/16.
-//  Copyright © 2016 The Half-Blood Jedi. All rights reserved.
-//
-
 import BEMCheckBox
 import FlatUIKit
 
 class ShowLaunchScreen: UIViewController {
-    
     @IBOutlet weak var checkBox: BEMCheckBox!
     @IBOutlet weak var background: UIImageView!
 

@@ -1,15 +1,6 @@
-//
-//  CustomScrollView.swift
-//  GradeMate
-//
-//  Created by Vince Carpino on 2/8/18.
-//  Copyright © 2018 The Half-Blood Jedi. All rights reserved.
-//
-
 import UIKit
 
 class CustomScrollView: UIScrollView {
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         myInit()

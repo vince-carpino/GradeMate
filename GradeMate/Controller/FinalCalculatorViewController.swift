@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  GradeMate
-//
-//  Created by Vince Carpino on 6/26/16.
-//  Copyright © 2016 TheHalfBloodJedi. All rights reserved.
-//
-
 import CHIPageControl
 import FlatUIKit
 import Haptica
@@ -14,7 +6,6 @@ import NightNight
 import PickerView
 
 class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate {
-
     // GRADEMATE BUTTON MENU ITEMS
     @IBOutlet var gradeMateButtonView: UIView!
     @IBOutlet weak var shareLinkButton: FUIButton!

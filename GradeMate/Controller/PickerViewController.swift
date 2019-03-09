@@ -1,11 +1,3 @@
-//
-//  PickerViewController.swift
-//  GradeMate
-//
-//  Created by Vince Carpino on 1/11/18.
-//  Copyright © 2018 The Half-Blood Jedi. All rights reserved.
-//
-
 import Foundation
 import FlatUIKit
 import Haptica
@@ -13,7 +5,6 @@ import NightNight
 import PickerView
 
 class PickerViewController: UIViewController {
-
     // MARK: - VALUES
     var currentGrade = 0
     var decimalValue = 0.0
@@ -185,7 +176,7 @@ class PickerViewController: UIViewController {
 
     public func setCurrentClass(val: Int) {
 //        self.picker3.selectRow(val, animated: true)
-        print (val)
+        print(val)
     }
 }
 
@@ -435,91 +426,91 @@ extension PickerViewController {
     // MARK: - RESPONSES
     func checkScoreValue(value: Double) {
         switch Int(value) {
-        // 301+
-        case let x where x > 300:
-            setWarning(warning: "I think it's safe to say that this is not your best subject.")
-            setDismiss(message: "No 💩, Sherlock")
-            break
-            
-        // 201 - 300
-        case let x where x > 200:
-            setWarning(warning: "Bribery is your only hope at this point...")
-            setDismiss(message: "I would never...😈")
-            break
-            
-        // 151 - 200
-        case let x where x > 150:
-            setWarning(warning: "It's okay to cry...")
-            setDismiss(message: "Already am 😭")
-            break
-            
-        // 126 - 150
-        case let x where x > 125:
-            setWarning(warning: "It's not lookin' good for you...")
-            setDismiss(message: "I surrender 🏳")
-            break
-            
-        // 116 - 125
-        case let x where x > 115:
-            setWarning(warning: "You shall not pass! ✋")
-            setDismiss(message: "Thanks, Gandalf 😐")
-            break
-            
-        // 101 - 115
-        case let x where x > 100:
-            setWarning(warning: "Is there extra credit? 😬")
-            setDismiss(message: "I'll look into it 🙄")
-            break
-            
-        // 100
-        case let x where x == 100:
-            setWarning(warning: "May the Force be with you...")
-            setDismiss(message: "Thank you, Master 🙏")
-            break
-            
-        // 90 - 99
-        case let x where x >= 90:
-            setWarning(warning: "I have faith in you.")
-            setDismiss(message: "Thanks bro 😅")
-            break
-            
-        // 80 - 89
-        case let x where x >= 80:
-            setWarning(warning: "You got this.")
-            setDismiss(message: "It's possible 🤔")
-            break
-            
-        // 70 - 79
-        case let x where x >= 70:
-            setWarning(warning: "Not so bad.")
-            setDismiss(message: "Alright 😛")
-            break
-            
-        // 60 - 69
-        case let x where x >= 60:
-            setWarning(warning: "Piece o' cake.")
-            setDismiss(message: "Yes please 🍰")
-            break
-            
-        // 50 - 59
-        case let x where x >= 50:
-            setWarning(warning: "No problemo.")
-            setDismiss(message: "I can do that 😃")
-            break
-            
-        // 1 - 49
-        case let x where x > 0:
-            setWarning(warning: "You could bomb it.")
-            setDismiss(message: "Chill 👌")
-            break
-            
-        // <= 0
-        case let x where x <= 0:
-            setWarning(warning: "Don't even take the test, dude.")
-            setDismiss(message: "Sweeeet 😎")
-            break
-            
-        default: break
+            // 301+
+            case let x where x > 300:
+                setWarning(warning: "I think it's safe to say that this is not your best subject.")
+                setDismiss(message: "No 💩, Sherlock")
+                break
+
+            // 201 - 300
+            case let x where x > 200:
+                setWarning(warning: "Bribery is your only hope at this point...")
+                setDismiss(message: "I would never...😈")
+                break
+
+            // 151 - 200
+            case let x where x > 150:
+                setWarning(warning: "It's okay to cry...")
+                setDismiss(message: "Already am 😭")
+                break
+
+            // 126 - 150
+            case let x where x > 125:
+                setWarning(warning: "It's not lookin' good for you...")
+                setDismiss(message: "I surrender 🏳")
+                break
+
+            // 116 - 125
+            case let x where x > 115:
+                setWarning(warning: "You shall not pass! ✋")
+                setDismiss(message: "Thanks, Gandalf 😐")
+                break
+
+            // 101 - 115
+            case let x where x > 100:
+                setWarning(warning: "Is there extra credit? 😬")
+                setDismiss(message: "I'll look into it 🙄")
+                break
+
+            // 100
+            case let x where x == 100:
+                setWarning(warning: "May the Force be with you...")
+                setDismiss(message: "Thank you, Master 🙏")
+                break
+
+            // 90 - 99
+            case let x where x >= 90:
+                setWarning(warning: "I have faith in you.")
+                setDismiss(message: "Thanks bro 😅")
+                break
+
+            // 80 - 89
+            case let x where x >= 80:
+                setWarning(warning: "You got this.")
+                setDismiss(message: "It's possible 🤔")
+                break
+
+            // 70 - 79
+            case let x where x >= 70:
+                setWarning(warning: "Not so bad.")
+                setDismiss(message: "Alright 😛")
+                break
+
+            // 60 - 69
+            case let x where x >= 60:
+                setWarning(warning: "Piece o' cake.")
+                setDismiss(message: "Yes please 🍰")
+                break
+
+            // 50 - 59
+            case let x where x >= 50:
+                setWarning(warning: "No problemo.")
+                setDismiss(message: "I can do that 😃")
+                break
+
+            // 1 - 49
+            case let x where x > 0:
+                setWarning(warning: "You could bomb it.")
+                setDismiss(message: "Chill 👌")
+                break
+
+            // <= 0
+            case let x where x <= 0:
+                setWarning(warning: "Don't even take the test, dude.")
+                setDismiss(message: "Sweeeet 😎")
+                break
+
+            default: break
         }
     }
 
@@ -528,17 +519,16 @@ extension PickerViewController {
         let coords = CGPoint(x: 0, y: score)
 
         switch score {
-
-        case let x where x >= 0:
-            return (scoreGradientImage?.getPixelColor(pos: coords))!
-        case let x where x <= 100:
-            return (scoreGradientImage?.getPixelColor(pos: coords))!
-        case let x where x > 100:
-            return (scoreGradientImage?.getPixelColor(pos: CGPoint(x: 0, y: 0)))!
-        case let x where x < 0:
-            return (scoreGradientImage?.getPixelColor(pos: CGPoint(x: 0, y: 100)))!
-        default:
-            return UIColor.black
+            case let x where x >= 0:
+                return (scoreGradientImage?.getPixelColor(pos: coords))!
+            case let x where x <= 100:
+                return (scoreGradientImage?.getPixelColor(pos: coords))!
+            case let x where x > 100:
+                return (scoreGradientImage?.getPixelColor(pos: CGPoint(x: 0, y: 0)))!
+            case let x where x < 0:
+                return (scoreGradientImage?.getPixelColor(pos: CGPoint(x: 0, y: 100)))!
+            default:
+                return UIColor.black
         }
     }
 }
