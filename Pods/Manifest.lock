@@ -18,7 +18,7 @@ PODS:
   - CHIPageControl/Paprika (0.1.7)
   - CHIPageControl/Puya (0.1.7)
   - FlatUIKit (1.6.2)
-  - Haptica (2.2.2)
+  - Haptica (2.2.3)
   - Hero (1.4.0)
   - NightNight (0.5.0)
   - PickerView (0.4.0)
@@ -49,7 +49,7 @@ SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   CHIPageControl: bbe1ddd0c688c02ec65b7f7e7d34551a3d16f37c
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
-  Haptica: 5c93b881329fc9dc5c036ab3fee59eb15d2c9eed
+  Haptica: 9b4e210ecf506b9f96c2a7746a8d945452ec344b
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   NightNight: 2a5550fdd9cf424b75ebaab022c26aaba35304c8
   PickerView: a736ea986d992aa3ef32423f475fdf3f3a0cf7d4
