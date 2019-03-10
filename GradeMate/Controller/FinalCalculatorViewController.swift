@@ -6,7 +6,6 @@ import NightNight
 import PickerView
 
 class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate {
-    // GRADEMATE BUTTON MENU ITEMS
     @IBOutlet var gradeMateButtonView: UIView!
     @IBOutlet weak var shareLinkButton: FUIButton!
     @IBOutlet weak var writeReviewButton: FUIButton!
@@ -16,35 +15,29 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     @IBOutlet weak var writeReviewLabel: UILabel!
     @IBOutlet weak var changeThemeLabel: UILabel!
     @IBOutlet weak var gradeMateViewTitleLabel: UILabel!
-    
-    // CURRENT GRADE INFO POP UP & DISMISS BUTTON
+
     @IBOutlet var currentGradeInfoView: UIView!
     @IBOutlet weak var currentGradeInfoTitleLabel: UILabel!
     @IBOutlet weak var currentGradeInfoMessageLabel: UILabel!
     @IBOutlet weak var currentGradeInfoDismiss: FUIButton!
-    
-    // EXAM WEIGHT INFO POP UP & DISMISS BUTTON
+
     @IBOutlet var examWeightInfoView: UIView!
     @IBOutlet weak var examWeightInfoTitleLabel: UILabel!
     @IBOutlet weak var examWeightInfoMessageLabel: UILabel!
     @IBOutlet weak var examWeightInfoDismiss: FUIButton!
-    
-    // DESIRED GRADE INFO POP UP & DISMISS BUTTON
+
     @IBOutlet var desiredGradeInfoView: UIView!
     @IBOutlet weak var desiredGradeInfoTitleLabel: UILabel!
     @IBOutlet weak var desiredGradeInfoMessageLabel: UILabel!
     @IBOutlet weak var desiredGradeInfoDismiss: FUIButton!
-    
-    // INFO BUTTONS
+
     @IBOutlet weak var currentGradeButton: FUIButton!
     @IBOutlet weak var examWeightButton: FUIButton!
     @IBOutlet weak var desiredGradeButton: FUIButton!
     
-    // GRADEMATE BUTTON
     @IBOutlet weak var gradeMateButton: FUIButton!
     @IBOutlet weak var gradeMateButtonShadow: FUIButton!
     
-    // CALCULATE BUTTON
     @IBOutlet weak var calculateButton: FUIButton!
 
     @IBOutlet var classesView: UIView!
@@ -54,7 +47,38 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     @IBOutlet weak var classesPageControl: CHIPageControlAleppo!
 
     @IBOutlet weak var backgroundImage: UIImageView!
-    
+
+    let APP_ID = "1142404187"
+    let SHARE_URL_STRING = "https://appsto.re/us/Br7feb.i"
+    let USER_DEFAULTS_KEY_FOR_THEME = "theme"
+
+    let CLASSES_VIEW_POPUP_HEIGHT = 485
+    let CLASSES_PAGE_CONTROL_RADIUS:  CGFloat = 5
+    let CLASSES_PAGE_CONTROL_PADDING: CGFloat = 10
+    let CLASSES_SCROLLVIEW_NORMAL_COLOR: UIColor = .silver()!
+    let CLASSES_SCROLLVIEW_NIGHT_COLOR: UIColor = .midnightBlue()!
+
+    let INFO_VIEW_POPUP_HEIGHT = 230
+    let POPUP_VIEW_CORNER_RADIUS: CGFloat = 10
+
+    let GRADEMATE_BUTTON_VIEW_HEIGHT = 486
+    let CALCULATE_BUTTON_VIEW_HEIGHT = 270
+    let SMALL_SCREEN_HEIGHT: CGFloat = 480
+
+    let STATUS_BAR_DISMISS_DELAY = 0.35
+
+    let DEFAULT_VIEW_NORMAL_COLOR: UIColor = .clouds()!
+    let DEFAULT_VIEW_NIGHT_COLOR:  UIColor = .wetAsphalt()!
+
+    var primaryColors         = MixedColor(normal: 0x1ABC9C, night: 0x1ABC9C)
+    let PRIMARY_SHADOW_COLORS = MixedColor(normal: 0x16A085, night: 0x16A085)
+
+    let SECONDARY_COLORS        = MixedColor(normal: 0x18C0EE, night: 0x18C0EE)
+    let SECONDARY_SHADOW_COLORS = MixedColor(normal: 0x149EC6, night: 0x149EC6)
+
+    let DEFAULT_NORMAL_TEXT_COLOR: UIColor = .black
+    let DEFAULT_NIGHT_TEXT_COLOR:  UIColor = .clouds()!
+
     let calculateButtonWords: [String] = [
         "Calculate",
         "Punch it",
@@ -72,20 +96,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     var savedClassesPage1: ClassButtonPage = Bundle.main.loadNibNamed("ClassButtonPage", owner: self, options: nil)?.first as! ClassButtonPage
     var savedClassesPage2: ClassButtonPage = Bundle.main.loadNibNamed("ClassButtonPage", owner: self, options: nil)?.first as! ClassButtonPage
 
-    //    let upperButtonColors  = UIColor(fromHexCode: "#18C0EE")!
-    //    let upperButtonShadows = UIColor(fromHexCode: "#149EC6")!
-
-    //    let calculateButtonColor  = UIColor(fromHexCode: "#1ABC9C")!
-    //    let calculateButtonShadow = UIColor(fromHexCode: "#16A085")!
-
-    var primaryColors = MixedColor(normal: 0x1ABC9C, night: 0x1ABC9C)
-    var primaryShadowColors = MixedColor(normal: 0x16A085, night: 0x16A085)
-
-    var secondaryColors = MixedColor(normal: 0x18C0EE, night: 0x18C0EE)
-    var secondaryShadowColors = MixedColor(normal: 0x149EC6, night: 0x149EC6)
-
-    let defaultNormalTextColor: UIColor = .black
-    let defaultNightTextColor: UIColor  = .clouds()!
 
     var defaultTextColors = MixedColor(normal: .red, night: .red)
 
@@ -98,7 +108,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         let pages: [ClassButtonPage] = createClassButtonPages()
         setupClassesScrollView(pages: pages)
 
-        setDefaultTextColors(defaultNormalTextColor, defaultNightTextColor)
+        setDefaultTextColors(DEFAULT_NORMAL_TEXT_COLOR, DEFAULT_NIGHT_TEXT_COLOR)
 
         self.view.mixedBackgroundColor = MixedColor(normal: 0x222F3E, night: 0x222F3E)
 
@@ -122,11 +132,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
         setUpClassesPageControl(pages)
 
-//        FontBlaster.blast()
-//
 //        calculateButton.titleLabel?.font = UIFont(name: "Quicksand-Medium", size: 12)
-
-
 
 //        if userDefaults.object(forKey: "class1") == nil {
 //            userDefaults.set(15, forKey: "class1")
@@ -140,42 +146,31 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     // MARK: - GRADEMATE BUTTON
-
-    // Tapped normally
-    // PUT BUTTON ACTIONS IN HERE
     @IBAction func gradeMateButtonTapped(_ sender: FUIButton) {
         gradeMateButtonShadow.isHidden = false
-        animateIn(viewToAnimate: self.gradeMateButtonView, height: 486)
+        animateIn(viewToAnimate: self.gradeMateButtonView, height: GRADEMATE_BUTTON_VIEW_HEIGHT)
     }
 
-    // Pushed down
     @IBAction func gradeMateButtonDown(_ sender: FUIButton) {
         gradeMateButtonShadow.isHidden = true
     }
 
-    // Pushed down, dragged out
     @IBAction func gradeMateButtonTouchDragExit(_ sender: FUIButton) {
         gradeMateButtonShadow.isHidden = false
     }
 
-    // Pushed down, dragged out, dragged back in
     @IBAction func gradeMateButtonTouchDragEnter(_ sender: FUIButton) {
         gradeMateButtonShadow.isHidden = true
     }
 
-
     // MARK: GRADEMATE VIEW BUTTONS
-
-    // Back
     @IBAction func gradeMateButtonViewBackButtonPressed(_ sender: FUIButton) {
         animateOut(viewToAnimate: self.gradeMateButtonView)
     }
 
-    // WRITE REVIEW BUTTON
     @IBAction func gradeMateButonViewWriteReviewPressed(_ sender: FUIButton) {
-        let appID = "1142404187"
-        let urlStr = "itms-apps://itunes.apple.com/app/viewContentsUserReviews?id=\(appID)"
-        let url = URL(string: urlStr)!
+        let urlString = "itms-apps://itunes.apple.com/app/viewContentsUserReviews?id=\(APP_ID)"
+        let url = URL(string: urlString)!
 
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
@@ -184,21 +179,19 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         }
     }
 
-    // SHARE BUTTON
     @IBAction func gradeMateButtonViewShareButton(_ sender: FUIButton) {
-        let url = URL(string: "https://appsto.re/us/Br7feb.i")!
+        let url = URL(string: SHARE_URL_STRING)!
 
         showShareSheet(itemsToShare: [url])
     }
 
-    // THEME SETTING
     fileprivate func setThemeAtLaunch() {
         let userDefaults = UserDefaults.standard
 
-        if userDefaults.object(forKey: "theme") == nil {
-            userDefaults.set(1, forKey: "theme")
+        if userDefaults.object(forKey: USER_DEFAULTS_KEY_FOR_THEME) == nil {
+            userDefaults.set(1, forKey: USER_DEFAULTS_KEY_FOR_THEME)
         } else {
-            NightNight.theme = userDefaults.integer(forKey: "theme") == 1 ? .normal : .night
+            NightNight.theme = userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_THEME) == 1 ? .normal : .night
             changeThemeButton.setTitle(NightNight.theme == .night ? "Go light ☀️" : "Go dark 🌙", for: .normal)
         }
     }
@@ -207,32 +200,26 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         NightNight.toggleNightTheme()
 
         let currentThemeAsInt = NightNight.theme == .normal ? 1 : 0
-
-        UserDefaults.standard.set(currentThemeAsInt, forKey: "theme")
+        UserDefaults.standard.set(currentThemeAsInt, forKey: USER_DEFAULTS_KEY_FOR_THEME)
 
         setAllButtonStyles()
-
         setBackgroundImageAlphaBasedOnCurrentTheme()
 
         changeThemeButton.setTitle(NightNight.theme == .night ? "Go light ☀️" : "Go dark 🌙", for: .normal)
     }
 
     // MARK: SAVED CLASSES VIEW
-
     func setUpClassesPageControl(_ pages: [ClassButtonPage]) {
         classesPageControl.numberOfPages = pages.count
-        classesPageControl.radius = 5
+        classesPageControl.radius = CLASSES_PAGE_CONTROL_RADIUS
         classesPageControl.tintColor = .greenSea()
         classesPageControl.currentPageTintColor = .greenSea()
-        classesPageControl.padding = 10
+        classesPageControl.padding = CLASSES_PAGE_CONTROL_PADDING
         classesPageControl.backgroundColor = .clear
     }
 
     @IBAction func classButtonPressed(_ sender: FUIButton) {
-
         picker3.selectRow(Int((sender.titleLabel?.text)!)! - 1, animated: true)
-
-
 
         //        if let stored = UserDefaults.standard.object(forKey: "class1") as? Int {
         //            UserDefaults.standard.set(stored + 1, forKey: "class1")
@@ -252,7 +239,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         //
         //        picker3.selectRow(Int(substring)! - 1, animated: true)
 
-
         animateOut(viewToAnimate: self.classesView)
     }
 
@@ -267,38 +253,28 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         animateOut(viewToAnimate: self.view.subviews.last!)
     }
 
-    
     // MARK: - INFO BUTTONS
-    
-    // Current Grade Tapped
     @IBAction func currentGradeTapped(_ sender: FUIButton) {
-        animateIn(viewToAnimate: self.currentGradeInfoView, height: 230)
+        animateIn(viewToAnimate: self.currentGradeInfoView, height: INFO_VIEW_POPUP_HEIGHT)
     }
     
-    // Weight Button Tapped
     @IBAction func weightButtonTapped(_ sender: FUIButton) {
-        animateIn(viewToAnimate: self.examWeightInfoView, height: 230)
+        animateIn(viewToAnimate: self.examWeightInfoView, height: INFO_VIEW_POPUP_HEIGHT)
     }
     
-    // Desired Grade Tapped
     @IBAction func desiredGradeTapped(_ sender: FUIButton) {
-        animateIn(viewToAnimate: self.desiredGradeInfoView, height: 230)
+        animateIn(viewToAnimate: self.desiredGradeInfoView, height: INFO_VIEW_POPUP_HEIGHT)
     }
-    
-    
+
     // MARK: - DISMISS POP UPS
-    
-    // Current Grade Info View
     @IBAction func currentGradeInfoDismiss(_ sender: FUIButton) {
         animateOut(viewToAnimate: self.currentGradeInfoView)
     }
     
-    // Exam Weight Info View
     @IBAction func examWeightInfoDismiss(_ sender: FUIButton) {
         animateOut(viewToAnimate: self.examWeightInfoView)
     }
     
-    // Desired Grade Info View
     @IBAction func desiredGradeInfoDismiss(_ sender: FUIButton) {
         animateOut(viewToAnimate: self.desiredGradeInfoView)
     }
@@ -308,7 +284,16 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     func showShareSheet(itemsToShare: [Any]) {
         let activityVC = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
         
-        let excludedActivities = [.postToFlickr, .postToWeibo, .print, .assignToContact, UIActivity.ActivityType.saveToCameraRoll, .addToReadingList, .postToFlickr, .postToVimeo, .postToTencentWeibo]
+        let excludedActivities: [UIActivity.ActivityType] = [
+            .addToReadingList,
+            .assignToContact,
+            .postToFlickr,
+            .postToTencentWeibo,
+            .postToWeibo,
+            .postToVimeo,
+            .print,
+            .saveToCameraRoll
+        ]
         
         activityVC.excludedActivityTypes = excludedActivities
         
@@ -318,7 +303,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     fileprivate func setBackgroundImageAlphaBasedOnCurrentTheme() {
-
         if (NightNight.theme == .normal) {
             UIView.animate(withDuration: 0.3, animations: {
                 self.backgroundImage.alpha = 1
@@ -332,9 +316,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
     // MARK: - CALCULATE BUTTON TAPPED
     @IBAction func calculateTapped(_ sender: FUIButton) {
-
-        
-        animateIn(viewToAnimate: self.resultView, height: 270)
+        animateIn(viewToAnimate: self.resultView, height: CALCULATE_BUTTON_VIEW_HEIGHT)
 
         //        // CHANGE BUTTON TEXT
         //        let arraySize = calculateButtonWords.count
@@ -344,51 +326,50 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     func checkForSmallScreen() {
-        if (UIScreen.main.bounds.size.height == 480) {
+        if (UIScreen.main.bounds.size.height == SMALL_SCREEN_HEIGHT) {
             gradeMateButton.isHidden = true
             gradeMateButtonShadow.isHidden = true
         }
     }
 
     func delayStatusBar() {
-        DispatchQueue.main.asyncAfter(deadline: (.now() + 0.35)) {
+        DispatchQueue.main.asyncAfter(deadline: (.now() + STATUS_BAR_DISMISS_DELAY)) {
             self.statusBarIsHidden = false
         }
     }
 
     func addAnimations() {
-        gradeMateButton.hero.modifiers = [.fade, .scale(0.5)]
+        gradeMateButton.hero.modifiers       = [.fade, .scale(0.5)]
         gradeMateButtonShadow.hero.modifiers = [.fade, .scale(0.5)]
-        currentGradeButton.hero.modifiers = [.fade, .translate(x: -50, y: 0, z: 0)]
-        examWeightButton.hero.modifiers = [.fade, .scale(0.5)]
-        desiredGradeButton.hero.modifiers = [.fade, .translate(x: 50, y: 0, z: 0)]
+        currentGradeButton.hero.modifiers    = [.fade, .translate(x: -50, y: 0, z: 0)]
+        examWeightButton.hero.modifiers      = [.fade, .scale(0.5)]
+        desiredGradeButton.hero.modifiers    = [.fade, .translate(x: 50, y: 0, z: 0)]
+        calculateButton.hero.modifiers       = [.fade, .scale(0.5)]
         picker1.hero.modifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
         picker2.hero.modifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
         picker3.hero.modifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
         picker4.hero.modifiers = [.fade, .translate(x: 0, y: 50, z: 0)]
-        calculateButton.hero.modifiers = [.fade, .scale(0.5)]
     }
 
     func roundOffPopUpCorners() {
-        currentGradeInfoView.layer.cornerRadius = 10
-        examWeightInfoView.layer.cornerRadius   = 10
-        desiredGradeInfoView.layer.cornerRadius = 10
-        gradeMateButtonView.layer.cornerRadius  = 10
-        classesView.layer.cornerRadius          = 10
-        classesScrollView.layer.cornerRadius    = 10
+        currentGradeInfoView.layer.cornerRadius = POPUP_VIEW_CORNER_RADIUS
+        examWeightInfoView.layer.cornerRadius   = POPUP_VIEW_CORNER_RADIUS
+        desiredGradeInfoView.layer.cornerRadius = POPUP_VIEW_CORNER_RADIUS
+        gradeMateButtonView.layer.cornerRadius  = POPUP_VIEW_CORNER_RADIUS
+        classesView.layer.cornerRadius          = POPUP_VIEW_CORNER_RADIUS
+        classesScrollView.layer.cornerRadius    = POPUP_VIEW_CORNER_RADIUS
 
+        resultView.mixedBackgroundColor           = MixedColor(normal: DEFAULT_VIEW_NORMAL_COLOR, night: DEFAULT_VIEW_NIGHT_COLOR)
+        examWeightInfoView.mixedBackgroundColor   = MixedColor(normal: DEFAULT_VIEW_NORMAL_COLOR, night: DEFAULT_VIEW_NIGHT_COLOR)
+        gradeMateButtonView.mixedBackgroundColor  = MixedColor(normal: DEFAULT_VIEW_NORMAL_COLOR, night: DEFAULT_VIEW_NIGHT_COLOR)
+        currentGradeInfoView.mixedBackgroundColor = MixedColor(normal: DEFAULT_VIEW_NORMAL_COLOR, night: DEFAULT_VIEW_NIGHT_COLOR)
+        desiredGradeInfoView.mixedBackgroundColor = MixedColor(normal: DEFAULT_VIEW_NORMAL_COLOR, night: DEFAULT_VIEW_NIGHT_COLOR)
+        classesView.mixedBackgroundColor          = MixedColor(normal: DEFAULT_VIEW_NORMAL_COLOR, night: DEFAULT_VIEW_NIGHT_COLOR)
 
-        resultView.mixedBackgroundColor = MixedColor(normal: .clouds(), night: .wetAsphalt())
-        examWeightInfoView.mixedBackgroundColor = MixedColor(normal: .clouds(), night: .wetAsphalt())
-        gradeMateButtonView.mixedBackgroundColor = MixedColor(normal: .clouds(), night: .wetAsphalt())
-        currentGradeInfoView.mixedBackgroundColor = MixedColor(normal: .clouds(), night: .wetAsphalt())
-        desiredGradeInfoView.mixedBackgroundColor = MixedColor(normal: .clouds(), night: .wetAsphalt())
-        classesView.mixedBackgroundColor = MixedColor(normal: .clouds(), night: .wetAsphalt())
-
-        classesScrollView.mixedBackgroundColor = MixedColor(normal: .silver(), night: .midnightBlue())
+        classesScrollView.mixedBackgroundColor = MixedColor(normal: CLASSES_SCROLLVIEW_NORMAL_COLOR, night: CLASSES_SCROLLVIEW_NIGHT_COLOR)
 
         classesScrollView.subviews.forEach { (view) in
-            view.mixedBackgroundColor = MixedColor(normal: .silver(), night: .midnightBlue())
+            view.mixedBackgroundColor = MixedColor(normal: CLASSES_SCROLLVIEW_NORMAL_COLOR, night: CLASSES_SCROLLVIEW_NIGHT_COLOR)
         }
 
         let gradeMateViewLabels = [
@@ -407,7 +388,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
             desiredGradeInfoMessageLabel
         ]
 
-        classesViewTitleLabel.mixedTextColor = MixedColor(normal: .black, night: .clouds())
+        classesViewTitleLabel.mixedTextColor = MixedColor(normal: DEFAULT_NORMAL_TEXT_COLOR, night: DEFAULT_NIGHT_TEXT_COLOR)
 
         gradeMateViewLabels.forEach { (label) in
             label?.mixedTextColor = getDefaultTextColors()
@@ -423,7 +404,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     fileprivate func getDefaultTextColors() -> MixedColor {
-        return MixedColor(normal: defaultNormalTextColor, night: defaultNightTextColor)
+        return MixedColor(normal: DEFAULT_NORMAL_TEXT_COLOR, night: DEFAULT_NIGHT_TEXT_COLOR)
     }
 
     fileprivate func setSecondaryColors(_ colors: MixedColor) {
@@ -438,7 +419,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         ]
 
         infoButtons.forEach { (button) in
-            setButtonStyle(button: button, buttonColor: secondaryColors, shadowColor: secondaryShadowColors)
+            setButtonStyle(button: button, buttonColor: SECONDARY_COLORS, shadowColor: SECONDARY_SHADOW_COLORS)
         }
     }
 
@@ -450,7 +431,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         ]
 
         infoDismissButtons.forEach { (button) in
-            setButtonStyle(button: button, buttonColor: primaryColors, shadowColor: primaryShadowColors, isDismiss: true)
+            setButtonStyle(button: button, buttonColor: primaryColors, shadowColor: PRIMARY_SHADOW_COLORS, isDismiss: true)
         }
     }
 
@@ -462,16 +443,13 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         ]
 
         gradeMateViewButtons.forEach { (button) in
-            setButtonStyle(button: button, buttonColor: secondaryColors, shadowColor: secondaryShadowColors, isDismiss: true)
+            setButtonStyle(button: button, buttonColor: SECONDARY_COLORS, shadowColor: SECONDARY_SHADOW_COLORS, isDismiss: true)
         }
     }
 
     func setAllButtonStyles() {
-
         setInfoButtonStyles()
-
         setInfoDismissButtonStyles()
-
         setGradeMateViewButtonStyles()
 
 //        let allButtons: [FUIButton] = [
@@ -482,31 +460,30 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 //            gradeMateButtonViewBackButton
 //        ]
 
+        setButtonStyle(button: calculateButton, buttonColor: primaryColors, shadowColor: PRIMARY_SHADOW_COLORS)
 
-        setButtonStyle(button: calculateButton, buttonColor: primaryColors, shadowColor: primaryShadowColors, textColor: MixedColor(normal: .clouds(), night: .clouds()))
+        setButtonStyle(button: resultViewDismissButton, buttonColor: SECONDARY_COLORS, shadowColor: SECONDARY_SHADOW_COLORS, isDismiss: true)
 
-        setButtonStyle(button: resultViewDismissButton, buttonColor: secondaryColors, shadowColor: secondaryShadowColors, textColor: MixedColor(normal: .clouds(), night: .clouds()), isDismiss: true)
-
-        setButtonStyle(button: gradeMateButton, buttonColor: MixedColor(normal: .clear, night: .clear), shadowColor: MixedColor(normal: .clear, night: .clear), textColor: MixedColor(normal: .clouds(), night: .clouds()), shadowHeight: 5.0)
+        setButtonStyle(button: gradeMateButton, buttonColor: MixedColor(normal: .clear, night: .clear), shadowColor: MixedColor(normal: .clear, night: .clear), shadowHeight: 5.0)
 
         setButtonStyle(button: gradeMateButtonShadow, buttonColor: MixedColor(normal: .clear, night: .clear), shadowColor: MixedColor(normal: .clear, night: .clear), textColor: MixedColor(normal: .asbestos(), night: .asbestos()), shadowHeight: 5.0)
 
-        setButtonStyle(button: gradeMateButtonViewBackButton, buttonColor: primaryColors, shadowColor: primaryShadowColors, textColor: MixedColor(normal: .clouds(), night: .clouds()))
+        setButtonStyle(button: gradeMateButtonViewBackButton, buttonColor: primaryColors, shadowColor: PRIMARY_SHADOW_COLORS)
 
         // GO THROUGH PAGES AND SET BUTTON COLORS
-        setButtonStyle(button: savedClassesPage1.button1, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
-        setButtonStyle(button: savedClassesPage1.button2, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
-        setButtonStyle(button: savedClassesPage1.button3, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
-        setButtonStyle(button: savedClassesPage1.button4, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
-        setButtonStyle(button: savedClassesPage1.button5, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
+        setButtonStyle(button: savedClassesPage1.button1, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        setButtonStyle(button: savedClassesPage1.button2, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        setButtonStyle(button: savedClassesPage1.button3, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        setButtonStyle(button: savedClassesPage1.button4, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        setButtonStyle(button: savedClassesPage1.button5, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
 
-        setButtonStyle(button: savedClassesPage2.button1, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
-        setButtonStyle(button: savedClassesPage2.button2, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
-        setButtonStyle(button: savedClassesPage2.button3, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
-        setButtonStyle(button: savedClassesPage2.button4, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
-        setButtonStyle(button: savedClassesPage2.button5, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
+        setButtonStyle(button: savedClassesPage2.button1, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        setButtonStyle(button: savedClassesPage2.button2, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        setButtonStyle(button: savedClassesPage2.button3, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        setButtonStyle(button: savedClassesPage2.button4, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        setButtonStyle(button: savedClassesPage2.button5, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
 
-        setButtonStyle(button: classesBackButton, buttonColor: MixedColor(normal: .concrete(), night: .concrete()), shadowColor: MixedColor(normal: .asbestos(), night: .asbestos()), textColor: MixedColor(normal: .clouds(), night: .clouds()))
+        setButtonStyle(button: classesBackButton, buttonColor: MixedColor(normal: .concrete(), night: .concrete()), shadowColor: MixedColor(normal: .asbestos(), night: .asbestos()))
     }
 
     func setAllButtonTextBehavior() {
@@ -521,7 +498,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
     @objc func longTap(_ sender: UIGestureRecognizer) {
         if sender.state == .began {
-            animateIn(viewToAnimate: self.classesView, height: 485)
+            animateIn(viewToAnimate: self.classesView, height: CLASSES_VIEW_POPUP_HEIGHT)
         }
     }
 
@@ -585,7 +562,14 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 // MARK: -
 extension UIViewController {
     // MARK: SET BUTTON STYLE
-    func setButtonStyle(button: FUIButton, buttonColor: MixedColor = MixedColor(normal: .turquoise(), night: .concrete()), shadowColor: MixedColor = MixedColor(normal: .greenSea(), night: .asbestos()), textColor: MixedColor = MixedColor(normal: .clouds(), night: .clouds()), shadowHeight: CGFloat = 6.0, cornerRadius: CGFloat = 6.0, isDismiss: Bool = false) {
+    func setButtonStyle(
+        button: FUIButton,
+        buttonColor: MixedColor = MixedColor(normal: .turquoise(), night: .concrete()),
+        shadowColor: MixedColor = MixedColor(normal: .greenSea(), night: .asbestos()),
+        textColor:   MixedColor = MixedColor(normal: .clouds(), night: .clouds()),
+        shadowHeight: CGFloat = 6.0,
+        cornerRadius: CGFloat = 6.0,
+        isDismiss: Bool = false) {
 
         button.shadowHeight = shadowHeight
         button.buttonColor  = buttonColor.unfold()
@@ -596,15 +580,12 @@ extension UIViewController {
         button.setTitleColor(textColor.unfold(), for: .highlighted)
         button.backgroundColor = .clear
 
-//        button.titleLabel?.font = UIFont(name: "FredokaOne-Regular", size: UIFont.buttonFontSize)
-
         button.isExclusiveTouch = true
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.adjustsFontSizeToFitWidth = true
 
         button.isHaptic = true
         button.hapticType = .impact(.light)
-
     }
 }
 
