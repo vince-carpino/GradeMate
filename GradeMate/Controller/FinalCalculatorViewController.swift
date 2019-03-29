@@ -128,7 +128,8 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
         setAllButtonTextBehavior()
 
-        addLongPressToExamWeightButton()
+        // TODO: Leave commented until Saved Classes are ready
+//        addLongPressToExamWeightButton()
 
         setUpClassesPageControl(pages)
 
