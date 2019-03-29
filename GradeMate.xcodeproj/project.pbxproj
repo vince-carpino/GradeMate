@@ -203,7 +203,7 @@
 					D028A9081D2105F000AAA32A = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = UZ338LKNSU;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -212,6 +212,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -456,7 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TheHalf-BloodJedi.GradeMate";
 				PRODUCT_NAME = GradeMate;
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -474,7 +475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TheHalf-BloodJedi.GradeMate";
 				PRODUCT_NAME = GradeMate;
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -164,7 +164,7 @@ class PickerViewController: UIViewController {
         picker.backgroundColor = .clear
         picker.scrollingStyle  = .default
         picker.selectionStyle  = .defaultIndicator
-        picker.currentSelectedRow = stringArray.index(of: stringArray.first!)
+        picker.currentSelectedRow = stringArray.firstIndex(of: stringArray.first!)
     }
 
     public func setCurrentClass(val: Int) {
@@ -259,7 +259,7 @@ extension PickerViewController: PickerViewDelegate {
                 picker3.defaultSelectionIndicator.backgroundColor = .clear
             case picker4:
                 let labelText = label.text!
-                let strIndex = labelText.index(of: "%")!
+                let strIndex = labelText.firstIndex(of: "%")!
                 let subString = String(labelText[..<strIndex])
                 let itemTextInt = Int(subString)
                 let coords = CGPoint(x: 0, y: ((itemTextInt!)-1))
