@@ -1,9 +1,14 @@
 import BEMCheckBox
 import FlatUIKit
+import NightNight
 
 class ShowLaunchScreen: UIViewController {
     @IBOutlet weak var checkBox: BEMCheckBox!
     @IBOutlet weak var background: UIImageView!
+
+    let USER_DEFAULTS_KEY_FOR_THEME = "theme"
+
+    var currentTheme: NightNight.Theme = .normal
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -32,6 +37,20 @@ class ShowLaunchScreen: UIViewController {
         checkBox.onAnimationType  = .stroke
         checkBox.offAnimationType = .fade
     }
+
+    func setThemeAtLaunch() {
+        let userDefaults = UserDefaults.standard
+
+        if userDefaults.object(forKey: USER_DEFAULTS_KEY_FOR_THEME) == nil {
+            userDefaults.set(1, forKey: USER_DEFAULTS_KEY_FOR_THEME)
+        } else {
+            currentTheme = userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_THEME) == 1 ? .normal : .night
+        }
+    }
+
+    func setBackgroundImageAlphaBasedOnCurrentTheme() {
+        self.background.alpha = currentTheme == .normal ? 1 : 0
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,7 +59,8 @@ class ShowLaunchScreen: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        background.image = UIImage(named: "matte-grey")
+        setThemeAtLaunch()
+        setBackgroundImageAlphaBasedOnCurrentTheme()
     }
 
     @objc func showMainView() {
