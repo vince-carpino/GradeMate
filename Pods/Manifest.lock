@@ -22,7 +22,7 @@ PODS:
   - Hero (1.4.0)
   - NightNight (0.5.0)
   - PickerView (0.4.0)
-  - ViewAnimator (2.2.2)
+  - ViewAnimator (2.4.0)
 
 DEPENDENCIES:
   - BEMCheckBox
@@ -53,7 +53,7 @@ SPEC CHECKSUMS:
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   NightNight: 2a5550fdd9cf424b75ebaab022c26aaba35304c8
   PickerView: a736ea986d992aa3ef32423f475fdf3f3a0cf7d4
-  ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
+  ViewAnimator: 28b9ef703e280a02852b1271ef36295ea96eae4b
 
 PODFILE CHECKSUM: 8c2aa049d7927dfe55517641f2a2bf9602e1aa61
 
