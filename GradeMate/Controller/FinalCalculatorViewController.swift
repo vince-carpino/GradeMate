@@ -51,6 +51,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     let APP_ID = "1142404187"
     let SHARE_URL_STRING = "https://appsto.re/us/Br7feb.i"
     let USER_DEFAULTS_KEY_FOR_THEME = "theme"
+    let USER_DEFAULTS_KEY_FOR_SELECTED_CLASS = "selectedClass"
 
     let CLASSES_VIEW_POPUP_HEIGHT = 485
     let CLASSES_PAGE_CONTROL_RADIUS:  CGFloat = 5
@@ -128,8 +129,8 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
         setAllButtonTextBehavior()
 
-        // TODO: Leave commented until Saved Classes are ready
-//        addLongPressToExamWeightButton()
+        // FIXME: Leave commented until Saved Classes are ready
+        addLongPressToExamWeightButton()
 
         setUpClassesPageControl(pages)
 
@@ -220,7 +221,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     @IBAction func classButtonPressed(_ sender: FUIButton) {
-        picker3.selectRow(Int((sender.titleLabel?.text)!)! - 1, animated: true)
+//        picker3.selectRow(Int((sender.titleLabel?.text)!)! - 1, animated: true)
 
         //        if let stored = UserDefaults.standard.object(forKey: "class1") as? Int {
         //            UserDefaults.standard.set(stored + 1, forKey: "class1")
@@ -252,6 +253,12 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     @IBAction func savedClassesBackPressed(_ sender: FUIButton) {
         //        animateOut(viewToAnimate: self.classesView)
         animateOut(viewToAnimate: self.view.subviews.last!)
+
+        let selectedClass = self.userDefaults.object(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS) == nil ? -1 : self.userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS)
+        if (selectedClass != -1) {
+//            print("GOT CLASS AS \(selectedClass) OF TYPE \(type(of: selectedClass))")
+            self.picker3.selectRow(self.userDefaults.integer(forKey: "selectedClass") - 1, animated: true)
+        }
     }
 
     // MARK: - INFO BUTTONS
