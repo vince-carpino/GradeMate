@@ -52,6 +52,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     let SHARE_URL_STRING = "https://appsto.re/us/Br7feb.i"
     let USER_DEFAULTS_KEY_FOR_THEME = "theme"
     let USER_DEFAULTS_KEY_FOR_SELECTED_CLASS = "selectedClass"
+    let USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS = "alreadyRolledToClass"
 
     let CLASSES_VIEW_POPUP_HEIGHT = 485
     let CLASSES_PAGE_CONTROL_RADIUS:  CGFloat = 5
@@ -114,6 +115,8 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         self.view.mixedBackgroundColor = MixedColor(normal: 0x222F3E, night: 0x222F3E)
 
         setThemeAtLaunch()
+
+        setAlreadyRolledToSelectedClassAtLaunch()
 
         checkForSmallScreen()
 
@@ -198,6 +201,11 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         }
     }
 
+    fileprivate func setAlreadyRolledToSelectedClassAtLaunch() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(true, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS)
+    }
+
     @IBAction func changeThemeButtonPressed(_ sender: FUIButton) {
         NightNight.toggleNightTheme()
 
@@ -251,13 +259,14 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
 
     @IBAction func savedClassesBackPressed(_ sender: FUIButton) {
-        //        animateOut(viewToAnimate: self.classesView)
         animateOut(viewToAnimate: self.view.subviews.last!)
 
-        let selectedClass = self.userDefaults.object(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS) == nil ? -1 : self.userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS)
-        if (selectedClass != -1) {
-//            print("GOT CLASS AS \(selectedClass) OF TYPE \(type(of: selectedClass))")
+        let selectedClass = self.userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS)
+        let alreadyRolledToClass = self.userDefaults.bool(forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
+
+        if (selectedClass != -1 && !alreadyRolledToClass) {
             self.picker3.selectRow(self.userDefaults.integer(forKey: "selectedClass") - 1, animated: true)
+            userDefaults.set(true, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
         }
     }
 

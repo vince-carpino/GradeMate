@@ -129,7 +129,9 @@ class PickerViewController: UIViewController {
     let letterGradientImage = UIImage(named: "GradeGradient")
 
     let scoreGradientImage = UIImage(named: "ScoreGradient")
-    
+
+    let userDefaults = UserDefaults.standard
+
     override func viewDidLoad() {
         self.view.hero.isEnabled = true
         
