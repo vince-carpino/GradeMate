@@ -537,10 +537,18 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
     func createClassButtonPages() -> [ClassButtonPage] {
         for i in (1...5) {
-            savedClassesPage1.getAllButtons()[i-1].setTitle(String(i * 5) + "%", for: .normal)
-            setButtonStyle(button: savedClassesPage1.getAllButtons()[i-1])
-            savedClassesPage2.getAllButtons()[i-1].setTitle(String((i+5) * 5) + "%", for: .normal)
-            setButtonStyle(button: savedClassesPage2.getAllButtons()[i-1])
+            let buttonOnPage1 = savedClassesPage1.getAllButtons()[i-1]
+            buttonOnPage1.setTitle(String(i * 5) + "%", for: .normal)
+            setButtonStyle(button: buttonOnPage1)
+            buttonOnPage1.tag = i - 1
+
+            let buttonOnPage2 = savedClassesPage2.getAllButtons()[i-1]
+            buttonOnPage2.setTitle(String((i+5) * 5) + "%", for: .normal)
+            setButtonStyle(button: buttonOnPage2)
+            buttonOnPage2.tag = i - 1
+
+            addLongPressToSavedClassesButton(buttonOnPage1)
+            addLongPressToSavedClassesButton(buttonOnPage2)
         }
 
         return [savedClassesPage1, savedClassesPage2]
@@ -561,6 +569,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         for (index, page) in pages.enumerated() {
             page.frame = CGRect(x: classesScrollView.frame.width * CGFloat(index), y: 0, width: classesScrollView.frame.width, height: classesScrollView.frame.height)
             classesScrollView.addSubview(page)
+            page.tag = index
         }
     }
 
@@ -568,6 +577,11 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         let page = classesScrollView.contentOffset.x / classesScrollView.frame.size.width
         classesPageControl.progress = Double(page)
     }
+}
+
+extension FUIButton {
+    var buttonId: Int { return self.tag }
+    var parentId: Int { return self.superview!.tag }
 }
 
 // MARK: -
