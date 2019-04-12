@@ -98,7 +98,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     var savedClassesPage1: ClassButtonPage = Bundle.main.loadNibNamed("ClassButtonPage", owner: self, options: nil)?.first as! ClassButtonPage
     var savedClassesPage2: ClassButtonPage = Bundle.main.loadNibNamed("ClassButtonPage", owner: self, options: nil)?.first as! ClassButtonPage
 
-
     var defaultTextColors = MixedColor(normal: .red, night: .red)
 
     // MARK: - VIEWDIDLOAD
@@ -487,18 +486,13 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
         setButtonStyle(button: gradeMateButtonViewBackButton, buttonColor: primaryColors, shadowColor: PRIMARY_SHADOW_COLORS)
 
-        // GO THROUGH PAGES AND SET BUTTON COLORS
-        setButtonStyle(button: savedClassesPage1.button1, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
-        setButtonStyle(button: savedClassesPage1.button2, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
-        setButtonStyle(button: savedClassesPage1.button3, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
-        setButtonStyle(button: savedClassesPage1.button4, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
-        setButtonStyle(button: savedClassesPage1.button5, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        savedClassesPage1.getAllButtons().forEach { (button) in
+            setButtonStyle(button: button, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        }
 
-        setButtonStyle(button: savedClassesPage2.button1, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
-        setButtonStyle(button: savedClassesPage2.button2, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
-        setButtonStyle(button: savedClassesPage2.button3, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
-        setButtonStyle(button: savedClassesPage2.button4, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
-        setButtonStyle(button: savedClassesPage2.button5, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        savedClassesPage2.getAllButtons().forEach { (button) in
+            setButtonStyle(button: button, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+        }
 
         setButtonStyle(button: classesBackButton, buttonColor: MixedColor(normal: .concrete(), night: .concrete()), shadowColor: MixedColor(normal: .asbestos(), night: .asbestos()))
     }
@@ -525,29 +519,12 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     func createClassButtonPages() -> [ClassButtonPage] {
-        savedClassesPage1.button1.setTitle("5%" , for: .normal)
-        savedClassesPage1.button2.setTitle("10%", for: .normal)
-        savedClassesPage1.button3.setTitle("15%", for: .normal)
-        savedClassesPage1.button4.setTitle("20%", for: .normal)
-        savedClassesPage1.button5.setTitle("25%", for: .normal)
-
-        savedClassesPage2.button1.setTitle("30%", for: .normal)
-        savedClassesPage2.button2.setTitle("35%", for: .normal)
-        savedClassesPage2.button3.setTitle("40%", for: .normal)
-        savedClassesPage2.button4.setTitle("45%", for: .normal)
-        savedClassesPage2.button5.setTitle("50%", for: .normal)
-
-        setButtonStyle(button: savedClassesPage1.button1)
-        setButtonStyle(button: savedClassesPage1.button2)
-        setButtonStyle(button: savedClassesPage1.button3)
-        setButtonStyle(button: savedClassesPage1.button4)
-        setButtonStyle(button: savedClassesPage1.button5)
-
-        setButtonStyle(button: savedClassesPage2.button1)
-        setButtonStyle(button: savedClassesPage2.button2)
-        setButtonStyle(button: savedClassesPage2.button3)
-        setButtonStyle(button: savedClassesPage2.button4)
-        setButtonStyle(button: savedClassesPage2.button5)
+        for i in (1...5) {
+            savedClassesPage1.getAllButtons()[i-1].setTitle(String(i * 5) + "%", for: .normal)
+            setButtonStyle(button: savedClassesPage1.getAllButtons()[i-1])
+            savedClassesPage2.getAllButtons()[i-1].setTitle(String((i+5) * 5) + "%", for: .normal)
+            setButtonStyle(button: savedClassesPage2.getAllButtons()[i-1])
+        }
 
         return [savedClassesPage1, savedClassesPage2]
     }
