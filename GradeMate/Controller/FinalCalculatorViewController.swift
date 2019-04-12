@@ -507,15 +507,32 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         desiredGradeInfoDismiss.titleLabel?.numberOfLines = 1
     }
 
-    @objc func longTap(_ sender: UIGestureRecognizer) {
+    @objc func examWeightLongTap(_ sender: UIGestureRecognizer) {
         if sender.state == .began {
             animateIn(viewToAnimate: self.classesView, height: CLASSES_VIEW_POPUP_HEIGHT)
         }
     }
 
+    @objc func savedClassLongTap(_ sender: UIGestureRecognizer) {
+        if sender.state == .began {
+            let button = sender.view as! FUIButton
+//            print(button.title(for: .normal)! as String)
+//            button.setTitle("CALCULUS II - 35%", for: .normal)
+//            print(type(of: button.superview!.tag))
+            print("\nBUTTON ID: \(button.buttonId)")
+            print("PARENT ID: \(button.parentId)")
+//            animateIn(viewToAnimate: self.classesView, height: CLASSES_VIEW_POPUP_HEIGHT)
+        }
+    }
+
     func addLongPressToExamWeightButton() {
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(examWeightLongTap(_:)))
         examWeightButton.addGestureRecognizer(longGesture)
+    }
+
+    func addLongPressToSavedClassesButton(_ button: FUIButton) {
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(savedClassLongTap(_:)))
+        button.addGestureRecognizer(longGesture)
     }
 
     func createClassButtonPages() -> [ClassButtonPage] {
