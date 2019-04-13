@@ -132,21 +132,11 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         setAllButtonTextBehavior()
 
         // FIXME: Leave commented until Saved Classes are ready
-        addLongPressToExamWeightButton()
+        addLongPressToButton(button: examWeightButton, method: #selector(examWeightLongTap(_:)))
 
         setUpClassesPageControl(pages)
 
 //        calculateButton.titleLabel?.font = UIFont(name: "Quicksand-Medium", size: 12)
-
-//        if userDefaults.object(forKey: "class1") == nil {
-//            userDefaults.set(15, forKey: "class1")
-//        }
-//
-//        if let val = userDefaults.object(forKey: "class1") as? Int {
-//            class1Button.titleLabel?.text = String(val)
-//        } else {
-//            userDefaults.set(15, forKey: "class1")
-//        }
     }
 
     // MARK: - GRADEMATE BUTTON
@@ -463,36 +453,34 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         }
     }
 
+    fileprivate func setSavedClassesButtonStyles() {
+        let savedClassesPages = [savedClassesPage1, savedClassesPage2]
+
+        savedClassesPages.forEach { (page) in
+            page.getAllButtons().forEach({ (button) in
+                setButtonStyle(button: button, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
+            })
+        }
+    }
+
+    fileprivate func setGradeMateButtonStyles() {
+        setButtonStyle(button: gradeMateButton, buttonColor: MixedColor(normal: .clear, night: .clear), shadowColor: MixedColor(normal: .clear, night: .clear), shadowHeight: 5.0)
+
+        setButtonStyle(button: gradeMateButtonShadow, buttonColor: MixedColor(normal: .clear, night: .clear), shadowColor: MixedColor(normal: .clear, night: .clear), textColor: MixedColor(normal: .asbestos(), night: .asbestos()), shadowHeight: 5.0)
+    }
+
     func setAllButtonStyles() {
         setInfoButtonStyles()
         setInfoDismissButtonStyles()
         setGradeMateViewButtonStyles()
-
-//        let allButtons: [FUIButton] = [
-//            calculateButton,
-//            resultViewDismissButton,
-//            gradeMateButton,
-//            gradeMateButtonShadow,
-//            gradeMateButtonViewBackButton
-//        ]
+        setGradeMateButtonStyles()
+        setSavedClassesButtonStyles()
 
         setButtonStyle(button: calculateButton, buttonColor: primaryColors, shadowColor: PRIMARY_SHADOW_COLORS)
 
         setButtonStyle(button: resultViewDismissButton, buttonColor: SECONDARY_COLORS, shadowColor: SECONDARY_SHADOW_COLORS, isDismiss: true)
 
-        setButtonStyle(button: gradeMateButton, buttonColor: MixedColor(normal: .clear, night: .clear), shadowColor: MixedColor(normal: .clear, night: .clear), shadowHeight: 5.0)
-
-        setButtonStyle(button: gradeMateButtonShadow, buttonColor: MixedColor(normal: .clear, night: .clear), shadowColor: MixedColor(normal: .clear, night: .clear), textColor: MixedColor(normal: .asbestos(), night: .asbestos()), shadowHeight: 5.0)
-
         setButtonStyle(button: gradeMateButtonViewBackButton, buttonColor: primaryColors, shadowColor: PRIMARY_SHADOW_COLORS)
-
-        savedClassesPage1.getAllButtons().forEach { (button) in
-            setButtonStyle(button: button, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
-        }
-
-        savedClassesPage2.getAllButtons().forEach { (button) in
-            setButtonStyle(button: button, buttonColor: MixedColor(normal: .turquoise(), night: .turquoise()), shadowColor: MixedColor(normal: .greenSea(), night: .greenSea()))
-        }
 
         setButtonStyle(button: classesBackButton, buttonColor: MixedColor(normal: .concrete(), night: .concrete()), shadowColor: MixedColor(normal: .asbestos(), night: .asbestos()))
     }
@@ -516,22 +504,13 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     @objc func savedClassLongTap(_ sender: UIGestureRecognizer) {
         if sender.state == .began {
             let button = sender.view as! FUIButton
-//            print(button.title(for: .normal)! as String)
-//            button.setTitle("CALCULUS II - 35%", for: .normal)
-//            print(type(of: button.superview!.tag))
-            print("\nBUTTON ID: \(button.buttonId)")
-            print("PARENT ID: \(button.parentId)")
+            print("BUTTON \(button.buttonId + 1) ON PAGE \(button.parentId + 1) LONG PRESSED")
 //            animateIn(viewToAnimate: self.classesView, height: CLASSES_VIEW_POPUP_HEIGHT)
         }
     }
 
-    func addLongPressToExamWeightButton() {
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(examWeightLongTap(_:)))
-        examWeightButton.addGestureRecognizer(longGesture)
-    }
-
-    func addLongPressToSavedClassesButton(_ button: FUIButton) {
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(savedClassLongTap(_:)))
+    func addLongPressToButton(button: FUIButton, method: Selector) {
+        let longGesture = UILongPressGestureRecognizer(target: self, action: method)
         button.addGestureRecognizer(longGesture)
     }
 
@@ -547,8 +526,8 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
             setButtonStyle(button: buttonOnPage2)
             buttonOnPage2.tag = i - 1
 
-            addLongPressToSavedClassesButton(buttonOnPage1)
-            addLongPressToSavedClassesButton(buttonOnPage2)
+            addLongPressToButton(button: buttonOnPage1, method: #selector(savedClassLongTap(_:)))
+            addLongPressToButton(button: buttonOnPage2, method: #selector(savedClassLongTap(_:)))
         }
 
         return [savedClassesPage1, savedClassesPage2]
