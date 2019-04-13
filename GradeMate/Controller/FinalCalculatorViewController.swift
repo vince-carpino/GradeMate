@@ -217,30 +217,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         classesPageControl.backgroundColor = .clear
     }
 
-    @IBAction func classButtonPressed(_ sender: FUIButton) {
-//        picker3.selectRow(Int((sender.titleLabel?.text)!)! - 1, animated: true)
-
-        //        if let stored = UserDefaults.standard.object(forKey: "class1") as? Int {
-        //            UserDefaults.standard.set(stored + 1, forKey: "class1")
-        //            class1Button.titleLabel?.text = String(stored + 1)
-        //            picker3.selectRow(stored, animated: true)
-        //        }
-
-
-        //        if let val = UserDefaults.standard.object(forKey: "class1") as? String {
-        //            class1Button.titleLabel?.text = val
-        //        }
-        //
-        //        let text = sender.titleLabel!.text!
-        //        let start = text.index(text.startIndex, offsetBy: 9)
-        //        let end   = text.index(text.endIndex, offsetBy: -1)
-        //        let substring = text[start..<end]
-        //
-        //        picker3.selectRow(Int(substring)! - 1, animated: true)
-
-        animateOut(viewToAnimate: self.classesView)
-    }
-
     // MARK: - DISMISS POP UP
     //    @IBAction func dismissPopUp(_ sender: FUIButton) {
     //        animateOut(viewToAnimate: self.view.subviews.last!)
