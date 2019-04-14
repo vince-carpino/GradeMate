@@ -181,8 +181,6 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     fileprivate func setThemeAtLaunch() {
-        let userDefaults = UserDefaults.standard
-
         if userDefaults.object(forKey: USER_DEFAULTS_KEY_FOR_THEME) == nil {
             userDefaults.set(1, forKey: USER_DEFAULTS_KEY_FOR_THEME)
         } else {
@@ -192,8 +190,11 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     }
 
     fileprivate func setAlreadyRolledToSelectedClassAtLaunch() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(true, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS)
+        userDefaults.set(true, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
+    }
+
+    fileprivate func resetSelectedClassIsActiveToFalseAtLaunch() {
+        userDefaults.set(false, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_IS_ACTIVE)
     }
 
     @IBAction func changeThemeButtonPressed(_ sender: FUIButton) {
