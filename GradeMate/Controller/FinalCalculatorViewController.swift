@@ -44,7 +44,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     @IBOutlet weak var classesViewTitleLabel: UILabel!
     @IBOutlet weak var classesScrollView: UIScrollView!
     @IBOutlet weak var classesBackButton: FUIButton!
-    @IBOutlet weak var classesPageControl: CHIPageControlAleppo!
+    @IBOutlet weak var classesPageControl: CHIPageControlJaloro!
 
     @IBOutlet weak var backgroundImage: UIImageView!
 
@@ -56,8 +56,8 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     let USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS = "alreadyRolledToClass"
 
     let CLASSES_VIEW_POPUP_HEIGHT = 485
-    let CLASSES_PAGE_CONTROL_RADIUS:  CGFloat = 5
-    let CLASSES_PAGE_CONTROL_PADDING: CGFloat = 10
+    let CLASSES_PAGE_CONTROL_RADIUS:  CGFloat = 3
+    let CLASSES_PAGE_CONTROL_PADDING: CGFloat = 8
     let CLASSES_SCROLLVIEW_NORMAL_COLOR: UIColor = .silver()!
     let CLASSES_SCROLLVIEW_NIGHT_COLOR: UIColor = .midnightBlue()!
 
