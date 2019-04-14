@@ -8,8 +8,12 @@ class ClassButtonPage: UIView {
     @IBOutlet weak var button4: FUIButton!
     @IBOutlet weak var button5: FUIButton!
 
-    let USER_DEFAULTS_KEY_FOR_CURRENTLY_SELECTED_CLASS = "selectedClass"
+//    let USER_DEFAULTS_KEY_FOR_CURRENTLY_SELECTED_CLASS = "selectedClass"
     let USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS  = "alreadyRolledToClass"
+
+    let USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID   = "selectedClassPageId"
+    let USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID = "selectedClassButtonId"
+    let USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_IS_ACTIVE = "selectedClassIsActive"
 
     let defaultButtonColor       = UIColor.turquoise()
     let defaultButtonShadowColor = UIColor.greenSea()
@@ -20,30 +24,27 @@ class ClassButtonPage: UIView {
     let userDefaults = UserDefaults.standard
 
     fileprivate func setSelectedClass(_ sender: FUIButton) {
-        if userDefaults.object(forKey: USER_DEFAULTS_KEY_FOR_CURRENTLY_SELECTED_CLASS) == nil {
-            userDefaults.set(-1, forKey: USER_DEFAULTS_KEY_FOR_CURRENTLY_SELECTED_CLASS)
+        let selectedClassParentId = sender.parentId
+        let selectedClassButtonId = sender.buttonId
+
+        if userDefaults.object(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID) == nil {
+            userDefaults.set(-1, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID)
+            userDefaults.set(-1, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID)
+
             userDefaults.set(true, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
         } else {
-            let buttonTextToInt = convertStringWithPercentToInt(value: sender.titleLabel?.text!)
-            userDefaults.set(buttonTextToInt, forKey: USER_DEFAULTS_KEY_FOR_CURRENTLY_SELECTED_CLASS)
-            userDefaults.set(sender.buttonColor == defaultButtonColor ? true : false, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
+            userDefaults.set(selectedClassParentId, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID)
+            userDefaults.set(selectedClassButtonId, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID)
+
+            let alreadyRolledToClass: Bool = sender.buttonColor == defaultButtonColor ? true : false
+            userDefaults.set(alreadyRolledToClass, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
         }
     }
 
-    public func resetAllOtherButtonColors(_ sender: FUIButton) {
-        let allButtons: [FUIButton] = [
-            button1,
-            button2,
-            button3,
-            button4,
-            button5
-        ]
-
-        allButtons.forEach { (button) in
-            if (sender != button) {
-                button.buttonColor = defaultButtonColor
-                button.shadowColor = defaultButtonShadowColor
-            }
+    public func resetAllButtonColors(_ sender: FUIButton) {
+        getAllButtons().forEach { (button) in
+            button.buttonColor = defaultButtonColor
+            button.shadowColor = defaultButtonShadowColor
         }
     }
 
@@ -58,18 +59,48 @@ class ClassButtonPage: UIView {
     }
 
     fileprivate func setSelectedButtonColors(_ sender: FUIButton) {
-        // FIXME: Toggle active selectedClass
+        let selectedClassIsActive = userDefaults.bool(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_IS_ACTIVE)
+        let selectedClassParentId = userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID)
+        let selectedClassButtonId = userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID)
 
-        sender.buttonColor = sender.buttonColor == defaultButtonColor ? activeButtonColor : defaultButtonColor
-        sender.shadowColor = sender.shadowColor == defaultButtonShadowColor ? activeButtonShadowColor : defaultButtonShadowColor
+        let parentIdsMatch: Bool = selectedClassParentId == sender.parentId
+        let buttonIdsMatch: Bool = selectedClassButtonId == sender.buttonId
+        let shouldBeActiveColor = selectedClassIsActive && parentIdsMatch && buttonIdsMatch
 
-        userDefaults.set(sender.buttonColor == defaultButtonColor ? true : false, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
+        sender.buttonColor = shouldBeActiveColor ? activeButtonColor : defaultButtonColor
+        sender.shadowColor = shouldBeActiveColor ? activeButtonShadowColor : defaultButtonShadowColor
+
+        let alreadyRolledToClass: Bool = sender.buttonColor == defaultButtonColor ? true : false
+        userDefaults.set(alreadyRolledToClass, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
+    }
+
+    fileprivate func toggleSelectedClassIsActive(_ sender: FUIButton) {
+        let selectedClassPageId = userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID)
+        let selectedClassButtonId = userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID)
+
+        let parentIdsMatch: Bool = sender.parentId == selectedClassPageId
+        let buttonIdsMatch: Bool = sender.buttonId == selectedClassButtonId
+        let selectedClassIsSameAsLastSelected: Bool = parentIdsMatch && buttonIdsMatch
+
+        if (selectedClassIsSameAsLastSelected) {
+            let selectedClassIsActive = userDefaults.bool(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_IS_ACTIVE)
+            userDefaults.set(!selectedClassIsActive, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_IS_ACTIVE)
+        } else {
+            userDefaults.set(true, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_IS_ACTIVE)
+        }
     }
 
     @IBAction func buttonClicked(_ sender: FUIButton) {
-        resetAllOtherButtonColors(sender)
-        setSelectedButtonColors(sender)
+        print("\nACTIVE AT BEGIN? \(userDefaults.bool(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_IS_ACTIVE))")
+
+        toggleSelectedClassIsActive(sender)
         setSelectedClass(sender)
+        resetAllButtonColors(sender)
+        setSelectedButtonColors(sender)
+
+        print("CURRENTLY SELECTED CLASS ON PAGE: \(userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID) + 1)")
+        print("AT BUTTON: \(userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID) + 1)")
+        print("ACTIVE AT END? \(userDefaults.bool(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_IS_ACTIVE))")
     }
 
     func convertStringWithPercentToInt(value: String?) -> Int? {

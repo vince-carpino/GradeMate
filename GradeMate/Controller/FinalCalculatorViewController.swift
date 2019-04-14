@@ -52,6 +52,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
     let SHARE_URL_STRING = "https://appsto.re/us/Br7feb.i"
     let USER_DEFAULTS_KEY_FOR_THEME = "theme"
     let USER_DEFAULTS_KEY_FOR_SELECTED_CLASS = "selectedClass"
+    let USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_IS_ACTIVE = "selectedClassIsActive"
     let USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS = "alreadyRolledToClass"
 
     let CLASSES_VIEW_POPUP_HEIGHT = 485
@@ -136,7 +137,7 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
 
         setUpClassesPageControl(pages)
 
-//        calculateButton.titleLabel?.font = UIFont(name: "Quicksand-Medium", size: 12)
+        resetSelectedClassIsActiveToFalseAtLaunch()
     }
 
     // MARK: - GRADEMATE BUTTON
