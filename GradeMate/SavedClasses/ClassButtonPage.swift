@@ -8,7 +8,7 @@ class ClassButtonPage: UIView {
     @IBOutlet weak var button4: FUIButton!
     @IBOutlet weak var button5: FUIButton!
 
-//    let USER_DEFAULTS_KEY_FOR_CURRENTLY_SELECTED_CLASS = "selectedClass"
+    let USER_DEFAULTS_KEY_FOR_CURRENTLY_SELECTED_CLASS = "selectedClass"
     let USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS  = "alreadyRolledToClass"
 
     let USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID   = "selectedClassPageId"
@@ -32,6 +32,10 @@ class ClassButtonPage: UIView {
 
         let alreadyRolledToClass: Bool = sender.buttonColor == defaultButtonColor ? true : false
         userDefaults.set(alreadyRolledToClass, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
+
+        let buttonTextString = sender.titleLabel?.text
+        let intValueOfString = convertStringWithPercentToInt(value: buttonTextString)
+        userDefaults.set(intValueOfString, forKey: USER_DEFAULTS_KEY_FOR_CURRENTLY_SELECTED_CLASS)
     }
 
     public func resetAllButtonColors(_ sender: FUIButton) {
