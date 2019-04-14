@@ -12,4 +12,5 @@ target 'GradeMate' do
   pod 'NightNight'
   pod 'PickerView'
   pod 'ViewAnimator'
+  pod 'WhatsNewKit'
 end

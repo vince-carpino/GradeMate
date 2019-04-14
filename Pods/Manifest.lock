@@ -23,6 +23,7 @@ PODS:
   - NightNight (0.5.0)
   - PickerView (0.4.0)
   - ViewAnimator (2.5.1)
+  - WhatsNewKit (1.1.8)
 
 DEPENDENCIES:
   - BEMCheckBox
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - NightNight
   - PickerView
   - ViewAnimator
+  - WhatsNewKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -44,6 +46,7 @@ SPEC REPOS:
     - NightNight
     - PickerView
     - ViewAnimator
+    - WhatsNewKit
 
 SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
@@ -54,7 +57,8 @@ SPEC CHECKSUMS:
   NightNight: 2a5550fdd9cf424b75ebaab022c26aaba35304c8
   PickerView: a736ea986d992aa3ef32423f475fdf3f3a0cf7d4
   ViewAnimator: 173932c659a43c5a15c665878750d92801ae2cf1
+  WhatsNewKit: 971d8dc185b2c73a9a3706a4cce27e8e955b3459
 
-PODFILE CHECKSUM: 8c2aa049d7927dfe55517641f2a2bf9602e1aa61
+PODFILE CHECKSUM: 418e9a3d0738a2a2afb23be88a3967be96c695fd
 
 COCOAPODS: 1.5.3
