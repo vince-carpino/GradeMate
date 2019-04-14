@@ -1,5 +1,6 @@
 import BEMCheckBox
 import FlatUIKit
+import Haptica
 import NightNight
 
 class ShowLaunchScreen: UIViewController {
@@ -21,6 +22,7 @@ class ShowLaunchScreen: UIViewController {
 
         DispatchQueue.main.asyncAfter(deadline: (.now() + 0.25)) {
             self.checkBox.setOn(true, animated: true)
+            Haptic.play("-.--o", delay: 0.1)
         }
 
         DispatchQueue.main.asyncAfter(deadline: (.now() + 1)) {
