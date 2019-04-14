@@ -27,18 +27,11 @@ class ClassButtonPage: UIView {
         let selectedClassParentId = sender.parentId
         let selectedClassButtonId = sender.buttonId
 
-        if userDefaults.object(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID) == nil {
-            userDefaults.set(-1, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID)
-            userDefaults.set(-1, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID)
+        userDefaults.set(selectedClassParentId, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID)
+        userDefaults.set(selectedClassButtonId, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID)
 
-            userDefaults.set(true, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
-        } else {
-            userDefaults.set(selectedClassParentId, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID)
-            userDefaults.set(selectedClassButtonId, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID)
-
-            let alreadyRolledToClass: Bool = sender.buttonColor == defaultButtonColor ? true : false
-            userDefaults.set(alreadyRolledToClass, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
-        }
+        let alreadyRolledToClass: Bool = sender.buttonColor == defaultButtonColor ? true : false
+        userDefaults.set(alreadyRolledToClass, forKey: USER_DEFAULTS_KEY_FOR_ALREADY_ROLLED_TO_CLASS)
     }
 
     public func resetAllButtonColors(_ sender: FUIButton) {
@@ -75,6 +68,11 @@ class ClassButtonPage: UIView {
     }
 
     fileprivate func toggleSelectedClassIsActive(_ sender: FUIButton) {
+        if userDefaults.object(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID) == nil {
+            userDefaults.set(sender.parentId, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID)
+            userDefaults.set(sender.buttonId, forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID)
+        }
+
         let selectedClassPageId = userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_PAGE_ID)
         let selectedClassButtonId = userDefaults.integer(forKey: USER_DEFAULTS_KEY_FOR_SELECTED_CLASS_BUTTON_ID)
 
