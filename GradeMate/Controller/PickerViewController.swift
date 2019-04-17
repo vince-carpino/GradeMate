@@ -3,8 +3,11 @@ import FlatUIKit
 import Haptica
 import NightNight
 import PickerView
+import WhatsNewKit
 
 class PickerViewController: UIViewController {
+    let FONT_NAME = "Fredoka One"
+
     var currentGrade = 0
     var decimalValue = 0.0
     var examWeight   = 0
@@ -132,6 +135,8 @@ class PickerViewController: UIViewController {
 
     let userDefaults = UserDefaults.standard
 
+    var whatsNewVc = WhatsNewViewController(whatsNew: WhatsNew.init(title: "DEFAULT", items: []))
+
     override func viewDidLoad() {
         self.view.hero.isEnabled = true
         
@@ -150,6 +155,89 @@ class PickerViewController: UIViewController {
         visualEffectView.isHidden = true         // HIDES BLUR EFFECT SO BUTTONS CAN BE USED
         
         resultView.layer.cornerRadius = 10
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        showWhatsNewIfNeeded()
+    }
+
+    func showWhatsNewIfNeeded() {
+        let items = [
+            WhatsNew.Item(
+                title: "Haptic feedback",
+                subtitle: "Feel the clickiness",
+                image: UIImage(named: "icon-touch")),
+            WhatsNew.Item(
+                title: "Dark theme",
+                subtitle: "Cause all the cool apps have one",
+                image: UIImage(named: "icon-moon")),
+            WhatsNew.Item(
+                title: "New font",
+                subtitle: "Simple and clean",
+                image: UIImage(named: "icon-font")),
+            WhatsNew.Item(
+                title: "This page",
+                subtitle: "Now you can easily see what's new",
+                image: UIImage(named: "icon-new")),
+            WhatsNew.Item(
+                title: "GradeMate menu",
+                subtitle: "Change theme, see this page and more by tapping the 'GradeMate' button",
+                image: UIImage(named: "icon-toggle-on")),
+        ]
+
+        let itemsView = WhatsNewViewController.ItemsView(
+            titleFont: UIFont(name: FONT_NAME, size: 24)!,
+            titleColor: .clouds(),
+            subtitleFont: UIFont(name: FONT_NAME, size: 18)!,
+            subtitleColor: .clouds(),
+            imageSize: .preferred
+        )
+
+        let titleView = WhatsNewViewController.TitleView(
+            titleFont: UIFont(name: FONT_NAME, size: 32)!,
+            titleColor: .clouds()
+        )
+
+        let theme = WhatsNewViewController.Theme { configuration in
+            configuration.apply(animation: .slideUp)
+        }
+
+        let detailButton = WhatsNewViewController.DetailButton(
+            title: "See this again in the GradeMate menu",
+            action: .custom(action: { vc in () } ),
+            titleFont: UIFont(name: FONT_NAME, size: 18)!,
+            titleColor: .clouds()
+        )
+
+        let completionButton = WhatsNewViewController.CompletionButton(
+            title: "Alright!",
+            backgroundColor: .greenSea(),
+            titleFont: UIFont(name: FONT_NAME, size: 20)!,
+            titleColor: .clouds(),
+            cornerRadius: 6.0
+        )
+
+        let config = WhatsNewViewController.Configuration(
+            theme: theme,
+            backgroundColor: .wetAsphalt(),
+            titleView: titleView,
+            itemsView: itemsView,
+            completionButton: completionButton
+        )
+
+        let whatsNew = WhatsNew(title: "What's New", items: items)
+
+        whatsNewVc = WhatsNewViewController(whatsNew: whatsNew, configuration: config)
+        self.present(whatsNewVc, animated: true)
+
+//        let keyValueVersionStore = KeyValueWhatsNewVersionStore(keyValueable: userDefaults)
+//        whatsNewVc = WhatsNewViewController(whatsNew: whatsNew, configuration: config, versionStore: keyValueVersionStore)!
+//
+//        if let _ = whatsNewVc {
+//            self.present(whatsNewVc, animated: true)
+//        }
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
