@@ -4,6 +4,7 @@ import Haptica
 import Hero
 import NightNight
 import PickerView
+import WhatsNewKit
 
 class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate {
     @IBOutlet var gradeMateButtonView: UIView!
@@ -284,6 +285,10 @@ class FinalCalculatorViewController: PickerViewController, UIScrollViewDelegate 
         activityVC.popoverPresentationController?.sourceView = self.view
         
         self.present(activityVC, animated: true, completion: nil)
+    }
+
+    func showWhatsNewPage() {
+        self.present(whatsNewVc, animated: true)
     }
 
     fileprivate func setBackgroundImageAlphaBasedOnCurrentTheme() {

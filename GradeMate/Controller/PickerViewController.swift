@@ -136,6 +136,7 @@ class PickerViewController: UIViewController {
     let userDefaults = UserDefaults.standard
 
     var whatsNewVc = WhatsNewViewController(whatsNew: WhatsNew.init(title: "DEFAULT", items: []))
+    var whatsNewOptionalVc = WhatsNewViewController(coder: NSCoder.init())
 
     override func viewDidLoad() {
         self.view.hero.isEnabled = true
@@ -179,11 +180,11 @@ class PickerViewController: UIViewController {
                 image: UIImage(named: "icon-font")),
             WhatsNew.Item(
                 title: "This page",
-                subtitle: "Now you can easily see what's new",
+                subtitle: "Easily see what's new",
                 image: UIImage(named: "icon-new")),
             WhatsNew.Item(
                 title: "GradeMate menu",
-                subtitle: "Change theme, see this page and more by tapping the 'GradeMate' button",
+                subtitle: "Tap the 'GradeMate' button for some options",
                 image: UIImage(named: "icon-toggle-on")),
         ]
 
@@ -219,6 +220,15 @@ class PickerViewController: UIViewController {
             cornerRadius: 6.0
         )
 
+        let optionalConfig = WhatsNewViewController.Configuration(
+            theme: theme,
+            backgroundColor: .wetAsphalt(),
+            titleView: titleView,
+            itemsView: itemsView,
+            detailButton: detailButton,
+            completionButton: completionButton
+        )
+
         let config = WhatsNewViewController.Configuration(
             theme: theme,
             backgroundColor: .wetAsphalt(),
@@ -229,15 +239,28 @@ class PickerViewController: UIViewController {
 
         let whatsNew = WhatsNew(title: "What's New", items: items)
 
-        whatsNewVc = WhatsNewViewController(whatsNew: whatsNew, configuration: config)
-        self.present(whatsNewVc, animated: true)
+//        whatsNewVc = WhatsNewViewController(whatsNew: whatsNew, configuration: config)
 
-//        let keyValueVersionStore = KeyValueWhatsNewVersionStore(keyValueable: userDefaults)
-//        whatsNewVc = WhatsNewViewController(whatsNew: whatsNew, configuration: config, versionStore: keyValueVersionStore)!
+//        let newButton = FUIButton(frame: CGRect(x: 0, y: 100, width: 200, height: 20))
+//        let newButton = FUIButton(type: .custom)
+//        newButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+//        newButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+//        newButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
 //
-//        if let _ = whatsNewVc {
-//            self.present(whatsNewVc, animated: true)
-//        }
+//        setButtonStyle(button: newButton)
+//
+//        whatsNewVc.view.addSubview(newButton)
+
+//        self.present(whatsNewVc, animated: true)
+
+        let keyValueVersionStore = KeyValueWhatsNewVersionStore(keyValueable: userDefaults)
+
+        whatsNewVc         = WhatsNewViewController(whatsNew: whatsNew, configuration: config)
+        whatsNewOptionalVc = WhatsNewViewController(whatsNew: whatsNew, configuration: optionalConfig, versionStore: keyValueVersionStore)
+
+        if let vc = whatsNewOptionalVc {
+            self.present(vc, animated: true)
+        }
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
