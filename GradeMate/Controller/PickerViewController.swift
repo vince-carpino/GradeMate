@@ -167,13 +167,17 @@ class PickerViewController: UIViewController {
     func showWhatsNewIfNeeded() {
         let items = [
             WhatsNew.Item(
-                title: "Haptic feedback",
-                subtitle: "Feel the clickiness",
-                image: UIImage(named: "icon-touch")),
-            WhatsNew.Item(
                 title: "Dark theme",
                 subtitle: "Cause all the cool apps have one",
                 image: UIImage(named: "icon-moon")),
+            WhatsNew.Item(
+                title: "GradeMate menu",
+                subtitle: "Tap the 'GradeMate' button for some options",
+                image: UIImage(named: "icon-toggle-on")),
+            WhatsNew.Item(
+                title: "Haptic feedback",
+                subtitle: "Feel the clickiness",
+                image: UIImage(named: "icon-touch")),
             WhatsNew.Item(
                 title: "New font",
                 subtitle: "Simple and clean",
@@ -182,10 +186,6 @@ class PickerViewController: UIViewController {
                 title: "This page",
                 subtitle: "Easily see what's new",
                 image: UIImage(named: "icon-new")),
-            WhatsNew.Item(
-                title: "GradeMate menu",
-                subtitle: "Tap the 'GradeMate' button for some options",
-                image: UIImage(named: "icon-toggle-on")),
         ]
 
         let itemsView = WhatsNewViewController.ItemsView(
@@ -205,12 +205,12 @@ class PickerViewController: UIViewController {
             configuration.apply(animation: .slideUp)
         }
 
-        let detailButton = WhatsNewViewController.DetailButton(
-            title: "See this again in the GradeMate menu",
-            action: .custom(action: { vc in () } ),
-            titleFont: UIFont(name: FONT_NAME, size: 18)!,
-            titleColor: .clouds()
-        )
+//        let detailButton = WhatsNewViewController.DetailButton(
+//            title: "See this again in the GradeMate menu",
+//            action: .custom(action: { vc in () } ),
+//            titleFont: UIFont(name: FONT_NAME, size: 18)!,
+//            titleColor: .clouds()
+//        )
 
         let completionButton = WhatsNewViewController.CompletionButton(
             title: "Alright!",
@@ -225,7 +225,7 @@ class PickerViewController: UIViewController {
             backgroundColor: .wetAsphalt(),
             titleView: titleView,
             itemsView: itemsView,
-            detailButton: detailButton,
+//            detailButton: detailButton,
             completionButton: completionButton
         )
 
