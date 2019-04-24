@@ -10,53 +10,6 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
-            <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Gradient-Background" translatesAutoresizingMaskIntoConstraints="NO" id="oAR-6t-8oo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="49.275362318840585" y="373.36956521739131"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="DSa-Mo-vNc">
-            <objects>
-                <viewController id="bVC-Zt-RP7" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SdN-Fm-DRw"/>
-                        <viewControllerLayoutGuide type="bottom" id="SVo-Mu-uDA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qg6-fZ-RyE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matte-grey" translatesAutoresizingMaskIntoConstraints="NO" id="NyA-iA-w0m" userLabel="Dark-Theme-Background">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p6F-Gs-2Fc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="804" y="372.86356821589209"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="FJn-7d-9Rc">
             <objects>
                 <viewController id="jfm-VB-bjw" sceneMemberID="viewController">
@@ -75,8 +28,4 @@
             <point key="canvasLocation" x="-732" y="373"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Gradient-Background" width="682" height="682"/>
-        <image name="matte-grey" width="300" height="300"/>
-    </resources>
 </document>
