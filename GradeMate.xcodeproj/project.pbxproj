@@ -209,10 +209,9 @@
 			};
 			buildConfigurationList = D028A9041D2105F000AAA32A /* Build configuration list for PBXProject "GradeMate" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
