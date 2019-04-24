@@ -31,6 +31,7 @@ class PickerViewController: UIViewController {
     }
 
     let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
 
     @IBOutlet weak var picker1: PickerView!
     @IBOutlet weak var picker2: PickerView!
@@ -239,20 +240,6 @@ class PickerViewController: UIViewController {
 
         let whatsNew = WhatsNew(title: "What's New", items: items)
 
-//        whatsNewVc = WhatsNewViewController(whatsNew: whatsNew, configuration: config)
-
-//        let newButton = FUIButton(frame: CGRect(x: 0, y: 100, width: 200, height: 20))
-//        let newButton = FUIButton(type: .custom)
-//        newButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-//        newButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-//        newButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-//
-//        setButtonStyle(button: newButton)
-//
-//        whatsNewVc.view.addSubview(newButton)
-
-//        self.present(whatsNewVc, animated: true)
-
         let keyValueVersionStore = KeyValueWhatsNewVersionStore(keyValueable: userDefaults)
 
         whatsNewVc         = WhatsNewViewController(whatsNew: whatsNew, configuration: config)
@@ -278,11 +265,6 @@ class PickerViewController: UIViewController {
         picker.scrollingStyle  = .default
         picker.selectionStyle  = .defaultIndicator
         picker.currentSelectedRow = stringArray.firstIndex(of: stringArray.first!)
-    }
-
-    public func setCurrentClass(val: Int) {
-//        self.picker3.selectRow(val, animated: true)
-        print(val)
     }
 }
 
@@ -354,6 +336,7 @@ extension PickerViewController: PickerViewDelegate {
 //        label.font = UIFont(name: "Courier-Bold", size: 26.0)
 //        label.font = UIFont(name: "FredokaOne-Regular", size: 26)
         label.font = UIFont(name: "Quicksand-Bold", size: 26)
+//        label.font = UIFont(name: FONT_NAME, size: 26)
 
         if pickerView == picker2 {
             label.textAlignment = .left
